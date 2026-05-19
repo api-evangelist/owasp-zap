@@ -1,0 +1,1370 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — ajaxSpider
+  description: 'ZAP API — ajaxSpider. 41 operations. Lead operation: ajaxSpider. Self-contained Naftiko capability covering
+    one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - ajaxSpider
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-ajaxspider
+    baseUri: http://zap
+    description: ZAP API — ajaxSpider business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-ajaxSpider-action-addAllowedResource
+      path: /JSON/ajaxSpider/action/addAllowedResource/
+      operations:
+      - name: ajaxspideractionaddallowedresource
+        method: GET
+        description: Adds an allowed resource.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-addExcludedElement
+      path: /JSON/ajaxSpider/action/addExcludedElement/
+      operations:
+      - name: ajaxspideractionaddexcludedelement
+        method: GET
+        description: Adds an excluded element to a context.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-modifyExcludedElement
+      path: /JSON/ajaxSpider/action/modifyExcludedElement/
+      operations:
+      - name: ajaxspideractionmodifyexcludedelement
+        method: GET
+        description: Modifies an excluded element of a context.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-removeAllowedResource
+      path: /JSON/ajaxSpider/action/removeAllowedResource/
+      operations:
+      - name: ajaxspideractionremoveallowedresource
+        method: GET
+        description: Removes an allowed resource.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-removeExcludedElement
+      path: /JSON/ajaxSpider/action/removeExcludedElement/
+      operations:
+      - name: ajaxspideractionremoveexcludedelement
+        method: GET
+        description: Removes an excluded element from a context.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-scan
+      path: /JSON/ajaxSpider/action/scan/
+      operations:
+      - name: ajaxspideractionscan
+        method: GET
+        description: Runs the AJAX Spider against a given target.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-scanAsUser
+      path: /JSON/ajaxSpider/action/scanAsUser/
+      operations:
+      - name: ajaxspideractionscanasuser
+        method: GET
+        description: Runs the AJAX Spider from the perspective of a User of the web application.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setEnabledAllowedResource
+      path: /JSON/ajaxSpider/action/setEnabledAllowedResource/
+      operations:
+      - name: ajaxspideractionsetenabledallowedresource
+        method: GET
+        description: Sets whether or not an allowed resource is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionBrowserId
+      path: /JSON/ajaxSpider/action/setOptionBrowserId/
+      operations:
+      - name: ajaxspideractionsetoptionbrowserid
+        method: GET
+        description: Sets the configuration of the AJAX Spider to use one of the supported browsers.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionClickDefaultElems
+      path: /JSON/ajaxSpider/action/setOptionClickDefaultElems/
+      operations:
+      - name: ajaxspideractionsetoptionclickdefaultelems
+        method: GET
+        description: Sets whether or not the AJAX Spider will only click on the default HTML elements.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionClickElemsOnce
+      path: /JSON/ajaxSpider/action/setOptionClickElemsOnce/
+      operations:
+      - name: ajaxspideractionsetoptionclickelemsonce
+        method: GET
+        description: When enabled, the crawler attempts to interact with each element (e.g., by clicking) only once.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionEnableExtensions
+      path: /JSON/ajaxSpider/action/setOptionEnableExtensions/
+      operations:
+      - name: ajaxspideractionsetoptionenableextensions
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionEventWait
+      path: /JSON/ajaxSpider/action/setOptionEventWait/
+      operations:
+      - name: ajaxspideractionsetoptioneventwait
+        method: GET
+        description: 'Sets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor
+          hovers over an element, in order for a menu to display, etc.'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionLogoutAvoidance
+      path: /JSON/ajaxSpider/action/setOptionLogoutAvoidance/
+      operations:
+      - name: ajaxspideractionsetoptionlogoutavoidance
+        method: GET
+        description: Sets whether or not the AJAX Spider should avoid clicking logout elements.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionMaxCrawlDepth
+      path: /JSON/ajaxSpider/action/setOptionMaxCrawlDepth/
+      operations:
+      - name: ajaxspideractionsetoptionmaxcrawldepth
+        method: GET
+        description: Sets the maximum depth that the crawler can reach.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionMaxCrawlStates
+      path: /JSON/ajaxSpider/action/setOptionMaxCrawlStates/
+      operations:
+      - name: ajaxspideractionsetoptionmaxcrawlstates
+        method: GET
+        description: Sets the maximum number of states that the crawler should crawl.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionMaxDuration
+      path: /JSON/ajaxSpider/action/setOptionMaxDuration/
+      operations:
+      - name: ajaxspideractionsetoptionmaxduration
+        method: GET
+        description: The maximum time that the crawler is allowed to run.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionNumberOfBrowsers
+      path: /JSON/ajaxSpider/action/setOptionNumberOfBrowsers/
+      operations:
+      - name: ajaxspideractionsetoptionnumberofbrowsers
+        method: GET
+        description: Sets the number of windows to be used by AJAX Spider.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionRandomInputs
+      path: /JSON/ajaxSpider/action/setOptionRandomInputs/
+      operations:
+      - name: ajaxspideractionsetoptionrandominputs
+        method: GET
+        description: When enabled, inserts random values into form fields.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionReloadWait
+      path: /JSON/ajaxSpider/action/setOptionReloadWait/
+      operations:
+      - name: ajaxspideractionsetoptionreloadwait
+        method: GET
+        description: Sets the time to wait after the page is loaded before interacting with it.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-setOptionScopeCheck
+      path: /JSON/ajaxSpider/action/setOptionScopeCheck/
+      operations:
+      - name: ajaxspideractionsetoptionscopecheck
+        method: GET
+        description: Sets the scope check.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-action-stop
+      path: /JSON/ajaxSpider/action/stop/
+      operations:
+      - name: ajaxspideractionstop
+        method: GET
+        description: Stops the AJAX Spider.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-allowedResources
+      path: /JSON/ajaxSpider/view/allowedResources/
+      operations:
+      - name: ajaxspiderviewallowedresources
+        method: GET
+        description: Gets the allowed resources. The allowed resources are always fetched even if out of scope, allowing to
+          include necessary resources (e.g. scripts) from 3rd-parties.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-excludedElements
+      path: /JSON/ajaxSpider/view/excludedElements/
+      operations:
+      - name: ajaxspiderviewexcludedelements
+        method: GET
+        description: Gets the excluded elements. The excluded elements are not clicked during crawling, for example, to prevent
+          logging out.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-fullResults
+      path: /JSON/ajaxSpider/view/fullResults/
+      operations:
+      - name: ajaxspiderviewfullresults
+        method: GET
+        description: Gets the full crawled content detected by the AJAX Spider. Returns a set of values based on 'inScope'
+          URLs, 'outOfScope' URLs, and 'errors' encountered during the last/current run of the AJAX Spider.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-numberOfResults
+      path: /JSON/ajaxSpider/view/numberOfResults/
+      operations:
+      - name: ajaxspiderviewnumberofresults
+        method: GET
+        description: Gets the number of resources found.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionBrowserId
+      path: /JSON/ajaxSpider/view/optionBrowserId/
+      operations:
+      - name: ajaxspiderviewoptionbrowserid
+        method: GET
+        description: Gets the configured browser to use for crawling.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionClickDefaultElems
+      path: /JSON/ajaxSpider/view/optionClickDefaultElems/
+      operations:
+      - name: ajaxspiderviewoptionclickdefaultelems
+        method: GET
+        description: Gets the configured value for 'Click Default Elements Only', HTML elements such as 'a', 'button', 'input',
+          all associated with some action or links on the page.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionClickElemsOnce
+      path: /JSON/ajaxSpider/view/optionClickElemsOnce/
+      operations:
+      - name: ajaxspiderviewoptionclickelemsonce
+        method: GET
+        description: Gets the value configured for the AJAX Spider to know if it should click on the elements only once.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionEnableExtensions
+      path: /JSON/ajaxSpider/view/optionEnableExtensions/
+      operations:
+      - name: ajaxspiderviewoptionenableextensions
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionEventWait
+      path: /JSON/ajaxSpider/view/optionEventWait/
+      operations:
+      - name: ajaxspiderviewoptioneventwait
+        method: GET
+        description: 'Gets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor
+          hovers over an element, in order for a menu to display, etc.'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionLogoutAvoidance
+      path: /JSON/ajaxSpider/view/optionLogoutAvoidance/
+      operations:
+      - name: ajaxspiderviewoptionlogoutavoidance
+        method: GET
+        description: Gets the value of the Logout Avoidance option.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionMaxCrawlDepth
+      path: /JSON/ajaxSpider/view/optionMaxCrawlDepth/
+      operations:
+      - name: ajaxspiderviewoptionmaxcrawldepth
+        method: GET
+        description: Gets the configured value for the max crawl depth.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionMaxCrawlStates
+      path: /JSON/ajaxSpider/view/optionMaxCrawlStates/
+      operations:
+      - name: ajaxspiderviewoptionmaxcrawlstates
+        method: GET
+        description: Gets the configured value for the maximum crawl states allowed.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionMaxDuration
+      path: /JSON/ajaxSpider/view/optionMaxDuration/
+      operations:
+      - name: ajaxspiderviewoptionmaxduration
+        method: GET
+        description: Gets the configured max duration of the crawl, the value is in minutes.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionNumberOfBrowsers
+      path: /JSON/ajaxSpider/view/optionNumberOfBrowsers/
+      operations:
+      - name: ajaxspiderviewoptionnumberofbrowsers
+        method: GET
+        description: Gets the configured number of browsers to be used.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionRandomInputs
+      path: /JSON/ajaxSpider/view/optionRandomInputs/
+      operations:
+      - name: ajaxspiderviewoptionrandominputs
+        method: GET
+        description: Gets if the AJAX Spider will use random values in form fields when crawling, if set to true.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionReloadWait
+      path: /JSON/ajaxSpider/view/optionReloadWait/
+      operations:
+      - name: ajaxspiderviewoptionreloadwait
+        method: GET
+        description: Gets the configured time to wait after reloading the page, this value is in milliseconds.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-optionScopeCheck
+      path: /JSON/ajaxSpider/view/optionScopeCheck/
+      operations:
+      - name: ajaxspiderviewoptionscopecheck
+        method: GET
+        description: Gets the configured scope check.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-results
+      path: /JSON/ajaxSpider/view/results/
+      operations:
+      - name: ajaxspiderviewresults
+        method: GET
+        description: Gets the current results of the crawler.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ajaxSpider-view-status
+      path: /JSON/ajaxSpider/view/status/
+      operations:
+      - name: ajaxspiderviewstatus
+        method: GET
+        description: Gets the current status of the crawler. Actual values are Stopped and Running.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-ajaxspider-rest
+    port: 8080
+    description: REST adapter for ZAP API — ajaxSpider. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/json/ajaxspider/action/addallowedresource
+      name: json-ajaxspider-action-addallowedresource
+      description: REST surface for JSON-ajaxSpider-action-addAllowedResource.
+      operations:
+      - method: GET
+        name: ajaxspideractionaddallowedresource
+        description: Adds an allowed resource.
+        call: owasp-zap-ajaxspider.ajaxspideractionaddallowedresource
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/addexcludedelement
+      name: json-ajaxspider-action-addexcludedelement
+      description: REST surface for JSON-ajaxSpider-action-addExcludedElement.
+      operations:
+      - method: GET
+        name: ajaxspideractionaddexcludedelement
+        description: Adds an excluded element to a context.
+        call: owasp-zap-ajaxspider.ajaxspideractionaddexcludedelement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/modifyexcludedelement
+      name: json-ajaxspider-action-modifyexcludedelement
+      description: REST surface for JSON-ajaxSpider-action-modifyExcludedElement.
+      operations:
+      - method: GET
+        name: ajaxspideractionmodifyexcludedelement
+        description: Modifies an excluded element of a context.
+        call: owasp-zap-ajaxspider.ajaxspideractionmodifyexcludedelement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/removeallowedresource
+      name: json-ajaxspider-action-removeallowedresource
+      description: REST surface for JSON-ajaxSpider-action-removeAllowedResource.
+      operations:
+      - method: GET
+        name: ajaxspideractionremoveallowedresource
+        description: Removes an allowed resource.
+        call: owasp-zap-ajaxspider.ajaxspideractionremoveallowedresource
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/removeexcludedelement
+      name: json-ajaxspider-action-removeexcludedelement
+      description: REST surface for JSON-ajaxSpider-action-removeExcludedElement.
+      operations:
+      - method: GET
+        name: ajaxspideractionremoveexcludedelement
+        description: Removes an excluded element from a context.
+        call: owasp-zap-ajaxspider.ajaxspideractionremoveexcludedelement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/scan
+      name: json-ajaxspider-action-scan
+      description: REST surface for JSON-ajaxSpider-action-scan.
+      operations:
+      - method: GET
+        name: ajaxspideractionscan
+        description: Runs the AJAX Spider against a given target.
+        call: owasp-zap-ajaxspider.ajaxspideractionscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/scanasuser
+      name: json-ajaxspider-action-scanasuser
+      description: REST surface for JSON-ajaxSpider-action-scanAsUser.
+      operations:
+      - method: GET
+        name: ajaxspideractionscanasuser
+        description: Runs the AJAX Spider from the perspective of a User of the web application.
+        call: owasp-zap-ajaxspider.ajaxspideractionscanasuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setenabledallowedresource
+      name: json-ajaxspider-action-setenabledallowedresource
+      description: REST surface for JSON-ajaxSpider-action-setEnabledAllowedResource.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetenabledallowedresource
+        description: Sets whether or not an allowed resource is enabled.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetenabledallowedresource
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionbrowserid
+      name: json-ajaxspider-action-setoptionbrowserid
+      description: REST surface for JSON-ajaxSpider-action-setOptionBrowserId.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionbrowserid
+        description: Sets the configuration of the AJAX Spider to use one of the supported browsers.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionbrowserid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionclickdefaultelems
+      name: json-ajaxspider-action-setoptionclickdefaultelems
+      description: REST surface for JSON-ajaxSpider-action-setOptionClickDefaultElems.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionclickdefaultelems
+        description: Sets whether or not the AJAX Spider will only click on the default HTML elements.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionclickdefaultelems
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionclickelemsonce
+      name: json-ajaxspider-action-setoptionclickelemsonce
+      description: REST surface for JSON-ajaxSpider-action-setOptionClickElemsOnce.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionclickelemsonce
+        description: When enabled, the crawler attempts to interact with each element (e.g., by clicking) only once.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionclickelemsonce
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionenableextensions
+      name: json-ajaxspider-action-setoptionenableextensions
+      description: REST surface for JSON-ajaxSpider-action-setOptionEnableExtensions.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionenableextensions
+        description: ajaxspideractionsetoptionenableextensions
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionenableextensions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptioneventwait
+      name: json-ajaxspider-action-setoptioneventwait
+      description: REST surface for JSON-ajaxSpider-action-setOptionEventWait.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptioneventwait
+        description: 'Sets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor
+          hovers over an element, in order for a menu to display, etc.'
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptioneventwait
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionlogoutavoidance
+      name: json-ajaxspider-action-setoptionlogoutavoidance
+      description: REST surface for JSON-ajaxSpider-action-setOptionLogoutAvoidance.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionlogoutavoidance
+        description: Sets whether or not the AJAX Spider should avoid clicking logout elements.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionlogoutavoidance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionmaxcrawldepth
+      name: json-ajaxspider-action-setoptionmaxcrawldepth
+      description: REST surface for JSON-ajaxSpider-action-setOptionMaxCrawlDepth.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionmaxcrawldepth
+        description: Sets the maximum depth that the crawler can reach.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionmaxcrawldepth
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionmaxcrawlstates
+      name: json-ajaxspider-action-setoptionmaxcrawlstates
+      description: REST surface for JSON-ajaxSpider-action-setOptionMaxCrawlStates.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionmaxcrawlstates
+        description: Sets the maximum number of states that the crawler should crawl.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionmaxcrawlstates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionmaxduration
+      name: json-ajaxspider-action-setoptionmaxduration
+      description: REST surface for JSON-ajaxSpider-action-setOptionMaxDuration.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionmaxduration
+        description: The maximum time that the crawler is allowed to run.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionmaxduration
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionnumberofbrowsers
+      name: json-ajaxspider-action-setoptionnumberofbrowsers
+      description: REST surface for JSON-ajaxSpider-action-setOptionNumberOfBrowsers.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionnumberofbrowsers
+        description: Sets the number of windows to be used by AJAX Spider.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionnumberofbrowsers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionrandominputs
+      name: json-ajaxspider-action-setoptionrandominputs
+      description: REST surface for JSON-ajaxSpider-action-setOptionRandomInputs.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionrandominputs
+        description: When enabled, inserts random values into form fields.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionrandominputs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionreloadwait
+      name: json-ajaxspider-action-setoptionreloadwait
+      description: REST surface for JSON-ajaxSpider-action-setOptionReloadWait.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionreloadwait
+        description: Sets the time to wait after the page is loaded before interacting with it.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionreloadwait
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/setoptionscopecheck
+      name: json-ajaxspider-action-setoptionscopecheck
+      description: REST surface for JSON-ajaxSpider-action-setOptionScopeCheck.
+      operations:
+      - method: GET
+        name: ajaxspideractionsetoptionscopecheck
+        description: Sets the scope check.
+        call: owasp-zap-ajaxspider.ajaxspideractionsetoptionscopecheck
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/action/stop
+      name: json-ajaxspider-action-stop
+      description: REST surface for JSON-ajaxSpider-action-stop.
+      operations:
+      - method: GET
+        name: ajaxspideractionstop
+        description: Stops the AJAX Spider.
+        call: owasp-zap-ajaxspider.ajaxspideractionstop
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/allowedresources
+      name: json-ajaxspider-view-allowedresources
+      description: REST surface for JSON-ajaxSpider-view-allowedResources.
+      operations:
+      - method: GET
+        name: ajaxspiderviewallowedresources
+        description: Gets the allowed resources. The allowed resources are always fetched even if out of scope, allowing to
+          include necessary resources (e.g. scripts) from 3rd-parties.
+        call: owasp-zap-ajaxspider.ajaxspiderviewallowedresources
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/excludedelements
+      name: json-ajaxspider-view-excludedelements
+      description: REST surface for JSON-ajaxSpider-view-excludedElements.
+      operations:
+      - method: GET
+        name: ajaxspiderviewexcludedelements
+        description: Gets the excluded elements. The excluded elements are not clicked during crawling, for example, to prevent
+          logging out.
+        call: owasp-zap-ajaxspider.ajaxspiderviewexcludedelements
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/fullresults
+      name: json-ajaxspider-view-fullresults
+      description: REST surface for JSON-ajaxSpider-view-fullResults.
+      operations:
+      - method: GET
+        name: ajaxspiderviewfullresults
+        description: Gets the full crawled content detected by the AJAX Spider. Returns a set of values based on 'inScope'
+          URLs, 'outOfScope' URLs, and 'errors' encountered during the last/current run of the AJAX Spider.
+        call: owasp-zap-ajaxspider.ajaxspiderviewfullresults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/numberofresults
+      name: json-ajaxspider-view-numberofresults
+      description: REST surface for JSON-ajaxSpider-view-numberOfResults.
+      operations:
+      - method: GET
+        name: ajaxspiderviewnumberofresults
+        description: Gets the number of resources found.
+        call: owasp-zap-ajaxspider.ajaxspiderviewnumberofresults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionbrowserid
+      name: json-ajaxspider-view-optionbrowserid
+      description: REST surface for JSON-ajaxSpider-view-optionBrowserId.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionbrowserid
+        description: Gets the configured browser to use for crawling.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionbrowserid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionclickdefaultelems
+      name: json-ajaxspider-view-optionclickdefaultelems
+      description: REST surface for JSON-ajaxSpider-view-optionClickDefaultElems.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionclickdefaultelems
+        description: Gets the configured value for 'Click Default Elements Only', HTML elements such as 'a', 'button', 'input',
+          all associated with some action or links on the page.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionclickdefaultelems
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionclickelemsonce
+      name: json-ajaxspider-view-optionclickelemsonce
+      description: REST surface for JSON-ajaxSpider-view-optionClickElemsOnce.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionclickelemsonce
+        description: Gets the value configured for the AJAX Spider to know if it should click on the elements only once.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionclickelemsonce
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionenableextensions
+      name: json-ajaxspider-view-optionenableextensions
+      description: REST surface for JSON-ajaxSpider-view-optionEnableExtensions.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionenableextensions
+        description: ajaxspiderviewoptionenableextensions
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionenableextensions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optioneventwait
+      name: json-ajaxspider-view-optioneventwait
+      description: REST surface for JSON-ajaxSpider-view-optionEventWait.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptioneventwait
+        description: 'Gets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor
+          hovers over an element, in order for a menu to display, etc.'
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptioneventwait
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionlogoutavoidance
+      name: json-ajaxspider-view-optionlogoutavoidance
+      description: REST surface for JSON-ajaxSpider-view-optionLogoutAvoidance.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionlogoutavoidance
+        description: Gets the value of the Logout Avoidance option.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionlogoutavoidance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionmaxcrawldepth
+      name: json-ajaxspider-view-optionmaxcrawldepth
+      description: REST surface for JSON-ajaxSpider-view-optionMaxCrawlDepth.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionmaxcrawldepth
+        description: Gets the configured value for the max crawl depth.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionmaxcrawldepth
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionmaxcrawlstates
+      name: json-ajaxspider-view-optionmaxcrawlstates
+      description: REST surface for JSON-ajaxSpider-view-optionMaxCrawlStates.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionmaxcrawlstates
+        description: Gets the configured value for the maximum crawl states allowed.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionmaxcrawlstates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionmaxduration
+      name: json-ajaxspider-view-optionmaxduration
+      description: REST surface for JSON-ajaxSpider-view-optionMaxDuration.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionmaxduration
+        description: Gets the configured max duration of the crawl, the value is in minutes.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionmaxduration
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionnumberofbrowsers
+      name: json-ajaxspider-view-optionnumberofbrowsers
+      description: REST surface for JSON-ajaxSpider-view-optionNumberOfBrowsers.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionnumberofbrowsers
+        description: Gets the configured number of browsers to be used.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionnumberofbrowsers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionrandominputs
+      name: json-ajaxspider-view-optionrandominputs
+      description: REST surface for JSON-ajaxSpider-view-optionRandomInputs.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionrandominputs
+        description: Gets if the AJAX Spider will use random values in form fields when crawling, if set to true.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionrandominputs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionreloadwait
+      name: json-ajaxspider-view-optionreloadwait
+      description: REST surface for JSON-ajaxSpider-view-optionReloadWait.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionreloadwait
+        description: Gets the configured time to wait after reloading the page, this value is in milliseconds.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionreloadwait
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/optionscopecheck
+      name: json-ajaxspider-view-optionscopecheck
+      description: REST surface for JSON-ajaxSpider-view-optionScopeCheck.
+      operations:
+      - method: GET
+        name: ajaxspiderviewoptionscopecheck
+        description: Gets the configured scope check.
+        call: owasp-zap-ajaxspider.ajaxspiderviewoptionscopecheck
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/results
+      name: json-ajaxspider-view-results
+      description: REST surface for JSON-ajaxSpider-view-results.
+      operations:
+      - method: GET
+        name: ajaxspiderviewresults
+        description: Gets the current results of the crawler.
+        call: owasp-zap-ajaxspider.ajaxspiderviewresults
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ajaxspider/view/status
+      name: json-ajaxspider-view-status
+      description: REST surface for JSON-ajaxSpider-view-status.
+      operations:
+      - method: GET
+        name: ajaxspiderviewstatus
+        description: Gets the current status of the crawler. Actual values are Stopped and Running.
+        call: owasp-zap-ajaxspider.ajaxspiderviewstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-ajaxspider-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — ajaxSpider. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adds-allowed-resource
+      description: Adds an allowed resource.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionaddallowedresource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-excluded-element-context
+      description: Adds an excluded element to a context.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionaddexcludedelement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: modifies-excluded-element-context
+      description: Modifies an excluded element of a context.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionmodifyexcludedelement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-allowed-resource
+      description: Removes an allowed resource.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionremoveallowedresource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-excluded-element-context
+      description: Removes an excluded element from a context.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionremoveexcludedelement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: runs-ajax-spider-against-given
+      description: Runs the AJAX Spider against a given target.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: runs-ajax-spider-perspective-user
+      description: Runs the AJAX Spider from the perspective of a User of the web application.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionscanasuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-allowed-resource
+      description: Sets whether or not an allowed resource is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetenabledallowedresource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-configuration-ajax-spider-use
+      description: Sets the configuration of the AJAX Spider to use one of the supported browsers.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionbrowserid
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-ajax-spider
+      description: Sets whether or not the AJAX Spider will only click on the default HTML elements.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionclickdefaultelems
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: when-enabled-crawler-attempts-interact
+      description: When enabled, the crawler attempts to interact with each element (e.g., by clicking) only once.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionclickelemsonce
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ajaxspideractionsetoptionenableextensions
+      description: ajaxspideractionsetoptionenableextensions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionenableextensions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-time-wait-after-event
+      description: 'Sets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers
+        over an element, in order for a menu to display, etc.'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptioneventwait
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-ajax-spider-2
+      description: Sets whether or not the AJAX Spider should avoid clicking logout elements.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionlogoutavoidance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-maximum-depth-that-crawler
+      description: Sets the maximum depth that the crawler can reach.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionmaxcrawldepth
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-maximum-number-states-that
+      description: Sets the maximum number of states that the crawler should crawl.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionmaxcrawlstates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: maximum-time-that-crawler-is
+      description: The maximum time that the crawler is allowed to run.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionmaxduration
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-number-windows-be-used
+      description: Sets the number of windows to be used by AJAX Spider.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionnumberofbrowsers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: when-enabled-inserts-random-values
+      description: When enabled, inserts random values into form fields.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionrandominputs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-time-wait-after-page
+      description: Sets the time to wait after the page is loaded before interacting with it.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionreloadwait
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-scope-check
+      description: Sets the scope check.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionsetoptionscopecheck
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stops-ajax-spider
+      description: Stops the AJAX Spider.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspideractionstop
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-allowed-resources-allowed-resources
+      description: Gets the allowed resources. The allowed resources are always fetched even if out of scope, allowing to
+        include necessary resources (e.g. scripts) from 3rd-parties.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewallowedresources
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-excluded-elements-excluded-elements
+      description: Gets the excluded elements. The excluded elements are not clicked during crawling, for example, to prevent
+        logging out.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewexcludedelements
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-full-crawled-content-detected
+      description: Gets the full crawled content detected by the AJAX Spider. Returns a set of values based on 'inScope' URLs,
+        'outOfScope' URLs, and 'errors' encountered during the last/current run of the AJAX Spider.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewfullresults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-number-resources-found
+      description: Gets the number of resources found.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewnumberofresults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-browser-use-crawling
+      description: Gets the configured browser to use for crawling.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionbrowserid
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-value-click-default
+      description: Gets the configured value for 'Click Default Elements Only', HTML elements such as 'a', 'button', 'input',
+        all associated with some action or links on the page.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionclickdefaultelems
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-value-configured-ajax-spider
+      description: Gets the value configured for the AJAX Spider to know if it should click on the elements only once.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionclickelemsonce
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ajaxspiderviewoptionenableextensions
+      description: ajaxspiderviewoptionenableextensions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionenableextensions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-time-wait-after-event
+      description: 'Gets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers
+        over an element, in order for a menu to display, etc.'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptioneventwait
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-value-logout-avoidance-option
+      description: Gets the value of the Logout Avoidance option.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionlogoutavoidance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-value-max-crawl
+      description: Gets the configured value for the max crawl depth.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionmaxcrawldepth
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-value-maximum-crawl
+      description: Gets the configured value for the maximum crawl states allowed.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionmaxcrawlstates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-max-duration-crawl
+      description: Gets the configured max duration of the crawl, the value is in minutes.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionmaxduration
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-number-browsers-be
+      description: Gets the configured number of browsers to be used.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionnumberofbrowsers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-if-ajax-spider-will
+      description: Gets if the AJAX Spider will use random values in form fields when crawling, if set to true.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionrandominputs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-time-wait-after
+      description: Gets the configured time to wait after reloading the page, this value is in milliseconds.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionreloadwait
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configured-scope-check
+      description: Gets the configured scope check.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewoptionscopecheck
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-current-results-crawler
+      description: Gets the current results of the crawler.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewresults
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-current-status-crawler-actual
+      description: Gets the current status of the crawler. Actual values are Stopped and Running.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ajaxspider.ajaxspiderviewstatus
+      outputParameters:
+      - type: object
+        mapping: $.

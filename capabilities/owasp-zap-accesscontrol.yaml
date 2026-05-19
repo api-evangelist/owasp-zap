@@ -1,0 +1,177 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — accessControl
+  description: 'ZAP API — accessControl. 4 operations. Lead operation: accessControl. Self-contained Naftiko capability covering
+    one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - accessControl
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-accesscontrol
+    baseUri: http://zap
+    description: ZAP API — accessControl business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-accessControl-action-scan
+      path: /JSON/accessControl/action/scan/
+      operations:
+      - name: accesscontrolactionscan
+        method: GET
+        description: 'Starts an Access Control scan with the given context ID and user ID. (Optional parameters: user ID for
+          Unauthenticated user, boolean identifying whether or not Alerts are raised, and the Risk level for the Alerts.)
+          [This assumes the Access '
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-accessControl-action-writeHTMLreport
+      path: /JSON/accessControl/action/writeHTMLreport/
+      operations:
+      - name: accesscontrolactionwritehtmlreport
+        method: GET
+        description: Generates an Access Control report for the given context ID and saves it based on the provided filename
+          (path).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-accessControl-view-getScanProgress
+      path: /JSON/accessControl/view/getScanProgress/
+      operations:
+      - name: accesscontrolviewgetscanprogress
+        method: GET
+        description: Gets the Access Control scan progress (percentage integer) for the given context ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-accessControl-view-getScanStatus
+      path: /JSON/accessControl/view/getScanStatus/
+      operations:
+      - name: accesscontrolviewgetscanstatus
+        method: GET
+        description: Gets the Access Control scan status (description string) for the given context ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-accesscontrol-rest
+    port: 8080
+    description: REST adapter for ZAP API — accessControl. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/json/accesscontrol/action/scan
+      name: json-accesscontrol-action-scan
+      description: REST surface for JSON-accessControl-action-scan.
+      operations:
+      - method: GET
+        name: accesscontrolactionscan
+        description: 'Starts an Access Control scan with the given context ID and user ID. (Optional parameters: user ID for
+          Unauthenticated user, boolean identifying whether or not Alerts are raised, and the Risk level for the Alerts.)
+          [This assumes the Access '
+        call: owasp-zap-accesscontrol.accesscontrolactionscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/accesscontrol/action/writehtmlreport
+      name: json-accesscontrol-action-writehtmlreport
+      description: REST surface for JSON-accessControl-action-writeHTMLreport.
+      operations:
+      - method: GET
+        name: accesscontrolactionwritehtmlreport
+        description: Generates an Access Control report for the given context ID and saves it based on the provided filename
+          (path).
+        call: owasp-zap-accesscontrol.accesscontrolactionwritehtmlreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/accesscontrol/view/getscanprogress
+      name: json-accesscontrol-view-getscanprogress
+      description: REST surface for JSON-accessControl-view-getScanProgress.
+      operations:
+      - method: GET
+        name: accesscontrolviewgetscanprogress
+        description: Gets the Access Control scan progress (percentage integer) for the given context ID.
+        call: owasp-zap-accesscontrol.accesscontrolviewgetscanprogress
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/accesscontrol/view/getscanstatus
+      name: json-accesscontrol-view-getscanstatus
+      description: REST surface for JSON-accessControl-view-getScanStatus.
+      operations:
+      - method: GET
+        name: accesscontrolviewgetscanstatus
+        description: Gets the Access Control scan status (description string) for the given context ID.
+        call: owasp-zap-accesscontrol.accesscontrolviewgetscanstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-accesscontrol-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — accessControl. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: starts-access-control-scan-given
+      description: 'Starts an Access Control scan with the given context ID and user ID. (Optional parameters: user ID for
+        Unauthenticated user, boolean identifying whether or not Alerts are raised, and the Risk level for the Alerts.) [This
+        assumes the Access '
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-accesscontrol.accesscontrolactionscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: generates-access-control-report-given
+      description: Generates an Access Control report for the given context ID and saves it based on the provided filename
+        (path).
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-accesscontrol.accesscontrolactionwritehtmlreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-access-control-scan-progress
+      description: Gets the Access Control scan progress (percentage integer) for the given context ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-accesscontrol.accesscontrolviewgetscanprogress
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-access-control-scan-status
+      description: Gets the Access Control scan status (description string) for the given context ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-accesscontrol.accesscontrolviewgetscanstatus
+      outputParameters:
+      - type: object
+        mapping: $.

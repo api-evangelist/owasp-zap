@@ -1,0 +1,71 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — dev
+  description: 'ZAP API — dev. 1 operations. Lead operation: dev. Self-contained Naftiko capability covering one Owasp Zap
+    business surface.'
+  tags:
+  - Owasp Zap
+  - dev
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-dev
+    baseUri: http://zap
+    description: ZAP API — dev business capability. Self-contained, no shared references.
+    resources:
+    - name: OTHER-dev-other-openapi
+      path: /OTHER/dev/other/openapi/
+      operations:
+      - name: devotheropenapi
+        method: GET
+        description: Provides the OpenAPI definition of the ZAP API, in YAML format.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-dev-rest
+    port: 8080
+    description: REST adapter for ZAP API — dev. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/other/dev/other/openapi
+      name: other-dev-other-openapi
+      description: REST surface for OTHER-dev-other-openapi.
+      operations:
+      - method: GET
+        name: devotheropenapi
+        description: Provides the OpenAPI definition of the ZAP API, in YAML format.
+        call: owasp-zap-dev.devotheropenapi
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-dev-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — dev. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: provides-openapi-definition-zap-api
+      description: Provides the OpenAPI definition of the ZAP API, in YAML format.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-dev.devotheropenapi
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,110 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — authorization
+  description: 'ZAP API — authorization. 2 operations. Lead operation: authorization. Self-contained Naftiko capability covering
+    one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - authorization
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-authorization
+    baseUri: http://zap
+    description: ZAP API — authorization business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-authorization-action-setBasicAuthorizationDetectionMethod
+      path: /JSON/authorization/action/setBasicAuthorizationDetectionMethod/
+      operations:
+      - name: authorizationactionsetbasicauthorizationdetectionmethod
+        method: GET
+        description: 'Sets the authorization detection method for a context as one that identifies un-authorized messages
+          based on: the message''s status code or a regex pattern in the response''s header or body. Also, whether all conditions
+          must match or just som'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authorization-view-getAuthorizationDetectionMethod
+      path: /JSON/authorization/view/getAuthorizationDetectionMethod/
+      operations:
+      - name: authorizationviewgetauthorizationdetectionmethod
+        method: GET
+        description: Obtains all the configuration of the authorization detection method that is currently set for a context.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-authorization-rest
+    port: 8080
+    description: REST adapter for ZAP API — authorization. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/json/authorization/action/setbasicauthorizationdetectionmethod
+      name: json-authorization-action-setbasicauthorizationdetectionmethod
+      description: REST surface for JSON-authorization-action-setBasicAuthorizationDetectionMethod.
+      operations:
+      - method: GET
+        name: authorizationactionsetbasicauthorizationdetectionmethod
+        description: 'Sets the authorization detection method for a context as one that identifies un-authorized messages
+          based on: the message''s status code or a regex pattern in the response''s header or body. Also, whether all conditions
+          must match or just som'
+        call: owasp-zap-authorization.authorizationactionsetbasicauthorizationdetectionmethod
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authorization/view/getauthorizationdetectionmethod
+      name: json-authorization-view-getauthorizationdetectionmethod
+      description: REST surface for JSON-authorization-view-getAuthorizationDetectionMethod.
+      operations:
+      - method: GET
+        name: authorizationviewgetauthorizationdetectionmethod
+        description: Obtains all the configuration of the authorization detection method that is currently set for a context.
+        call: owasp-zap-authorization.authorizationviewgetauthorizationdetectionmethod
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-authorization-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — authorization. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: sets-authorization-detection-method-context
+      description: 'Sets the authorization detection method for a context as one that identifies un-authorized messages based
+        on: the message''s status code or a regex pattern in the response''s header or body. Also, whether all conditions
+        must match or just som'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authorization.authorizationactionsetbasicauthorizationdetectionmethod
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: obtains-all-configuration-authorization-detection
+      description: Obtains all the configuration of the authorization detection method that is currently set for a context.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authorization.authorizationviewgetauthorizationdetectionmethod
+      outputParameters:
+      - type: object
+        mapping: $.

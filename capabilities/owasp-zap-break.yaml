@@ -1,0 +1,403 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — break
+  description: 'ZAP API — break. 11 operations. Lead operation: break. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - break
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-break
+    baseUri: http://zap
+    description: ZAP API — break business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-break-action-addHttpBreakpoint
+      path: /JSON/break/action/addHttpBreakpoint/
+      operations:
+      - name: breakactionaddhttpbreakpoint
+        method: GET
+        description: 'Adds a custom HTTP breakpoint. The string is the string to match. Location may be one of: url, request_header,
+          request_body, response_header or response_body. Match may be: contains or regex. Inverse (match) may be true or
+          false. Lastly, ig'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-action-break
+      path: /JSON/break/action/break/
+      operations:
+      - name: breakactionbreak
+        method: GET
+        description: 'Controls the global break functionality. The type may be one of: http-all, http-request or http-response.
+          The state may be true (for turning break on for the specified type) or false (for turning break off). Scope is not
+          currently used.'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-action-continue
+      path: /JSON/break/action/continue/
+      operations:
+      - name: breakactioncontinue
+        method: GET
+        description: Submits the currently intercepted message and unsets the global request/response breakpoints
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-action-drop
+      path: /JSON/break/action/drop/
+      operations:
+      - name: breakactiondrop
+        method: GET
+        description: Drops the currently intercepted message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-action-removeHttpBreakpoint
+      path: /JSON/break/action/removeHttpBreakpoint/
+      operations:
+      - name: breakactionremovehttpbreakpoint
+        method: GET
+        description: Removes the specified breakpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-action-setHttpMessage
+      path: /JSON/break/action/setHttpMessage/
+      operations:
+      - name: breakactionsethttpmessage
+        method: GET
+        description: Overwrites the currently intercepted message with the data provided
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-action-step
+      path: /JSON/break/action/step/
+      operations:
+      - name: breakactionstep
+        method: GET
+        description: Submits the currently intercepted message, the next request or response will automatically be intercepted
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-view-httpMessage
+      path: /JSON/break/view/httpMessage/
+      operations:
+      - name: breakviewhttpmessage
+        method: GET
+        description: Returns the HTTP message currently intercepted (if any)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-view-isBreakAll
+      path: /JSON/break/view/isBreakAll/
+      operations:
+      - name: breakviewisbreakall
+        method: GET
+        description: Returns True if ZAP will break on both requests and responses
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-view-isBreakRequest
+      path: /JSON/break/view/isBreakRequest/
+      operations:
+      - name: breakviewisbreakrequest
+        method: GET
+        description: Returns True if ZAP will break on requests
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-break-view-isBreakResponse
+      path: /JSON/break/view/isBreakResponse/
+      operations:
+      - name: breakviewisbreakresponse
+        method: GET
+        description: Returns True if ZAP will break on responses
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-break-rest
+    port: 8080
+    description: REST adapter for ZAP API — break. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/json/break/action/addhttpbreakpoint
+      name: json-break-action-addhttpbreakpoint
+      description: REST surface for JSON-break-action-addHttpBreakpoint.
+      operations:
+      - method: GET
+        name: breakactionaddhttpbreakpoint
+        description: 'Adds a custom HTTP breakpoint. The string is the string to match. Location may be one of: url, request_header,
+          request_body, response_header or response_body. Match may be: contains or regex. Inverse (match) may be true or
+          false. Lastly, ig'
+        call: owasp-zap-break.breakactionaddhttpbreakpoint
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/action/break
+      name: json-break-action-break
+      description: REST surface for JSON-break-action-break.
+      operations:
+      - method: GET
+        name: breakactionbreak
+        description: 'Controls the global break functionality. The type may be one of: http-all, http-request or http-response.
+          The state may be true (for turning break on for the specified type) or false (for turning break off). Scope is not
+          currently used.'
+        call: owasp-zap-break.breakactionbreak
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/action/continue
+      name: json-break-action-continue
+      description: REST surface for JSON-break-action-continue.
+      operations:
+      - method: GET
+        name: breakactioncontinue
+        description: Submits the currently intercepted message and unsets the global request/response breakpoints
+        call: owasp-zap-break.breakactioncontinue
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/action/drop
+      name: json-break-action-drop
+      description: REST surface for JSON-break-action-drop.
+      operations:
+      - method: GET
+        name: breakactiondrop
+        description: Drops the currently intercepted message
+        call: owasp-zap-break.breakactiondrop
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/action/removehttpbreakpoint
+      name: json-break-action-removehttpbreakpoint
+      description: REST surface for JSON-break-action-removeHttpBreakpoint.
+      operations:
+      - method: GET
+        name: breakactionremovehttpbreakpoint
+        description: Removes the specified breakpoint
+        call: owasp-zap-break.breakactionremovehttpbreakpoint
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/action/sethttpmessage
+      name: json-break-action-sethttpmessage
+      description: REST surface for JSON-break-action-setHttpMessage.
+      operations:
+      - method: GET
+        name: breakactionsethttpmessage
+        description: Overwrites the currently intercepted message with the data provided
+        call: owasp-zap-break.breakactionsethttpmessage
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/action/step
+      name: json-break-action-step
+      description: REST surface for JSON-break-action-step.
+      operations:
+      - method: GET
+        name: breakactionstep
+        description: Submits the currently intercepted message, the next request or response will automatically be intercepted
+        call: owasp-zap-break.breakactionstep
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/view/httpmessage
+      name: json-break-view-httpmessage
+      description: REST surface for JSON-break-view-httpMessage.
+      operations:
+      - method: GET
+        name: breakviewhttpmessage
+        description: Returns the HTTP message currently intercepted (if any)
+        call: owasp-zap-break.breakviewhttpmessage
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/view/isbreakall
+      name: json-break-view-isbreakall
+      description: REST surface for JSON-break-view-isBreakAll.
+      operations:
+      - method: GET
+        name: breakviewisbreakall
+        description: Returns True if ZAP will break on both requests and responses
+        call: owasp-zap-break.breakviewisbreakall
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/view/isbreakrequest
+      name: json-break-view-isbreakrequest
+      description: REST surface for JSON-break-view-isBreakRequest.
+      operations:
+      - method: GET
+        name: breakviewisbreakrequest
+        description: Returns True if ZAP will break on requests
+        call: owasp-zap-break.breakviewisbreakrequest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/break/view/isbreakresponse
+      name: json-break-view-isbreakresponse
+      description: REST surface for JSON-break-view-isBreakResponse.
+      operations:
+      - method: GET
+        name: breakviewisbreakresponse
+        description: Returns True if ZAP will break on responses
+        call: owasp-zap-break.breakviewisbreakresponse
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-break-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — break. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adds-custom-http-breakpoint-string
+      description: 'Adds a custom HTTP breakpoint. The string is the string to match. Location may be one of: url, request_header,
+        request_body, response_header or response_body. Match may be: contains or regex. Inverse (match) may be true or false.
+        Lastly, ig'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakactionaddhttpbreakpoint
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: controls-global-break-functionality-type
+      description: 'Controls the global break functionality. The type may be one of: http-all, http-request or http-response.
+        The state may be true (for turning break on for the specified type) or false (for turning break off). Scope is not
+        currently used.'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakactionbreak
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: submits-currently-intercepted-message-and
+      description: Submits the currently intercepted message and unsets the global request/response breakpoints
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakactioncontinue
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: drops-currently-intercepted-message
+      description: Drops the currently intercepted message
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakactiondrop
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-specified-breakpoint
+      description: Removes the specified breakpoint
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakactionremovehttpbreakpoint
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: overwrites-currently-intercepted-message-data
+      description: Overwrites the currently intercepted message with the data provided
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakactionsethttpmessage
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: submits-currently-intercepted-message-next
+      description: Submits the currently intercepted message, the next request or response will automatically be intercepted
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakactionstep
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-http-message-currently-intercepted
+      description: Returns the HTTP message currently intercepted (if any)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakviewhttpmessage
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-true-if-zap-will
+      description: Returns True if ZAP will break on both requests and responses
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakviewisbreakall
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-true-if-zap-will-2
+      description: Returns True if ZAP will break on requests
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakviewisbreakrequest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-true-if-zap-will-3
+      description: Returns True if ZAP will break on responses
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-break.breakviewisbreakresponse
+      outputParameters:
+      - type: object
+        mapping: $.

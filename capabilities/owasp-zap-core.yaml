@@ -1,0 +1,3179 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — core
+  description: 'ZAP API — core. 97 operations. Lead operation: core. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - core
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-core
+    baseUri: http://zap
+    description: ZAP API — core business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-core-action-accessUrl
+      path: /JSON/core/action/accessUrl/
+      operations:
+      - name: coreactionaccessurl
+        method: GET
+        description: Convenient and simple action to access a URL, optionally following redirections. Returns the request
+          sent and response received and followed redirections, if any. Other actions are available which offer more control
+          on what is sent, like, '
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-addProxyChainExcludedDomain
+      path: /JSON/core/action/addProxyChainExcludedDomain/
+      operations:
+      - name: coreactionaddproxychainexcludeddomain
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-clearExcludedFromProxy
+      path: /JSON/core/action/clearExcludedFromProxy/
+      operations:
+      - name: coreactionclearexcludedfromproxy
+        method: GET
+        description: Clears the regexes of URLs excluded from the local proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-createSbomZip
+      path: /JSON/core/action/createSbomZip/
+      operations:
+      - name: coreactioncreatesbomzip
+        method: GET
+        description: Create a zip file of the ZAP core and add-on SBOMs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-deleteAlert
+      path: /JSON/core/action/deleteAlert/
+      operations:
+      - name: coreactiondeletealert
+        method: GET
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-deleteAllAlerts
+      path: /JSON/core/action/deleteAllAlerts/
+      operations:
+      - name: coreactiondeleteallalerts
+        method: GET
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-deleteSiteNode
+      path: /JSON/core/action/deleteSiteNode/
+      operations:
+      - name: coreactiondeletesitenode
+        method: GET
+        description: Deletes the site node found in the Sites Tree on the basis of the URL, HTTP method, and post data (if
+          applicable and specified).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-disableAllProxyChainExcludedDomains
+      path: /JSON/core/action/disableAllProxyChainExcludedDomains/
+      operations:
+      - name: coreactiondisableallproxychainexcludeddomains
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-disableClientCertificate
+      path: /JSON/core/action/disableClientCertificate/
+      operations:
+      - name: coreactiondisableclientcertificate
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-enableAllProxyChainExcludedDomains
+      path: /JSON/core/action/enableAllProxyChainExcludedDomains/
+      operations:
+      - name: coreactionenableallproxychainexcludeddomains
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-enablePKCS12ClientCertificate
+      path: /JSON/core/action/enablePKCS12ClientCertificate/
+      operations:
+      - name: coreactionenablepkcs12clientcertificate
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-excludeFromProxy
+      path: /JSON/core/action/excludeFromProxy/
+      operations:
+      - name: coreactionexcludefromproxy
+        method: GET
+        description: Adds a regex of URLs that should be excluded from the local proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-generateRootCA
+      path: /JSON/core/action/generateRootCA/
+      operations:
+      - name: coreactiongeneraterootca
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-loadSession
+      path: /JSON/core/action/loadSession/
+      operations:
+      - name: coreactionloadsession
+        method: GET
+        description: Loads the session with the given name. If a relative path is specified it will be resolved against the
+          "session" directory in ZAP "home" dir.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-modifyProxyChainExcludedDomain
+      path: /JSON/core/action/modifyProxyChainExcludedDomain/
+      operations:
+      - name: coreactionmodifyproxychainexcludeddomain
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-newSession
+      path: /JSON/core/action/newSession/
+      operations:
+      - name: coreactionnewsession
+        method: GET
+        description: Creates a new session, optionally overwriting existing files. If a relative path is specified it will
+          be resolved against the "session" directory in ZAP "home" dir.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-removeProxyChainExcludedDomain
+      path: /JSON/core/action/removeProxyChainExcludedDomain/
+      operations:
+      - name: coreactionremoveproxychainexcludeddomain
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-runGarbageCollection
+      path: /JSON/core/action/runGarbageCollection/
+      operations:
+      - name: coreactionrungarbagecollection
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-saveSession
+      path: /JSON/core/action/saveSession/
+      operations:
+      - name: coreactionsavesession
+        method: GET
+        description: Saves the session.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-sendRequest
+      path: /JSON/core/action/sendRequest/
+      operations:
+      - name: coreactionsendrequest
+        method: GET
+        description: 'Sends the HTTP request, optionally following redirections. Returns the request sent and response received
+          and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom
+          manual requests '
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setHomeDirectory
+      path: /JSON/core/action/setHomeDirectory/
+      operations:
+      - name: coreactionsethomedirectory
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setLogLevel
+      path: /JSON/core/action/setLogLevel/
+      operations:
+      - name: coreactionsetloglevel
+        method: GET
+        description: Sets the logging level for a given logger name.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setMode
+      path: /JSON/core/action/setMode/
+      operations:
+      - name: coreactionsetmode
+        method: GET
+        description: Sets the mode, which may be one of [safe, protect, standard, attack]
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionAlertOverridesFilePath
+      path: /JSON/core/action/setOptionAlertOverridesFilePath/
+      operations:
+      - name: coreactionsetoptionalertoverridesfilepath
+        method: GET
+        description: Sets (or clears, if empty) the path to the file with alert overrides.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionDefaultUserAgent
+      path: /JSON/core/action/setOptionDefaultUserAgent/
+      operations:
+      - name: coreactionsetoptiondefaultuseragent
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionDnsTtlSuccessfulQueries
+      path: /JSON/core/action/setOptionDnsTtlSuccessfulQueries/
+      operations:
+      - name: coreactionsetoptiondnsttlsuccessfulqueries
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionHttpStateEnabled
+      path: /JSON/core/action/setOptionHttpStateEnabled/
+      operations:
+      - name: coreactionsetoptionhttpstateenabled
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionMaximumAlertInstances
+      path: /JSON/core/action/setOptionMaximumAlertInstances/
+      operations:
+      - name: coreactionsetoptionmaximumalertinstances
+        method: GET
+        description: Sets the maximum number of alert instances to include in a report. A value of zero is treated as unlimited.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionMergeRelatedAlerts
+      path: /JSON/core/action/setOptionMergeRelatedAlerts/
+      operations:
+      - name: coreactionsetoptionmergerelatedalerts
+        method: GET
+        description: Sets whether or not related alerts will be merged in any reports generated.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionProxyChainName
+      path: /JSON/core/action/setOptionProxyChainName/
+      operations:
+      - name: coreactionsetoptionproxychainname
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionProxyChainPassword
+      path: /JSON/core/action/setOptionProxyChainPassword/
+      operations:
+      - name: coreactionsetoptionproxychainpassword
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionProxyChainPort
+      path: /JSON/core/action/setOptionProxyChainPort/
+      operations:
+      - name: coreactionsetoptionproxychainport
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionProxyChainPrompt
+      path: /JSON/core/action/setOptionProxyChainPrompt/
+      operations:
+      - name: coreactionsetoptionproxychainprompt
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionProxyChainRealm
+      path: /JSON/core/action/setOptionProxyChainRealm/
+      operations:
+      - name: coreactionsetoptionproxychainrealm
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionProxyChainSkipName
+      path: /JSON/core/action/setOptionProxyChainSkipName/
+      operations:
+      - name: coreactionsetoptionproxychainskipname
+        method: GET
+        description: Option no longer in effective use.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionProxyChainUserName
+      path: /JSON/core/action/setOptionProxyChainUserName/
+      operations:
+      - name: coreactionsetoptionproxychainusername
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionSingleCookieRequestHeader
+      path: /JSON/core/action/setOptionSingleCookieRequestHeader/
+      operations:
+      - name: coreactionsetoptionsinglecookierequestheader
+        method: GET
+        description: Option no longer in effective use.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionTimeoutInSecs
+      path: /JSON/core/action/setOptionTimeoutInSecs/
+      operations:
+      - name: coreactionsetoptiontimeoutinsecs
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionUseProxyChain
+      path: /JSON/core/action/setOptionUseProxyChain/
+      operations:
+      - name: coreactionsetoptionuseproxychain
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionUseProxyChainAuth
+      path: /JSON/core/action/setOptionUseProxyChainAuth/
+      operations:
+      - name: coreactionsetoptionuseproxychainauth
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-setOptionUseSocksProxy
+      path: /JSON/core/action/setOptionUseSocksProxy/
+      operations:
+      - name: coreactionsetoptionusesocksproxy
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-shutdown
+      path: /JSON/core/action/shutdown/
+      operations:
+      - name: coreactionshutdown
+        method: GET
+        description: Shuts down ZAP
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-action-snapshotSession
+      path: /JSON/core/action/snapshotSession/
+      operations:
+      - name: coreactionsnapshotsession
+        method: GET
+        description: Snapshots the session, optionally with the given name, and overwriting existing files. If no name is
+          specified the name of the current session with a timestamp appended is used. If a relative path is specified it
+          will be resolved against th
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-alert
+      path: /JSON/core/view/alert/
+      operations:
+      - name: coreviewalert
+        method: GET
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-alerts
+      path: /JSON/core/view/alerts/
+      operations:
+      - name: coreviewalerts
+        method: GET
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-alertsSummary
+      path: /JSON/core/view/alertsSummary/
+      operations:
+      - name: coreviewalertssummary
+        method: GET
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-childNodes
+      path: /JSON/core/view/childNodes/
+      operations:
+      - name: coreviewchildnodes
+        method: GET
+        description: Gets the child nodes underneath the specified URL in the Sites tree
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-excludedFromProxy
+      path: /JSON/core/view/excludedFromProxy/
+      operations:
+      - name: coreviewexcludedfromproxy
+        method: GET
+        description: Gets the regular expressions, applied to URLs, to exclude from the local proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-getLogLevel
+      path: /JSON/core/view/getLogLevel/
+      operations:
+      - name: coreviewgetloglevel
+        method: GET
+        description: 'The detailed logging config, optionally filtered based on a name (ex: starts with).'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-homeDirectory
+      path: /JSON/core/view/homeDirectory/
+      operations:
+      - name: coreviewhomedirectory
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-hosts
+      path: /JSON/core/view/hosts/
+      operations:
+      - name: coreviewhosts
+        method: GET
+        description: Gets the name of the hosts accessed through/by ZAP
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-message
+      path: /JSON/core/view/message/
+      operations:
+      - name: coreviewmessage
+        method: GET
+        description: Gets the HTTP message with the given ID. Returns the ID, request/response headers and bodies, cookies,
+          note, type, RTT, and timestamp.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-messages
+      path: /JSON/core/view/messages/
+      operations:
+      - name: coreviewmessages
+        method: GET
+        description: Gets the HTTP messages sent by ZAP, request and response, optionally filtered by URL and paginated with
+          'start' position and 'count' of messages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-messagesById
+      path: /JSON/core/view/messagesById/
+      operations:
+      - name: coreviewmessagesbyid
+        method: GET
+        description: Gets the HTTP messages with the given IDs.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-mode
+      path: /JSON/core/view/mode/
+      operations:
+      - name: coreviewmode
+        method: GET
+        description: Gets the mode
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-numberOfAlerts
+      path: /JSON/core/view/numberOfAlerts/
+      operations:
+      - name: coreviewnumberofalerts
+        method: GET
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-numberOfMessages
+      path: /JSON/core/view/numberOfMessages/
+      operations:
+      - name: coreviewnumberofmessages
+        method: GET
+        description: Gets the number of messages, optionally filtering by URL
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionAlertOverridesFilePath
+      path: /JSON/core/view/optionAlertOverridesFilePath/
+      operations:
+      - name: coreviewoptionalertoverridesfilepath
+        method: GET
+        description: Gets the path to the file with alert overrides.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionDefaultUserAgent
+      path: /JSON/core/view/optionDefaultUserAgent/
+      operations:
+      - name: coreviewoptiondefaultuseragent
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionDnsTtlSuccessfulQueries
+      path: /JSON/core/view/optionDnsTtlSuccessfulQueries/
+      operations:
+      - name: coreviewoptiondnsttlsuccessfulqueries
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionHttpState
+      path: /JSON/core/view/optionHttpState/
+      operations:
+      - name: coreviewoptionhttpstate
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionHttpStateEnabled
+      path: /JSON/core/view/optionHttpStateEnabled/
+      operations:
+      - name: coreviewoptionhttpstateenabled
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionMaximumAlertInstances
+      path: /JSON/core/view/optionMaximumAlertInstances/
+      operations:
+      - name: coreviewoptionmaximumalertinstances
+        method: GET
+        description: Gets the maximum number of alert instances to include in a report.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionMergeRelatedAlerts
+      path: /JSON/core/view/optionMergeRelatedAlerts/
+      operations:
+      - name: coreviewoptionmergerelatedalerts
+        method: GET
+        description: Gets whether or not related alerts will be merged in any reports generated.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyChainName
+      path: /JSON/core/view/optionProxyChainName/
+      operations:
+      - name: coreviewoptionproxychainname
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyChainPassword
+      path: /JSON/core/view/optionProxyChainPassword/
+      operations:
+      - name: coreviewoptionproxychainpassword
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyChainPort
+      path: /JSON/core/view/optionProxyChainPort/
+      operations:
+      - name: coreviewoptionproxychainport
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyChainPrompt
+      path: /JSON/core/view/optionProxyChainPrompt/
+      operations:
+      - name: coreviewoptionproxychainprompt
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyChainRealm
+      path: /JSON/core/view/optionProxyChainRealm/
+      operations:
+      - name: coreviewoptionproxychainrealm
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyChainSkipName
+      path: /JSON/core/view/optionProxyChainSkipName/
+      operations:
+      - name: coreviewoptionproxychainskipname
+        method: GET
+        description: Use view proxyChainExcludedDomains instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyChainUserName
+      path: /JSON/core/view/optionProxyChainUserName/
+      operations:
+      - name: coreviewoptionproxychainusername
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyExcludedDomains
+      path: /JSON/core/view/optionProxyExcludedDomains/
+      operations:
+      - name: coreviewoptionproxyexcludeddomains
+        method: GET
+        description: Use view proxyChainExcludedDomains instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionProxyExcludedDomainsEnabled
+      path: /JSON/core/view/optionProxyExcludedDomainsEnabled/
+      operations:
+      - name: coreviewoptionproxyexcludeddomainsenabled
+        method: GET
+        description: Use view proxyChainExcludedDomains instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionSingleCookieRequestHeader
+      path: /JSON/core/view/optionSingleCookieRequestHeader/
+      operations:
+      - name: coreviewoptionsinglecookierequestheader
+        method: GET
+        description: Option no longer in effective use.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionTimeoutInSecs
+      path: /JSON/core/view/optionTimeoutInSecs/
+      operations:
+      - name: coreviewoptiontimeoutinsecs
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionUseProxyChain
+      path: /JSON/core/view/optionUseProxyChain/
+      operations:
+      - name: coreviewoptionuseproxychain
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionUseProxyChainAuth
+      path: /JSON/core/view/optionUseProxyChainAuth/
+      operations:
+      - name: coreviewoptionuseproxychainauth
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-optionUseSocksProxy
+      path: /JSON/core/view/optionUseSocksProxy/
+      operations:
+      - name: coreviewoptionusesocksproxy
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-proxyChainExcludedDomains
+      path: /JSON/core/view/proxyChainExcludedDomains/
+      operations:
+      - name: coreviewproxychainexcludeddomains
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-sessionLocation
+      path: /JSON/core/view/sessionLocation/
+      operations:
+      - name: coreviewsessionlocation
+        method: GET
+        description: Gets the location of the current session file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-sites
+      path: /JSON/core/view/sites/
+      operations:
+      - name: coreviewsites
+        method: GET
+        description: Gets the sites accessed through/by ZAP (scheme and domain)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-urls
+      path: /JSON/core/view/urls/
+      operations:
+      - name: coreviewurls
+        method: GET
+        description: Gets the URLs accessed through/by ZAP, optionally filtering by (base) URL.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-version
+      path: /JSON/core/view/version/
+      operations:
+      - name: coreviewversion
+        method: GET
+        description: Gets ZAP version
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-core-view-zapHomePath
+      path: /JSON/core/view/zapHomePath/
+      operations:
+      - name: coreviewzaphomepath
+        method: GET
+        description: Gets the path to ZAP's home directory.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-fileDownload
+      path: /OTHER/core/other/fileDownload/
+      operations:
+      - name: coreotherfiledownload
+        method: GET
+        description: Download a file from the transfer directory
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-fileUpload
+      path: /OTHER/core/other/fileUpload/
+      operations:
+      - name: coreotherfileupload
+        method: GET
+        description: Upload a file to the transfer directory. Only POST requests accepted with encodings of "multipart/form-data"
+          or "application/x-www-form-urlencoded".
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-htmlreport
+      path: /OTHER/core/other/htmlreport/
+      operations:
+      - name: coreotherhtmlreport
+        method: GET
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-jsonreport
+      path: /OTHER/core/other/jsonreport/
+      operations:
+      - name: coreotherjsonreport
+        method: GET
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-mdreport
+      path: /OTHER/core/other/mdreport/
+      operations:
+      - name: coreothermdreport
+        method: GET
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-messageHar
+      path: /OTHER/core/other/messageHar/
+      operations:
+      - name: coreothermessagehar
+        method: GET
+        description: Use the API endpoints in the 'exim' add-on instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-messagesHar
+      path: /OTHER/core/other/messagesHar/
+      operations:
+      - name: coreothermessageshar
+        method: GET
+        description: Use the API endpoints in the 'exim' add-on instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-messagesHarById
+      path: /OTHER/core/other/messagesHarById/
+      operations:
+      - name: coreothermessagesharbyid
+        method: GET
+        description: Use the API endpoints in the 'exim' add-on instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-proxy.pac
+      path: /OTHER/core/other/proxy.pac/
+      operations:
+      - name: coreotherproxypac
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-rootcert
+      path: /OTHER/core/other/rootcert/
+      operations:
+      - name: coreotherrootcert
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-sendHarRequest
+      path: /OTHER/core/other/sendHarRequest/
+      operations:
+      - name: coreothersendharrequest
+        method: GET
+        description: Use the API endpoints in the 'exim' add-on instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-setproxy
+      path: /OTHER/core/other/setproxy/
+      operations:
+      - name: coreothersetproxy
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-core-other-xmlreport
+      path: /OTHER/core/other/xmlreport/
+      operations:
+      - name: coreotherxmlreport
+        method: GET
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-core-rest
+    port: 8080
+    description: REST adapter for ZAP API — core. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/json/core/action/accessurl
+      name: json-core-action-accessurl
+      description: REST surface for JSON-core-action-accessUrl.
+      operations:
+      - method: GET
+        name: coreactionaccessurl
+        description: Convenient and simple action to access a URL, optionally following redirections. Returns the request
+          sent and response received and followed redirections, if any. Other actions are available which offer more control
+          on what is sent, like, '
+        call: owasp-zap-core.coreactionaccessurl
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/addproxychainexcludeddomain
+      name: json-core-action-addproxychainexcludeddomain
+      description: REST surface for JSON-core-action-addProxyChainExcludedDomain.
+      operations:
+      - method: GET
+        name: coreactionaddproxychainexcludeddomain
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionaddproxychainexcludeddomain
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/clearexcludedfromproxy
+      name: json-core-action-clearexcludedfromproxy
+      description: REST surface for JSON-core-action-clearExcludedFromProxy.
+      operations:
+      - method: GET
+        name: coreactionclearexcludedfromproxy
+        description: Clears the regexes of URLs excluded from the local proxies.
+        call: owasp-zap-core.coreactionclearexcludedfromproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/createsbomzip
+      name: json-core-action-createsbomzip
+      description: REST surface for JSON-core-action-createSbomZip.
+      operations:
+      - method: GET
+        name: coreactioncreatesbomzip
+        description: Create a zip file of the ZAP core and add-on SBOMs
+        call: owasp-zap-core.coreactioncreatesbomzip
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/deletealert
+      name: json-core-action-deletealert
+      description: REST surface for JSON-core-action-deleteAlert.
+      operations:
+      - method: GET
+        name: coreactiondeletealert
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        call: owasp-zap-core.coreactiondeletealert
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/deleteallalerts
+      name: json-core-action-deleteallalerts
+      description: REST surface for JSON-core-action-deleteAllAlerts.
+      operations:
+      - method: GET
+        name: coreactiondeleteallalerts
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        call: owasp-zap-core.coreactiondeleteallalerts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/deletesitenode
+      name: json-core-action-deletesitenode
+      description: REST surface for JSON-core-action-deleteSiteNode.
+      operations:
+      - method: GET
+        name: coreactiondeletesitenode
+        description: Deletes the site node found in the Sites Tree on the basis of the URL, HTTP method, and post data (if
+          applicable and specified).
+        call: owasp-zap-core.coreactiondeletesitenode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/disableallproxychainexcludeddomains
+      name: json-core-action-disableallproxychainexcludeddomains
+      description: REST surface for JSON-core-action-disableAllProxyChainExcludedDomains.
+      operations:
+      - method: GET
+        name: coreactiondisableallproxychainexcludeddomains
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactiondisableallproxychainexcludeddomains
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/disableclientcertificate
+      name: json-core-action-disableclientcertificate
+      description: REST surface for JSON-core-action-disableClientCertificate.
+      operations:
+      - method: GET
+        name: coreactiondisableclientcertificate
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactiondisableclientcertificate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/enableallproxychainexcludeddomains
+      name: json-core-action-enableallproxychainexcludeddomains
+      description: REST surface for JSON-core-action-enableAllProxyChainExcludedDomains.
+      operations:
+      - method: GET
+        name: coreactionenableallproxychainexcludeddomains
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionenableallproxychainexcludeddomains
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/enablepkcs12clientcertificate
+      name: json-core-action-enablepkcs12clientcertificate
+      description: REST surface for JSON-core-action-enablePKCS12ClientCertificate.
+      operations:
+      - method: GET
+        name: coreactionenablepkcs12clientcertificate
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionenablepkcs12clientcertificate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/excludefromproxy
+      name: json-core-action-excludefromproxy
+      description: REST surface for JSON-core-action-excludeFromProxy.
+      operations:
+      - method: GET
+        name: coreactionexcludefromproxy
+        description: Adds a regex of URLs that should be excluded from the local proxies.
+        call: owasp-zap-core.coreactionexcludefromproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/generaterootca
+      name: json-core-action-generaterootca
+      description: REST surface for JSON-core-action-generateRootCA.
+      operations:
+      - method: GET
+        name: coreactiongeneraterootca
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactiongeneraterootca
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/loadsession
+      name: json-core-action-loadsession
+      description: REST surface for JSON-core-action-loadSession.
+      operations:
+      - method: GET
+        name: coreactionloadsession
+        description: Loads the session with the given name. If a relative path is specified it will be resolved against the
+          "session" directory in ZAP "home" dir.
+        call: owasp-zap-core.coreactionloadsession
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/modifyproxychainexcludeddomain
+      name: json-core-action-modifyproxychainexcludeddomain
+      description: REST surface for JSON-core-action-modifyProxyChainExcludedDomain.
+      operations:
+      - method: GET
+        name: coreactionmodifyproxychainexcludeddomain
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionmodifyproxychainexcludeddomain
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/newsession
+      name: json-core-action-newsession
+      description: REST surface for JSON-core-action-newSession.
+      operations:
+      - method: GET
+        name: coreactionnewsession
+        description: Creates a new session, optionally overwriting existing files. If a relative path is specified it will
+          be resolved against the "session" directory in ZAP "home" dir.
+        call: owasp-zap-core.coreactionnewsession
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/removeproxychainexcludeddomain
+      name: json-core-action-removeproxychainexcludeddomain
+      description: REST surface for JSON-core-action-removeProxyChainExcludedDomain.
+      operations:
+      - method: GET
+        name: coreactionremoveproxychainexcludeddomain
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionremoveproxychainexcludeddomain
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/rungarbagecollection
+      name: json-core-action-rungarbagecollection
+      description: REST surface for JSON-core-action-runGarbageCollection.
+      operations:
+      - method: GET
+        name: coreactionrungarbagecollection
+        description: coreactionrungarbagecollection
+        call: owasp-zap-core.coreactionrungarbagecollection
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/savesession
+      name: json-core-action-savesession
+      description: REST surface for JSON-core-action-saveSession.
+      operations:
+      - method: GET
+        name: coreactionsavesession
+        description: Saves the session.
+        call: owasp-zap-core.coreactionsavesession
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/sendrequest
+      name: json-core-action-sendrequest
+      description: REST surface for JSON-core-action-sendRequest.
+      operations:
+      - method: GET
+        name: coreactionsendrequest
+        description: 'Sends the HTTP request, optionally following redirections. Returns the request sent and response received
+          and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom
+          manual requests '
+        call: owasp-zap-core.coreactionsendrequest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/sethomedirectory
+      name: json-core-action-sethomedirectory
+      description: REST surface for JSON-core-action-setHomeDirectory.
+      operations:
+      - method: GET
+        name: coreactionsethomedirectory
+        description: coreactionsethomedirectory
+        call: owasp-zap-core.coreactionsethomedirectory
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setloglevel
+      name: json-core-action-setloglevel
+      description: REST surface for JSON-core-action-setLogLevel.
+      operations:
+      - method: GET
+        name: coreactionsetloglevel
+        description: Sets the logging level for a given logger name.
+        call: owasp-zap-core.coreactionsetloglevel
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setmode
+      name: json-core-action-setmode
+      description: REST surface for JSON-core-action-setMode.
+      operations:
+      - method: GET
+        name: coreactionsetmode
+        description: Sets the mode, which may be one of [safe, protect, standard, attack]
+        call: owasp-zap-core.coreactionsetmode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionalertoverridesfilepath
+      name: json-core-action-setoptionalertoverridesfilepath
+      description: REST surface for JSON-core-action-setOptionAlertOverridesFilePath.
+      operations:
+      - method: GET
+        name: coreactionsetoptionalertoverridesfilepath
+        description: Sets (or clears, if empty) the path to the file with alert overrides.
+        call: owasp-zap-core.coreactionsetoptionalertoverridesfilepath
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptiondefaultuseragent
+      name: json-core-action-setoptiondefaultuseragent
+      description: REST surface for JSON-core-action-setOptionDefaultUserAgent.
+      operations:
+      - method: GET
+        name: coreactionsetoptiondefaultuseragent
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptiondefaultuseragent
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptiondnsttlsuccessfulqueries
+      name: json-core-action-setoptiondnsttlsuccessfulqueries
+      description: REST surface for JSON-core-action-setOptionDnsTtlSuccessfulQueries.
+      operations:
+      - method: GET
+        name: coreactionsetoptiondnsttlsuccessfulqueries
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptiondnsttlsuccessfulqueries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionhttpstateenabled
+      name: json-core-action-setoptionhttpstateenabled
+      description: REST surface for JSON-core-action-setOptionHttpStateEnabled.
+      operations:
+      - method: GET
+        name: coreactionsetoptionhttpstateenabled
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionhttpstateenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionmaximumalertinstances
+      name: json-core-action-setoptionmaximumalertinstances
+      description: REST surface for JSON-core-action-setOptionMaximumAlertInstances.
+      operations:
+      - method: GET
+        name: coreactionsetoptionmaximumalertinstances
+        description: Sets the maximum number of alert instances to include in a report. A value of zero is treated as unlimited.
+        call: owasp-zap-core.coreactionsetoptionmaximumalertinstances
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionmergerelatedalerts
+      name: json-core-action-setoptionmergerelatedalerts
+      description: REST surface for JSON-core-action-setOptionMergeRelatedAlerts.
+      operations:
+      - method: GET
+        name: coreactionsetoptionmergerelatedalerts
+        description: Sets whether or not related alerts will be merged in any reports generated.
+        call: owasp-zap-core.coreactionsetoptionmergerelatedalerts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionproxychainname
+      name: json-core-action-setoptionproxychainname
+      description: REST surface for JSON-core-action-setOptionProxyChainName.
+      operations:
+      - method: GET
+        name: coreactionsetoptionproxychainname
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionproxychainname
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionproxychainpassword
+      name: json-core-action-setoptionproxychainpassword
+      description: REST surface for JSON-core-action-setOptionProxyChainPassword.
+      operations:
+      - method: GET
+        name: coreactionsetoptionproxychainpassword
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionproxychainpassword
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionproxychainport
+      name: json-core-action-setoptionproxychainport
+      description: REST surface for JSON-core-action-setOptionProxyChainPort.
+      operations:
+      - method: GET
+        name: coreactionsetoptionproxychainport
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionproxychainport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionproxychainprompt
+      name: json-core-action-setoptionproxychainprompt
+      description: REST surface for JSON-core-action-setOptionProxyChainPrompt.
+      operations:
+      - method: GET
+        name: coreactionsetoptionproxychainprompt
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionproxychainprompt
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionproxychainrealm
+      name: json-core-action-setoptionproxychainrealm
+      description: REST surface for JSON-core-action-setOptionProxyChainRealm.
+      operations:
+      - method: GET
+        name: coreactionsetoptionproxychainrealm
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionproxychainrealm
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionproxychainskipname
+      name: json-core-action-setoptionproxychainskipname
+      description: REST surface for JSON-core-action-setOptionProxyChainSkipName.
+      operations:
+      - method: GET
+        name: coreactionsetoptionproxychainskipname
+        description: Option no longer in effective use.
+        call: owasp-zap-core.coreactionsetoptionproxychainskipname
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionproxychainusername
+      name: json-core-action-setoptionproxychainusername
+      description: REST surface for JSON-core-action-setOptionProxyChainUserName.
+      operations:
+      - method: GET
+        name: coreactionsetoptionproxychainusername
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionproxychainusername
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionsinglecookierequestheader
+      name: json-core-action-setoptionsinglecookierequestheader
+      description: REST surface for JSON-core-action-setOptionSingleCookieRequestHeader.
+      operations:
+      - method: GET
+        name: coreactionsetoptionsinglecookierequestheader
+        description: Option no longer in effective use.
+        call: owasp-zap-core.coreactionsetoptionsinglecookierequestheader
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptiontimeoutinsecs
+      name: json-core-action-setoptiontimeoutinsecs
+      description: REST surface for JSON-core-action-setOptionTimeoutInSecs.
+      operations:
+      - method: GET
+        name: coreactionsetoptiontimeoutinsecs
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptiontimeoutinsecs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionuseproxychain
+      name: json-core-action-setoptionuseproxychain
+      description: REST surface for JSON-core-action-setOptionUseProxyChain.
+      operations:
+      - method: GET
+        name: coreactionsetoptionuseproxychain
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionuseproxychain
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionuseproxychainauth
+      name: json-core-action-setoptionuseproxychainauth
+      description: REST surface for JSON-core-action-setOptionUseProxyChainAuth.
+      operations:
+      - method: GET
+        name: coreactionsetoptionuseproxychainauth
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionuseproxychainauth
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/setoptionusesocksproxy
+      name: json-core-action-setoptionusesocksproxy
+      description: REST surface for JSON-core-action-setOptionUseSocksProxy.
+      operations:
+      - method: GET
+        name: coreactionsetoptionusesocksproxy
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreactionsetoptionusesocksproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/shutdown
+      name: json-core-action-shutdown
+      description: REST surface for JSON-core-action-shutdown.
+      operations:
+      - method: GET
+        name: coreactionshutdown
+        description: Shuts down ZAP
+        call: owasp-zap-core.coreactionshutdown
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/action/snapshotsession
+      name: json-core-action-snapshotsession
+      description: REST surface for JSON-core-action-snapshotSession.
+      operations:
+      - method: GET
+        name: coreactionsnapshotsession
+        description: Snapshots the session, optionally with the given name, and overwriting existing files. If no name is
+          specified the name of the current session with a timestamp appended is used. If a relative path is specified it
+          will be resolved against th
+        call: owasp-zap-core.coreactionsnapshotsession
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/alert
+      name: json-core-view-alert
+      description: REST surface for JSON-core-view-alert.
+      operations:
+      - method: GET
+        name: coreviewalert
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        call: owasp-zap-core.coreviewalert
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/alerts
+      name: json-core-view-alerts
+      description: REST surface for JSON-core-view-alerts.
+      operations:
+      - method: GET
+        name: coreviewalerts
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        call: owasp-zap-core.coreviewalerts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/alertssummary
+      name: json-core-view-alertssummary
+      description: REST surface for JSON-core-view-alertsSummary.
+      operations:
+      - method: GET
+        name: coreviewalertssummary
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        call: owasp-zap-core.coreviewalertssummary
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/childnodes
+      name: json-core-view-childnodes
+      description: REST surface for JSON-core-view-childNodes.
+      operations:
+      - method: GET
+        name: coreviewchildnodes
+        description: Gets the child nodes underneath the specified URL in the Sites tree
+        call: owasp-zap-core.coreviewchildnodes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/excludedfromproxy
+      name: json-core-view-excludedfromproxy
+      description: REST surface for JSON-core-view-excludedFromProxy.
+      operations:
+      - method: GET
+        name: coreviewexcludedfromproxy
+        description: Gets the regular expressions, applied to URLs, to exclude from the local proxies.
+        call: owasp-zap-core.coreviewexcludedfromproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/getloglevel
+      name: json-core-view-getloglevel
+      description: REST surface for JSON-core-view-getLogLevel.
+      operations:
+      - method: GET
+        name: coreviewgetloglevel
+        description: 'The detailed logging config, optionally filtered based on a name (ex: starts with).'
+        call: owasp-zap-core.coreviewgetloglevel
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/homedirectory
+      name: json-core-view-homedirectory
+      description: REST surface for JSON-core-view-homeDirectory.
+      operations:
+      - method: GET
+        name: coreviewhomedirectory
+        description: coreviewhomedirectory
+        call: owasp-zap-core.coreviewhomedirectory
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/hosts
+      name: json-core-view-hosts
+      description: REST surface for JSON-core-view-hosts.
+      operations:
+      - method: GET
+        name: coreviewhosts
+        description: Gets the name of the hosts accessed through/by ZAP
+        call: owasp-zap-core.coreviewhosts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/message
+      name: json-core-view-message
+      description: REST surface for JSON-core-view-message.
+      operations:
+      - method: GET
+        name: coreviewmessage
+        description: Gets the HTTP message with the given ID. Returns the ID, request/response headers and bodies, cookies,
+          note, type, RTT, and timestamp.
+        call: owasp-zap-core.coreviewmessage
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/messages
+      name: json-core-view-messages
+      description: REST surface for JSON-core-view-messages.
+      operations:
+      - method: GET
+        name: coreviewmessages
+        description: Gets the HTTP messages sent by ZAP, request and response, optionally filtered by URL and paginated with
+          'start' position and 'count' of messages
+        call: owasp-zap-core.coreviewmessages
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/messagesbyid
+      name: json-core-view-messagesbyid
+      description: REST surface for JSON-core-view-messagesById.
+      operations:
+      - method: GET
+        name: coreviewmessagesbyid
+        description: Gets the HTTP messages with the given IDs.
+        call: owasp-zap-core.coreviewmessagesbyid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/mode
+      name: json-core-view-mode
+      description: REST surface for JSON-core-view-mode.
+      operations:
+      - method: GET
+        name: coreviewmode
+        description: Gets the mode
+        call: owasp-zap-core.coreviewmode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/numberofalerts
+      name: json-core-view-numberofalerts
+      description: REST surface for JSON-core-view-numberOfAlerts.
+      operations:
+      - method: GET
+        name: coreviewnumberofalerts
+        description: Use the API endpoint with the same name in the 'alert' component instead.
+        call: owasp-zap-core.coreviewnumberofalerts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/numberofmessages
+      name: json-core-view-numberofmessages
+      description: REST surface for JSON-core-view-numberOfMessages.
+      operations:
+      - method: GET
+        name: coreviewnumberofmessages
+        description: Gets the number of messages, optionally filtering by URL
+        call: owasp-zap-core.coreviewnumberofmessages
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionalertoverridesfilepath
+      name: json-core-view-optionalertoverridesfilepath
+      description: REST surface for JSON-core-view-optionAlertOverridesFilePath.
+      operations:
+      - method: GET
+        name: coreviewoptionalertoverridesfilepath
+        description: Gets the path to the file with alert overrides.
+        call: owasp-zap-core.coreviewoptionalertoverridesfilepath
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optiondefaultuseragent
+      name: json-core-view-optiondefaultuseragent
+      description: REST surface for JSON-core-view-optionDefaultUserAgent.
+      operations:
+      - method: GET
+        name: coreviewoptiondefaultuseragent
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptiondefaultuseragent
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optiondnsttlsuccessfulqueries
+      name: json-core-view-optiondnsttlsuccessfulqueries
+      description: REST surface for JSON-core-view-optionDnsTtlSuccessfulQueries.
+      operations:
+      - method: GET
+        name: coreviewoptiondnsttlsuccessfulqueries
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptiondnsttlsuccessfulqueries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionhttpstate
+      name: json-core-view-optionhttpstate
+      description: REST surface for JSON-core-view-optionHttpState.
+      operations:
+      - method: GET
+        name: coreviewoptionhttpstate
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionhttpstate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionhttpstateenabled
+      name: json-core-view-optionhttpstateenabled
+      description: REST surface for JSON-core-view-optionHttpStateEnabled.
+      operations:
+      - method: GET
+        name: coreviewoptionhttpstateenabled
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionhttpstateenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionmaximumalertinstances
+      name: json-core-view-optionmaximumalertinstances
+      description: REST surface for JSON-core-view-optionMaximumAlertInstances.
+      operations:
+      - method: GET
+        name: coreviewoptionmaximumalertinstances
+        description: Gets the maximum number of alert instances to include in a report.
+        call: owasp-zap-core.coreviewoptionmaximumalertinstances
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionmergerelatedalerts
+      name: json-core-view-optionmergerelatedalerts
+      description: REST surface for JSON-core-view-optionMergeRelatedAlerts.
+      operations:
+      - method: GET
+        name: coreviewoptionmergerelatedalerts
+        description: Gets whether or not related alerts will be merged in any reports generated.
+        call: owasp-zap-core.coreviewoptionmergerelatedalerts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxychainname
+      name: json-core-view-optionproxychainname
+      description: REST surface for JSON-core-view-optionProxyChainName.
+      operations:
+      - method: GET
+        name: coreviewoptionproxychainname
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionproxychainname
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxychainpassword
+      name: json-core-view-optionproxychainpassword
+      description: REST surface for JSON-core-view-optionProxyChainPassword.
+      operations:
+      - method: GET
+        name: coreviewoptionproxychainpassword
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionproxychainpassword
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxychainport
+      name: json-core-view-optionproxychainport
+      description: REST surface for JSON-core-view-optionProxyChainPort.
+      operations:
+      - method: GET
+        name: coreviewoptionproxychainport
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionproxychainport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxychainprompt
+      name: json-core-view-optionproxychainprompt
+      description: REST surface for JSON-core-view-optionProxyChainPrompt.
+      operations:
+      - method: GET
+        name: coreviewoptionproxychainprompt
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionproxychainprompt
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxychainrealm
+      name: json-core-view-optionproxychainrealm
+      description: REST surface for JSON-core-view-optionProxyChainRealm.
+      operations:
+      - method: GET
+        name: coreviewoptionproxychainrealm
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionproxychainrealm
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxychainskipname
+      name: json-core-view-optionproxychainskipname
+      description: REST surface for JSON-core-view-optionProxyChainSkipName.
+      operations:
+      - method: GET
+        name: coreviewoptionproxychainskipname
+        description: Use view proxyChainExcludedDomains instead.
+        call: owasp-zap-core.coreviewoptionproxychainskipname
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxychainusername
+      name: json-core-view-optionproxychainusername
+      description: REST surface for JSON-core-view-optionProxyChainUserName.
+      operations:
+      - method: GET
+        name: coreviewoptionproxychainusername
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionproxychainusername
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxyexcludeddomains
+      name: json-core-view-optionproxyexcludeddomains
+      description: REST surface for JSON-core-view-optionProxyExcludedDomains.
+      operations:
+      - method: GET
+        name: coreviewoptionproxyexcludeddomains
+        description: Use view proxyChainExcludedDomains instead.
+        call: owasp-zap-core.coreviewoptionproxyexcludeddomains
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionproxyexcludeddomainsenabled
+      name: json-core-view-optionproxyexcludeddomainsenabled
+      description: REST surface for JSON-core-view-optionProxyExcludedDomainsEnabled.
+      operations:
+      - method: GET
+        name: coreviewoptionproxyexcludeddomainsenabled
+        description: Use view proxyChainExcludedDomains instead.
+        call: owasp-zap-core.coreviewoptionproxyexcludeddomainsenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionsinglecookierequestheader
+      name: json-core-view-optionsinglecookierequestheader
+      description: REST surface for JSON-core-view-optionSingleCookieRequestHeader.
+      operations:
+      - method: GET
+        name: coreviewoptionsinglecookierequestheader
+        description: Option no longer in effective use.
+        call: owasp-zap-core.coreviewoptionsinglecookierequestheader
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optiontimeoutinsecs
+      name: json-core-view-optiontimeoutinsecs
+      description: REST surface for JSON-core-view-optionTimeoutInSecs.
+      operations:
+      - method: GET
+        name: coreviewoptiontimeoutinsecs
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptiontimeoutinsecs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionuseproxychain
+      name: json-core-view-optionuseproxychain
+      description: REST surface for JSON-core-view-optionUseProxyChain.
+      operations:
+      - method: GET
+        name: coreviewoptionuseproxychain
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionuseproxychain
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionuseproxychainauth
+      name: json-core-view-optionuseproxychainauth
+      description: REST surface for JSON-core-view-optionUseProxyChainAuth.
+      operations:
+      - method: GET
+        name: coreviewoptionuseproxychainauth
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionuseproxychainauth
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/optionusesocksproxy
+      name: json-core-view-optionusesocksproxy
+      description: REST surface for JSON-core-view-optionUseSocksProxy.
+      operations:
+      - method: GET
+        name: coreviewoptionusesocksproxy
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewoptionusesocksproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/proxychainexcludeddomains
+      name: json-core-view-proxychainexcludeddomains
+      description: REST surface for JSON-core-view-proxyChainExcludedDomains.
+      operations:
+      - method: GET
+        name: coreviewproxychainexcludeddomains
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreviewproxychainexcludeddomains
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/sessionlocation
+      name: json-core-view-sessionlocation
+      description: REST surface for JSON-core-view-sessionLocation.
+      operations:
+      - method: GET
+        name: coreviewsessionlocation
+        description: Gets the location of the current session file
+        call: owasp-zap-core.coreviewsessionlocation
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/sites
+      name: json-core-view-sites
+      description: REST surface for JSON-core-view-sites.
+      operations:
+      - method: GET
+        name: coreviewsites
+        description: Gets the sites accessed through/by ZAP (scheme and domain)
+        call: owasp-zap-core.coreviewsites
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/urls
+      name: json-core-view-urls
+      description: REST surface for JSON-core-view-urls.
+      operations:
+      - method: GET
+        name: coreviewurls
+        description: Gets the URLs accessed through/by ZAP, optionally filtering by (base) URL.
+        call: owasp-zap-core.coreviewurls
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/version
+      name: json-core-view-version
+      description: REST surface for JSON-core-view-version.
+      operations:
+      - method: GET
+        name: coreviewversion
+        description: Gets ZAP version
+        call: owasp-zap-core.coreviewversion
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/core/view/zaphomepath
+      name: json-core-view-zaphomepath
+      description: REST surface for JSON-core-view-zapHomePath.
+      operations:
+      - method: GET
+        name: coreviewzaphomepath
+        description: Gets the path to ZAP's home directory.
+        call: owasp-zap-core.coreviewzaphomepath
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/filedownload
+      name: other-core-other-filedownload
+      description: REST surface for OTHER-core-other-fileDownload.
+      operations:
+      - method: GET
+        name: coreotherfiledownload
+        description: Download a file from the transfer directory
+        call: owasp-zap-core.coreotherfiledownload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/fileupload
+      name: other-core-other-fileupload
+      description: REST surface for OTHER-core-other-fileUpload.
+      operations:
+      - method: GET
+        name: coreotherfileupload
+        description: Upload a file to the transfer directory. Only POST requests accepted with encodings of "multipart/form-data"
+          or "application/x-www-form-urlencoded".
+        call: owasp-zap-core.coreotherfileupload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/htmlreport
+      name: other-core-other-htmlreport
+      description: REST surface for OTHER-core-other-htmlreport.
+      operations:
+      - method: GET
+        name: coreotherhtmlreport
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        call: owasp-zap-core.coreotherhtmlreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/jsonreport
+      name: other-core-other-jsonreport
+      description: REST surface for OTHER-core-other-jsonreport.
+      operations:
+      - method: GET
+        name: coreotherjsonreport
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        call: owasp-zap-core.coreotherjsonreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/mdreport
+      name: other-core-other-mdreport
+      description: REST surface for OTHER-core-other-mdreport.
+      operations:
+      - method: GET
+        name: coreothermdreport
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        call: owasp-zap-core.coreothermdreport
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/messagehar
+      name: other-core-other-messagehar
+      description: REST surface for OTHER-core-other-messageHar.
+      operations:
+      - method: GET
+        name: coreothermessagehar
+        description: Use the API endpoints in the 'exim' add-on instead.
+        call: owasp-zap-core.coreothermessagehar
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/messageshar
+      name: other-core-other-messageshar
+      description: REST surface for OTHER-core-other-messagesHar.
+      operations:
+      - method: GET
+        name: coreothermessageshar
+        description: Use the API endpoints in the 'exim' add-on instead.
+        call: owasp-zap-core.coreothermessageshar
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/messagesharbyid
+      name: other-core-other-messagesharbyid
+      description: REST surface for OTHER-core-other-messagesHarById.
+      operations:
+      - method: GET
+        name: coreothermessagesharbyid
+        description: Use the API endpoints in the 'exim' add-on instead.
+        call: owasp-zap-core.coreothermessagesharbyid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/proxy-pac
+      name: other-core-other-proxy-pac
+      description: REST surface for OTHER-core-other-proxy.pac.
+      operations:
+      - method: GET
+        name: coreotherproxypac
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreotherproxypac
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/rootcert
+      name: other-core-other-rootcert
+      description: REST surface for OTHER-core-other-rootcert.
+      operations:
+      - method: GET
+        name: coreotherrootcert
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreotherrootcert
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/sendharrequest
+      name: other-core-other-sendharrequest
+      description: REST surface for OTHER-core-other-sendHarRequest.
+      operations:
+      - method: GET
+        name: coreothersendharrequest
+        description: Use the API endpoints in the 'exim' add-on instead.
+        call: owasp-zap-core.coreothersendharrequest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/setproxy
+      name: other-core-other-setproxy
+      description: REST surface for OTHER-core-other-setproxy.
+      operations:
+      - method: GET
+        name: coreothersetproxy
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-core.coreothersetproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/core/other/xmlreport
+      name: other-core-other-xmlreport
+      description: REST surface for OTHER-core-other-xmlreport.
+      operations:
+      - method: GET
+        name: coreotherxmlreport
+        description: Use the 'generate' API endpoint the 'reports' component instead.
+        call: owasp-zap-core.coreotherxmlreport
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-core-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — core. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: convenient-and-simple-action-access
+      description: Convenient and simple action to access a URL, optionally following redirections. Returns the request sent
+        and response received and followed redirections, if any. Other actions are available which offer more control on what
+        is sent, like, '
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionaccessurl
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionaddproxychainexcludeddomain
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: clears-regexes-urls-excluded-local
+      description: Clears the regexes of URLs excluded from the local proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionclearexcludedfromproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-zip-file-zap-core
+      description: Create a zip file of the ZAP core and add-on SBOMs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactioncreatesbomzip
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoint-same-name
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactiondeletealert
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoint-same-name-2
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactiondeleteallalerts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletes-site-node-found-sites
+      description: Deletes the site node found in the Sites Tree on the basis of the URL, HTTP method, and post data (if applicable
+        and specified).
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactiondeletesitenode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-2
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactiondisableallproxychainexcludeddomains
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-3
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactiondisableclientcertificate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-4
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionenableallproxychainexcludeddomains
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-5
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionenablepkcs12clientcertificate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-regex-urls-that-should
+      description: Adds a regex of URLs that should be excluded from the local proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionexcludefromproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-6
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactiongeneraterootca
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: loads-session-given-name-if
+      description: Loads the session with the given name. If a relative path is specified it will be resolved against the
+        "session" directory in ZAP "home" dir.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionloadsession
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-7
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionmodifyproxychainexcludeddomain
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: creates-new-session-optionally-overwriting
+      description: Creates a new session, optionally overwriting existing files. If a relative path is specified it will be
+        resolved against the "session" directory in ZAP "home" dir.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionnewsession
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-8
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionremoveproxychainexcludeddomain
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: coreactionrungarbagecollection
+      description: coreactionrungarbagecollection
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionrungarbagecollection
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: saves-session
+      description: Saves the session.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsavesession
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sends-http-request-optionally-following
+      description: 'Sends the HTTP request, optionally following redirections. Returns the request sent and response received
+        and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom
+        manual requests '
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsendrequest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: coreactionsethomedirectory
+      description: coreactionsethomedirectory
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsethomedirectory
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-logging-level-given-logger
+      description: Sets the logging level for a given logger name.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetloglevel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-mode-which-may-be
+      description: Sets the mode, which may be one of [safe, protect, standard, attack]
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetmode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-clears-if-empty-path
+      description: Sets (or clears, if empty) the path to the file with alert overrides.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionalertoverridesfilepath
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-9
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptiondefaultuseragent
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-10
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptiondnsttlsuccessfulqueries
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-11
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionhttpstateenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-maximum-number-alert-instances
+      description: Sets the maximum number of alert instances to include in a report. A value of zero is treated as unlimited.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionmaximumalertinstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-related-alerts
+      description: Sets whether or not related alerts will be merged in any reports generated.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionmergerelatedalerts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-12
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionproxychainname
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-13
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionproxychainpassword
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-14
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionproxychainport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-15
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionproxychainprompt
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-16
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionproxychainrealm
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: option-no-longer-effective-use
+      description: Option no longer in effective use.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionproxychainskipname
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-17
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionproxychainusername
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: option-no-longer-effective-use-2
+      description: Option no longer in effective use.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionsinglecookierequestheader
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-18
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptiontimeoutinsecs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-19
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionuseproxychain
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-20
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionuseproxychainauth
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-21
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsetoptionusesocksproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: shuts-down-zap
+      description: Shuts down ZAP
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionshutdown
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: snapshots-session-optionally-given-name
+      description: Snapshots the session, optionally with the given name, and overwriting existing files. If no name is specified
+        the name of the current session with a timestamp appended is used. If a relative path is specified it will be resolved
+        against th
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreactionsnapshotsession
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoint-same-name-3
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewalert
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoint-same-name-4
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewalerts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoint-same-name-5
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewalertssummary
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-child-nodes-underneath-specified
+      description: Gets the child nodes underneath the specified URL in the Sites tree
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewchildnodes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-regular-expressions-applied-urls
+      description: Gets the regular expressions, applied to URLs, to exclude from the local proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewexcludedfromproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: detailed-logging-config-optionally-filtered
+      description: 'The detailed logging config, optionally filtered based on a name (ex: starts with).'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewgetloglevel
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: coreviewhomedirectory
+      description: coreviewhomedirectory
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewhomedirectory
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-name-hosts-accessed-through
+      description: Gets the name of the hosts accessed through/by ZAP
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewhosts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-http-message-given-id
+      description: Gets the HTTP message with the given ID. Returns the ID, request/response headers and bodies, cookies,
+        note, type, RTT, and timestamp.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewmessage
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-http-messages-sent-zap
+      description: Gets the HTTP messages sent by ZAP, request and response, optionally filtered by URL and paginated with
+        'start' position and 'count' of messages
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewmessages
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-http-messages-given-ids
+      description: Gets the HTTP messages with the given IDs.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewmessagesbyid
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-mode
+      description: Gets the mode
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewmode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoint-same-name-6
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewnumberofalerts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-number-messages-optionally-filtering
+      description: Gets the number of messages, optionally filtering by URL
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewnumberofmessages
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-path-file-alert-overrides
+      description: Gets the path to the file with alert overrides.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionalertoverridesfilepath
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-22
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptiondefaultuseragent
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-23
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptiondnsttlsuccessfulqueries
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-24
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionhttpstate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-25
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionhttpstateenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-maximum-number-alert-instances
+      description: Gets the maximum number of alert instances to include in a report.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionmaximumalertinstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-whether-not-related-alerts
+      description: Gets whether or not related alerts will be merged in any reports generated.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionmergerelatedalerts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-26
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxychainname
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-27
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxychainpassword
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-28
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxychainport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-29
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxychainprompt
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-30
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxychainrealm
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-view-proxychainexcludeddomains-instead
+      description: Use view proxyChainExcludedDomains instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxychainskipname
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-31
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxychainusername
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-view-proxychainexcludeddomains-instead-2
+      description: Use view proxyChainExcludedDomains instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxyexcludeddomains
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-view-proxychainexcludeddomains-instead-3
+      description: Use view proxyChainExcludedDomains instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionproxyexcludeddomainsenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: option-no-longer-effective-use-3
+      description: Option no longer in effective use.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionsinglecookierequestheader
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-32
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptiontimeoutinsecs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-33
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionuseproxychain
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-34
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionuseproxychainauth
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-35
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewoptionusesocksproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-36
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewproxychainexcludeddomains
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-location-current-session-file
+      description: Gets the location of the current session file
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewsessionlocation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-sites-accessed-through-zap
+      description: Gets the sites accessed through/by ZAP (scheme and domain)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewsites
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-urls-accessed-through-zap
+      description: Gets the URLs accessed through/by ZAP, optionally filtering by (base) URL.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewurls
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-zap-version
+      description: Gets ZAP version
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewversion
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-path-zap-s-home-directory
+      description: Gets the path to ZAP's home directory.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreviewzaphomepath
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: download-file-transfer-directory
+      description: Download a file from the transfer directory
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreotherfiledownload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: upload-file-transfer-directory-only
+      description: Upload a file to the transfer directory. Only POST requests accepted with encodings of "multipart/form-data"
+        or "application/x-www-form-urlencoded".
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreotherfileupload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-generate-api-endpoint-reports
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreotherhtmlreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-generate-api-endpoint-reports-2
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreotherjsonreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-generate-api-endpoint-reports-3
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreothermdreport
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-exim-add
+      description: Use the API endpoints in the 'exim' add-on instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreothermessagehar
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-exim-add-2
+      description: Use the API endpoints in the 'exim' add-on instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreothermessageshar
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-exim-add-3
+      description: Use the API endpoints in the 'exim' add-on instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreothermessagesharbyid
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-37
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreotherproxypac
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-38
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreotherrootcert
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-exim-add-4
+      description: Use the API endpoints in the 'exim' add-on instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreothersendharrequest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-39
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreothersetproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-generate-api-endpoint-reports-4
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-core.coreotherxmlreport
+      outputParameters:
+      - type: object
+        mapping: $.

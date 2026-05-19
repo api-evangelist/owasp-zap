@@ -1,0 +1,296 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — authentication
+  description: 'ZAP API — authentication. 8 operations. Lead operation: authentication. Self-contained Naftiko capability
+    covering one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - authentication
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-authentication
+    baseUri: http://zap
+    description: ZAP API — authentication business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-authentication-action-setAuthenticationMethod
+      path: /JSON/authentication/action/setAuthenticationMethod/
+      operations:
+      - name: authenticationactionsetauthenticationmethod
+        method: GET
+        description: Sets the authentication method for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authentication-action-setLoggedInIndicator
+      path: /JSON/authentication/action/setLoggedInIndicator/
+      operations:
+      - name: authenticationactionsetloggedinindicator
+        method: GET
+        description: Sets the logged in indicator for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authentication-action-setLoggedOutIndicator
+      path: /JSON/authentication/action/setLoggedOutIndicator/
+      operations:
+      - name: authenticationactionsetloggedoutindicator
+        method: GET
+        description: Sets the logged out indicator for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authentication-view-getAuthenticationMethod
+      path: /JSON/authentication/view/getAuthenticationMethod/
+      operations:
+      - name: authenticationviewgetauthenticationmethod
+        method: GET
+        description: Gets the name of the authentication method for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authentication-view-getAuthenticationMethodConfigParams
+      path: /JSON/authentication/view/getAuthenticationMethodConfigParams/
+      operations:
+      - name: authenticationviewgetauthenticationmethodconfigparams
+        method: GET
+        description: Gets the configuration parameters for the authentication method with the given name.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authentication-view-getLoggedInIndicator
+      path: /JSON/authentication/view/getLoggedInIndicator/
+      operations:
+      - name: authenticationviewgetloggedinindicator
+        method: GET
+        description: Gets the logged in indicator for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authentication-view-getLoggedOutIndicator
+      path: /JSON/authentication/view/getLoggedOutIndicator/
+      operations:
+      - name: authenticationviewgetloggedoutindicator
+        method: GET
+        description: Gets the logged out indicator for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-authentication-view-getSupportedAuthenticationMethods
+      path: /JSON/authentication/view/getSupportedAuthenticationMethods/
+      operations:
+      - name: authenticationviewgetsupportedauthenticationmethods
+        method: GET
+        description: Gets the name of the authentication methods.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-authentication-rest
+    port: 8080
+    description: REST adapter for ZAP API — authentication. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/json/authentication/action/setauthenticationmethod
+      name: json-authentication-action-setauthenticationmethod
+      description: REST surface for JSON-authentication-action-setAuthenticationMethod.
+      operations:
+      - method: GET
+        name: authenticationactionsetauthenticationmethod
+        description: Sets the authentication method for the context with the given ID.
+        call: owasp-zap-authentication.authenticationactionsetauthenticationmethod
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authentication/action/setloggedinindicator
+      name: json-authentication-action-setloggedinindicator
+      description: REST surface for JSON-authentication-action-setLoggedInIndicator.
+      operations:
+      - method: GET
+        name: authenticationactionsetloggedinindicator
+        description: Sets the logged in indicator for the context with the given ID.
+        call: owasp-zap-authentication.authenticationactionsetloggedinindicator
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authentication/action/setloggedoutindicator
+      name: json-authentication-action-setloggedoutindicator
+      description: REST surface for JSON-authentication-action-setLoggedOutIndicator.
+      operations:
+      - method: GET
+        name: authenticationactionsetloggedoutindicator
+        description: Sets the logged out indicator for the context with the given ID.
+        call: owasp-zap-authentication.authenticationactionsetloggedoutindicator
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authentication/view/getauthenticationmethod
+      name: json-authentication-view-getauthenticationmethod
+      description: REST surface for JSON-authentication-view-getAuthenticationMethod.
+      operations:
+      - method: GET
+        name: authenticationviewgetauthenticationmethod
+        description: Gets the name of the authentication method for the context with the given ID.
+        call: owasp-zap-authentication.authenticationviewgetauthenticationmethod
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authentication/view/getauthenticationmethodconfigparams
+      name: json-authentication-view-getauthenticationmethodconfigparams
+      description: REST surface for JSON-authentication-view-getAuthenticationMethodConfigParams.
+      operations:
+      - method: GET
+        name: authenticationviewgetauthenticationmethodconfigparams
+        description: Gets the configuration parameters for the authentication method with the given name.
+        call: owasp-zap-authentication.authenticationviewgetauthenticationmethodconfigparams
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authentication/view/getloggedinindicator
+      name: json-authentication-view-getloggedinindicator
+      description: REST surface for JSON-authentication-view-getLoggedInIndicator.
+      operations:
+      - method: GET
+        name: authenticationviewgetloggedinindicator
+        description: Gets the logged in indicator for the context with the given ID.
+        call: owasp-zap-authentication.authenticationviewgetloggedinindicator
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authentication/view/getloggedoutindicator
+      name: json-authentication-view-getloggedoutindicator
+      description: REST surface for JSON-authentication-view-getLoggedOutIndicator.
+      operations:
+      - method: GET
+        name: authenticationviewgetloggedoutindicator
+        description: Gets the logged out indicator for the context with the given ID.
+        call: owasp-zap-authentication.authenticationviewgetloggedoutindicator
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/authentication/view/getsupportedauthenticationmethods
+      name: json-authentication-view-getsupportedauthenticationmethods
+      description: REST surface for JSON-authentication-view-getSupportedAuthenticationMethods.
+      operations:
+      - method: GET
+        name: authenticationviewgetsupportedauthenticationmethods
+        description: Gets the name of the authentication methods.
+        call: owasp-zap-authentication.authenticationviewgetsupportedauthenticationmethods
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-authentication-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — authentication. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: sets-authentication-method-context-given
+      description: Sets the authentication method for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationactionsetauthenticationmethod
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-logged-indicator-context-given
+      description: Sets the logged in indicator for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationactionsetloggedinindicator
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-logged-out-indicator-context
+      description: Sets the logged out indicator for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationactionsetloggedoutindicator
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-name-authentication-method-context
+      description: Gets the name of the authentication method for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationviewgetauthenticationmethod
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configuration-parameters-authentication-method
+      description: Gets the configuration parameters for the authentication method with the given name.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationviewgetauthenticationmethodconfigparams
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-logged-indicator-context-given
+      description: Gets the logged in indicator for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationviewgetloggedinindicator
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-logged-out-indicator-context
+      description: Gets the logged out indicator for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationviewgetloggedoutindicator
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-name-authentication-methods
+      description: Gets the name of the authentication methods.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-authentication.authenticationviewgetsupportedauthenticationmethods
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,104 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — openapi
+  description: 'ZAP API — openapi. 2 operations. Lead operation: openapi. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - openapi
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-openapi
+    baseUri: http://zap
+    description: ZAP API — openapi business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-openapi-action-importFile
+      path: /JSON/openapi/action/importFile/
+      operations:
+      - name: openapiactionimportfile
+        method: GET
+        description: Imports an OpenAPI definition from a local file.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-openapi-action-importUrl
+      path: /JSON/openapi/action/importUrl/
+      operations:
+      - name: openapiactionimporturl
+        method: GET
+        description: Imports an OpenAPI definition from a URL.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-openapi-rest
+    port: 8080
+    description: REST adapter for ZAP API — openapi. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/json/openapi/action/importfile
+      name: json-openapi-action-importfile
+      description: REST surface for JSON-openapi-action-importFile.
+      operations:
+      - method: GET
+        name: openapiactionimportfile
+        description: Imports an OpenAPI definition from a local file.
+        call: owasp-zap-openapi.openapiactionimportfile
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/openapi/action/importurl
+      name: json-openapi-action-importurl
+      description: REST surface for JSON-openapi-action-importUrl.
+      operations:
+      - method: GET
+        name: openapiactionimporturl
+        description: Imports an OpenAPI definition from a URL.
+        call: owasp-zap-openapi.openapiactionimporturl
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-openapi-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — openapi. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: imports-openapi-definition-local-file
+      description: Imports an OpenAPI definition from a local file.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-openapi.openapiactionimportfile
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: imports-openapi-definition-url
+      description: Imports an OpenAPI definition from a URL.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-openapi.openapiactionimporturl
+      outputParameters:
+      - type: object
+        mapping: $.

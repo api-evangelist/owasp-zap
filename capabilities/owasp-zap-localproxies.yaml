@@ -1,0 +1,136 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — localProxies
+  description: 'ZAP API — localProxies. 3 operations. Lead operation: localProxies. Self-contained Naftiko capability covering
+    one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - localProxies
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-localproxies
+    baseUri: http://zap
+    description: ZAP API — localProxies business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-localProxies-action-addAdditionalProxy
+      path: /JSON/localProxies/action/addAdditionalProxy/
+      operations:
+      - name: localproxiesactionaddadditionalproxy
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-localProxies-action-removeAdditionalProxy
+      path: /JSON/localProxies/action/removeAdditionalProxy/
+      operations:
+      - name: localproxiesactionremoveadditionalproxy
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-localProxies-view-additionalProxies
+      path: /JSON/localProxies/view/additionalProxies/
+      operations:
+      - name: localproxiesviewadditionalproxies
+        method: GET
+        description: Use the API endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-localproxies-rest
+    port: 8080
+    description: REST adapter for ZAP API — localProxies. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/json/localproxies/action/addadditionalproxy
+      name: json-localproxies-action-addadditionalproxy
+      description: REST surface for JSON-localProxies-action-addAdditionalProxy.
+      operations:
+      - method: GET
+        name: localproxiesactionaddadditionalproxy
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-localproxies.localproxiesactionaddadditionalproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/localproxies/action/removeadditionalproxy
+      name: json-localproxies-action-removeadditionalproxy
+      description: REST surface for JSON-localProxies-action-removeAdditionalProxy.
+      operations:
+      - method: GET
+        name: localproxiesactionremoveadditionalproxy
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-localproxies.localproxiesactionremoveadditionalproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/localproxies/view/additionalproxies
+      name: json-localproxies-view-additionalproxies
+      description: REST surface for JSON-localProxies-view-additionalProxies.
+      operations:
+      - method: GET
+        name: localproxiesviewadditionalproxies
+        description: Use the API endpoints in the 'network' component instead.
+        call: owasp-zap-localproxies.localproxiesviewadditionalproxies
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-localproxies-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — localProxies. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: use-api-endpoints-network-component
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-localproxies.localproxiesactionaddadditionalproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-2
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-localproxies.localproxiesactionremoveadditionalproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-api-endpoints-network-component-3
+      description: Use the API endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-localproxies.localproxiesviewadditionalproxies
+      outputParameters:
+      - type: object
+        mapping: $.

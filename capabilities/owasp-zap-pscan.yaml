@@ -1,0 +1,583 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — pscan
+  description: 'ZAP API — pscan. 17 operations. Lead operation: pscan. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - pscan
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-pscan
+    baseUri: http://zap
+    description: ZAP API — pscan business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-pscan-action-clearQueue
+      path: /JSON/pscan/action/clearQueue/
+      operations:
+      - name: pscanactionclearqueue
+        method: GET
+        description: Clears the passive scan queue.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-disableAllScanners
+      path: /JSON/pscan/action/disableAllScanners/
+      operations:
+      - name: pscanactiondisableallscanners
+        method: GET
+        description: Disables all passive scan rules.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-disableAllTags
+      path: /JSON/pscan/action/disableAllTags/
+      operations:
+      - name: pscanactiondisablealltags
+        method: GET
+        description: Disables all passive scan tags.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-disableScanners
+      path: /JSON/pscan/action/disableScanners/
+      operations:
+      - name: pscanactiondisablescanners
+        method: GET
+        description: Disables passive scan rules.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-enableAllScanners
+      path: /JSON/pscan/action/enableAllScanners/
+      operations:
+      - name: pscanactionenableallscanners
+        method: GET
+        description: Enables all passive scan rules.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-enableAllTags
+      path: /JSON/pscan/action/enableAllTags/
+      operations:
+      - name: pscanactionenablealltags
+        method: GET
+        description: Enables all passive scan tags.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-enableScanners
+      path: /JSON/pscan/action/enableScanners/
+      operations:
+      - name: pscanactionenablescanners
+        method: GET
+        description: Enables passive scan rules.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-setEnabled
+      path: /JSON/pscan/action/setEnabled/
+      operations:
+      - name: pscanactionsetenabled
+        method: GET
+        description: 'Sets whether or not the passive scanning is enabled (Note: the enabled state is not persisted).'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-setMaxAlertsPerRule
+      path: /JSON/pscan/action/setMaxAlertsPerRule/
+      operations:
+      - name: pscanactionsetmaxalertsperrule
+        method: GET
+        description: Sets the maximum number of alerts a passive scan rule can raise.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-setScanOnlyInScope
+      path: /JSON/pscan/action/setScanOnlyInScope/
+      operations:
+      - name: pscanactionsetscanonlyinscope
+        method: GET
+        description: Sets whether or not the passive scan should be performed only on messages that are in scope.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-action-setScannerAlertThreshold
+      path: /JSON/pscan/action/setScannerAlertThreshold/
+      operations:
+      - name: pscanactionsetscanneralertthreshold
+        method: GET
+        description: Sets the alert threshold of a passive scan rule.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-view-currentRule
+      path: /JSON/pscan/view/currentRule/
+      operations:
+      - name: pscanviewcurrentrule
+        method: GET
+        description: Use the currentTasks view instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-view-currentTasks
+      path: /JSON/pscan/view/currentTasks/
+      operations:
+      - name: pscanviewcurrenttasks
+        method: GET
+        description: Shows information about the passive scan tasks currently being run (if any).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-view-maxAlertsPerRule
+      path: /JSON/pscan/view/maxAlertsPerRule/
+      operations:
+      - name: pscanviewmaxalertsperrule
+        method: GET
+        description: Gets the maximum number of alerts a passive scan rule should raise.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-view-recordsToScan
+      path: /JSON/pscan/view/recordsToScan/
+      operations:
+      - name: pscanviewrecordstoscan
+        method: GET
+        description: The number of records the passive scanner still has to scan.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-view-scanOnlyInScope
+      path: /JSON/pscan/view/scanOnlyInScope/
+      operations:
+      - name: pscanviewscanonlyinscope
+        method: GET
+        description: Tells whether or not the passive scan should be performed only on messages that are in scope.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-pscan-view-scanners
+      path: /JSON/pscan/view/scanners/
+      operations:
+      - name: pscanviewscanners
+        method: GET
+        description: Lists all passive scan rules with their ID, name, enabled state, and alert threshold.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-pscan-rest
+    port: 8080
+    description: REST adapter for ZAP API — pscan. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/json/pscan/action/clearqueue
+      name: json-pscan-action-clearqueue
+      description: REST surface for JSON-pscan-action-clearQueue.
+      operations:
+      - method: GET
+        name: pscanactionclearqueue
+        description: Clears the passive scan queue.
+        call: owasp-zap-pscan.pscanactionclearqueue
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/disableallscanners
+      name: json-pscan-action-disableallscanners
+      description: REST surface for JSON-pscan-action-disableAllScanners.
+      operations:
+      - method: GET
+        name: pscanactiondisableallscanners
+        description: Disables all passive scan rules.
+        call: owasp-zap-pscan.pscanactiondisableallscanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/disablealltags
+      name: json-pscan-action-disablealltags
+      description: REST surface for JSON-pscan-action-disableAllTags.
+      operations:
+      - method: GET
+        name: pscanactiondisablealltags
+        description: Disables all passive scan tags.
+        call: owasp-zap-pscan.pscanactiondisablealltags
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/disablescanners
+      name: json-pscan-action-disablescanners
+      description: REST surface for JSON-pscan-action-disableScanners.
+      operations:
+      - method: GET
+        name: pscanactiondisablescanners
+        description: Disables passive scan rules.
+        call: owasp-zap-pscan.pscanactiondisablescanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/enableallscanners
+      name: json-pscan-action-enableallscanners
+      description: REST surface for JSON-pscan-action-enableAllScanners.
+      operations:
+      - method: GET
+        name: pscanactionenableallscanners
+        description: Enables all passive scan rules.
+        call: owasp-zap-pscan.pscanactionenableallscanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/enablealltags
+      name: json-pscan-action-enablealltags
+      description: REST surface for JSON-pscan-action-enableAllTags.
+      operations:
+      - method: GET
+        name: pscanactionenablealltags
+        description: Enables all passive scan tags.
+        call: owasp-zap-pscan.pscanactionenablealltags
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/enablescanners
+      name: json-pscan-action-enablescanners
+      description: REST surface for JSON-pscan-action-enableScanners.
+      operations:
+      - method: GET
+        name: pscanactionenablescanners
+        description: Enables passive scan rules.
+        call: owasp-zap-pscan.pscanactionenablescanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/setenabled
+      name: json-pscan-action-setenabled
+      description: REST surface for JSON-pscan-action-setEnabled.
+      operations:
+      - method: GET
+        name: pscanactionsetenabled
+        description: 'Sets whether or not the passive scanning is enabled (Note: the enabled state is not persisted).'
+        call: owasp-zap-pscan.pscanactionsetenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/setmaxalertsperrule
+      name: json-pscan-action-setmaxalertsperrule
+      description: REST surface for JSON-pscan-action-setMaxAlertsPerRule.
+      operations:
+      - method: GET
+        name: pscanactionsetmaxalertsperrule
+        description: Sets the maximum number of alerts a passive scan rule can raise.
+        call: owasp-zap-pscan.pscanactionsetmaxalertsperrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/setscanonlyinscope
+      name: json-pscan-action-setscanonlyinscope
+      description: REST surface for JSON-pscan-action-setScanOnlyInScope.
+      operations:
+      - method: GET
+        name: pscanactionsetscanonlyinscope
+        description: Sets whether or not the passive scan should be performed only on messages that are in scope.
+        call: owasp-zap-pscan.pscanactionsetscanonlyinscope
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/action/setscanneralertthreshold
+      name: json-pscan-action-setscanneralertthreshold
+      description: REST surface for JSON-pscan-action-setScannerAlertThreshold.
+      operations:
+      - method: GET
+        name: pscanactionsetscanneralertthreshold
+        description: Sets the alert threshold of a passive scan rule.
+        call: owasp-zap-pscan.pscanactionsetscanneralertthreshold
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/view/currentrule
+      name: json-pscan-view-currentrule
+      description: REST surface for JSON-pscan-view-currentRule.
+      operations:
+      - method: GET
+        name: pscanviewcurrentrule
+        description: Use the currentTasks view instead.
+        call: owasp-zap-pscan.pscanviewcurrentrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/view/currenttasks
+      name: json-pscan-view-currenttasks
+      description: REST surface for JSON-pscan-view-currentTasks.
+      operations:
+      - method: GET
+        name: pscanviewcurrenttasks
+        description: Shows information about the passive scan tasks currently being run (if any).
+        call: owasp-zap-pscan.pscanviewcurrenttasks
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/view/maxalertsperrule
+      name: json-pscan-view-maxalertsperrule
+      description: REST surface for JSON-pscan-view-maxAlertsPerRule.
+      operations:
+      - method: GET
+        name: pscanviewmaxalertsperrule
+        description: Gets the maximum number of alerts a passive scan rule should raise.
+        call: owasp-zap-pscan.pscanviewmaxalertsperrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/view/recordstoscan
+      name: json-pscan-view-recordstoscan
+      description: REST surface for JSON-pscan-view-recordsToScan.
+      operations:
+      - method: GET
+        name: pscanviewrecordstoscan
+        description: The number of records the passive scanner still has to scan.
+        call: owasp-zap-pscan.pscanviewrecordstoscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/view/scanonlyinscope
+      name: json-pscan-view-scanonlyinscope
+      description: REST surface for JSON-pscan-view-scanOnlyInScope.
+      operations:
+      - method: GET
+        name: pscanviewscanonlyinscope
+        description: Tells whether or not the passive scan should be performed only on messages that are in scope.
+        call: owasp-zap-pscan.pscanviewscanonlyinscope
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/pscan/view/scanners
+      name: json-pscan-view-scanners
+      description: REST surface for JSON-pscan-view-scanners.
+      operations:
+      - method: GET
+        name: pscanviewscanners
+        description: Lists all passive scan rules with their ID, name, enabled state, and alert threshold.
+        call: owasp-zap-pscan.pscanviewscanners
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-pscan-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — pscan. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: clears-passive-scan-queue
+      description: Clears the passive scan queue.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionclearqueue
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disables-all-passive-scan-rules
+      description: Disables all passive scan rules.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactiondisableallscanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disables-all-passive-scan-tags
+      description: Disables all passive scan tags.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactiondisablealltags
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disables-passive-scan-rules
+      description: Disables passive scan rules.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactiondisablescanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-all-passive-scan-rules
+      description: Enables all passive scan rules.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionenableallscanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-all-passive-scan-tags
+      description: Enables all passive scan tags.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionenablealltags
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-passive-scan-rules
+      description: Enables passive scan rules.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionenablescanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-passive-scanning
+      description: 'Sets whether or not the passive scanning is enabled (Note: the enabled state is not persisted).'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionsetenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-maximum-number-alerts-passive
+      description: Sets the maximum number of alerts a passive scan rule can raise.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionsetmaxalertsperrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-passive-scan
+      description: Sets whether or not the passive scan should be performed only on messages that are in scope.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionsetscanonlyinscope
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-alert-threshold-passive-scan
+      description: Sets the alert threshold of a passive scan rule.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanactionsetscanneralertthreshold
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-currenttasks-view-instead
+      description: Use the currentTasks view instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanviewcurrentrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: shows-information-about-passive-scan
+      description: Shows information about the passive scan tasks currently being run (if any).
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanviewcurrenttasks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-maximum-number-alerts-passive
+      description: Gets the maximum number of alerts a passive scan rule should raise.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanviewmaxalertsperrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: number-records-passive-scanner-still
+      description: The number of records the passive scanner still has to scan.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanviewrecordstoscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-passive-scan
+      description: Tells whether or not the passive scan should be performed only on messages that are in scope.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanviewscanonlyinscope
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-all-passive-scan-rules
+      description: Lists all passive scan rules with their ID, name, enabled state, and alert threshold.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-pscan.pscanviewscanners
+      outputParameters:
+      - type: object
+        mapping: $.

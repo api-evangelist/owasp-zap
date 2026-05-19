@@ -1,0 +1,391 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — oast
+  description: 'ZAP API — oast. 11 operations. Lead operation: oast. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - oast
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-oast
+    baseUri: http://zap
+    description: ZAP API — oast business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-oast-action-setActiveScanService
+      path: /JSON/oast/action/setActiveScanService/
+      operations:
+      - name: oastactionsetactivescanservice
+        method: GET
+        description: Sets the service used with the active scanner.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-action-setBoastOptions
+      path: /JSON/oast/action/setBoastOptions/
+      operations:
+      - name: oastactionsetboastoptions
+        method: GET
+        description: Sets the BOAST options.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-action-setCallbackOptions
+      path: /JSON/oast/action/setCallbackOptions/
+      operations:
+      - name: oastactionsetcallbackoptions
+        method: GET
+        description: Sets the Callback options.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-action-setDaysToKeepRecords
+      path: /JSON/oast/action/setDaysToKeepRecords/
+      operations:
+      - name: oastactionsetdaystokeeprecords
+        method: GET
+        description: Sets the number of days the OAST records will be kept for.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-action-setInteractshOptions
+      path: /JSON/oast/action/setInteractshOptions/
+      operations:
+      - name: oastactionsetinteractshoptions
+        method: GET
+        description: Sets the Interactsh options.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-view-getActiveScanService
+      path: /JSON/oast/view/getActiveScanService/
+      operations:
+      - name: oastviewgetactivescanservice
+        method: GET
+        description: Gets the service used with the active scanner, if any.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-view-getBoastOptions
+      path: /JSON/oast/view/getBoastOptions/
+      operations:
+      - name: oastviewgetboastoptions
+        method: GET
+        description: Gets the BOAST options.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-view-getCallbackOptions
+      path: /JSON/oast/view/getCallbackOptions/
+      operations:
+      - name: oastviewgetcallbackoptions
+        method: GET
+        description: Gets the Callback options.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-view-getDaysToKeepRecords
+      path: /JSON/oast/view/getDaysToKeepRecords/
+      operations:
+      - name: oastviewgetdaystokeeprecords
+        method: GET
+        description: Gets the number of days the OAST records will be kept for.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-view-getInteractshOptions
+      path: /JSON/oast/view/getInteractshOptions/
+      operations:
+      - name: oastviewgetinteractshoptions
+        method: GET
+        description: Gets the Interactsh options.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-oast-view-getServices
+      path: /JSON/oast/view/getServices/
+      operations:
+      - name: oastviewgetservices
+        method: GET
+        description: Gets all of the services.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-oast-rest
+    port: 8080
+    description: REST adapter for ZAP API — oast. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/json/oast/action/setactivescanservice
+      name: json-oast-action-setactivescanservice
+      description: REST surface for JSON-oast-action-setActiveScanService.
+      operations:
+      - method: GET
+        name: oastactionsetactivescanservice
+        description: Sets the service used with the active scanner.
+        call: owasp-zap-oast.oastactionsetactivescanservice
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/action/setboastoptions
+      name: json-oast-action-setboastoptions
+      description: REST surface for JSON-oast-action-setBoastOptions.
+      operations:
+      - method: GET
+        name: oastactionsetboastoptions
+        description: Sets the BOAST options.
+        call: owasp-zap-oast.oastactionsetboastoptions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/action/setcallbackoptions
+      name: json-oast-action-setcallbackoptions
+      description: REST surface for JSON-oast-action-setCallbackOptions.
+      operations:
+      - method: GET
+        name: oastactionsetcallbackoptions
+        description: Sets the Callback options.
+        call: owasp-zap-oast.oastactionsetcallbackoptions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/action/setdaystokeeprecords
+      name: json-oast-action-setdaystokeeprecords
+      description: REST surface for JSON-oast-action-setDaysToKeepRecords.
+      operations:
+      - method: GET
+        name: oastactionsetdaystokeeprecords
+        description: Sets the number of days the OAST records will be kept for.
+        call: owasp-zap-oast.oastactionsetdaystokeeprecords
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/action/setinteractshoptions
+      name: json-oast-action-setinteractshoptions
+      description: REST surface for JSON-oast-action-setInteractshOptions.
+      operations:
+      - method: GET
+        name: oastactionsetinteractshoptions
+        description: Sets the Interactsh options.
+        call: owasp-zap-oast.oastactionsetinteractshoptions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/view/getactivescanservice
+      name: json-oast-view-getactivescanservice
+      description: REST surface for JSON-oast-view-getActiveScanService.
+      operations:
+      - method: GET
+        name: oastviewgetactivescanservice
+        description: Gets the service used with the active scanner, if any.
+        call: owasp-zap-oast.oastviewgetactivescanservice
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/view/getboastoptions
+      name: json-oast-view-getboastoptions
+      description: REST surface for JSON-oast-view-getBoastOptions.
+      operations:
+      - method: GET
+        name: oastviewgetboastoptions
+        description: Gets the BOAST options.
+        call: owasp-zap-oast.oastviewgetboastoptions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/view/getcallbackoptions
+      name: json-oast-view-getcallbackoptions
+      description: REST surface for JSON-oast-view-getCallbackOptions.
+      operations:
+      - method: GET
+        name: oastviewgetcallbackoptions
+        description: Gets the Callback options.
+        call: owasp-zap-oast.oastviewgetcallbackoptions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/view/getdaystokeeprecords
+      name: json-oast-view-getdaystokeeprecords
+      description: REST surface for JSON-oast-view-getDaysToKeepRecords.
+      operations:
+      - method: GET
+        name: oastviewgetdaystokeeprecords
+        description: Gets the number of days the OAST records will be kept for.
+        call: owasp-zap-oast.oastviewgetdaystokeeprecords
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/view/getinteractshoptions
+      name: json-oast-view-getinteractshoptions
+      description: REST surface for JSON-oast-view-getInteractshOptions.
+      operations:
+      - method: GET
+        name: oastviewgetinteractshoptions
+        description: Gets the Interactsh options.
+        call: owasp-zap-oast.oastviewgetinteractshoptions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/oast/view/getservices
+      name: json-oast-view-getservices
+      description: REST surface for JSON-oast-view-getServices.
+      operations:
+      - method: GET
+        name: oastviewgetservices
+        description: Gets all of the services.
+        call: owasp-zap-oast.oastviewgetservices
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-oast-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — oast. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: sets-service-used-active-scanner
+      description: Sets the service used with the active scanner.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastactionsetactivescanservice
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-boast-options
+      description: Sets the BOAST options.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastactionsetboastoptions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-callback-options
+      description: Sets the Callback options.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastactionsetcallbackoptions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-number-days-oast-records
+      description: Sets the number of days the OAST records will be kept for.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastactionsetdaystokeeprecords
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-interactsh-options
+      description: Sets the Interactsh options.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastactionsetinteractshoptions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-service-used-active-scanner
+      description: Gets the service used with the active scanner, if any.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastviewgetactivescanservice
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-boast-options
+      description: Gets the BOAST options.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastviewgetboastoptions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-callback-options
+      description: Gets the Callback options.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastviewgetcallbackoptions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-number-days-oast-records
+      description: Gets the number of days the OAST records will be kept for.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastviewgetdaystokeeprecords
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-interactsh-options
+      description: Gets the Interactsh options.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastviewgetinteractshoptions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-all-services
+      description: Gets all of the services.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-oast.oastviewgetservices
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,1582 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — network
+  description: 'ZAP API — network. 48 operations. Lead operation: network. Self-contained Naftiko capability covering one
+    Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - network
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-network
+    baseUri: http://zap
+    description: ZAP API — network business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-network-action-addAlias
+      path: /JSON/network/action/addAlias/
+      operations:
+      - name: networkactionaddalias
+        method: GET
+        description: Adds an alias for the local servers/proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-addHttpProxyExclusion
+      path: /JSON/network/action/addHttpProxyExclusion/
+      operations:
+      - name: networkactionaddhttpproxyexclusion
+        method: GET
+        description: Adds a host to be excluded from the HTTP proxy.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-addLocalServer
+      path: /JSON/network/action/addLocalServer/
+      operations:
+      - name: networkactionaddlocalserver
+        method: GET
+        description: Adds a local server/proxy.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-addPassThrough
+      path: /JSON/network/action/addPassThrough/
+      operations:
+      - name: networkactionaddpassthrough
+        method: GET
+        description: Adds an authority to pass-through the local proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-addPkcs12ClientCertificate
+      path: /JSON/network/action/addPkcs12ClientCertificate/
+      operations:
+      - name: networkactionaddpkcs12clientcertificate
+        method: GET
+        description: Adds a client certificate contained in a PKCS#12 file, the certificate is automatically set as active
+          and used.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-addRateLimitRule
+      path: /JSON/network/action/addRateLimitRule/
+      operations:
+      - name: networkactionaddratelimitrule
+        method: GET
+        description: Adds a rate limit rule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-generateRootCaCert
+      path: /JSON/network/action/generateRootCaCert/
+      operations:
+      - name: networkactiongeneraterootcacert
+        method: GET
+        description: Generates a new Root CA certificate, used to issue server certificates.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-importRootCaCert
+      path: /JSON/network/action/importRootCaCert/
+      operations:
+      - name: networkactionimportrootcacert
+        method: GET
+        description: Imports a Root CA certificate to be used to issue server certificates.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-removeAlias
+      path: /JSON/network/action/removeAlias/
+      operations:
+      - name: networkactionremovealias
+        method: GET
+        description: Removes an alias.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-removeHttpProxyExclusion
+      path: /JSON/network/action/removeHttpProxyExclusion/
+      operations:
+      - name: networkactionremovehttpproxyexclusion
+        method: GET
+        description: Removes an HTTP proxy exclusion.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-removeLocalServer
+      path: /JSON/network/action/removeLocalServer/
+      operations:
+      - name: networkactionremovelocalserver
+        method: GET
+        description: Removes a local server/proxy.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-removePassThrough
+      path: /JSON/network/action/removePassThrough/
+      operations:
+      - name: networkactionremovepassthrough
+        method: GET
+        description: Removes a pass-through.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-removeRateLimitRule
+      path: /JSON/network/action/removeRateLimitRule/
+      operations:
+      - name: networkactionremoveratelimitrule
+        method: GET
+        description: Remove a rate limit rule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setAliasEnabled
+      path: /JSON/network/action/setAliasEnabled/
+      operations:
+      - name: networkactionsetaliasenabled
+        method: GET
+        description: Sets whether or not an alias is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setConnectionTimeout
+      path: /JSON/network/action/setConnectionTimeout/
+      operations:
+      - name: networkactionsetconnectiontimeout
+        method: GET
+        description: Sets the timeout, for reads and connects.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setDefaultUserAgent
+      path: /JSON/network/action/setDefaultUserAgent/
+      operations:
+      - name: networkactionsetdefaultuseragent
+        method: GET
+        description: Sets the default user-agent.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setDnsTtlSuccessfulQueries
+      path: /JSON/network/action/setDnsTtlSuccessfulQueries/
+      operations:
+      - name: networkactionsetdnsttlsuccessfulqueries
+        method: GET
+        description: Sets the TTL of successful DNS queries.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setHttpProxy
+      path: /JSON/network/action/setHttpProxy/
+      operations:
+      - name: networkactionsethttpproxy
+        method: GET
+        description: Sets the HTTP proxy configuration.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setHttpProxyAuthEnabled
+      path: /JSON/network/action/setHttpProxyAuthEnabled/
+      operations:
+      - name: networkactionsethttpproxyauthenabled
+        method: GET
+        description: Sets whether or not the HTTP proxy authentication is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setHttpProxyEnabled
+      path: /JSON/network/action/setHttpProxyEnabled/
+      operations:
+      - name: networkactionsethttpproxyenabled
+        method: GET
+        description: Sets whether or not the HTTP proxy is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setHttpProxyExclusionEnabled
+      path: /JSON/network/action/setHttpProxyExclusionEnabled/
+      operations:
+      - name: networkactionsethttpproxyexclusionenabled
+        method: GET
+        description: Sets whether or not an HTTP proxy exclusion is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setPassThroughEnabled
+      path: /JSON/network/action/setPassThroughEnabled/
+      operations:
+      - name: networkactionsetpassthroughenabled
+        method: GET
+        description: Sets whether or not a pass-through is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setRateLimitRuleEnabled
+      path: /JSON/network/action/setRateLimitRuleEnabled/
+      operations:
+      - name: networkactionsetratelimitruleenabled
+        method: GET
+        description: Set enabled state for a rate limit rule.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setRootCaCertValidity
+      path: /JSON/network/action/setRootCaCertValidity/
+      operations:
+      - name: networkactionsetrootcacertvalidity
+        method: GET
+        description: Sets the Root CA certificate validity. Used when generating a new Root CA certificate.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setServerCertValidity
+      path: /JSON/network/action/setServerCertValidity/
+      operations:
+      - name: networkactionsetservercertvalidity
+        method: GET
+        description: Sets the server certificate validity. Used when generating server certificates.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setSocksProxy
+      path: /JSON/network/action/setSocksProxy/
+      operations:
+      - name: networkactionsetsocksproxy
+        method: GET
+        description: Sets the SOCKS proxy configuration.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setSocksProxyEnabled
+      path: /JSON/network/action/setSocksProxyEnabled/
+      operations:
+      - name: networkactionsetsocksproxyenabled
+        method: GET
+        description: Sets whether or not the SOCKS proxy is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setUseClientCertificate
+      path: /JSON/network/action/setUseClientCertificate/
+      operations:
+      - name: networkactionsetuseclientcertificate
+        method: GET
+        description: Sets whether or not to use the active client certificate.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-action-setUseGlobalHttpState
+      path: /JSON/network/action/setUseGlobalHttpState/
+      operations:
+      - name: networkactionsetuseglobalhttpstate
+        method: GET
+        description: Sets whether or not to use the global HTTP state.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getAliases
+      path: /JSON/network/view/getAliases/
+      operations:
+      - name: networkviewgetaliases
+        method: GET
+        description: Gets the aliases used to identify the local servers/proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getConnectionTimeout
+      path: /JSON/network/view/getConnectionTimeout/
+      operations:
+      - name: networkviewgetconnectiontimeout
+        method: GET
+        description: Gets the connection timeout, in seconds.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getDefaultUserAgent
+      path: /JSON/network/view/getDefaultUserAgent/
+      operations:
+      - name: networkviewgetdefaultuseragent
+        method: GET
+        description: Gets the default user-agent.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getDnsTtlSuccessfulQueries
+      path: /JSON/network/view/getDnsTtlSuccessfulQueries/
+      operations:
+      - name: networkviewgetdnsttlsuccessfulqueries
+        method: GET
+        description: Gets the TTL (in seconds) of successful DNS queries.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getHttpProxy
+      path: /JSON/network/view/getHttpProxy/
+      operations:
+      - name: networkviewgethttpproxy
+        method: GET
+        description: Gets the HTTP proxy.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getHttpProxyExclusions
+      path: /JSON/network/view/getHttpProxyExclusions/
+      operations:
+      - name: networkviewgethttpproxyexclusions
+        method: GET
+        description: Gets the HTTP proxy exclusions.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getLocalServers
+      path: /JSON/network/view/getLocalServers/
+      operations:
+      - name: networkviewgetlocalservers
+        method: GET
+        description: Gets the local servers/proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getPassThroughs
+      path: /JSON/network/view/getPassThroughs/
+      operations:
+      - name: networkviewgetpassthroughs
+        method: GET
+        description: Gets the authorities that will pass-through the local proxies.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getRateLimitRules
+      path: /JSON/network/view/getRateLimitRules/
+      operations:
+      - name: networkviewgetratelimitrules
+        method: GET
+        description: List of rate limit rules.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getRootCaCertValidity
+      path: /JSON/network/view/getRootCaCertValidity/
+      operations:
+      - name: networkviewgetrootcacertvalidity
+        method: GET
+        description: Gets the Root CA certificate validity, in days. Used when generating a new Root CA certificate.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getServerCertValidity
+      path: /JSON/network/view/getServerCertValidity/
+      operations:
+      - name: networkviewgetservercertvalidity
+        method: GET
+        description: Gets the server certificate validity, in days. Used when generating server certificates.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-getSocksProxy
+      path: /JSON/network/view/getSocksProxy/
+      operations:
+      - name: networkviewgetsocksproxy
+        method: GET
+        description: Gets the SOCKS proxy.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-isHttpProxyAuthEnabled
+      path: /JSON/network/view/isHttpProxyAuthEnabled/
+      operations:
+      - name: networkviewishttpproxyauthenabled
+        method: GET
+        description: Tells whether or not the HTTP proxy authentication is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-isHttpProxyEnabled
+      path: /JSON/network/view/isHttpProxyEnabled/
+      operations:
+      - name: networkviewishttpproxyenabled
+        method: GET
+        description: Tells whether or not the HTTP proxy is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-isSocksProxyEnabled
+      path: /JSON/network/view/isSocksProxyEnabled/
+      operations:
+      - name: networkviewissocksproxyenabled
+        method: GET
+        description: Tells whether or not the SOCKS proxy is enabled.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-network-view-isUseGlobalHttpState
+      path: /JSON/network/view/isUseGlobalHttpState/
+      operations:
+      - name: networkviewisuseglobalhttpstate
+        method: GET
+        description: Tells whether or not to use global HTTP state.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-network-other-proxy.pac
+      path: /OTHER/network/other/proxy.pac/
+      operations:
+      - name: networkotherproxypac
+        method: GET
+        description: Provides a PAC file, proxying through the main proxy.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-network-other-rootCaCert
+      path: /OTHER/network/other/rootCaCert/
+      operations:
+      - name: networkotherrootcacert
+        method: GET
+        description: Gets the Root CA certificate used to issue server certificates. Suitable to import into client applications
+          (e.g. browsers).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-network-other-setProxy
+      path: /OTHER/network/other/setProxy/
+      operations:
+      - name: networkothersetproxy
+        method: GET
+        description: Sets the HTTP proxy configuration.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-network-rest
+    port: 8080
+    description: REST adapter for ZAP API — network. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/json/network/action/addalias
+      name: json-network-action-addalias
+      description: REST surface for JSON-network-action-addAlias.
+      operations:
+      - method: GET
+        name: networkactionaddalias
+        description: Adds an alias for the local servers/proxies.
+        call: owasp-zap-network.networkactionaddalias
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/addhttpproxyexclusion
+      name: json-network-action-addhttpproxyexclusion
+      description: REST surface for JSON-network-action-addHttpProxyExclusion.
+      operations:
+      - method: GET
+        name: networkactionaddhttpproxyexclusion
+        description: Adds a host to be excluded from the HTTP proxy.
+        call: owasp-zap-network.networkactionaddhttpproxyexclusion
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/addlocalserver
+      name: json-network-action-addlocalserver
+      description: REST surface for JSON-network-action-addLocalServer.
+      operations:
+      - method: GET
+        name: networkactionaddlocalserver
+        description: Adds a local server/proxy.
+        call: owasp-zap-network.networkactionaddlocalserver
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/addpassthrough
+      name: json-network-action-addpassthrough
+      description: REST surface for JSON-network-action-addPassThrough.
+      operations:
+      - method: GET
+        name: networkactionaddpassthrough
+        description: Adds an authority to pass-through the local proxies.
+        call: owasp-zap-network.networkactionaddpassthrough
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/addpkcs12clientcertificate
+      name: json-network-action-addpkcs12clientcertificate
+      description: REST surface for JSON-network-action-addPkcs12ClientCertificate.
+      operations:
+      - method: GET
+        name: networkactionaddpkcs12clientcertificate
+        description: Adds a client certificate contained in a PKCS#12 file, the certificate is automatically set as active
+          and used.
+        call: owasp-zap-network.networkactionaddpkcs12clientcertificate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/addratelimitrule
+      name: json-network-action-addratelimitrule
+      description: REST surface for JSON-network-action-addRateLimitRule.
+      operations:
+      - method: GET
+        name: networkactionaddratelimitrule
+        description: Adds a rate limit rule
+        call: owasp-zap-network.networkactionaddratelimitrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/generaterootcacert
+      name: json-network-action-generaterootcacert
+      description: REST surface for JSON-network-action-generateRootCaCert.
+      operations:
+      - method: GET
+        name: networkactiongeneraterootcacert
+        description: Generates a new Root CA certificate, used to issue server certificates.
+        call: owasp-zap-network.networkactiongeneraterootcacert
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/importrootcacert
+      name: json-network-action-importrootcacert
+      description: REST surface for JSON-network-action-importRootCaCert.
+      operations:
+      - method: GET
+        name: networkactionimportrootcacert
+        description: Imports a Root CA certificate to be used to issue server certificates.
+        call: owasp-zap-network.networkactionimportrootcacert
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/removealias
+      name: json-network-action-removealias
+      description: REST surface for JSON-network-action-removeAlias.
+      operations:
+      - method: GET
+        name: networkactionremovealias
+        description: Removes an alias.
+        call: owasp-zap-network.networkactionremovealias
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/removehttpproxyexclusion
+      name: json-network-action-removehttpproxyexclusion
+      description: REST surface for JSON-network-action-removeHttpProxyExclusion.
+      operations:
+      - method: GET
+        name: networkactionremovehttpproxyexclusion
+        description: Removes an HTTP proxy exclusion.
+        call: owasp-zap-network.networkactionremovehttpproxyexclusion
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/removelocalserver
+      name: json-network-action-removelocalserver
+      description: REST surface for JSON-network-action-removeLocalServer.
+      operations:
+      - method: GET
+        name: networkactionremovelocalserver
+        description: Removes a local server/proxy.
+        call: owasp-zap-network.networkactionremovelocalserver
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/removepassthrough
+      name: json-network-action-removepassthrough
+      description: REST surface for JSON-network-action-removePassThrough.
+      operations:
+      - method: GET
+        name: networkactionremovepassthrough
+        description: Removes a pass-through.
+        call: owasp-zap-network.networkactionremovepassthrough
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/removeratelimitrule
+      name: json-network-action-removeratelimitrule
+      description: REST surface for JSON-network-action-removeRateLimitRule.
+      operations:
+      - method: GET
+        name: networkactionremoveratelimitrule
+        description: Remove a rate limit rule
+        call: owasp-zap-network.networkactionremoveratelimitrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setaliasenabled
+      name: json-network-action-setaliasenabled
+      description: REST surface for JSON-network-action-setAliasEnabled.
+      operations:
+      - method: GET
+        name: networkactionsetaliasenabled
+        description: Sets whether or not an alias is enabled.
+        call: owasp-zap-network.networkactionsetaliasenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setconnectiontimeout
+      name: json-network-action-setconnectiontimeout
+      description: REST surface for JSON-network-action-setConnectionTimeout.
+      operations:
+      - method: GET
+        name: networkactionsetconnectiontimeout
+        description: Sets the timeout, for reads and connects.
+        call: owasp-zap-network.networkactionsetconnectiontimeout
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setdefaultuseragent
+      name: json-network-action-setdefaultuseragent
+      description: REST surface for JSON-network-action-setDefaultUserAgent.
+      operations:
+      - method: GET
+        name: networkactionsetdefaultuseragent
+        description: Sets the default user-agent.
+        call: owasp-zap-network.networkactionsetdefaultuseragent
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setdnsttlsuccessfulqueries
+      name: json-network-action-setdnsttlsuccessfulqueries
+      description: REST surface for JSON-network-action-setDnsTtlSuccessfulQueries.
+      operations:
+      - method: GET
+        name: networkactionsetdnsttlsuccessfulqueries
+        description: Sets the TTL of successful DNS queries.
+        call: owasp-zap-network.networkactionsetdnsttlsuccessfulqueries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/sethttpproxy
+      name: json-network-action-sethttpproxy
+      description: REST surface for JSON-network-action-setHttpProxy.
+      operations:
+      - method: GET
+        name: networkactionsethttpproxy
+        description: Sets the HTTP proxy configuration.
+        call: owasp-zap-network.networkactionsethttpproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/sethttpproxyauthenabled
+      name: json-network-action-sethttpproxyauthenabled
+      description: REST surface for JSON-network-action-setHttpProxyAuthEnabled.
+      operations:
+      - method: GET
+        name: networkactionsethttpproxyauthenabled
+        description: Sets whether or not the HTTP proxy authentication is enabled.
+        call: owasp-zap-network.networkactionsethttpproxyauthenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/sethttpproxyenabled
+      name: json-network-action-sethttpproxyenabled
+      description: REST surface for JSON-network-action-setHttpProxyEnabled.
+      operations:
+      - method: GET
+        name: networkactionsethttpproxyenabled
+        description: Sets whether or not the HTTP proxy is enabled.
+        call: owasp-zap-network.networkactionsethttpproxyenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/sethttpproxyexclusionenabled
+      name: json-network-action-sethttpproxyexclusionenabled
+      description: REST surface for JSON-network-action-setHttpProxyExclusionEnabled.
+      operations:
+      - method: GET
+        name: networkactionsethttpproxyexclusionenabled
+        description: Sets whether or not an HTTP proxy exclusion is enabled.
+        call: owasp-zap-network.networkactionsethttpproxyexclusionenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setpassthroughenabled
+      name: json-network-action-setpassthroughenabled
+      description: REST surface for JSON-network-action-setPassThroughEnabled.
+      operations:
+      - method: GET
+        name: networkactionsetpassthroughenabled
+        description: Sets whether or not a pass-through is enabled.
+        call: owasp-zap-network.networkactionsetpassthroughenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setratelimitruleenabled
+      name: json-network-action-setratelimitruleenabled
+      description: REST surface for JSON-network-action-setRateLimitRuleEnabled.
+      operations:
+      - method: GET
+        name: networkactionsetratelimitruleenabled
+        description: Set enabled state for a rate limit rule.
+        call: owasp-zap-network.networkactionsetratelimitruleenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setrootcacertvalidity
+      name: json-network-action-setrootcacertvalidity
+      description: REST surface for JSON-network-action-setRootCaCertValidity.
+      operations:
+      - method: GET
+        name: networkactionsetrootcacertvalidity
+        description: Sets the Root CA certificate validity. Used when generating a new Root CA certificate.
+        call: owasp-zap-network.networkactionsetrootcacertvalidity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setservercertvalidity
+      name: json-network-action-setservercertvalidity
+      description: REST surface for JSON-network-action-setServerCertValidity.
+      operations:
+      - method: GET
+        name: networkactionsetservercertvalidity
+        description: Sets the server certificate validity. Used when generating server certificates.
+        call: owasp-zap-network.networkactionsetservercertvalidity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setsocksproxy
+      name: json-network-action-setsocksproxy
+      description: REST surface for JSON-network-action-setSocksProxy.
+      operations:
+      - method: GET
+        name: networkactionsetsocksproxy
+        description: Sets the SOCKS proxy configuration.
+        call: owasp-zap-network.networkactionsetsocksproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setsocksproxyenabled
+      name: json-network-action-setsocksproxyenabled
+      description: REST surface for JSON-network-action-setSocksProxyEnabled.
+      operations:
+      - method: GET
+        name: networkactionsetsocksproxyenabled
+        description: Sets whether or not the SOCKS proxy is enabled.
+        call: owasp-zap-network.networkactionsetsocksproxyenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setuseclientcertificate
+      name: json-network-action-setuseclientcertificate
+      description: REST surface for JSON-network-action-setUseClientCertificate.
+      operations:
+      - method: GET
+        name: networkactionsetuseclientcertificate
+        description: Sets whether or not to use the active client certificate.
+        call: owasp-zap-network.networkactionsetuseclientcertificate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/action/setuseglobalhttpstate
+      name: json-network-action-setuseglobalhttpstate
+      description: REST surface for JSON-network-action-setUseGlobalHttpState.
+      operations:
+      - method: GET
+        name: networkactionsetuseglobalhttpstate
+        description: Sets whether or not to use the global HTTP state.
+        call: owasp-zap-network.networkactionsetuseglobalhttpstate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getaliases
+      name: json-network-view-getaliases
+      description: REST surface for JSON-network-view-getAliases.
+      operations:
+      - method: GET
+        name: networkviewgetaliases
+        description: Gets the aliases used to identify the local servers/proxies.
+        call: owasp-zap-network.networkviewgetaliases
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getconnectiontimeout
+      name: json-network-view-getconnectiontimeout
+      description: REST surface for JSON-network-view-getConnectionTimeout.
+      operations:
+      - method: GET
+        name: networkviewgetconnectiontimeout
+        description: Gets the connection timeout, in seconds.
+        call: owasp-zap-network.networkviewgetconnectiontimeout
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getdefaultuseragent
+      name: json-network-view-getdefaultuseragent
+      description: REST surface for JSON-network-view-getDefaultUserAgent.
+      operations:
+      - method: GET
+        name: networkviewgetdefaultuseragent
+        description: Gets the default user-agent.
+        call: owasp-zap-network.networkviewgetdefaultuseragent
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getdnsttlsuccessfulqueries
+      name: json-network-view-getdnsttlsuccessfulqueries
+      description: REST surface for JSON-network-view-getDnsTtlSuccessfulQueries.
+      operations:
+      - method: GET
+        name: networkviewgetdnsttlsuccessfulqueries
+        description: Gets the TTL (in seconds) of successful DNS queries.
+        call: owasp-zap-network.networkviewgetdnsttlsuccessfulqueries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/gethttpproxy
+      name: json-network-view-gethttpproxy
+      description: REST surface for JSON-network-view-getHttpProxy.
+      operations:
+      - method: GET
+        name: networkviewgethttpproxy
+        description: Gets the HTTP proxy.
+        call: owasp-zap-network.networkviewgethttpproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/gethttpproxyexclusions
+      name: json-network-view-gethttpproxyexclusions
+      description: REST surface for JSON-network-view-getHttpProxyExclusions.
+      operations:
+      - method: GET
+        name: networkviewgethttpproxyexclusions
+        description: Gets the HTTP proxy exclusions.
+        call: owasp-zap-network.networkviewgethttpproxyexclusions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getlocalservers
+      name: json-network-view-getlocalservers
+      description: REST surface for JSON-network-view-getLocalServers.
+      operations:
+      - method: GET
+        name: networkviewgetlocalservers
+        description: Gets the local servers/proxies.
+        call: owasp-zap-network.networkviewgetlocalservers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getpassthroughs
+      name: json-network-view-getpassthroughs
+      description: REST surface for JSON-network-view-getPassThroughs.
+      operations:
+      - method: GET
+        name: networkviewgetpassthroughs
+        description: Gets the authorities that will pass-through the local proxies.
+        call: owasp-zap-network.networkviewgetpassthroughs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getratelimitrules
+      name: json-network-view-getratelimitrules
+      description: REST surface for JSON-network-view-getRateLimitRules.
+      operations:
+      - method: GET
+        name: networkviewgetratelimitrules
+        description: List of rate limit rules.
+        call: owasp-zap-network.networkviewgetratelimitrules
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getrootcacertvalidity
+      name: json-network-view-getrootcacertvalidity
+      description: REST surface for JSON-network-view-getRootCaCertValidity.
+      operations:
+      - method: GET
+        name: networkviewgetrootcacertvalidity
+        description: Gets the Root CA certificate validity, in days. Used when generating a new Root CA certificate.
+        call: owasp-zap-network.networkviewgetrootcacertvalidity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getservercertvalidity
+      name: json-network-view-getservercertvalidity
+      description: REST surface for JSON-network-view-getServerCertValidity.
+      operations:
+      - method: GET
+        name: networkviewgetservercertvalidity
+        description: Gets the server certificate validity, in days. Used when generating server certificates.
+        call: owasp-zap-network.networkviewgetservercertvalidity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/getsocksproxy
+      name: json-network-view-getsocksproxy
+      description: REST surface for JSON-network-view-getSocksProxy.
+      operations:
+      - method: GET
+        name: networkviewgetsocksproxy
+        description: Gets the SOCKS proxy.
+        call: owasp-zap-network.networkviewgetsocksproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/ishttpproxyauthenabled
+      name: json-network-view-ishttpproxyauthenabled
+      description: REST surface for JSON-network-view-isHttpProxyAuthEnabled.
+      operations:
+      - method: GET
+        name: networkviewishttpproxyauthenabled
+        description: Tells whether or not the HTTP proxy authentication is enabled.
+        call: owasp-zap-network.networkviewishttpproxyauthenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/ishttpproxyenabled
+      name: json-network-view-ishttpproxyenabled
+      description: REST surface for JSON-network-view-isHttpProxyEnabled.
+      operations:
+      - method: GET
+        name: networkviewishttpproxyenabled
+        description: Tells whether or not the HTTP proxy is enabled.
+        call: owasp-zap-network.networkviewishttpproxyenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/issocksproxyenabled
+      name: json-network-view-issocksproxyenabled
+      description: REST surface for JSON-network-view-isSocksProxyEnabled.
+      operations:
+      - method: GET
+        name: networkviewissocksproxyenabled
+        description: Tells whether or not the SOCKS proxy is enabled.
+        call: owasp-zap-network.networkviewissocksproxyenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/network/view/isuseglobalhttpstate
+      name: json-network-view-isuseglobalhttpstate
+      description: REST surface for JSON-network-view-isUseGlobalHttpState.
+      operations:
+      - method: GET
+        name: networkviewisuseglobalhttpstate
+        description: Tells whether or not to use global HTTP state.
+        call: owasp-zap-network.networkviewisuseglobalhttpstate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/network/other/proxy-pac
+      name: other-network-other-proxy-pac
+      description: REST surface for OTHER-network-other-proxy.pac.
+      operations:
+      - method: GET
+        name: networkotherproxypac
+        description: Provides a PAC file, proxying through the main proxy.
+        call: owasp-zap-network.networkotherproxypac
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/network/other/rootcacert
+      name: other-network-other-rootcacert
+      description: REST surface for OTHER-network-other-rootCaCert.
+      operations:
+      - method: GET
+        name: networkotherrootcacert
+        description: Gets the Root CA certificate used to issue server certificates. Suitable to import into client applications
+          (e.g. browsers).
+        call: owasp-zap-network.networkotherrootcacert
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/network/other/setproxy
+      name: other-network-other-setproxy
+      description: REST surface for OTHER-network-other-setProxy.
+      operations:
+      - method: GET
+        name: networkothersetproxy
+        description: Sets the HTTP proxy configuration.
+        call: owasp-zap-network.networkothersetproxy
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-network-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — network. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adds-alias-local-servers-proxies
+      description: Adds an alias for the local servers/proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionaddalias
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-host-be-excluded-http
+      description: Adds a host to be excluded from the HTTP proxy.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionaddhttpproxyexclusion
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-local-server-proxy
+      description: Adds a local server/proxy.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionaddlocalserver
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-authority-pass-through-local
+      description: Adds an authority to pass-through the local proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionaddpassthrough
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-client-certificate-contained-pkcs-12
+      description: Adds a client certificate contained in a PKCS#12 file, the certificate is automatically set as active and
+        used.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionaddpkcs12clientcertificate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-rate-limit-rule
+      description: Adds a rate limit rule
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionaddratelimitrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: generates-new-root-ca-certificate
+      description: Generates a new Root CA certificate, used to issue server certificates.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactiongeneraterootcacert
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: imports-root-ca-certificate-be
+      description: Imports a Root CA certificate to be used to issue server certificates.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionimportrootcacert
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-alias
+      description: Removes an alias.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionremovealias
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-http-proxy-exclusion
+      description: Removes an HTTP proxy exclusion.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionremovehttpproxyexclusion
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-local-server-proxy
+      description: Removes a local server/proxy.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionremovelocalserver
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-pass-through
+      description: Removes a pass-through.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionremovepassthrough
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: remove-rate-limit-rule
+      description: Remove a rate limit rule
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionremoveratelimitrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-alias-is
+      description: Sets whether or not an alias is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetaliasenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-timeout-reads-and-connects
+      description: Sets the timeout, for reads and connects.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetconnectiontimeout
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-default-user-agent
+      description: Sets the default user-agent.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetdefaultuseragent
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-ttl-successful-dns-queries
+      description: Sets the TTL of successful DNS queries.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetdnsttlsuccessfulqueries
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-http-proxy-configuration
+      description: Sets the HTTP proxy configuration.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsethttpproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-http-proxy
+      description: Sets whether or not the HTTP proxy authentication is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsethttpproxyauthenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-http-proxy-2
+      description: Sets whether or not the HTTP proxy is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsethttpproxyenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-http-proxy-3
+      description: Sets whether or not an HTTP proxy exclusion is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsethttpproxyexclusionenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-pass-through
+      description: Sets whether or not a pass-through is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetpassthroughenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: set-enabled-state-rate-limit
+      description: Set enabled state for a rate limit rule.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetratelimitruleenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-root-ca-certificate-validity
+      description: Sets the Root CA certificate validity. Used when generating a new Root CA certificate.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetrootcacertvalidity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-server-certificate-validity-used
+      description: Sets the server certificate validity. Used when generating server certificates.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetservercertvalidity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-socks-proxy-configuration
+      description: Sets the SOCKS proxy configuration.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetsocksproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-socks-proxy
+      description: Sets whether or not the SOCKS proxy is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetsocksproxyenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-use-active
+      description: Sets whether or not to use the active client certificate.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetuseclientcertificate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-use-global
+      description: Sets whether or not to use the global HTTP state.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkactionsetuseglobalhttpstate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-aliases-used-identify-local
+      description: Gets the aliases used to identify the local servers/proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetaliases
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-connection-timeout-seconds
+      description: Gets the connection timeout, in seconds.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetconnectiontimeout
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-default-user-agent
+      description: Gets the default user-agent.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetdefaultuseragent
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-ttl-seconds-successful-dns
+      description: Gets the TTL (in seconds) of successful DNS queries.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetdnsttlsuccessfulqueries
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-http-proxy
+      description: Gets the HTTP proxy.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgethttpproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-http-proxy-exclusions
+      description: Gets the HTTP proxy exclusions.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgethttpproxyexclusions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-local-servers-proxies
+      description: Gets the local servers/proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetlocalservers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-authorities-that-will-pass
+      description: Gets the authorities that will pass-through the local proxies.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetpassthroughs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-rate-limit-rules
+      description: List of rate limit rules.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetratelimitrules
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-root-ca-certificate-validity
+      description: Gets the Root CA certificate validity, in days. Used when generating a new Root CA certificate.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetrootcacertvalidity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-server-certificate-validity-days
+      description: Gets the server certificate validity, in days. Used when generating server certificates.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetservercertvalidity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-socks-proxy
+      description: Gets the SOCKS proxy.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewgetsocksproxy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-http-proxy
+      description: Tells whether or not the HTTP proxy authentication is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewishttpproxyauthenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-http-proxy-2
+      description: Tells whether or not the HTTP proxy is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewishttpproxyenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-socks-proxy
+      description: Tells whether or not the SOCKS proxy is enabled.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewissocksproxyenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-use-global
+      description: Tells whether or not to use global HTTP state.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkviewisuseglobalhttpstate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: provides-pac-file-proxying-through
+      description: Provides a PAC file, proxying through the main proxy.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkotherproxypac
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-root-ca-certificate-used
+      description: Gets the Root CA certificate used to issue server certificates. Suitable to import into client applications
+        (e.g. browsers).
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkotherrootcacert
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-http-proxy-configuration-2
+      description: Sets the HTTP proxy configuration.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-network.networkothersetproxy
+      outputParameters:
+      - type: object
+        mapping: $.

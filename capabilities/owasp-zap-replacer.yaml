@@ -1,0 +1,174 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — replacer
+  description: 'ZAP API — replacer. 4 operations. Lead operation: replacer. Self-contained Naftiko capability covering one
+    Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - replacer
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-replacer
+    baseUri: http://zap
+    description: ZAP API — replacer business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-replacer-action-addRule
+      path: /JSON/replacer/action/addRule/
+      operations:
+      - name: replaceractionaddrule
+        method: GET
+        description: 'Adds a replacer rule. For the parameters: desc is a user friendly description, enabled is true or false,
+          matchType is one of [REQ_HEADER, REQ_HEADER_STR, REQ_BODY_STR, RESP_HEADER, RESP_HEADER_STR, RESP_BODY_STR], matchRegex
+          should be true '
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-replacer-action-removeRule
+      path: /JSON/replacer/action/removeRule/
+      operations:
+      - name: replaceractionremoverule
+        method: GET
+        description: Removes the rule with the given description
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-replacer-action-setEnabled
+      path: /JSON/replacer/action/setEnabled/
+      operations:
+      - name: replaceractionsetenabled
+        method: GET
+        description: Enables or disables the rule with the given description based on the bool parameter
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-replacer-view-rules
+      path: /JSON/replacer/view/rules/
+      operations:
+      - name: replacerviewrules
+        method: GET
+        description: Returns full details of all of the rules
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-replacer-rest
+    port: 8080
+    description: REST adapter for ZAP API — replacer. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/json/replacer/action/addrule
+      name: json-replacer-action-addrule
+      description: REST surface for JSON-replacer-action-addRule.
+      operations:
+      - method: GET
+        name: replaceractionaddrule
+        description: 'Adds a replacer rule. For the parameters: desc is a user friendly description, enabled is true or false,
+          matchType is one of [REQ_HEADER, REQ_HEADER_STR, REQ_BODY_STR, RESP_HEADER, RESP_HEADER_STR, RESP_BODY_STR], matchRegex
+          should be true '
+        call: owasp-zap-replacer.replaceractionaddrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/replacer/action/removerule
+      name: json-replacer-action-removerule
+      description: REST surface for JSON-replacer-action-removeRule.
+      operations:
+      - method: GET
+        name: replaceractionremoverule
+        description: Removes the rule with the given description
+        call: owasp-zap-replacer.replaceractionremoverule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/replacer/action/setenabled
+      name: json-replacer-action-setenabled
+      description: REST surface for JSON-replacer-action-setEnabled.
+      operations:
+      - method: GET
+        name: replaceractionsetenabled
+        description: Enables or disables the rule with the given description based on the bool parameter
+        call: owasp-zap-replacer.replaceractionsetenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/replacer/view/rules
+      name: json-replacer-view-rules
+      description: REST surface for JSON-replacer-view-rules.
+      operations:
+      - method: GET
+        name: replacerviewrules
+        description: Returns full details of all of the rules
+        call: owasp-zap-replacer.replacerviewrules
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-replacer-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — replacer. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adds-replacer-rule-parameters-desc
+      description: 'Adds a replacer rule. For the parameters: desc is a user friendly description, enabled is true or false,
+        matchType is one of [REQ_HEADER, REQ_HEADER_STR, REQ_BODY_STR, RESP_HEADER, RESP_HEADER_STR, RESP_BODY_STR], matchRegex
+        should be true '
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-replacer.replaceractionaddrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-rule-given-description
+      description: Removes the rule with the given description
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-replacer.replaceractionremoverule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-disables-rule-given-description
+      description: Enables or disables the rule with the given description based on the bool parameter
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-replacer.replaceractionsetenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-full-details-all-rules
+      description: Returns full details of all of the rules
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-replacer.replacerviewrules
+      outputParameters:
+      - type: object
+        mapping: $.

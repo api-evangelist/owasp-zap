@@ -1,0 +1,168 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — sessionManagement
+  description: 'ZAP API — sessionManagement. 4 operations. Lead operation: sessionManagement. Self-contained Naftiko capability
+    covering one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - sessionManagement
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-sessionmanagement
+    baseUri: http://zap
+    description: ZAP API — sessionManagement business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-sessionManagement-action-setSessionManagementMethod
+      path: /JSON/sessionManagement/action/setSessionManagementMethod/
+      operations:
+      - name: sessionmanagementactionsetsessionmanagementmethod
+        method: GET
+        description: Sets the session management method for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-sessionManagement-view-getSessionManagementMethod
+      path: /JSON/sessionManagement/view/getSessionManagementMethod/
+      operations:
+      - name: sessionmanagementviewgetsessionmanagementmethod
+        method: GET
+        description: Gets the name of the session management method for the context with the given ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-sessionManagement-view-getSessionManagementMethodConfigParams
+      path: /JSON/sessionManagement/view/getSessionManagementMethodConfigParams/
+      operations:
+      - name: sessionmanagementviewgetsessionmanagementmethodconfigparams
+        method: GET
+        description: Gets the configuration parameters for the session management method with the given name.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-sessionManagement-view-getSupportedSessionManagementMethods
+      path: /JSON/sessionManagement/view/getSupportedSessionManagementMethods/
+      operations:
+      - name: sessionmanagementviewgetsupportedsessionmanagementmethods
+        method: GET
+        description: Gets the name of the session management methods.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-sessionmanagement-rest
+    port: 8080
+    description: REST adapter for ZAP API — sessionManagement. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/json/sessionmanagement/action/setsessionmanagementmethod
+      name: json-sessionmanagement-action-setsessionmanagementmethod
+      description: REST surface for JSON-sessionManagement-action-setSessionManagementMethod.
+      operations:
+      - method: GET
+        name: sessionmanagementactionsetsessionmanagementmethod
+        description: Sets the session management method for the context with the given ID.
+        call: owasp-zap-sessionmanagement.sessionmanagementactionsetsessionmanagementmethod
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/sessionmanagement/view/getsessionmanagementmethod
+      name: json-sessionmanagement-view-getsessionmanagementmethod
+      description: REST surface for JSON-sessionManagement-view-getSessionManagementMethod.
+      operations:
+      - method: GET
+        name: sessionmanagementviewgetsessionmanagementmethod
+        description: Gets the name of the session management method for the context with the given ID.
+        call: owasp-zap-sessionmanagement.sessionmanagementviewgetsessionmanagementmethod
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/sessionmanagement/view/getsessionmanagementmethodconfigparams
+      name: json-sessionmanagement-view-getsessionmanagementmethodconfigparams
+      description: REST surface for JSON-sessionManagement-view-getSessionManagementMethodConfigParams.
+      operations:
+      - method: GET
+        name: sessionmanagementviewgetsessionmanagementmethodconfigparams
+        description: Gets the configuration parameters for the session management method with the given name.
+        call: owasp-zap-sessionmanagement.sessionmanagementviewgetsessionmanagementmethodconfigparams
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/sessionmanagement/view/getsupportedsessionmanagementmethods
+      name: json-sessionmanagement-view-getsupportedsessionmanagementmethods
+      description: REST surface for JSON-sessionManagement-view-getSupportedSessionManagementMethods.
+      operations:
+      - method: GET
+        name: sessionmanagementviewgetsupportedsessionmanagementmethods
+        description: Gets the name of the session management methods.
+        call: owasp-zap-sessionmanagement.sessionmanagementviewgetsupportedsessionmanagementmethods
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-sessionmanagement-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — sessionManagement. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: sets-session-management-method-context
+      description: Sets the session management method for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-sessionmanagement.sessionmanagementactionsetsessionmanagementmethod
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-name-session-management-method
+      description: Gets the name of the session management method for the context with the given ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-sessionmanagement.sessionmanagementviewgetsessionmanagementmethod
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-configuration-parameters-session-management
+      description: Gets the configuration parameters for the session management method with the given name.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-sessionmanagement.sessionmanagementviewgetsessionmanagementmethodconfigparams
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-name-session-management-methods
+      description: Gets the name of the session management methods.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-sessionmanagement.sessionmanagementviewgetsupportedsessionmanagementmethods
+      outputParameters:
+      - type: object
+        mapping: $.

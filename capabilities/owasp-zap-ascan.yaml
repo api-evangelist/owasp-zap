@@ -1,0 +1,2973 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — ascan
+  description: 'ZAP API — ascan. 90 operations. Lead operation: ascan. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - ascan
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-ascan
+    baseUri: http://zap
+    description: ZAP API — ascan business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-ascan-action-addExcludedParam
+      path: /JSON/ascan/action/addExcludedParam/
+      operations:
+      - name: ascanactionaddexcludedparam
+        method: GET
+        description: Adds a new parameter excluded from the scan, using the specified name. Optionally sets if the new entry
+          applies to a specific URL (default, all URLs) and sets the ID of the type of the parameter (default, ID of any type).
+          The type IDs can b
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-addScanPolicy
+      path: /JSON/ascan/action/addScanPolicy/
+      operations:
+      - name: ascanactionaddscanpolicy
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-clearExcludedFromScan
+      path: /JSON/ascan/action/clearExcludedFromScan/
+      operations:
+      - name: ascanactionclearexcludedfromscan
+        method: GET
+        description: Clears the regexes of URLs excluded from the active scans.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-disableAllScanners
+      path: /JSON/ascan/action/disableAllScanners/
+      operations:
+      - name: ascanactiondisableallscanners
+        method: GET
+        description: Disables all scan rules of the scan policy with the given name, or the default if none given.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-disableScanners
+      path: /JSON/ascan/action/disableScanners/
+      operations:
+      - name: ascanactiondisablescanners
+        method: GET
+        description: Disables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the
+          given name, or the default if none given.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-enableAllScanners
+      path: /JSON/ascan/action/enableAllScanners/
+      operations:
+      - name: ascanactionenableallscanners
+        method: GET
+        description: Enables all scan rules of the scan policy with the given name, or the default if none given.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-enableScanners
+      path: /JSON/ascan/action/enableScanners/
+      operations:
+      - name: ascanactionenablescanners
+        method: GET
+        description: Enables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given
+          name, or the default if none given.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-excludeFromScan
+      path: /JSON/ascan/action/excludeFromScan/
+      operations:
+      - name: ascanactionexcludefromscan
+        method: GET
+        description: Adds a regex of URLs that should be excluded from the active scans.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-importScanPolicy
+      path: /JSON/ascan/action/importScanPolicy/
+      operations:
+      - name: ascanactionimportscanpolicy
+        method: GET
+        description: Imports a Scan Policy using the given file system path.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-modifyExcludedParam
+      path: /JSON/ascan/action/modifyExcludedParam/
+      operations:
+      - name: ascanactionmodifyexcludedparam
+        method: GET
+        description: Modifies a parameter excluded from the scan. Allows to modify the name, the URL and the type of parameter.
+          The parameter is selected with its index, which can be obtained with the view excludedParams.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-pause
+      path: /JSON/ascan/action/pause/
+      operations:
+      - name: ascanactionpause
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-pauseAllScans
+      path: /JSON/ascan/action/pauseAllScans/
+      operations:
+      - name: ascanactionpauseallscans
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-removeAllScans
+      path: /JSON/ascan/action/removeAllScans/
+      operations:
+      - name: ascanactionremoveallscans
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-removeExcludedParam
+      path: /JSON/ascan/action/removeExcludedParam/
+      operations:
+      - name: ascanactionremoveexcludedparam
+        method: GET
+        description: Removes a parameter excluded from the scan, with the given index. The index can be obtained with the
+          view excludedParams.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-removeScan
+      path: /JSON/ascan/action/removeScan/
+      operations:
+      - name: ascanactionremovescan
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-removeScanPolicy
+      path: /JSON/ascan/action/removeScanPolicy/
+      operations:
+      - name: ascanactionremovescanpolicy
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-resume
+      path: /JSON/ascan/action/resume/
+      operations:
+      - name: ascanactionresume
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-resumeAllScans
+      path: /JSON/ascan/action/resumeAllScans/
+      operations:
+      - name: ascanactionresumeallscans
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-scan
+      path: /JSON/ascan/action/scan/
+      operations:
+      - name: ascanactionscan
+        method: GET
+        description: 'Runs the active scanner against the given URL or Context. Optionally, the ''recurse'' parameter can
+          be used to scan URLs under the given URL, the parameter ''inScopeOnly'' can be used to constrain the scan to URLs
+          that are in scope (ignored if '
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-scanAsUser
+      path: /JSON/ascan/action/scanAsUser/
+      operations:
+      - name: ascanactionscanasuser
+        method: GET
+        description: Active Scans from the perspective of a User, obtained using the given Context ID and User ID. See 'scan'
+          action for more details.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setEnabledPolicies
+      path: /JSON/ascan/action/setEnabledPolicies/
+      operations:
+      - name: ascanactionsetenabledpolicies
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionAddQueryParam
+      path: /JSON/ascan/action/setOptionAddQueryParam/
+      operations:
+      - name: ascanactionsetoptionaddqueryparam
+        method: GET
+        description: Sets whether or not the active scanner should add a query param to GET requests which do not have parameters
+          to start with.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionAllowAttackOnStart
+      path: /JSON/ascan/action/setOptionAllowAttackOnStart/
+      operations:
+      - name: ascanactionsetoptionallowattackonstart
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionAttackPolicy
+      path: /JSON/ascan/action/setOptionAttackPolicy/
+      operations:
+      - name: ascanactionsetoptionattackpolicy
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionDefaultPolicy
+      path: /JSON/ascan/action/setOptionDefaultPolicy/
+      operations:
+      - name: ascanactionsetoptiondefaultpolicy
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionDelayInMs
+      path: /JSON/ascan/action/setOptionDelayInMs/
+      operations:
+      - name: ascanactionsetoptiondelayinms
+        method: GET
+        description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionEncodeCookieValues
+      path: /JSON/ascan/action/setOptionEncodeCookieValues/
+      operations:
+      - name: ascanactionsetoptionencodecookievalues
+        method: GET
+        description: Sets whether or not the active scanner should encode cookie values.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionHandleAntiCSRFTokens
+      path: /JSON/ascan/action/setOptionHandleAntiCSRFTokens/
+      operations:
+      - name: ascanactionsetoptionhandleanticsrftokens
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionHostPerScan
+      path: /JSON/ascan/action/setOptionHostPerScan/
+      operations:
+      - name: ascanactionsetoptionhostperscan
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionInjectPluginIdInHeader
+      path: /JSON/ascan/action/setOptionInjectPluginIdInHeader/
+      operations:
+      - name: ascanactionsetoptioninjectpluginidinheader
+        method: GET
+        description: Sets whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the
+          ID of the scan rule that's sending the requests.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionMaxAlertsPerRule
+      path: /JSON/ascan/action/setOptionMaxAlertsPerRule/
+      operations:
+      - name: ascanactionsetoptionmaxalertsperrule
+        method: GET
+        description: Sets the maximum number of alerts that a rule can raise before being skipped.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionMaxChartTimeInMins
+      path: /JSON/ascan/action/setOptionMaxChartTimeInMins/
+      operations:
+      - name: ascanactionsetoptionmaxcharttimeinmins
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionMaxResultsToList
+      path: /JSON/ascan/action/setOptionMaxResultsToList/
+      operations:
+      - name: ascanactionsetoptionmaxresultstolist
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionMaxRuleDurationInMins
+      path: /JSON/ascan/action/setOptionMaxRuleDurationInMins/
+      operations:
+      - name: ascanactionsetoptionmaxruledurationinmins
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionMaxScanDurationInMins
+      path: /JSON/ascan/action/setOptionMaxScanDurationInMins/
+      operations:
+      - name: ascanactionsetoptionmaxscandurationinmins
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionMaxScansInUI
+      path: /JSON/ascan/action/setOptionMaxScansInUI/
+      operations:
+      - name: ascanactionsetoptionmaxscansinui
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionPromptInAttackMode
+      path: /JSON/ascan/action/setOptionPromptInAttackMode/
+      operations:
+      - name: ascanactionsetoptionpromptinattackmode
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionPromptToClearFinishedScans
+      path: /JSON/ascan/action/setOptionPromptToClearFinishedScans/
+      operations:
+      - name: ascanactionsetoptionprompttoclearfinishedscans
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionRescanInAttackMode
+      path: /JSON/ascan/action/setOptionRescanInAttackMode/
+      operations:
+      - name: ascanactionsetoptionrescaninattackmode
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionScanHeadersAllRequests
+      path: /JSON/ascan/action/setOptionScanHeadersAllRequests/
+      operations:
+      - name: ascanactionsetoptionscanheadersallrequests
+        method: GET
+        description: Sets whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters,
+          through the query or request body.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionScanNullJsonValues
+      path: /JSON/ascan/action/setOptionScanNullJsonValues/
+      operations:
+      - name: ascanactionsetoptionscannulljsonvalues
+        method: GET
+        description: Sets whether or not the active scanner should scan null JSON values.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionShowAdvancedDialog
+      path: /JSON/ascan/action/setOptionShowAdvancedDialog/
+      operations:
+      - name: ascanactionsetoptionshowadvanceddialog
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionTargetParamsEnabledRPC
+      path: /JSON/ascan/action/setOptionTargetParamsEnabledRPC/
+      operations:
+      - name: ascanactionsetoptiontargetparamsenabledrpc
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionTargetParamsInjectable
+      path: /JSON/ascan/action/setOptionTargetParamsInjectable/
+      operations:
+      - name: ascanactionsetoptiontargetparamsinjectable
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setOptionThreadPerHost
+      path: /JSON/ascan/action/setOptionThreadPerHost/
+      operations:
+      - name: ascanactionsetoptionthreadperhost
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setPolicyAlertThreshold
+      path: /JSON/ascan/action/setPolicyAlertThreshold/
+      operations:
+      - name: ascanactionsetpolicyalertthreshold
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setPolicyAttackStrength
+      path: /JSON/ascan/action/setPolicyAttackStrength/
+      operations:
+      - name: ascanactionsetpolicyattackstrength
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setScannerAlertThreshold
+      path: /JSON/ascan/action/setScannerAlertThreshold/
+      operations:
+      - name: ascanactionsetscanneralertthreshold
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-setScannerAttackStrength
+      path: /JSON/ascan/action/setScannerAttackStrength/
+      operations:
+      - name: ascanactionsetscannerattackstrength
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-skipScanner
+      path: /JSON/ascan/action/skipScanner/
+      operations:
+      - name: ascanactionskipscanner
+        method: GET
+        description: Skips the scan rule using the given IDs of the scan and the scan rule.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-stop
+      path: /JSON/ascan/action/stop/
+      operations:
+      - name: ascanactionstop
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-stopAllScans
+      path: /JSON/ascan/action/stopAllScans/
+      operations:
+      - name: ascanactionstopallscans
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-action-updateScanPolicy
+      path: /JSON/ascan/action/updateScanPolicy/
+      operations:
+      - name: ascanactionupdatescanpolicy
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-alertsIds
+      path: /JSON/ascan/view/alertsIds/
+      operations:
+      - name: ascanviewalertsids
+        method: GET
+        description: Gets the IDs of the alerts raised during the scan with the given ID. An alert can be obtained with 'alert'
+          core view.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-attackModeQueue
+      path: /JSON/ascan/view/attackModeQueue/
+      operations:
+      - name: ascanviewattackmodequeue
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-excludedFromScan
+      path: /JSON/ascan/view/excludedFromScan/
+      operations:
+      - name: ascanviewexcludedfromscan
+        method: GET
+        description: Gets the regexes of URLs excluded from the active scans.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-excludedParamTypes
+      path: /JSON/ascan/view/excludedParamTypes/
+      operations:
+      - name: ascanviewexcludedparamtypes
+        method: GET
+        description: 'Gets all the types of excluded parameters. For each type the following are shown: the ID and the name.'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-excludedParams
+      path: /JSON/ascan/view/excludedParams/
+      operations:
+      - name: ascanviewexcludedparams
+        method: GET
+        description: 'Gets all the parameters that are excluded. For each parameter the following are shown: the name, the
+          URL, and the parameter type.'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-messagesIds
+      path: /JSON/ascan/view/messagesIds/
+      operations:
+      - name: ascanviewmessagesids
+        method: GET
+        description: Gets the IDs of the messages sent during the scan with the given ID. A message can be obtained with 'message'
+          core view.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionAddQueryParam
+      path: /JSON/ascan/view/optionAddQueryParam/
+      operations:
+      - name: ascanviewoptionaddqueryparam
+        method: GET
+        description: Tells whether or not the active scanner should add a query parameter to GET request that don't have parameters
+          to start with.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionAllowAttackOnStart
+      path: /JSON/ascan/view/optionAllowAttackOnStart/
+      operations:
+      - name: ascanviewoptionallowattackonstart
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionAttackPolicy
+      path: /JSON/ascan/view/optionAttackPolicy/
+      operations:
+      - name: ascanviewoptionattackpolicy
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionDefaultPolicy
+      path: /JSON/ascan/view/optionDefaultPolicy/
+      operations:
+      - name: ascanviewoptiondefaultpolicy
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionDelayInMs
+      path: /JSON/ascan/view/optionDelayInMs/
+      operations:
+      - name: ascanviewoptiondelayinms
+        method: GET
+        description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionEncodeCookieValues
+      path: /JSON/ascan/view/optionEncodeCookieValues/
+      operations:
+      - name: ascanviewoptionencodecookievalues
+        method: GET
+        description: Tells whether or not the active scanner should encode cookie values.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionExcludedParamList
+      path: /JSON/ascan/view/optionExcludedParamList/
+      operations:
+      - name: ascanviewoptionexcludedparamlist
+        method: GET
+        description: Use view excludedParams instead.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionHandleAntiCSRFTokens
+      path: /JSON/ascan/view/optionHandleAntiCSRFTokens/
+      operations:
+      - name: ascanviewoptionhandleanticsrftokens
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionHostPerScan
+      path: /JSON/ascan/view/optionHostPerScan/
+      operations:
+      - name: ascanviewoptionhostperscan
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionInjectPluginIdInHeader
+      path: /JSON/ascan/view/optionInjectPluginIdInHeader/
+      operations:
+      - name: ascanviewoptioninjectpluginidinheader
+        method: GET
+        description: Tells whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the
+          ID of the scan rule that's sending the requests.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionMaxAlertsPerRule
+      path: /JSON/ascan/view/optionMaxAlertsPerRule/
+      operations:
+      - name: ascanviewoptionmaxalertsperrule
+        method: GET
+        description: Gets the maximum number of alerts that a rule can raise before being skipped.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionMaxChartTimeInMins
+      path: /JSON/ascan/view/optionMaxChartTimeInMins/
+      operations:
+      - name: ascanviewoptionmaxcharttimeinmins
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionMaxResultsToList
+      path: /JSON/ascan/view/optionMaxResultsToList/
+      operations:
+      - name: ascanviewoptionmaxresultstolist
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionMaxRuleDurationInMins
+      path: /JSON/ascan/view/optionMaxRuleDurationInMins/
+      operations:
+      - name: ascanviewoptionmaxruledurationinmins
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionMaxScanDurationInMins
+      path: /JSON/ascan/view/optionMaxScanDurationInMins/
+      operations:
+      - name: ascanviewoptionmaxscandurationinmins
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionMaxScansInUI
+      path: /JSON/ascan/view/optionMaxScansInUI/
+      operations:
+      - name: ascanviewoptionmaxscansinui
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionPromptInAttackMode
+      path: /JSON/ascan/view/optionPromptInAttackMode/
+      operations:
+      - name: ascanviewoptionpromptinattackmode
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionPromptToClearFinishedScans
+      path: /JSON/ascan/view/optionPromptToClearFinishedScans/
+      operations:
+      - name: ascanviewoptionprompttoclearfinishedscans
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionRescanInAttackMode
+      path: /JSON/ascan/view/optionRescanInAttackMode/
+      operations:
+      - name: ascanviewoptionrescaninattackmode
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionScanHeadersAllRequests
+      path: /JSON/ascan/view/optionScanHeadersAllRequests/
+      operations:
+      - name: ascanviewoptionscanheadersallrequests
+        method: GET
+        description: Tells whether or not the HTTP Headers of all requests should be scanned. Not just requests that send
+          parameters, through the query or request body.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionScanNullJsonValues
+      path: /JSON/ascan/view/optionScanNullJsonValues/
+      operations:
+      - name: ascanviewoptionscannulljsonvalues
+        method: GET
+        description: Tells whether or not the active scanner should scan null JSON values.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionShowAdvancedDialog
+      path: /JSON/ascan/view/optionShowAdvancedDialog/
+      operations:
+      - name: ascanviewoptionshowadvanceddialog
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionTargetParamsEnabledRPC
+      path: /JSON/ascan/view/optionTargetParamsEnabledRPC/
+      operations:
+      - name: ascanviewoptiontargetparamsenabledrpc
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionTargetParamsInjectable
+      path: /JSON/ascan/view/optionTargetParamsInjectable/
+      operations:
+      - name: ascanviewoptiontargetparamsinjectable
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-optionThreadPerHost
+      path: /JSON/ascan/view/optionThreadPerHost/
+      operations:
+      - name: ascanviewoptionthreadperhost
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-policies
+      path: /JSON/ascan/view/policies/
+      operations:
+      - name: ascanviewpolicies
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-scanPolicyNames
+      path: /JSON/ascan/view/scanPolicyNames/
+      operations:
+      - name: ascanviewscanpolicynames
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-scanProgress
+      path: /JSON/ascan/view/scanProgress/
+      operations:
+      - name: ascanviewscanprogress
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-scanners
+      path: /JSON/ascan/view/scanners/
+      operations:
+      - name: ascanviewscanners
+        method: GET
+        description: Gets the scan rules, optionally, of the given scan policy or scanner policy/category ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-scans
+      path: /JSON/ascan/view/scans/
+      operations:
+      - name: ascanviewscans
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-ascan-view-status
+      path: /JSON/ascan/view/status/
+      operations:
+      - name: ascanviewstatus
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-ascan-rest
+    port: 8080
+    description: REST adapter for ZAP API — ascan. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/json/ascan/action/addexcludedparam
+      name: json-ascan-action-addexcludedparam
+      description: REST surface for JSON-ascan-action-addExcludedParam.
+      operations:
+      - method: GET
+        name: ascanactionaddexcludedparam
+        description: Adds a new parameter excluded from the scan, using the specified name. Optionally sets if the new entry
+          applies to a specific URL (default, all URLs) and sets the ID of the type of the parameter (default, ID of any type).
+          The type IDs can b
+        call: owasp-zap-ascan.ascanactionaddexcludedparam
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/addscanpolicy
+      name: json-ascan-action-addscanpolicy
+      description: REST surface for JSON-ascan-action-addScanPolicy.
+      operations:
+      - method: GET
+        name: ascanactionaddscanpolicy
+        description: ascanactionaddscanpolicy
+        call: owasp-zap-ascan.ascanactionaddscanpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/clearexcludedfromscan
+      name: json-ascan-action-clearexcludedfromscan
+      description: REST surface for JSON-ascan-action-clearExcludedFromScan.
+      operations:
+      - method: GET
+        name: ascanactionclearexcludedfromscan
+        description: Clears the regexes of URLs excluded from the active scans.
+        call: owasp-zap-ascan.ascanactionclearexcludedfromscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/disableallscanners
+      name: json-ascan-action-disableallscanners
+      description: REST surface for JSON-ascan-action-disableAllScanners.
+      operations:
+      - method: GET
+        name: ascanactiondisableallscanners
+        description: Disables all scan rules of the scan policy with the given name, or the default if none given.
+        call: owasp-zap-ascan.ascanactiondisableallscanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/disablescanners
+      name: json-ascan-action-disablescanners
+      description: REST surface for JSON-ascan-action-disableScanners.
+      operations:
+      - method: GET
+        name: ascanactiondisablescanners
+        description: Disables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the
+          given name, or the default if none given.
+        call: owasp-zap-ascan.ascanactiondisablescanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/enableallscanners
+      name: json-ascan-action-enableallscanners
+      description: REST surface for JSON-ascan-action-enableAllScanners.
+      operations:
+      - method: GET
+        name: ascanactionenableallscanners
+        description: Enables all scan rules of the scan policy with the given name, or the default if none given.
+        call: owasp-zap-ascan.ascanactionenableallscanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/enablescanners
+      name: json-ascan-action-enablescanners
+      description: REST surface for JSON-ascan-action-enableScanners.
+      operations:
+      - method: GET
+        name: ascanactionenablescanners
+        description: Enables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given
+          name, or the default if none given.
+        call: owasp-zap-ascan.ascanactionenablescanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/excludefromscan
+      name: json-ascan-action-excludefromscan
+      description: REST surface for JSON-ascan-action-excludeFromScan.
+      operations:
+      - method: GET
+        name: ascanactionexcludefromscan
+        description: Adds a regex of URLs that should be excluded from the active scans.
+        call: owasp-zap-ascan.ascanactionexcludefromscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/importscanpolicy
+      name: json-ascan-action-importscanpolicy
+      description: REST surface for JSON-ascan-action-importScanPolicy.
+      operations:
+      - method: GET
+        name: ascanactionimportscanpolicy
+        description: Imports a Scan Policy using the given file system path.
+        call: owasp-zap-ascan.ascanactionimportscanpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/modifyexcludedparam
+      name: json-ascan-action-modifyexcludedparam
+      description: REST surface for JSON-ascan-action-modifyExcludedParam.
+      operations:
+      - method: GET
+        name: ascanactionmodifyexcludedparam
+        description: Modifies a parameter excluded from the scan. Allows to modify the name, the URL and the type of parameter.
+          The parameter is selected with its index, which can be obtained with the view excludedParams.
+        call: owasp-zap-ascan.ascanactionmodifyexcludedparam
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/pause
+      name: json-ascan-action-pause
+      description: REST surface for JSON-ascan-action-pause.
+      operations:
+      - method: GET
+        name: ascanactionpause
+        description: ascanactionpause
+        call: owasp-zap-ascan.ascanactionpause
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/pauseallscans
+      name: json-ascan-action-pauseallscans
+      description: REST surface for JSON-ascan-action-pauseAllScans.
+      operations:
+      - method: GET
+        name: ascanactionpauseallscans
+        description: ascanactionpauseallscans
+        call: owasp-zap-ascan.ascanactionpauseallscans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/removeallscans
+      name: json-ascan-action-removeallscans
+      description: REST surface for JSON-ascan-action-removeAllScans.
+      operations:
+      - method: GET
+        name: ascanactionremoveallscans
+        description: ascanactionremoveallscans
+        call: owasp-zap-ascan.ascanactionremoveallscans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/removeexcludedparam
+      name: json-ascan-action-removeexcludedparam
+      description: REST surface for JSON-ascan-action-removeExcludedParam.
+      operations:
+      - method: GET
+        name: ascanactionremoveexcludedparam
+        description: Removes a parameter excluded from the scan, with the given index. The index can be obtained with the
+          view excludedParams.
+        call: owasp-zap-ascan.ascanactionremoveexcludedparam
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/removescan
+      name: json-ascan-action-removescan
+      description: REST surface for JSON-ascan-action-removeScan.
+      operations:
+      - method: GET
+        name: ascanactionremovescan
+        description: ascanactionremovescan
+        call: owasp-zap-ascan.ascanactionremovescan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/removescanpolicy
+      name: json-ascan-action-removescanpolicy
+      description: REST surface for JSON-ascan-action-removeScanPolicy.
+      operations:
+      - method: GET
+        name: ascanactionremovescanpolicy
+        description: ascanactionremovescanpolicy
+        call: owasp-zap-ascan.ascanactionremovescanpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/resume
+      name: json-ascan-action-resume
+      description: REST surface for JSON-ascan-action-resume.
+      operations:
+      - method: GET
+        name: ascanactionresume
+        description: ascanactionresume
+        call: owasp-zap-ascan.ascanactionresume
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/resumeallscans
+      name: json-ascan-action-resumeallscans
+      description: REST surface for JSON-ascan-action-resumeAllScans.
+      operations:
+      - method: GET
+        name: ascanactionresumeallscans
+        description: ascanactionresumeallscans
+        call: owasp-zap-ascan.ascanactionresumeallscans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/scan
+      name: json-ascan-action-scan
+      description: REST surface for JSON-ascan-action-scan.
+      operations:
+      - method: GET
+        name: ascanactionscan
+        description: 'Runs the active scanner against the given URL or Context. Optionally, the ''recurse'' parameter can
+          be used to scan URLs under the given URL, the parameter ''inScopeOnly'' can be used to constrain the scan to URLs
+          that are in scope (ignored if '
+        call: owasp-zap-ascan.ascanactionscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/scanasuser
+      name: json-ascan-action-scanasuser
+      description: REST surface for JSON-ascan-action-scanAsUser.
+      operations:
+      - method: GET
+        name: ascanactionscanasuser
+        description: Active Scans from the perspective of a User, obtained using the given Context ID and User ID. See 'scan'
+          action for more details.
+        call: owasp-zap-ascan.ascanactionscanasuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setenabledpolicies
+      name: json-ascan-action-setenabledpolicies
+      description: REST surface for JSON-ascan-action-setEnabledPolicies.
+      operations:
+      - method: GET
+        name: ascanactionsetenabledpolicies
+        description: ascanactionsetenabledpolicies
+        call: owasp-zap-ascan.ascanactionsetenabledpolicies
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionaddqueryparam
+      name: json-ascan-action-setoptionaddqueryparam
+      description: REST surface for JSON-ascan-action-setOptionAddQueryParam.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionaddqueryparam
+        description: Sets whether or not the active scanner should add a query param to GET requests which do not have parameters
+          to start with.
+        call: owasp-zap-ascan.ascanactionsetoptionaddqueryparam
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionallowattackonstart
+      name: json-ascan-action-setoptionallowattackonstart
+      description: REST surface for JSON-ascan-action-setOptionAllowAttackOnStart.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionallowattackonstart
+        description: ascanactionsetoptionallowattackonstart
+        call: owasp-zap-ascan.ascanactionsetoptionallowattackonstart
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionattackpolicy
+      name: json-ascan-action-setoptionattackpolicy
+      description: REST surface for JSON-ascan-action-setOptionAttackPolicy.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionattackpolicy
+        description: ascanactionsetoptionattackpolicy
+        call: owasp-zap-ascan.ascanactionsetoptionattackpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptiondefaultpolicy
+      name: json-ascan-action-setoptiondefaultpolicy
+      description: REST surface for JSON-ascan-action-setOptionDefaultPolicy.
+      operations:
+      - method: GET
+        name: ascanactionsetoptiondefaultpolicy
+        description: ascanactionsetoptiondefaultpolicy
+        call: owasp-zap-ascan.ascanactionsetoptiondefaultpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptiondelayinms
+      name: json-ascan-action-setoptiondelayinms
+      description: REST surface for JSON-ascan-action-setOptionDelayInMs.
+      operations:
+      - method: GET
+        name: ascanactionsetoptiondelayinms
+        description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+        call: owasp-zap-ascan.ascanactionsetoptiondelayinms
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionencodecookievalues
+      name: json-ascan-action-setoptionencodecookievalues
+      description: REST surface for JSON-ascan-action-setOptionEncodeCookieValues.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionencodecookievalues
+        description: Sets whether or not the active scanner should encode cookie values.
+        call: owasp-zap-ascan.ascanactionsetoptionencodecookievalues
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionhandleanticsrftokens
+      name: json-ascan-action-setoptionhandleanticsrftokens
+      description: REST surface for JSON-ascan-action-setOptionHandleAntiCSRFTokens.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionhandleanticsrftokens
+        description: ascanactionsetoptionhandleanticsrftokens
+        call: owasp-zap-ascan.ascanactionsetoptionhandleanticsrftokens
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionhostperscan
+      name: json-ascan-action-setoptionhostperscan
+      description: REST surface for JSON-ascan-action-setOptionHostPerScan.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionhostperscan
+        description: ascanactionsetoptionhostperscan
+        call: owasp-zap-ascan.ascanactionsetoptionhostperscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptioninjectpluginidinheader
+      name: json-ascan-action-setoptioninjectpluginidinheader
+      description: REST surface for JSON-ascan-action-setOptionInjectPluginIdInHeader.
+      operations:
+      - method: GET
+        name: ascanactionsetoptioninjectpluginidinheader
+        description: Sets whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the
+          ID of the scan rule that's sending the requests.
+        call: owasp-zap-ascan.ascanactionsetoptioninjectpluginidinheader
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionmaxalertsperrule
+      name: json-ascan-action-setoptionmaxalertsperrule
+      description: REST surface for JSON-ascan-action-setOptionMaxAlertsPerRule.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionmaxalertsperrule
+        description: Sets the maximum number of alerts that a rule can raise before being skipped.
+        call: owasp-zap-ascan.ascanactionsetoptionmaxalertsperrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionmaxcharttimeinmins
+      name: json-ascan-action-setoptionmaxcharttimeinmins
+      description: REST surface for JSON-ascan-action-setOptionMaxChartTimeInMins.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionmaxcharttimeinmins
+        description: ascanactionsetoptionmaxcharttimeinmins
+        call: owasp-zap-ascan.ascanactionsetoptionmaxcharttimeinmins
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionmaxresultstolist
+      name: json-ascan-action-setoptionmaxresultstolist
+      description: REST surface for JSON-ascan-action-setOptionMaxResultsToList.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionmaxresultstolist
+        description: ascanactionsetoptionmaxresultstolist
+        call: owasp-zap-ascan.ascanactionsetoptionmaxresultstolist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionmaxruledurationinmins
+      name: json-ascan-action-setoptionmaxruledurationinmins
+      description: REST surface for JSON-ascan-action-setOptionMaxRuleDurationInMins.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionmaxruledurationinmins
+        description: ascanactionsetoptionmaxruledurationinmins
+        call: owasp-zap-ascan.ascanactionsetoptionmaxruledurationinmins
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionmaxscandurationinmins
+      name: json-ascan-action-setoptionmaxscandurationinmins
+      description: REST surface for JSON-ascan-action-setOptionMaxScanDurationInMins.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionmaxscandurationinmins
+        description: ascanactionsetoptionmaxscandurationinmins
+        call: owasp-zap-ascan.ascanactionsetoptionmaxscandurationinmins
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionmaxscansinui
+      name: json-ascan-action-setoptionmaxscansinui
+      description: REST surface for JSON-ascan-action-setOptionMaxScansInUI.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionmaxscansinui
+        description: ascanactionsetoptionmaxscansinui
+        call: owasp-zap-ascan.ascanactionsetoptionmaxscansinui
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionpromptinattackmode
+      name: json-ascan-action-setoptionpromptinattackmode
+      description: REST surface for JSON-ascan-action-setOptionPromptInAttackMode.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionpromptinattackmode
+        description: ascanactionsetoptionpromptinattackmode
+        call: owasp-zap-ascan.ascanactionsetoptionpromptinattackmode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionprompttoclearfinishedscans
+      name: json-ascan-action-setoptionprompttoclearfinishedscans
+      description: REST surface for JSON-ascan-action-setOptionPromptToClearFinishedScans.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionprompttoclearfinishedscans
+        description: ascanactionsetoptionprompttoclearfinishedscans
+        call: owasp-zap-ascan.ascanactionsetoptionprompttoclearfinishedscans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionrescaninattackmode
+      name: json-ascan-action-setoptionrescaninattackmode
+      description: REST surface for JSON-ascan-action-setOptionRescanInAttackMode.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionrescaninattackmode
+        description: ascanactionsetoptionrescaninattackmode
+        call: owasp-zap-ascan.ascanactionsetoptionrescaninattackmode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionscanheadersallrequests
+      name: json-ascan-action-setoptionscanheadersallrequests
+      description: REST surface for JSON-ascan-action-setOptionScanHeadersAllRequests.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionscanheadersallrequests
+        description: Sets whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters,
+          through the query or request body.
+        call: owasp-zap-ascan.ascanactionsetoptionscanheadersallrequests
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionscannulljsonvalues
+      name: json-ascan-action-setoptionscannulljsonvalues
+      description: REST surface for JSON-ascan-action-setOptionScanNullJsonValues.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionscannulljsonvalues
+        description: Sets whether or not the active scanner should scan null JSON values.
+        call: owasp-zap-ascan.ascanactionsetoptionscannulljsonvalues
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionshowadvanceddialog
+      name: json-ascan-action-setoptionshowadvanceddialog
+      description: REST surface for JSON-ascan-action-setOptionShowAdvancedDialog.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionshowadvanceddialog
+        description: ascanactionsetoptionshowadvanceddialog
+        call: owasp-zap-ascan.ascanactionsetoptionshowadvanceddialog
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptiontargetparamsenabledrpc
+      name: json-ascan-action-setoptiontargetparamsenabledrpc
+      description: REST surface for JSON-ascan-action-setOptionTargetParamsEnabledRPC.
+      operations:
+      - method: GET
+        name: ascanactionsetoptiontargetparamsenabledrpc
+        description: ascanactionsetoptiontargetparamsenabledrpc
+        call: owasp-zap-ascan.ascanactionsetoptiontargetparamsenabledrpc
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptiontargetparamsinjectable
+      name: json-ascan-action-setoptiontargetparamsinjectable
+      description: REST surface for JSON-ascan-action-setOptionTargetParamsInjectable.
+      operations:
+      - method: GET
+        name: ascanactionsetoptiontargetparamsinjectable
+        description: ascanactionsetoptiontargetparamsinjectable
+        call: owasp-zap-ascan.ascanactionsetoptiontargetparamsinjectable
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setoptionthreadperhost
+      name: json-ascan-action-setoptionthreadperhost
+      description: REST surface for JSON-ascan-action-setOptionThreadPerHost.
+      operations:
+      - method: GET
+        name: ascanactionsetoptionthreadperhost
+        description: ascanactionsetoptionthreadperhost
+        call: owasp-zap-ascan.ascanactionsetoptionthreadperhost
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setpolicyalertthreshold
+      name: json-ascan-action-setpolicyalertthreshold
+      description: REST surface for JSON-ascan-action-setPolicyAlertThreshold.
+      operations:
+      - method: GET
+        name: ascanactionsetpolicyalertthreshold
+        description: ascanactionsetpolicyalertthreshold
+        call: owasp-zap-ascan.ascanactionsetpolicyalertthreshold
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setpolicyattackstrength
+      name: json-ascan-action-setpolicyattackstrength
+      description: REST surface for JSON-ascan-action-setPolicyAttackStrength.
+      operations:
+      - method: GET
+        name: ascanactionsetpolicyattackstrength
+        description: ascanactionsetpolicyattackstrength
+        call: owasp-zap-ascan.ascanactionsetpolicyattackstrength
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setscanneralertthreshold
+      name: json-ascan-action-setscanneralertthreshold
+      description: REST surface for JSON-ascan-action-setScannerAlertThreshold.
+      operations:
+      - method: GET
+        name: ascanactionsetscanneralertthreshold
+        description: ascanactionsetscanneralertthreshold
+        call: owasp-zap-ascan.ascanactionsetscanneralertthreshold
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/setscannerattackstrength
+      name: json-ascan-action-setscannerattackstrength
+      description: REST surface for JSON-ascan-action-setScannerAttackStrength.
+      operations:
+      - method: GET
+        name: ascanactionsetscannerattackstrength
+        description: ascanactionsetscannerattackstrength
+        call: owasp-zap-ascan.ascanactionsetscannerattackstrength
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/skipscanner
+      name: json-ascan-action-skipscanner
+      description: REST surface for JSON-ascan-action-skipScanner.
+      operations:
+      - method: GET
+        name: ascanactionskipscanner
+        description: Skips the scan rule using the given IDs of the scan and the scan rule.
+        call: owasp-zap-ascan.ascanactionskipscanner
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/stop
+      name: json-ascan-action-stop
+      description: REST surface for JSON-ascan-action-stop.
+      operations:
+      - method: GET
+        name: ascanactionstop
+        description: ascanactionstop
+        call: owasp-zap-ascan.ascanactionstop
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/stopallscans
+      name: json-ascan-action-stopallscans
+      description: REST surface for JSON-ascan-action-stopAllScans.
+      operations:
+      - method: GET
+        name: ascanactionstopallscans
+        description: ascanactionstopallscans
+        call: owasp-zap-ascan.ascanactionstopallscans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/action/updatescanpolicy
+      name: json-ascan-action-updatescanpolicy
+      description: REST surface for JSON-ascan-action-updateScanPolicy.
+      operations:
+      - method: GET
+        name: ascanactionupdatescanpolicy
+        description: ascanactionupdatescanpolicy
+        call: owasp-zap-ascan.ascanactionupdatescanpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/alertsids
+      name: json-ascan-view-alertsids
+      description: REST surface for JSON-ascan-view-alertsIds.
+      operations:
+      - method: GET
+        name: ascanviewalertsids
+        description: Gets the IDs of the alerts raised during the scan with the given ID. An alert can be obtained with 'alert'
+          core view.
+        call: owasp-zap-ascan.ascanviewalertsids
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/attackmodequeue
+      name: json-ascan-view-attackmodequeue
+      description: REST surface for JSON-ascan-view-attackModeQueue.
+      operations:
+      - method: GET
+        name: ascanviewattackmodequeue
+        description: ascanviewattackmodequeue
+        call: owasp-zap-ascan.ascanviewattackmodequeue
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/excludedfromscan
+      name: json-ascan-view-excludedfromscan
+      description: REST surface for JSON-ascan-view-excludedFromScan.
+      operations:
+      - method: GET
+        name: ascanviewexcludedfromscan
+        description: Gets the regexes of URLs excluded from the active scans.
+        call: owasp-zap-ascan.ascanviewexcludedfromscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/excludedparamtypes
+      name: json-ascan-view-excludedparamtypes
+      description: REST surface for JSON-ascan-view-excludedParamTypes.
+      operations:
+      - method: GET
+        name: ascanviewexcludedparamtypes
+        description: 'Gets all the types of excluded parameters. For each type the following are shown: the ID and the name.'
+        call: owasp-zap-ascan.ascanviewexcludedparamtypes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/excludedparams
+      name: json-ascan-view-excludedparams
+      description: REST surface for JSON-ascan-view-excludedParams.
+      operations:
+      - method: GET
+        name: ascanviewexcludedparams
+        description: 'Gets all the parameters that are excluded. For each parameter the following are shown: the name, the
+          URL, and the parameter type.'
+        call: owasp-zap-ascan.ascanviewexcludedparams
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/messagesids
+      name: json-ascan-view-messagesids
+      description: REST surface for JSON-ascan-view-messagesIds.
+      operations:
+      - method: GET
+        name: ascanviewmessagesids
+        description: Gets the IDs of the messages sent during the scan with the given ID. A message can be obtained with 'message'
+          core view.
+        call: owasp-zap-ascan.ascanviewmessagesids
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionaddqueryparam
+      name: json-ascan-view-optionaddqueryparam
+      description: REST surface for JSON-ascan-view-optionAddQueryParam.
+      operations:
+      - method: GET
+        name: ascanviewoptionaddqueryparam
+        description: Tells whether or not the active scanner should add a query parameter to GET request that don't have parameters
+          to start with.
+        call: owasp-zap-ascan.ascanviewoptionaddqueryparam
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionallowattackonstart
+      name: json-ascan-view-optionallowattackonstart
+      description: REST surface for JSON-ascan-view-optionAllowAttackOnStart.
+      operations:
+      - method: GET
+        name: ascanviewoptionallowattackonstart
+        description: ascanviewoptionallowattackonstart
+        call: owasp-zap-ascan.ascanviewoptionallowattackonstart
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionattackpolicy
+      name: json-ascan-view-optionattackpolicy
+      description: REST surface for JSON-ascan-view-optionAttackPolicy.
+      operations:
+      - method: GET
+        name: ascanviewoptionattackpolicy
+        description: ascanviewoptionattackpolicy
+        call: owasp-zap-ascan.ascanviewoptionattackpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optiondefaultpolicy
+      name: json-ascan-view-optiondefaultpolicy
+      description: REST surface for JSON-ascan-view-optionDefaultPolicy.
+      operations:
+      - method: GET
+        name: ascanviewoptiondefaultpolicy
+        description: ascanviewoptiondefaultpolicy
+        call: owasp-zap-ascan.ascanviewoptiondefaultpolicy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optiondelayinms
+      name: json-ascan-view-optiondelayinms
+      description: REST surface for JSON-ascan-view-optionDelayInMs.
+      operations:
+      - method: GET
+        name: ascanviewoptiondelayinms
+        description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+        call: owasp-zap-ascan.ascanviewoptiondelayinms
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionencodecookievalues
+      name: json-ascan-view-optionencodecookievalues
+      description: REST surface for JSON-ascan-view-optionEncodeCookieValues.
+      operations:
+      - method: GET
+        name: ascanviewoptionencodecookievalues
+        description: Tells whether or not the active scanner should encode cookie values.
+        call: owasp-zap-ascan.ascanviewoptionencodecookievalues
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionexcludedparamlist
+      name: json-ascan-view-optionexcludedparamlist
+      description: REST surface for JSON-ascan-view-optionExcludedParamList.
+      operations:
+      - method: GET
+        name: ascanviewoptionexcludedparamlist
+        description: Use view excludedParams instead.
+        call: owasp-zap-ascan.ascanviewoptionexcludedparamlist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionhandleanticsrftokens
+      name: json-ascan-view-optionhandleanticsrftokens
+      description: REST surface for JSON-ascan-view-optionHandleAntiCSRFTokens.
+      operations:
+      - method: GET
+        name: ascanviewoptionhandleanticsrftokens
+        description: ascanviewoptionhandleanticsrftokens
+        call: owasp-zap-ascan.ascanviewoptionhandleanticsrftokens
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionhostperscan
+      name: json-ascan-view-optionhostperscan
+      description: REST surface for JSON-ascan-view-optionHostPerScan.
+      operations:
+      - method: GET
+        name: ascanviewoptionhostperscan
+        description: ascanviewoptionhostperscan
+        call: owasp-zap-ascan.ascanviewoptionhostperscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optioninjectpluginidinheader
+      name: json-ascan-view-optioninjectpluginidinheader
+      description: REST surface for JSON-ascan-view-optionInjectPluginIdInHeader.
+      operations:
+      - method: GET
+        name: ascanviewoptioninjectpluginidinheader
+        description: Tells whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the
+          ID of the scan rule that's sending the requests.
+        call: owasp-zap-ascan.ascanviewoptioninjectpluginidinheader
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionmaxalertsperrule
+      name: json-ascan-view-optionmaxalertsperrule
+      description: REST surface for JSON-ascan-view-optionMaxAlertsPerRule.
+      operations:
+      - method: GET
+        name: ascanviewoptionmaxalertsperrule
+        description: Gets the maximum number of alerts that a rule can raise before being skipped.
+        call: owasp-zap-ascan.ascanviewoptionmaxalertsperrule
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionmaxcharttimeinmins
+      name: json-ascan-view-optionmaxcharttimeinmins
+      description: REST surface for JSON-ascan-view-optionMaxChartTimeInMins.
+      operations:
+      - method: GET
+        name: ascanviewoptionmaxcharttimeinmins
+        description: ascanviewoptionmaxcharttimeinmins
+        call: owasp-zap-ascan.ascanviewoptionmaxcharttimeinmins
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionmaxresultstolist
+      name: json-ascan-view-optionmaxresultstolist
+      description: REST surface for JSON-ascan-view-optionMaxResultsToList.
+      operations:
+      - method: GET
+        name: ascanviewoptionmaxresultstolist
+        description: ascanviewoptionmaxresultstolist
+        call: owasp-zap-ascan.ascanviewoptionmaxresultstolist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionmaxruledurationinmins
+      name: json-ascan-view-optionmaxruledurationinmins
+      description: REST surface for JSON-ascan-view-optionMaxRuleDurationInMins.
+      operations:
+      - method: GET
+        name: ascanviewoptionmaxruledurationinmins
+        description: ascanviewoptionmaxruledurationinmins
+        call: owasp-zap-ascan.ascanviewoptionmaxruledurationinmins
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionmaxscandurationinmins
+      name: json-ascan-view-optionmaxscandurationinmins
+      description: REST surface for JSON-ascan-view-optionMaxScanDurationInMins.
+      operations:
+      - method: GET
+        name: ascanviewoptionmaxscandurationinmins
+        description: ascanviewoptionmaxscandurationinmins
+        call: owasp-zap-ascan.ascanviewoptionmaxscandurationinmins
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionmaxscansinui
+      name: json-ascan-view-optionmaxscansinui
+      description: REST surface for JSON-ascan-view-optionMaxScansInUI.
+      operations:
+      - method: GET
+        name: ascanviewoptionmaxscansinui
+        description: ascanviewoptionmaxscansinui
+        call: owasp-zap-ascan.ascanviewoptionmaxscansinui
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionpromptinattackmode
+      name: json-ascan-view-optionpromptinattackmode
+      description: REST surface for JSON-ascan-view-optionPromptInAttackMode.
+      operations:
+      - method: GET
+        name: ascanviewoptionpromptinattackmode
+        description: ascanviewoptionpromptinattackmode
+        call: owasp-zap-ascan.ascanviewoptionpromptinattackmode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionprompttoclearfinishedscans
+      name: json-ascan-view-optionprompttoclearfinishedscans
+      description: REST surface for JSON-ascan-view-optionPromptToClearFinishedScans.
+      operations:
+      - method: GET
+        name: ascanviewoptionprompttoclearfinishedscans
+        description: ascanviewoptionprompttoclearfinishedscans
+        call: owasp-zap-ascan.ascanviewoptionprompttoclearfinishedscans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionrescaninattackmode
+      name: json-ascan-view-optionrescaninattackmode
+      description: REST surface for JSON-ascan-view-optionRescanInAttackMode.
+      operations:
+      - method: GET
+        name: ascanviewoptionrescaninattackmode
+        description: ascanviewoptionrescaninattackmode
+        call: owasp-zap-ascan.ascanviewoptionrescaninattackmode
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionscanheadersallrequests
+      name: json-ascan-view-optionscanheadersallrequests
+      description: REST surface for JSON-ascan-view-optionScanHeadersAllRequests.
+      operations:
+      - method: GET
+        name: ascanviewoptionscanheadersallrequests
+        description: Tells whether or not the HTTP Headers of all requests should be scanned. Not just requests that send
+          parameters, through the query or request body.
+        call: owasp-zap-ascan.ascanviewoptionscanheadersallrequests
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionscannulljsonvalues
+      name: json-ascan-view-optionscannulljsonvalues
+      description: REST surface for JSON-ascan-view-optionScanNullJsonValues.
+      operations:
+      - method: GET
+        name: ascanviewoptionscannulljsonvalues
+        description: Tells whether or not the active scanner should scan null JSON values.
+        call: owasp-zap-ascan.ascanviewoptionscannulljsonvalues
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionshowadvanceddialog
+      name: json-ascan-view-optionshowadvanceddialog
+      description: REST surface for JSON-ascan-view-optionShowAdvancedDialog.
+      operations:
+      - method: GET
+        name: ascanviewoptionshowadvanceddialog
+        description: ascanviewoptionshowadvanceddialog
+        call: owasp-zap-ascan.ascanviewoptionshowadvanceddialog
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optiontargetparamsenabledrpc
+      name: json-ascan-view-optiontargetparamsenabledrpc
+      description: REST surface for JSON-ascan-view-optionTargetParamsEnabledRPC.
+      operations:
+      - method: GET
+        name: ascanviewoptiontargetparamsenabledrpc
+        description: ascanviewoptiontargetparamsenabledrpc
+        call: owasp-zap-ascan.ascanviewoptiontargetparamsenabledrpc
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optiontargetparamsinjectable
+      name: json-ascan-view-optiontargetparamsinjectable
+      description: REST surface for JSON-ascan-view-optionTargetParamsInjectable.
+      operations:
+      - method: GET
+        name: ascanviewoptiontargetparamsinjectable
+        description: ascanviewoptiontargetparamsinjectable
+        call: owasp-zap-ascan.ascanviewoptiontargetparamsinjectable
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/optionthreadperhost
+      name: json-ascan-view-optionthreadperhost
+      description: REST surface for JSON-ascan-view-optionThreadPerHost.
+      operations:
+      - method: GET
+        name: ascanviewoptionthreadperhost
+        description: ascanviewoptionthreadperhost
+        call: owasp-zap-ascan.ascanviewoptionthreadperhost
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/policies
+      name: json-ascan-view-policies
+      description: REST surface for JSON-ascan-view-policies.
+      operations:
+      - method: GET
+        name: ascanviewpolicies
+        description: ascanviewpolicies
+        call: owasp-zap-ascan.ascanviewpolicies
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/scanpolicynames
+      name: json-ascan-view-scanpolicynames
+      description: REST surface for JSON-ascan-view-scanPolicyNames.
+      operations:
+      - method: GET
+        name: ascanviewscanpolicynames
+        description: ascanviewscanpolicynames
+        call: owasp-zap-ascan.ascanviewscanpolicynames
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/scanprogress
+      name: json-ascan-view-scanprogress
+      description: REST surface for JSON-ascan-view-scanProgress.
+      operations:
+      - method: GET
+        name: ascanviewscanprogress
+        description: ascanviewscanprogress
+        call: owasp-zap-ascan.ascanviewscanprogress
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/scanners
+      name: json-ascan-view-scanners
+      description: REST surface for JSON-ascan-view-scanners.
+      operations:
+      - method: GET
+        name: ascanviewscanners
+        description: Gets the scan rules, optionally, of the given scan policy or scanner policy/category ID.
+        call: owasp-zap-ascan.ascanviewscanners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/scans
+      name: json-ascan-view-scans
+      description: REST surface for JSON-ascan-view-scans.
+      operations:
+      - method: GET
+        name: ascanviewscans
+        description: ascanviewscans
+        call: owasp-zap-ascan.ascanviewscans
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/ascan/view/status
+      name: json-ascan-view-status
+      description: REST surface for JSON-ascan-view-status.
+      operations:
+      - method: GET
+        name: ascanviewstatus
+        description: ascanviewstatus
+        call: owasp-zap-ascan.ascanviewstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-ascan-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — ascan. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adds-new-parameter-excluded-scan
+      description: Adds a new parameter excluded from the scan, using the specified name. Optionally sets if the new entry
+        applies to a specific URL (default, all URLs) and sets the ID of the type of the parameter (default, ID of any type).
+        The type IDs can b
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionaddexcludedparam
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionaddscanpolicy
+      description: ascanactionaddscanpolicy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionaddscanpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: clears-regexes-urls-excluded-active
+      description: Clears the regexes of URLs excluded from the active scans.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionclearexcludedfromscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disables-all-scan-rules-scan
+      description: Disables all scan rules of the scan policy with the given name, or the default if none given.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactiondisableallscanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disables-scan-rules-given-ids
+      description: Disables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given
+        name, or the default if none given.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactiondisablescanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-all-scan-rules-scan
+      description: Enables all scan rules of the scan policy with the given name, or the default if none given.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionenableallscanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-scan-rules-given-ids
+      description: Enables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given
+        name, or the default if none given.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionenablescanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: adds-regex-urls-that-should
+      description: Adds a regex of URLs that should be excluded from the active scans.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionexcludefromscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: imports-scan-policy-using-given
+      description: Imports a Scan Policy using the given file system path.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionimportscanpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: modifies-parameter-excluded-scan-allows
+      description: Modifies a parameter excluded from the scan. Allows to modify the name, the URL and the type of parameter.
+        The parameter is selected with its index, which can be obtained with the view excludedParams.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionmodifyexcludedparam
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionpause
+      description: ascanactionpause
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionpause
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionpauseallscans
+      description: ascanactionpauseallscans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionpauseallscans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionremoveallscans
+      description: ascanactionremoveallscans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionremoveallscans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-parameter-excluded-scan-given
+      description: Removes a parameter excluded from the scan, with the given index. The index can be obtained with the view
+        excludedParams.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionremoveexcludedparam
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionremovescan
+      description: ascanactionremovescan
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionremovescan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionremovescanpolicy
+      description: ascanactionremovescanpolicy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionremovescanpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionresume
+      description: ascanactionresume
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionresume
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionresumeallscans
+      description: ascanactionresumeallscans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionresumeallscans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: runs-active-scanner-against-given
+      description: 'Runs the active scanner against the given URL or Context. Optionally, the ''recurse'' parameter can be
+        used to scan URLs under the given URL, the parameter ''inScopeOnly'' can be used to constrain the scan to URLs that
+        are in scope (ignored if '
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: active-scans-perspective-user-obtained
+      description: Active Scans from the perspective of a User, obtained using the given Context ID and User ID. See 'scan'
+        action for more details.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionscanasuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetenabledpolicies
+      description: ascanactionsetenabledpolicies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetenabledpolicies
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-active-scanner
+      description: Sets whether or not the active scanner should add a query param to GET requests which do not have parameters
+        to start with.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionaddqueryparam
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionallowattackonstart
+      description: ascanactionsetoptionallowattackonstart
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionallowattackonstart
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionattackpolicy
+      description: ascanactionsetoptionattackpolicy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionattackpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptiondefaultpolicy
+      description: ascanactionsetoptiondefaultpolicy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptiondefaultpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: this-option-has-been-superseded
+      description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptiondelayinms
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-active-scanner-2
+      description: Sets whether or not the active scanner should encode cookie values.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionencodecookievalues
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionhandleanticsrftokens
+      description: ascanactionsetoptionhandleanticsrftokens
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionhandleanticsrftokens
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionhostperscan
+      description: ascanactionsetoptionhostperscan
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionhostperscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-active-scanner-3
+      description: Sets whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID
+        of the scan rule that's sending the requests.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptioninjectpluginidinheader
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-maximum-number-alerts-that
+      description: Sets the maximum number of alerts that a rule can raise before being skipped.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionmaxalertsperrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionmaxcharttimeinmins
+      description: ascanactionsetoptionmaxcharttimeinmins
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionmaxcharttimeinmins
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionmaxresultstolist
+      description: ascanactionsetoptionmaxresultstolist
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionmaxresultstolist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionmaxruledurationinmins
+      description: ascanactionsetoptionmaxruledurationinmins
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionmaxruledurationinmins
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionmaxscandurationinmins
+      description: ascanactionsetoptionmaxscandurationinmins
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionmaxscandurationinmins
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionmaxscansinui
+      description: ascanactionsetoptionmaxscansinui
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionmaxscansinui
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionpromptinattackmode
+      description: ascanactionsetoptionpromptinattackmode
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionpromptinattackmode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionprompttoclearfinishedscans
+      description: ascanactionsetoptionprompttoclearfinishedscans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionprompttoclearfinishedscans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionrescaninattackmode
+      description: ascanactionsetoptionrescaninattackmode
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionrescaninattackmode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-http-headers
+      description: Sets whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters,
+        through the query or request body.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionscanheadersallrequests
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sets-whether-not-active-scanner-4
+      description: Sets whether or not the active scanner should scan null JSON values.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionscannulljsonvalues
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionshowadvanceddialog
+      description: ascanactionsetoptionshowadvanceddialog
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionshowadvanceddialog
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptiontargetparamsenabledrpc
+      description: ascanactionsetoptiontargetparamsenabledrpc
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptiontargetparamsenabledrpc
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptiontargetparamsinjectable
+      description: ascanactionsetoptiontargetparamsinjectable
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptiontargetparamsinjectable
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetoptionthreadperhost
+      description: ascanactionsetoptionthreadperhost
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetoptionthreadperhost
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetpolicyalertthreshold
+      description: ascanactionsetpolicyalertthreshold
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetpolicyalertthreshold
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetpolicyattackstrength
+      description: ascanactionsetpolicyattackstrength
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetpolicyattackstrength
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetscanneralertthreshold
+      description: ascanactionsetscanneralertthreshold
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetscanneralertthreshold
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionsetscannerattackstrength
+      description: ascanactionsetscannerattackstrength
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionsetscannerattackstrength
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: skips-scan-rule-using-given
+      description: Skips the scan rule using the given IDs of the scan and the scan rule.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionskipscanner
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionstop
+      description: ascanactionstop
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionstop
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionstopallscans
+      description: ascanactionstopallscans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionstopallscans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanactionupdatescanpolicy
+      description: ascanactionupdatescanpolicy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanactionupdatescanpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-ids-alerts-raised-during
+      description: Gets the IDs of the alerts raised during the scan with the given ID. An alert can be obtained with 'alert'
+        core view.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewalertsids
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewattackmodequeue
+      description: ascanviewattackmodequeue
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewattackmodequeue
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-regexes-urls-excluded-active
+      description: Gets the regexes of URLs excluded from the active scans.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewexcludedfromscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-all-types-excluded-parameters
+      description: 'Gets all the types of excluded parameters. For each type the following are shown: the ID and the name.'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewexcludedparamtypes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-all-parameters-that-are
+      description: 'Gets all the parameters that are excluded. For each parameter the following are shown: the name, the URL,
+        and the parameter type.'
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewexcludedparams
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-ids-messages-sent-during
+      description: Gets the IDs of the messages sent during the scan with the given ID. A message can be obtained with 'message'
+        core view.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewmessagesids
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-active-scanner
+      description: Tells whether or not the active scanner should add a query parameter to GET request that don't have parameters
+        to start with.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionaddqueryparam
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionallowattackonstart
+      description: ascanviewoptionallowattackonstart
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionallowattackonstart
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionattackpolicy
+      description: ascanviewoptionattackpolicy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionattackpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptiondefaultpolicy
+      description: ascanviewoptiondefaultpolicy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptiondefaultpolicy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: this-option-has-been-superseded-2
+      description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptiondelayinms
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-active-scanner-2
+      description: Tells whether or not the active scanner should encode cookie values.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionencodecookievalues
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: use-view-excludedparams-instead
+      description: Use view excludedParams instead.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionexcludedparamlist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionhandleanticsrftokens
+      description: ascanviewoptionhandleanticsrftokens
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionhandleanticsrftokens
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionhostperscan
+      description: ascanviewoptionhostperscan
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionhostperscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-active-scanner-3
+      description: Tells whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID
+        of the scan rule that's sending the requests.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptioninjectpluginidinheader
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-maximum-number-alerts-that
+      description: Gets the maximum number of alerts that a rule can raise before being skipped.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionmaxalertsperrule
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionmaxcharttimeinmins
+      description: ascanviewoptionmaxcharttimeinmins
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionmaxcharttimeinmins
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionmaxresultstolist
+      description: ascanviewoptionmaxresultstolist
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionmaxresultstolist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionmaxruledurationinmins
+      description: ascanviewoptionmaxruledurationinmins
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionmaxruledurationinmins
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionmaxscandurationinmins
+      description: ascanviewoptionmaxscandurationinmins
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionmaxscandurationinmins
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionmaxscansinui
+      description: ascanviewoptionmaxscansinui
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionmaxscansinui
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionpromptinattackmode
+      description: ascanviewoptionpromptinattackmode
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionpromptinattackmode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionprompttoclearfinishedscans
+      description: ascanviewoptionprompttoclearfinishedscans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionprompttoclearfinishedscans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionrescaninattackmode
+      description: ascanviewoptionrescaninattackmode
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionrescaninattackmode
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-http-headers
+      description: Tells whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters,
+        through the query or request body.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionscanheadersallrequests
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: tells-whether-not-active-scanner-4
+      description: Tells whether or not the active scanner should scan null JSON values.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionscannulljsonvalues
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionshowadvanceddialog
+      description: ascanviewoptionshowadvanceddialog
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionshowadvanceddialog
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptiontargetparamsenabledrpc
+      description: ascanviewoptiontargetparamsenabledrpc
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptiontargetparamsenabledrpc
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptiontargetparamsinjectable
+      description: ascanviewoptiontargetparamsinjectable
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptiontargetparamsinjectable
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewoptionthreadperhost
+      description: ascanviewoptionthreadperhost
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewoptionthreadperhost
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewpolicies
+      description: ascanviewpolicies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewpolicies
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewscanpolicynames
+      description: ascanviewscanpolicynames
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewscanpolicynames
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewscanprogress
+      description: ascanviewscanprogress
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewscanprogress
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-scan-rules-optionally-given
+      description: Gets the scan rules, optionally, of the given scan policy or scanner policy/category ID.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewscanners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewscans
+      description: ascanviewscans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewscans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ascanviewstatus
+      description: ascanviewstatus
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-ascan.ascanviewstatus
+      outputParameters:
+      - type: object
+        mapping: $.

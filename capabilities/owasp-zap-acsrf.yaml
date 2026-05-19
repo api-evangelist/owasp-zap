@@ -1,0 +1,231 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — acsrf
+  description: 'ZAP API — acsrf. 6 operations. Lead operation: acsrf. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - acsrf
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-acsrf
+    baseUri: http://zap
+    description: ZAP API — acsrf business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-acsrf-action-addOptionToken
+      path: /JSON/acsrf/action/addOptionToken/
+      operations:
+      - name: acsrfactionaddoptiontoken
+        method: GET
+        description: Adds an anti-CSRF token with the given name, enabled by default
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-acsrf-action-removeOptionToken
+      path: /JSON/acsrf/action/removeOptionToken/
+      operations:
+      - name: acsrfactionremoveoptiontoken
+        method: GET
+        description: Removes the anti-CSRF token with the given name
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-acsrf-action-setOptionPartialMatchingEnabled
+      path: /JSON/acsrf/action/setOptionPartialMatchingEnabled/
+      operations:
+      - name: acsrfactionsetoptionpartialmatchingenabled
+        method: GET
+        description: Define if ZAP should detect CSRF tokens by searching for partial matches.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-acsrf-view-optionPartialMatchingEnabled
+      path: /JSON/acsrf/view/optionPartialMatchingEnabled/
+      operations:
+      - name: acsrfviewoptionpartialmatchingenabled
+        method: GET
+        description: Define if ZAP should detect CSRF tokens by searching for partial matches
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-acsrf-view-optionTokensNames
+      path: /JSON/acsrf/view/optionTokensNames/
+      operations:
+      - name: acsrfviewoptiontokensnames
+        method: GET
+        description: Lists the names of all anti-CSRF tokens
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: OTHER-acsrf-other-genForm
+      path: /OTHER/acsrf/other/genForm/
+      operations:
+      - name: acsrfothergenform
+        method: GET
+        description: Generate a form for testing lack of anti-CSRF tokens - typically invoked via ZAP
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-acsrf-rest
+    port: 8080
+    description: REST adapter for ZAP API — acsrf. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/json/acsrf/action/addoptiontoken
+      name: json-acsrf-action-addoptiontoken
+      description: REST surface for JSON-acsrf-action-addOptionToken.
+      operations:
+      - method: GET
+        name: acsrfactionaddoptiontoken
+        description: Adds an anti-CSRF token with the given name, enabled by default
+        call: owasp-zap-acsrf.acsrfactionaddoptiontoken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/acsrf/action/removeoptiontoken
+      name: json-acsrf-action-removeoptiontoken
+      description: REST surface for JSON-acsrf-action-removeOptionToken.
+      operations:
+      - method: GET
+        name: acsrfactionremoveoptiontoken
+        description: Removes the anti-CSRF token with the given name
+        call: owasp-zap-acsrf.acsrfactionremoveoptiontoken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/acsrf/action/setoptionpartialmatchingenabled
+      name: json-acsrf-action-setoptionpartialmatchingenabled
+      description: REST surface for JSON-acsrf-action-setOptionPartialMatchingEnabled.
+      operations:
+      - method: GET
+        name: acsrfactionsetoptionpartialmatchingenabled
+        description: Define if ZAP should detect CSRF tokens by searching for partial matches.
+        call: owasp-zap-acsrf.acsrfactionsetoptionpartialmatchingenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/acsrf/view/optionpartialmatchingenabled
+      name: json-acsrf-view-optionpartialmatchingenabled
+      description: REST surface for JSON-acsrf-view-optionPartialMatchingEnabled.
+      operations:
+      - method: GET
+        name: acsrfviewoptionpartialmatchingenabled
+        description: Define if ZAP should detect CSRF tokens by searching for partial matches
+        call: owasp-zap-acsrf.acsrfviewoptionpartialmatchingenabled
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/acsrf/view/optiontokensnames
+      name: json-acsrf-view-optiontokensnames
+      description: REST surface for JSON-acsrf-view-optionTokensNames.
+      operations:
+      - method: GET
+        name: acsrfviewoptiontokensnames
+        description: Lists the names of all anti-CSRF tokens
+        call: owasp-zap-acsrf.acsrfviewoptiontokensnames
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/other/acsrf/other/genform
+      name: other-acsrf-other-genform
+      description: REST surface for OTHER-acsrf-other-genForm.
+      operations:
+      - method: GET
+        name: acsrfothergenform
+        description: Generate a form for testing lack of anti-CSRF tokens - typically invoked via ZAP
+        call: owasp-zap-acsrf.acsrfothergenform
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-acsrf-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — acsrf. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adds-anti-csrf-token-given
+      description: Adds an anti-CSRF token with the given name, enabled by default
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-acsrf.acsrfactionaddoptiontoken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-anti-csrf-token-given
+      description: Removes the anti-CSRF token with the given name
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-acsrf.acsrfactionremoveoptiontoken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: define-if-zap-should-detect
+      description: Define if ZAP should detect CSRF tokens by searching for partial matches.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-acsrf.acsrfactionsetoptionpartialmatchingenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: define-if-zap-should-detect-2
+      description: Define if ZAP should detect CSRF tokens by searching for partial matches
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-acsrf.acsrfviewoptionpartialmatchingenabled
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-names-all-anti-csrf
+      description: Lists the names of all anti-CSRF tokens
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-acsrf.acsrfviewoptiontokensnames
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: generate-form-testing-lack-anti
+      description: Generate a form for testing lack of anti-CSRF tokens - typically invoked via ZAP
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-acsrf.acsrfothergenform
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,136 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — wappalyzer
+  description: 'ZAP API — wappalyzer. 3 operations. Lead operation: wappalyzer. Self-contained Naftiko capability covering
+    one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - wappalyzer
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-wappalyzer
+    baseUri: http://zap
+    description: ZAP API — wappalyzer business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-wappalyzer-view-listAll
+      path: /JSON/wappalyzer/view/listAll/
+      operations:
+      - name: wappalyzerviewlistall
+        method: GET
+        description: Lists all sites and their associated applications (technologies).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-wappalyzer-view-listSite
+      path: /JSON/wappalyzer/view/listSite/
+      operations:
+      - name: wappalyzerviewlistsite
+        method: GET
+        description: Lists all the applications (technologies) associated with a specific site.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-wappalyzer-view-listSites
+      path: /JSON/wappalyzer/view/listSites/
+      operations:
+      - name: wappalyzerviewlistsites
+        method: GET
+        description: Lists all the sites recognized by the Technology Detection add-on.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-wappalyzer-rest
+    port: 8080
+    description: REST adapter for ZAP API — wappalyzer. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/json/wappalyzer/view/listall
+      name: json-wappalyzer-view-listall
+      description: REST surface for JSON-wappalyzer-view-listAll.
+      operations:
+      - method: GET
+        name: wappalyzerviewlistall
+        description: Lists all sites and their associated applications (technologies).
+        call: owasp-zap-wappalyzer.wappalyzerviewlistall
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/wappalyzer/view/listsite
+      name: json-wappalyzer-view-listsite
+      description: REST surface for JSON-wappalyzer-view-listSite.
+      operations:
+      - method: GET
+        name: wappalyzerviewlistsite
+        description: Lists all the applications (technologies) associated with a specific site.
+        call: owasp-zap-wappalyzer.wappalyzerviewlistsite
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/wappalyzer/view/listsites
+      name: json-wappalyzer-view-listsites
+      description: REST surface for JSON-wappalyzer-view-listSites.
+      operations:
+      - method: GET
+        name: wappalyzerviewlistsites
+        description: Lists all the sites recognized by the Technology Detection add-on.
+        call: owasp-zap-wappalyzer.wappalyzerviewlistsites
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-wappalyzer-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — wappalyzer. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: lists-all-sites-and-their
+      description: Lists all sites and their associated applications (technologies).
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-wappalyzer.wappalyzerviewlistall
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-all-applications-technologies-associated
+      description: Lists all the applications (technologies) associated with a specific site.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-wappalyzer.wappalyzerviewlistsite
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-all-sites-recognized-technology
+      description: Lists all the sites recognized by the Technology Detection add-on.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-wappalyzer.wappalyzerviewlistsites
+      outputParameters:
+      - type: object
+        mapping: $.

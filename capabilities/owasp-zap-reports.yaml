@@ -1,0 +1,136 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — reports
+  description: 'ZAP API — reports. 3 operations. Lead operation: reports. Self-contained Naftiko capability covering one Owasp
+    Zap business surface.'
+  tags:
+  - Owasp Zap
+  - reports
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-reports
+    baseUri: http://zap
+    description: ZAP API — reports business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-reports-action-generate
+      path: /JSON/reports/action/generate/
+      operations:
+      - name: reportsactiongenerate
+        method: GET
+        description: Generate a report with the supplied parameters.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-reports-view-templateDetails
+      path: /JSON/reports/view/templateDetails/
+      operations:
+      - name: reportsviewtemplatedetails
+        method: GET
+        description: View details of the specified template.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-reports-view-templates
+      path: /JSON/reports/view/templates/
+      operations:
+      - name: reportsviewtemplates
+        method: GET
+        description: View available templates.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-reports-rest
+    port: 8080
+    description: REST adapter for ZAP API — reports. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/json/reports/action/generate
+      name: json-reports-action-generate
+      description: REST surface for JSON-reports-action-generate.
+      operations:
+      - method: GET
+        name: reportsactiongenerate
+        description: Generate a report with the supplied parameters.
+        call: owasp-zap-reports.reportsactiongenerate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/reports/view/templatedetails
+      name: json-reports-view-templatedetails
+      description: REST surface for JSON-reports-view-templateDetails.
+      operations:
+      - method: GET
+        name: reportsviewtemplatedetails
+        description: View details of the specified template.
+        call: owasp-zap-reports.reportsviewtemplatedetails
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/reports/view/templates
+      name: json-reports-view-templates
+      description: REST surface for JSON-reports-view-templates.
+      operations:
+      - method: GET
+        name: reportsviewtemplates
+        description: View available templates.
+        call: owasp-zap-reports.reportsviewtemplates
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-reports-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — reports. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: generate-report-supplied-parameters
+      description: Generate a report with the supplied parameters.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-reports.reportsactiongenerate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: view-details-specified-template
+      description: View details of the specified template.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-reports.reportsviewtemplatedetails
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: view-available-templates
+      description: View available templates.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-reports.reportsviewtemplates
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,1064 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — autoupdate
+  description: 'ZAP API — autoupdate. 32 operations. Lead operation: autoupdate. Self-contained Naftiko capability covering
+    one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - autoupdate
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-autoupdate
+    baseUri: http://zap
+    description: ZAP API — autoupdate business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-autoupdate-action-downloadLatestRelease
+      path: /JSON/autoupdate/action/downloadLatestRelease/
+      operations:
+      - name: autoupdateactiondownloadlatestrelease
+        method: GET
+        description: Downloads the latest release, if any
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-installAddon
+      path: /JSON/autoupdate/action/installAddon/
+      operations:
+      - name: autoupdateactioninstalladdon
+        method: GET
+        description: Installs or updates the specified add-on, returning when complete (i.e. not asynchronously)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-installLocalAddon
+      path: /JSON/autoupdate/action/installLocalAddon/
+      operations:
+      - name: autoupdateactioninstalllocaladdon
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionCheckAddonUpdates
+      path: /JSON/autoupdate/action/setOptionCheckAddonUpdates/
+      operations:
+      - name: autoupdateactionsetoptioncheckaddonupdates
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionCheckOnStart
+      path: /JSON/autoupdate/action/setOptionCheckOnStart/
+      operations:
+      - name: autoupdateactionsetoptioncheckonstart
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionDownloadNewRelease
+      path: /JSON/autoupdate/action/setOptionDownloadNewRelease/
+      operations:
+      - name: autoupdateactionsetoptiondownloadnewrelease
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionInstallAddonUpdates
+      path: /JSON/autoupdate/action/setOptionInstallAddonUpdates/
+      operations:
+      - name: autoupdateactionsetoptioninstalladdonupdates
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionInstallScannerRules
+      path: /JSON/autoupdate/action/setOptionInstallScannerRules/
+      operations:
+      - name: autoupdateactionsetoptioninstallscannerrules
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionReportAlphaAddons
+      path: /JSON/autoupdate/action/setOptionReportAlphaAddons/
+      operations:
+      - name: autoupdateactionsetoptionreportalphaaddons
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionReportBetaAddons
+      path: /JSON/autoupdate/action/setOptionReportBetaAddons/
+      operations:
+      - name: autoupdateactionsetoptionreportbetaaddons
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-setOptionReportReleaseAddons
+      path: /JSON/autoupdate/action/setOptionReportReleaseAddons/
+      operations:
+      - name: autoupdateactionsetoptionreportreleaseaddons
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-action-uninstallAddon
+      path: /JSON/autoupdate/action/uninstallAddon/
+      operations:
+      - name: autoupdateactionuninstalladdon
+        method: GET
+        description: Uninstalls the specified add-on
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-installedAddons
+      path: /JSON/autoupdate/view/installedAddons/
+      operations:
+      - name: autoupdateviewinstalledaddons
+        method: GET
+        description: Return a list of all of the installed add-ons
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-isLatestVersion
+      path: /JSON/autoupdate/view/isLatestVersion/
+      operations:
+      - name: autoupdateviewislatestversion
+        method: GET
+        description: Returns 'true' if ZAP is on the latest version
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-latestVersionNumber
+      path: /JSON/autoupdate/view/latestVersionNumber/
+      operations:
+      - name: autoupdateviewlatestversionnumber
+        method: GET
+        description: Returns the latest version number
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-localAddons
+      path: /JSON/autoupdate/view/localAddons/
+      operations:
+      - name: autoupdateviewlocaladdons
+        method: GET
+        description: Returns a list with all local add-ons, installed or not.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-marketplaceAddons
+      path: /JSON/autoupdate/view/marketplaceAddons/
+      operations:
+      - name: autoupdateviewmarketplaceaddons
+        method: GET
+        description: Return a list of all of the add-ons on the ZAP Marketplace (this information is read once and then cached)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-newAddons
+      path: /JSON/autoupdate/view/newAddons/
+      operations:
+      - name: autoupdateviewnewaddons
+        method: GET
+        description: Return a list of any add-ons that have been added to the Marketplace since the last check for updates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionAddonDirectories
+      path: /JSON/autoupdate/view/optionAddonDirectories/
+      operations:
+      - name: autoupdateviewoptionaddondirectories
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionCheckAddonUpdates
+      path: /JSON/autoupdate/view/optionCheckAddonUpdates/
+      operations:
+      - name: autoupdateviewoptioncheckaddonupdates
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionCheckOnStart
+      path: /JSON/autoupdate/view/optionCheckOnStart/
+      operations:
+      - name: autoupdateviewoptioncheckonstart
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionDayLastChecked
+      path: /JSON/autoupdate/view/optionDayLastChecked/
+      operations:
+      - name: autoupdateviewoptiondaylastchecked
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionDayLastInstallWarned
+      path: /JSON/autoupdate/view/optionDayLastInstallWarned/
+      operations:
+      - name: autoupdateviewoptiondaylastinstallwarned
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionDayLastUpdateWarned
+      path: /JSON/autoupdate/view/optionDayLastUpdateWarned/
+      operations:
+      - name: autoupdateviewoptiondaylastupdatewarned
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionDownloadDirectory
+      path: /JSON/autoupdate/view/optionDownloadDirectory/
+      operations:
+      - name: autoupdateviewoptiondownloaddirectory
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionDownloadNewRelease
+      path: /JSON/autoupdate/view/optionDownloadNewRelease/
+      operations:
+      - name: autoupdateviewoptiondownloadnewrelease
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionInstallAddonUpdates
+      path: /JSON/autoupdate/view/optionInstallAddonUpdates/
+      operations:
+      - name: autoupdateviewoptioninstalladdonupdates
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionInstallScannerRules
+      path: /JSON/autoupdate/view/optionInstallScannerRules/
+      operations:
+      - name: autoupdateviewoptioninstallscannerrules
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionReportAlphaAddons
+      path: /JSON/autoupdate/view/optionReportAlphaAddons/
+      operations:
+      - name: autoupdateviewoptionreportalphaaddons
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionReportBetaAddons
+      path: /JSON/autoupdate/view/optionReportBetaAddons/
+      operations:
+      - name: autoupdateviewoptionreportbetaaddons
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-optionReportReleaseAddons
+      path: /JSON/autoupdate/view/optionReportReleaseAddons/
+      operations:
+      - name: autoupdateviewoptionreportreleaseaddons
+        method: GET
+        description: ''
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-autoupdate-view-updatedAddons
+      path: /JSON/autoupdate/view/updatedAddons/
+      operations:
+      - name: autoupdateviewupdatedaddons
+        method: GET
+        description: Return a list of any add-ons that have been changed in the Marketplace since the last check for updates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-autoupdate-rest
+    port: 8080
+    description: REST adapter for ZAP API — autoupdate. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/json/autoupdate/action/downloadlatestrelease
+      name: json-autoupdate-action-downloadlatestrelease
+      description: REST surface for JSON-autoupdate-action-downloadLatestRelease.
+      operations:
+      - method: GET
+        name: autoupdateactiondownloadlatestrelease
+        description: Downloads the latest release, if any
+        call: owasp-zap-autoupdate.autoupdateactiondownloadlatestrelease
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/installaddon
+      name: json-autoupdate-action-installaddon
+      description: REST surface for JSON-autoupdate-action-installAddon.
+      operations:
+      - method: GET
+        name: autoupdateactioninstalladdon
+        description: Installs or updates the specified add-on, returning when complete (i.e. not asynchronously)
+        call: owasp-zap-autoupdate.autoupdateactioninstalladdon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/installlocaladdon
+      name: json-autoupdate-action-installlocaladdon
+      description: REST surface for JSON-autoupdate-action-installLocalAddon.
+      operations:
+      - method: GET
+        name: autoupdateactioninstalllocaladdon
+        description: autoupdateactioninstalllocaladdon
+        call: owasp-zap-autoupdate.autoupdateactioninstalllocaladdon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptioncheckaddonupdates
+      name: json-autoupdate-action-setoptioncheckaddonupdates
+      description: REST surface for JSON-autoupdate-action-setOptionCheckAddonUpdates.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptioncheckaddonupdates
+        description: autoupdateactionsetoptioncheckaddonupdates
+        call: owasp-zap-autoupdate.autoupdateactionsetoptioncheckaddonupdates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptioncheckonstart
+      name: json-autoupdate-action-setoptioncheckonstart
+      description: REST surface for JSON-autoupdate-action-setOptionCheckOnStart.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptioncheckonstart
+        description: autoupdateactionsetoptioncheckonstart
+        call: owasp-zap-autoupdate.autoupdateactionsetoptioncheckonstart
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptiondownloadnewrelease
+      name: json-autoupdate-action-setoptiondownloadnewrelease
+      description: REST surface for JSON-autoupdate-action-setOptionDownloadNewRelease.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptiondownloadnewrelease
+        description: autoupdateactionsetoptiondownloadnewrelease
+        call: owasp-zap-autoupdate.autoupdateactionsetoptiondownloadnewrelease
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptioninstalladdonupdates
+      name: json-autoupdate-action-setoptioninstalladdonupdates
+      description: REST surface for JSON-autoupdate-action-setOptionInstallAddonUpdates.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptioninstalladdonupdates
+        description: autoupdateactionsetoptioninstalladdonupdates
+        call: owasp-zap-autoupdate.autoupdateactionsetoptioninstalladdonupdates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptioninstallscannerrules
+      name: json-autoupdate-action-setoptioninstallscannerrules
+      description: REST surface for JSON-autoupdate-action-setOptionInstallScannerRules.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptioninstallscannerrules
+        description: autoupdateactionsetoptioninstallscannerrules
+        call: owasp-zap-autoupdate.autoupdateactionsetoptioninstallscannerrules
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptionreportalphaaddons
+      name: json-autoupdate-action-setoptionreportalphaaddons
+      description: REST surface for JSON-autoupdate-action-setOptionReportAlphaAddons.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptionreportalphaaddons
+        description: autoupdateactionsetoptionreportalphaaddons
+        call: owasp-zap-autoupdate.autoupdateactionsetoptionreportalphaaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptionreportbetaaddons
+      name: json-autoupdate-action-setoptionreportbetaaddons
+      description: REST surface for JSON-autoupdate-action-setOptionReportBetaAddons.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptionreportbetaaddons
+        description: autoupdateactionsetoptionreportbetaaddons
+        call: owasp-zap-autoupdate.autoupdateactionsetoptionreportbetaaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/setoptionreportreleaseaddons
+      name: json-autoupdate-action-setoptionreportreleaseaddons
+      description: REST surface for JSON-autoupdate-action-setOptionReportReleaseAddons.
+      operations:
+      - method: GET
+        name: autoupdateactionsetoptionreportreleaseaddons
+        description: autoupdateactionsetoptionreportreleaseaddons
+        call: owasp-zap-autoupdate.autoupdateactionsetoptionreportreleaseaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/action/uninstalladdon
+      name: json-autoupdate-action-uninstalladdon
+      description: REST surface for JSON-autoupdate-action-uninstallAddon.
+      operations:
+      - method: GET
+        name: autoupdateactionuninstalladdon
+        description: Uninstalls the specified add-on
+        call: owasp-zap-autoupdate.autoupdateactionuninstalladdon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/installedaddons
+      name: json-autoupdate-view-installedaddons
+      description: REST surface for JSON-autoupdate-view-installedAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewinstalledaddons
+        description: Return a list of all of the installed add-ons
+        call: owasp-zap-autoupdate.autoupdateviewinstalledaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/islatestversion
+      name: json-autoupdate-view-islatestversion
+      description: REST surface for JSON-autoupdate-view-isLatestVersion.
+      operations:
+      - method: GET
+        name: autoupdateviewislatestversion
+        description: Returns 'true' if ZAP is on the latest version
+        call: owasp-zap-autoupdate.autoupdateviewislatestversion
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/latestversionnumber
+      name: json-autoupdate-view-latestversionnumber
+      description: REST surface for JSON-autoupdate-view-latestVersionNumber.
+      operations:
+      - method: GET
+        name: autoupdateviewlatestversionnumber
+        description: Returns the latest version number
+        call: owasp-zap-autoupdate.autoupdateviewlatestversionnumber
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/localaddons
+      name: json-autoupdate-view-localaddons
+      description: REST surface for JSON-autoupdate-view-localAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewlocaladdons
+        description: Returns a list with all local add-ons, installed or not.
+        call: owasp-zap-autoupdate.autoupdateviewlocaladdons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/marketplaceaddons
+      name: json-autoupdate-view-marketplaceaddons
+      description: REST surface for JSON-autoupdate-view-marketplaceAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewmarketplaceaddons
+        description: Return a list of all of the add-ons on the ZAP Marketplace (this information is read once and then cached)
+        call: owasp-zap-autoupdate.autoupdateviewmarketplaceaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/newaddons
+      name: json-autoupdate-view-newaddons
+      description: REST surface for JSON-autoupdate-view-newAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewnewaddons
+        description: Return a list of any add-ons that have been added to the Marketplace since the last check for updates
+        call: owasp-zap-autoupdate.autoupdateviewnewaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optionaddondirectories
+      name: json-autoupdate-view-optionaddondirectories
+      description: REST surface for JSON-autoupdate-view-optionAddonDirectories.
+      operations:
+      - method: GET
+        name: autoupdateviewoptionaddondirectories
+        description: autoupdateviewoptionaddondirectories
+        call: owasp-zap-autoupdate.autoupdateviewoptionaddondirectories
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optioncheckaddonupdates
+      name: json-autoupdate-view-optioncheckaddonupdates
+      description: REST surface for JSON-autoupdate-view-optionCheckAddonUpdates.
+      operations:
+      - method: GET
+        name: autoupdateviewoptioncheckaddonupdates
+        description: autoupdateviewoptioncheckaddonupdates
+        call: owasp-zap-autoupdate.autoupdateviewoptioncheckaddonupdates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optioncheckonstart
+      name: json-autoupdate-view-optioncheckonstart
+      description: REST surface for JSON-autoupdate-view-optionCheckOnStart.
+      operations:
+      - method: GET
+        name: autoupdateviewoptioncheckonstart
+        description: autoupdateviewoptioncheckonstart
+        call: owasp-zap-autoupdate.autoupdateviewoptioncheckonstart
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optiondaylastchecked
+      name: json-autoupdate-view-optiondaylastchecked
+      description: REST surface for JSON-autoupdate-view-optionDayLastChecked.
+      operations:
+      - method: GET
+        name: autoupdateviewoptiondaylastchecked
+        description: autoupdateviewoptiondaylastchecked
+        call: owasp-zap-autoupdate.autoupdateviewoptiondaylastchecked
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optiondaylastinstallwarned
+      name: json-autoupdate-view-optiondaylastinstallwarned
+      description: REST surface for JSON-autoupdate-view-optionDayLastInstallWarned.
+      operations:
+      - method: GET
+        name: autoupdateviewoptiondaylastinstallwarned
+        description: autoupdateviewoptiondaylastinstallwarned
+        call: owasp-zap-autoupdate.autoupdateviewoptiondaylastinstallwarned
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optiondaylastupdatewarned
+      name: json-autoupdate-view-optiondaylastupdatewarned
+      description: REST surface for JSON-autoupdate-view-optionDayLastUpdateWarned.
+      operations:
+      - method: GET
+        name: autoupdateviewoptiondaylastupdatewarned
+        description: autoupdateviewoptiondaylastupdatewarned
+        call: owasp-zap-autoupdate.autoupdateviewoptiondaylastupdatewarned
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optiondownloaddirectory
+      name: json-autoupdate-view-optiondownloaddirectory
+      description: REST surface for JSON-autoupdate-view-optionDownloadDirectory.
+      operations:
+      - method: GET
+        name: autoupdateviewoptiondownloaddirectory
+        description: autoupdateviewoptiondownloaddirectory
+        call: owasp-zap-autoupdate.autoupdateviewoptiondownloaddirectory
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optiondownloadnewrelease
+      name: json-autoupdate-view-optiondownloadnewrelease
+      description: REST surface for JSON-autoupdate-view-optionDownloadNewRelease.
+      operations:
+      - method: GET
+        name: autoupdateviewoptiondownloadnewrelease
+        description: autoupdateviewoptiondownloadnewrelease
+        call: owasp-zap-autoupdate.autoupdateviewoptiondownloadnewrelease
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optioninstalladdonupdates
+      name: json-autoupdate-view-optioninstalladdonupdates
+      description: REST surface for JSON-autoupdate-view-optionInstallAddonUpdates.
+      operations:
+      - method: GET
+        name: autoupdateviewoptioninstalladdonupdates
+        description: autoupdateviewoptioninstalladdonupdates
+        call: owasp-zap-autoupdate.autoupdateviewoptioninstalladdonupdates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optioninstallscannerrules
+      name: json-autoupdate-view-optioninstallscannerrules
+      description: REST surface for JSON-autoupdate-view-optionInstallScannerRules.
+      operations:
+      - method: GET
+        name: autoupdateviewoptioninstallscannerrules
+        description: autoupdateviewoptioninstallscannerrules
+        call: owasp-zap-autoupdate.autoupdateviewoptioninstallscannerrules
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optionreportalphaaddons
+      name: json-autoupdate-view-optionreportalphaaddons
+      description: REST surface for JSON-autoupdate-view-optionReportAlphaAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewoptionreportalphaaddons
+        description: autoupdateviewoptionreportalphaaddons
+        call: owasp-zap-autoupdate.autoupdateviewoptionreportalphaaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optionreportbetaaddons
+      name: json-autoupdate-view-optionreportbetaaddons
+      description: REST surface for JSON-autoupdate-view-optionReportBetaAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewoptionreportbetaaddons
+        description: autoupdateviewoptionreportbetaaddons
+        call: owasp-zap-autoupdate.autoupdateviewoptionreportbetaaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/optionreportreleaseaddons
+      name: json-autoupdate-view-optionreportreleaseaddons
+      description: REST surface for JSON-autoupdate-view-optionReportReleaseAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewoptionreportreleaseaddons
+        description: autoupdateviewoptionreportreleaseaddons
+        call: owasp-zap-autoupdate.autoupdateviewoptionreportreleaseaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/autoupdate/view/updatedaddons
+      name: json-autoupdate-view-updatedaddons
+      description: REST surface for JSON-autoupdate-view-updatedAddons.
+      operations:
+      - method: GET
+        name: autoupdateviewupdatedaddons
+        description: Return a list of any add-ons that have been changed in the Marketplace since the last check for updates
+        call: owasp-zap-autoupdate.autoupdateviewupdatedaddons
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-autoupdate-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — autoupdate. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: downloads-latest-release-if-any
+      description: Downloads the latest release, if any
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactiondownloadlatestrelease
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: installs-updates-specified-add-returning
+      description: Installs or updates the specified add-on, returning when complete (i.e. not asynchronously)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactioninstalladdon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactioninstalllocaladdon
+      description: autoupdateactioninstalllocaladdon
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactioninstalllocaladdon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptioncheckaddonupdates
+      description: autoupdateactionsetoptioncheckaddonupdates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptioncheckaddonupdates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptioncheckonstart
+      description: autoupdateactionsetoptioncheckonstart
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptioncheckonstart
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptiondownloadnewrelease
+      description: autoupdateactionsetoptiondownloadnewrelease
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptiondownloadnewrelease
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptioninstalladdonupdates
+      description: autoupdateactionsetoptioninstalladdonupdates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptioninstalladdonupdates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptioninstallscannerrules
+      description: autoupdateactionsetoptioninstallscannerrules
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptioninstallscannerrules
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptionreportalphaaddons
+      description: autoupdateactionsetoptionreportalphaaddons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptionreportalphaaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptionreportbetaaddons
+      description: autoupdateactionsetoptionreportbetaaddons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptionreportbetaaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateactionsetoptionreportreleaseaddons
+      description: autoupdateactionsetoptionreportreleaseaddons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionsetoptionreportreleaseaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: uninstalls-specified-add
+      description: Uninstalls the specified add-on
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateactionuninstalladdon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: return-list-all-installed-add
+      description: Return a list of all of the installed add-ons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewinstalledaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-true-if-zap-is
+      description: Returns 'true' if ZAP is on the latest version
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewislatestversion
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-latest-version-number
+      description: Returns the latest version number
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewlatestversionnumber
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: returns-list-all-local-add
+      description: Returns a list with all local add-ons, installed or not.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewlocaladdons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: return-list-all-add-ons
+      description: Return a list of all of the add-ons on the ZAP Marketplace (this information is read once and then cached)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewmarketplaceaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: return-list-any-add-ons
+      description: Return a list of any add-ons that have been added to the Marketplace since the last check for updates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewnewaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptionaddondirectories
+      description: autoupdateviewoptionaddondirectories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptionaddondirectories
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptioncheckaddonupdates
+      description: autoupdateviewoptioncheckaddonupdates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptioncheckaddonupdates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptioncheckonstart
+      description: autoupdateviewoptioncheckonstart
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptioncheckonstart
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptiondaylastchecked
+      description: autoupdateviewoptiondaylastchecked
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptiondaylastchecked
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptiondaylastinstallwarned
+      description: autoupdateviewoptiondaylastinstallwarned
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptiondaylastinstallwarned
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptiondaylastupdatewarned
+      description: autoupdateviewoptiondaylastupdatewarned
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptiondaylastupdatewarned
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptiondownloaddirectory
+      description: autoupdateviewoptiondownloaddirectory
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptiondownloaddirectory
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptiondownloadnewrelease
+      description: autoupdateviewoptiondownloadnewrelease
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptiondownloadnewrelease
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptioninstalladdonupdates
+      description: autoupdateviewoptioninstalladdonupdates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptioninstalladdonupdates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptioninstallscannerrules
+      description: autoupdateviewoptioninstallscannerrules
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptioninstallscannerrules
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptionreportalphaaddons
+      description: autoupdateviewoptionreportalphaaddons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptionreportalphaaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptionreportbetaaddons
+      description: autoupdateviewoptionreportbetaaddons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptionreportbetaaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: autoupdateviewoptionreportreleaseaddons
+      description: autoupdateviewoptionreportreleaseaddons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewoptionreportreleaseaddons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: return-list-any-add-ons-2
+      description: Return a list of any add-ons that have been changed in the Marketplace since the last check for updates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-autoupdate.autoupdateviewupdatedaddons
+      outputParameters:
+      - type: object
+        mapping: $.

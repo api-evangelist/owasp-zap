@@ -1,0 +1,136 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — clientSpider
+  description: 'ZAP API — clientSpider. 3 operations. Lead operation: clientSpider. Self-contained Naftiko capability covering
+    one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - clientSpider
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-clientspider
+    baseUri: http://zap
+    description: ZAP API — clientSpider business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-clientSpider-action-scan
+      path: /JSON/clientSpider/action/scan/
+      operations:
+      - name: clientspideractionscan
+        method: GET
+        description: Starts a client spider scan.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-clientSpider-action-stop
+      path: /JSON/clientSpider/action/stop/
+      operations:
+      - name: clientspideractionstop
+        method: GET
+        description: Stops a client spider scan.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-clientSpider-view-status
+      path: /JSON/clientSpider/view/status/
+      operations:
+      - name: clientspiderviewstatus
+        method: GET
+        description: Gets the status of a client spider scan.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-clientspider-rest
+    port: 8080
+    description: REST adapter for ZAP API — clientSpider. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/json/clientspider/action/scan
+      name: json-clientspider-action-scan
+      description: REST surface for JSON-clientSpider-action-scan.
+      operations:
+      - method: GET
+        name: clientspideractionscan
+        description: Starts a client spider scan.
+        call: owasp-zap-clientspider.clientspideractionscan
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/clientspider/action/stop
+      name: json-clientspider-action-stop
+      description: REST surface for JSON-clientSpider-action-stop.
+      operations:
+      - method: GET
+        name: clientspideractionstop
+        description: Stops a client spider scan.
+        call: owasp-zap-clientspider.clientspideractionstop
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/clientspider/view/status
+      name: json-clientspider-view-status
+      description: REST surface for JSON-clientSpider-view-status.
+      operations:
+      - method: GET
+        name: clientspiderviewstatus
+        description: Gets the status of a client spider scan.
+        call: owasp-zap-clientspider.clientspiderviewstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-clientspider-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — clientSpider. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: starts-client-spider-scan
+      description: Starts a client spider scan.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-clientspider.clientspideractionscan
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: stops-client-spider-scan
+      description: Stops a client spider scan.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-clientspider.clientspideractionstop
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gets-status-client-spider-scan
+      description: Gets the status of a client spider scan.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-clientspider.clientspiderviewstatus
+      outputParameters:
+      - type: object
+        mapping: $.

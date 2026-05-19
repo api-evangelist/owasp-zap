@@ -1,0 +1,296 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ZAP API — custompayloads
+  description: 'ZAP API — custompayloads. 8 operations. Lead operation: custompayloads. Self-contained Naftiko capability
+    covering one Owasp Zap business surface.'
+  tags:
+  - Owasp Zap
+  - custompayloads
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OWASP_ZAP_API_KEY: OWASP_ZAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: owasp-zap-custompayloads
+    baseUri: http://zap
+    description: ZAP API — custompayloads business capability. Self-contained, no shared references.
+    resources:
+    - name: JSON-custompayloads-action-addCustomPayload
+      path: /JSON/custompayloads/action/addCustomPayload/
+      operations:
+      - name: custompayloadsactionaddcustompayload
+        method: GET
+        description: Adds a new payload.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-custompayloads-action-disableCustomPayload
+      path: /JSON/custompayloads/action/disableCustomPayload/
+      operations:
+      - name: custompayloadsactiondisablecustompayload
+        method: GET
+        description: Disables a given payload.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-custompayloads-action-disableCustomPayloads
+      path: /JSON/custompayloads/action/disableCustomPayloads/
+      operations:
+      - name: custompayloadsactiondisablecustompayloads
+        method: GET
+        description: Disables payloads for a given category.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-custompayloads-action-enableCustomPayload
+      path: /JSON/custompayloads/action/enableCustomPayload/
+      operations:
+      - name: custompayloadsactionenablecustompayload
+        method: GET
+        description: Enables a given payload.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-custompayloads-action-enableCustomPayloads
+      path: /JSON/custompayloads/action/enableCustomPayloads/
+      operations:
+      - name: custompayloadsactionenablecustompayloads
+        method: GET
+        description: Enables payloads for a given category.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-custompayloads-action-removeCustomPayload
+      path: /JSON/custompayloads/action/removeCustomPayload/
+      operations:
+      - name: custompayloadsactionremovecustompayload
+        method: GET
+        description: Removes a payload.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-custompayloads-view-customPayloads
+      path: /JSON/custompayloads/view/customPayloads/
+      operations:
+      - name: custompayloadsviewcustompayloads
+        method: GET
+        description: Lists all the payloads currently loaded (category, payload, enabled state). Optionally filtered by category.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: JSON-custompayloads-view-customPayloadsCategories
+      path: /JSON/custompayloads/view/customPayloadsCategories/
+      operations:
+      - name: custompayloadsviewcustompayloadscategories
+        method: GET
+        description: Lists all available categories.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-ZAP-API-Key
+      value: '{{env.OWASP_ZAP_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: owasp-zap-custompayloads-rest
+    port: 8080
+    description: REST adapter for ZAP API — custompayloads. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/json/custompayloads/action/addcustompayload
+      name: json-custompayloads-action-addcustompayload
+      description: REST surface for JSON-custompayloads-action-addCustomPayload.
+      operations:
+      - method: GET
+        name: custompayloadsactionaddcustompayload
+        description: Adds a new payload.
+        call: owasp-zap-custompayloads.custompayloadsactionaddcustompayload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/custompayloads/action/disablecustompayload
+      name: json-custompayloads-action-disablecustompayload
+      description: REST surface for JSON-custompayloads-action-disableCustomPayload.
+      operations:
+      - method: GET
+        name: custompayloadsactiondisablecustompayload
+        description: Disables a given payload.
+        call: owasp-zap-custompayloads.custompayloadsactiondisablecustompayload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/custompayloads/action/disablecustompayloads
+      name: json-custompayloads-action-disablecustompayloads
+      description: REST surface for JSON-custompayloads-action-disableCustomPayloads.
+      operations:
+      - method: GET
+        name: custompayloadsactiondisablecustompayloads
+        description: Disables payloads for a given category.
+        call: owasp-zap-custompayloads.custompayloadsactiondisablecustompayloads
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/custompayloads/action/enablecustompayload
+      name: json-custompayloads-action-enablecustompayload
+      description: REST surface for JSON-custompayloads-action-enableCustomPayload.
+      operations:
+      - method: GET
+        name: custompayloadsactionenablecustompayload
+        description: Enables a given payload.
+        call: owasp-zap-custompayloads.custompayloadsactionenablecustompayload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/custompayloads/action/enablecustompayloads
+      name: json-custompayloads-action-enablecustompayloads
+      description: REST surface for JSON-custompayloads-action-enableCustomPayloads.
+      operations:
+      - method: GET
+        name: custompayloadsactionenablecustompayloads
+        description: Enables payloads for a given category.
+        call: owasp-zap-custompayloads.custompayloadsactionenablecustompayloads
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/custompayloads/action/removecustompayload
+      name: json-custompayloads-action-removecustompayload
+      description: REST surface for JSON-custompayloads-action-removeCustomPayload.
+      operations:
+      - method: GET
+        name: custompayloadsactionremovecustompayload
+        description: Removes a payload.
+        call: owasp-zap-custompayloads.custompayloadsactionremovecustompayload
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/custompayloads/view/custompayloads
+      name: json-custompayloads-view-custompayloads
+      description: REST surface for JSON-custompayloads-view-customPayloads.
+      operations:
+      - method: GET
+        name: custompayloadsviewcustompayloads
+        description: Lists all the payloads currently loaded (category, payload, enabled state). Optionally filtered by category.
+        call: owasp-zap-custompayloads.custompayloadsviewcustompayloads
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/json/custompayloads/view/custompayloadscategories
+      name: json-custompayloads-view-custompayloadscategories
+      description: REST surface for JSON-custompayloads-view-customPayloadsCategories.
+      operations:
+      - method: GET
+        name: custompayloadsviewcustompayloadscategories
+        description: Lists all available categories.
+        call: owasp-zap-custompayloads.custompayloadsviewcustompayloadscategories
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: owasp-zap-custompayloads-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ZAP API — custompayloads. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: adds-new-payload
+      description: Adds a new payload.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsactionaddcustompayload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disables-given-payload
+      description: Disables a given payload.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsactiondisablecustompayload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: disables-payloads-given-category
+      description: Disables payloads for a given category.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsactiondisablecustompayloads
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-given-payload
+      description: Enables a given payload.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsactionenablecustompayload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enables-payloads-given-category
+      description: Enables payloads for a given category.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsactionenablecustompayloads
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removes-payload
+      description: Removes a payload.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsactionremovecustompayload
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-all-payloads-currently-loaded
+      description: Lists all the payloads currently loaded (category, payload, enabled state). Optionally filtered by category.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsviewcustompayloads
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lists-all-available-categories
+      description: Lists all available categories.
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: owasp-zap-custompayloads.custompayloadsviewcustompayloadscategories
+      outputParameters:
+      - type: object
+        mapping: $.

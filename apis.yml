@@ -1,64 +1,154 @@
 aid: owasp-zap
 name: OWASP ZAP
-description: >-
-  OWASP ZAP (Zed Attack Proxy) is an open source web application security
-  scanner for finding vulnerabilities in APIs and web applications during
-  development and testing. ZAP exposes a comprehensive HTTP API for
-  controlling and automating scans, spidering, authentication, alerts,
-  reporting, and more.
+description: OWASP ZAP (Zed Attack Proxy) is an open source web application security scanner for finding vulnerabilities in
+  APIs and web applications during development and testing. ZAP exposes a comprehensive HTTP API for controlling and automating
+  scans, spidering, authentication, alerts, reporting, and more.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+- Security Testing
+- Application Security
+- Vulnerability Scanning
+- Testing
+- Open Source
+url: https://raw.githubusercontent.com/api-evangelist/owasp-zap/refs/heads/main/apis.yml
+created: '2026-03-25'
+modified: '2026-05-19'
+specificationVersion: '0.19'
+apis:
+- aid: owasp-zap:owasp-zap
+  name: OWASP ZAP API
+  description: The HTTP API for controlling and accessing ZAP. Supports automation of access control scans, active and passive
+    scanning, spidering, authentication, alerts, contexts, reports, scripts, and many more ZAP components.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
   - Security Testing
   - Application Security
   - Vulnerability Scanning
   - Testing
-  - Open Source
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/owasp-zap/refs/heads/main/apis.yml
-created: '2026-03-25'
-modified: '2026-04-28'
-specificationVersion: '0.19'
-apis:
-  - aid: owasp-zap:owasp-zap
-    name: OWASP ZAP API
-    description: >-
-      The HTTP API for controlling and accessing ZAP. Supports automation
-      of access control scans, active and passive scanning, spidering,
-      authentication, alerts, contexts, reports, scripts, and many more
-      ZAP components.
-    humanURL: https://www.zaproxy.org
-    baseURL: http://zap
-    tags:
-      - Security Testing
-      - Application Security
-      - Vulnerability Scanning
-      - Testing
-    properties:
-      - type: Documentation
-        url: https://www.zaproxy.org/docs/
-      - type: API Documentation
-        url: https://www.zaproxy.org/docs/api/
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/owasp-zap/refs/heads/main/openapi/owasp-zap-openapi.yml
-      - type: GitHubRepository
-        url: https://github.com/zaproxy/zaproxy
-      - type: GitHub API Docs
-        url: https://github.com/zaproxy/zap-api-docs
-common:
-  - type: Website
-    url: https://www.zaproxy.org
+  properties:
   - type: Documentation
     url: https://www.zaproxy.org/docs/
   - type: API Documentation
     url: https://www.zaproxy.org/docs/api/
-  - type: GitHubOrganization
-    url: https://github.com/zaproxy
-  - type: Download
-    url: https://www.zaproxy.org/download/
-  - type: Community
-    url: https://groups.google.com/group/zaproxy-users
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-evangelist/owasp-zap/refs/heads/main/openapi/owasp-zap-openapi.yml
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-accesscontrol.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-acsrf.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-ajaxspider.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-alert.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-alertfilter.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-ascan.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-authentication.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-authorization.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-automation.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-autoupdate.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-break.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-client.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-clientspider.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-context.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-core.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-custompayloads.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-dev.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-exim.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-forceduser.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-graphql.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-httpsessions.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-hud.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-keyboard.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-localproxies.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-network.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-oast.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-openapi.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-paramdigger.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-params.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-pnh.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-postman.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-pscan.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-quickstartlaunch.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-replacer.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-reports.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-retest.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-reveal.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-revisit.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-ruleconfig.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-script.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-search.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-selenium.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-sessionmanagement.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-soap.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-spider.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-stats.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-users.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-wappalyzer.yaml
+  - type: NaftikoCapability
+    url: capabilities/owasp-zap-websocket.yaml
+common:
+- type: Website
+  url: https://www.zaproxy.org
+- type: Documentation
+  url: https://www.zaproxy.org/docs/
+- type: API Documentation
+  url: https://www.zaproxy.org/docs/api/
+- type: GitHubOrganization
+  url: https://github.com/zaproxy
+- type: Download
+  url: https://www.zaproxy.org/download/
+- type: Community
+  url: https://groups.google.com/group/zaproxy-users
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
