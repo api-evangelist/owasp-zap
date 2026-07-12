@@ -1,0 +1,22 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/owasp-zap-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  - query
+schemes:
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: X-ZAP-API-Key
+  sources:
+  - openapi/owasp-zap-openapi.yml
+- name: apiKeyQuery
+  type: apiKey
+  in: query
+  parameter: apikey
+  sources:
+  - openapi/owasp-zap-openapi.yml
