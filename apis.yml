@@ -41,6 +41,8 @@ apis:
       - type: GitHub API Docs
         url: https://github.com/zaproxy/zap-api-docs
 common:
+  - type: AgenticAccess
+    url: agentic-access/owasp-zap-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/owasp-zap-vulnerability-disclosure.yml
   - type: DomainSecurity

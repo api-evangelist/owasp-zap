@@ -1,0 +1,7364 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/owasp-zap-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 735
+  by_action_class:
+    connected: 735
+  by_consequence:
+    read: 735
+  human_in_the_loop_required: 0
+operations:
+- path: /JSON/accessControl/action/scan/
+  method: get
+  operationId: accessControlActionScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/accessControl/action/writeHTMLreport/
+  method: get
+  operationId: accessControlActionWriteHTMLreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/accessControl/view/getScanProgress/
+  method: get
+  operationId: accessControlViewGetScanProgress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/accessControl/view/getScanStatus/
+  method: get
+  operationId: accessControlViewGetScanStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/acsrf/action/addOptionToken/
+  method: get
+  operationId: acsrfActionAddOptionToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/acsrf/action/removeOptionToken/
+  method: get
+  operationId: acsrfActionRemoveOptionToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/acsrf/action/setOptionPartialMatchingEnabled/
+  method: get
+  operationId: acsrfActionSetOptionPartialMatchingEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/acsrf/other/genForm/
+  method: get
+  operationId: acsrfOtherGenForm
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/acsrf/view/optionPartialMatchingEnabled/
+  method: get
+  operationId: acsrfViewOptionPartialMatchingEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/acsrf/view/optionTokensNames/
+  method: get
+  operationId: acsrfViewOptionTokensNames
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/addAllowedResource/
+  method: get
+  operationId: ajaxSpiderActionAddAllowedResource
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/addExcludedElement/
+  method: get
+  operationId: ajaxSpiderActionAddExcludedElement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/modifyExcludedElement/
+  method: get
+  operationId: ajaxSpiderActionModifyExcludedElement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/removeAllowedResource/
+  method: get
+  operationId: ajaxSpiderActionRemoveAllowedResource
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/removeExcludedElement/
+  method: get
+  operationId: ajaxSpiderActionRemoveExcludedElement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/scan/
+  method: get
+  operationId: ajaxSpiderActionScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/scanAsUser/
+  method: get
+  operationId: ajaxSpiderActionScanAsUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setEnabledAllowedResource/
+  method: get
+  operationId: ajaxSpiderActionSetEnabledAllowedResource
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionBrowserId/
+  method: get
+  operationId: ajaxSpiderActionSetOptionBrowserId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionClickDefaultElems/
+  method: get
+  operationId: ajaxSpiderActionSetOptionClickDefaultElems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionClickElemsOnce/
+  method: get
+  operationId: ajaxSpiderActionSetOptionClickElemsOnce
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionEnableExtensions/
+  method: get
+  operationId: ajaxSpiderActionSetOptionEnableExtensions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionEventWait/
+  method: get
+  operationId: ajaxSpiderActionSetOptionEventWait
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionLogoutAvoidance/
+  method: get
+  operationId: ajaxSpiderActionSetOptionLogoutAvoidance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionMaxCrawlDepth/
+  method: get
+  operationId: ajaxSpiderActionSetOptionMaxCrawlDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionMaxCrawlStates/
+  method: get
+  operationId: ajaxSpiderActionSetOptionMaxCrawlStates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionMaxDuration/
+  method: get
+  operationId: ajaxSpiderActionSetOptionMaxDuration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionNumberOfBrowsers/
+  method: get
+  operationId: ajaxSpiderActionSetOptionNumberOfBrowsers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionRandomInputs/
+  method: get
+  operationId: ajaxSpiderActionSetOptionRandomInputs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionReloadWait/
+  method: get
+  operationId: ajaxSpiderActionSetOptionReloadWait
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/setOptionScopeCheck/
+  method: get
+  operationId: ajaxSpiderActionSetOptionScopeCheck
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/action/stop/
+  method: get
+  operationId: ajaxSpiderActionStop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/allowedResources/
+  method: get
+  operationId: ajaxSpiderViewAllowedResources
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/excludedElements/
+  method: get
+  operationId: ajaxSpiderViewExcludedElements
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/fullResults/
+  method: get
+  operationId: ajaxSpiderViewFullResults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/numberOfResults/
+  method: get
+  operationId: ajaxSpiderViewNumberOfResults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionBrowserId/
+  method: get
+  operationId: ajaxSpiderViewOptionBrowserId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionClickDefaultElems/
+  method: get
+  operationId: ajaxSpiderViewOptionClickDefaultElems
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionClickElemsOnce/
+  method: get
+  operationId: ajaxSpiderViewOptionClickElemsOnce
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionEnableExtensions/
+  method: get
+  operationId: ajaxSpiderViewOptionEnableExtensions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionEventWait/
+  method: get
+  operationId: ajaxSpiderViewOptionEventWait
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionLogoutAvoidance/
+  method: get
+  operationId: ajaxSpiderViewOptionLogoutAvoidance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionMaxCrawlDepth/
+  method: get
+  operationId: ajaxSpiderViewOptionMaxCrawlDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionMaxCrawlStates/
+  method: get
+  operationId: ajaxSpiderViewOptionMaxCrawlStates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionMaxDuration/
+  method: get
+  operationId: ajaxSpiderViewOptionMaxDuration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionNumberOfBrowsers/
+  method: get
+  operationId: ajaxSpiderViewOptionNumberOfBrowsers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionRandomInputs/
+  method: get
+  operationId: ajaxSpiderViewOptionRandomInputs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionReloadWait/
+  method: get
+  operationId: ajaxSpiderViewOptionReloadWait
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/optionScopeCheck/
+  method: get
+  operationId: ajaxSpiderViewOptionScopeCheck
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/results/
+  method: get
+  operationId: ajaxSpiderViewResults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ajaxSpider/view/status/
+  method: get
+  operationId: ajaxSpiderViewStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/action/addAlert/
+  method: get
+  operationId: alertActionAddAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/action/deleteAlert/
+  method: get
+  operationId: alertActionDeleteAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/action/deleteAlerts/
+  method: get
+  operationId: alertActionDeleteAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/action/deleteAllAlerts/
+  method: get
+  operationId: alertActionDeleteAllAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/action/updateAlert/
+  method: get
+  operationId: alertActionUpdateAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/action/updateAlertsConfidence/
+  method: get
+  operationId: alertActionUpdateAlertsConfidence
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/action/updateAlertsRisk/
+  method: get
+  operationId: alertActionUpdateAlertsRisk
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/view/alert/
+  method: get
+  operationId: alertViewAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/view/alertCountsByRisk/
+  method: get
+  operationId: alertViewAlertCountsByRisk
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/view/alerts/
+  method: get
+  operationId: alertViewAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/view/alertsByRisk/
+  method: get
+  operationId: alertViewAlertsByRisk
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/view/alertsSummary/
+  method: get
+  operationId: alertViewAlertsSummary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alert/view/numberOfAlerts/
+  method: get
+  operationId: alertViewNumberOfAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/addAlertFilter/
+  method: get
+  operationId: alertFilterActionAddAlertFilter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/addGlobalAlertFilter/
+  method: get
+  operationId: alertFilterActionAddGlobalAlertFilter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/applyAll/
+  method: get
+  operationId: alertFilterActionApplyAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/applyContext/
+  method: get
+  operationId: alertFilterActionApplyContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/applyGlobal/
+  method: get
+  operationId: alertFilterActionApplyGlobal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/removeAlertFilter/
+  method: get
+  operationId: alertFilterActionRemoveAlertFilter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/removeGlobalAlertFilter/
+  method: get
+  operationId: alertFilterActionRemoveGlobalAlertFilter
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/testAll/
+  method: get
+  operationId: alertFilterActionTestAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/testContext/
+  method: get
+  operationId: alertFilterActionTestContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/action/testGlobal/
+  method: get
+  operationId: alertFilterActionTestGlobal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/view/alertFilterList/
+  method: get
+  operationId: alertFilterViewAlertFilterList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/alertFilter/view/globalAlertFilterList/
+  method: get
+  operationId: alertFilterViewGlobalAlertFilterList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/addExcludedParam/
+  method: get
+  operationId: ascanActionAddExcludedParam
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/addScanPolicy/
+  method: get
+  operationId: ascanActionAddScanPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/clearExcludedFromScan/
+  method: get
+  operationId: ascanActionClearExcludedFromScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/disableAllScanners/
+  method: get
+  operationId: ascanActionDisableAllScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/disableScanners/
+  method: get
+  operationId: ascanActionDisableScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/enableAllScanners/
+  method: get
+  operationId: ascanActionEnableAllScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/enableScanners/
+  method: get
+  operationId: ascanActionEnableScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/excludeFromScan/
+  method: get
+  operationId: ascanActionExcludeFromScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/importScanPolicy/
+  method: get
+  operationId: ascanActionImportScanPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/modifyExcludedParam/
+  method: get
+  operationId: ascanActionModifyExcludedParam
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/pause/
+  method: get
+  operationId: ascanActionPause
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/pauseAllScans/
+  method: get
+  operationId: ascanActionPauseAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/removeAllScans/
+  method: get
+  operationId: ascanActionRemoveAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/removeExcludedParam/
+  method: get
+  operationId: ascanActionRemoveExcludedParam
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/removeScan/
+  method: get
+  operationId: ascanActionRemoveScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/removeScanPolicy/
+  method: get
+  operationId: ascanActionRemoveScanPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/resume/
+  method: get
+  operationId: ascanActionResume
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/resumeAllScans/
+  method: get
+  operationId: ascanActionResumeAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/scan/
+  method: get
+  operationId: ascanActionScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/scanAsUser/
+  method: get
+  operationId: ascanActionScanAsUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setEnabledPolicies/
+  method: get
+  operationId: ascanActionSetEnabledPolicies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionAddQueryParam/
+  method: get
+  operationId: ascanActionSetOptionAddQueryParam
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionAllowAttackOnStart/
+  method: get
+  operationId: ascanActionSetOptionAllowAttackOnStart
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionAttackPolicy/
+  method: get
+  operationId: ascanActionSetOptionAttackPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionDefaultPolicy/
+  method: get
+  operationId: ascanActionSetOptionDefaultPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionDelayInMs/
+  method: get
+  operationId: ascanActionSetOptionDelayInMs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionEncodeCookieValues/
+  method: get
+  operationId: ascanActionSetOptionEncodeCookieValues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionHandleAntiCSRFTokens/
+  method: get
+  operationId: ascanActionSetOptionHandleAntiCSRFTokens
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionHostPerScan/
+  method: get
+  operationId: ascanActionSetOptionHostPerScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionInjectPluginIdInHeader/
+  method: get
+  operationId: ascanActionSetOptionInjectPluginIdInHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionMaxAlertsPerRule/
+  method: get
+  operationId: ascanActionSetOptionMaxAlertsPerRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionMaxChartTimeInMins/
+  method: get
+  operationId: ascanActionSetOptionMaxChartTimeInMins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionMaxResultsToList/
+  method: get
+  operationId: ascanActionSetOptionMaxResultsToList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionMaxRuleDurationInMins/
+  method: get
+  operationId: ascanActionSetOptionMaxRuleDurationInMins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionMaxScanDurationInMins/
+  method: get
+  operationId: ascanActionSetOptionMaxScanDurationInMins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionMaxScansInUI/
+  method: get
+  operationId: ascanActionSetOptionMaxScansInUI
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionPromptInAttackMode/
+  method: get
+  operationId: ascanActionSetOptionPromptInAttackMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionPromptToClearFinishedScans/
+  method: get
+  operationId: ascanActionSetOptionPromptToClearFinishedScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionRescanInAttackMode/
+  method: get
+  operationId: ascanActionSetOptionRescanInAttackMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionScanHeadersAllRequests/
+  method: get
+  operationId: ascanActionSetOptionScanHeadersAllRequests
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionScanNullJsonValues/
+  method: get
+  operationId: ascanActionSetOptionScanNullJsonValues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionShowAdvancedDialog/
+  method: get
+  operationId: ascanActionSetOptionShowAdvancedDialog
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionTargetParamsEnabledRPC/
+  method: get
+  operationId: ascanActionSetOptionTargetParamsEnabledRPC
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionTargetParamsInjectable/
+  method: get
+  operationId: ascanActionSetOptionTargetParamsInjectable
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setOptionThreadPerHost/
+  method: get
+  operationId: ascanActionSetOptionThreadPerHost
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setPolicyAlertThreshold/
+  method: get
+  operationId: ascanActionSetPolicyAlertThreshold
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setPolicyAttackStrength/
+  method: get
+  operationId: ascanActionSetPolicyAttackStrength
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setScannerAlertThreshold/
+  method: get
+  operationId: ascanActionSetScannerAlertThreshold
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/setScannerAttackStrength/
+  method: get
+  operationId: ascanActionSetScannerAttackStrength
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/skipScanner/
+  method: get
+  operationId: ascanActionSkipScanner
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/stop/
+  method: get
+  operationId: ascanActionStop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/stopAllScans/
+  method: get
+  operationId: ascanActionStopAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/action/updateScanPolicy/
+  method: get
+  operationId: ascanActionUpdateScanPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/alertsIds/
+  method: get
+  operationId: ascanViewAlertsIds
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/attackModeQueue/
+  method: get
+  operationId: ascanViewAttackModeQueue
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/excludedFromScan/
+  method: get
+  operationId: ascanViewExcludedFromScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/excludedParamTypes/
+  method: get
+  operationId: ascanViewExcludedParamTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/excludedParams/
+  method: get
+  operationId: ascanViewExcludedParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/messagesIds/
+  method: get
+  operationId: ascanViewMessagesIds
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionAddQueryParam/
+  method: get
+  operationId: ascanViewOptionAddQueryParam
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionAllowAttackOnStart/
+  method: get
+  operationId: ascanViewOptionAllowAttackOnStart
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionAttackPolicy/
+  method: get
+  operationId: ascanViewOptionAttackPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionDefaultPolicy/
+  method: get
+  operationId: ascanViewOptionDefaultPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionDelayInMs/
+  method: get
+  operationId: ascanViewOptionDelayInMs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionEncodeCookieValues/
+  method: get
+  operationId: ascanViewOptionEncodeCookieValues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionExcludedParamList/
+  method: get
+  operationId: ascanViewOptionExcludedParamList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionHandleAntiCSRFTokens/
+  method: get
+  operationId: ascanViewOptionHandleAntiCSRFTokens
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionHostPerScan/
+  method: get
+  operationId: ascanViewOptionHostPerScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionInjectPluginIdInHeader/
+  method: get
+  operationId: ascanViewOptionInjectPluginIdInHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionMaxAlertsPerRule/
+  method: get
+  operationId: ascanViewOptionMaxAlertsPerRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionMaxChartTimeInMins/
+  method: get
+  operationId: ascanViewOptionMaxChartTimeInMins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionMaxResultsToList/
+  method: get
+  operationId: ascanViewOptionMaxResultsToList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionMaxRuleDurationInMins/
+  method: get
+  operationId: ascanViewOptionMaxRuleDurationInMins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionMaxScanDurationInMins/
+  method: get
+  operationId: ascanViewOptionMaxScanDurationInMins
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionMaxScansInUI/
+  method: get
+  operationId: ascanViewOptionMaxScansInUI
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionPromptInAttackMode/
+  method: get
+  operationId: ascanViewOptionPromptInAttackMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionPromptToClearFinishedScans/
+  method: get
+  operationId: ascanViewOptionPromptToClearFinishedScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionRescanInAttackMode/
+  method: get
+  operationId: ascanViewOptionRescanInAttackMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionScanHeadersAllRequests/
+  method: get
+  operationId: ascanViewOptionScanHeadersAllRequests
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionScanNullJsonValues/
+  method: get
+  operationId: ascanViewOptionScanNullJsonValues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionShowAdvancedDialog/
+  method: get
+  operationId: ascanViewOptionShowAdvancedDialog
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionTargetParamsEnabledRPC/
+  method: get
+  operationId: ascanViewOptionTargetParamsEnabledRPC
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionTargetParamsInjectable/
+  method: get
+  operationId: ascanViewOptionTargetParamsInjectable
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/optionThreadPerHost/
+  method: get
+  operationId: ascanViewOptionThreadPerHost
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/policies/
+  method: get
+  operationId: ascanViewPolicies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/scanPolicyNames/
+  method: get
+  operationId: ascanViewScanPolicyNames
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/scanProgress/
+  method: get
+  operationId: ascanViewScanProgress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/scanners/
+  method: get
+  operationId: ascanViewScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/scans/
+  method: get
+  operationId: ascanViewScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ascan/view/status/
+  method: get
+  operationId: ascanViewStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/action/setAuthenticationMethod/
+  method: get
+  operationId: authenticationActionSetAuthenticationMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/action/setLoggedInIndicator/
+  method: get
+  operationId: authenticationActionSetLoggedInIndicator
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/action/setLoggedOutIndicator/
+  method: get
+  operationId: authenticationActionSetLoggedOutIndicator
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/view/getAuthenticationMethod/
+  method: get
+  operationId: authenticationViewGetAuthenticationMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/view/getAuthenticationMethodConfigParams/
+  method: get
+  operationId: authenticationViewGetAuthenticationMethodConfigParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/view/getLoggedInIndicator/
+  method: get
+  operationId: authenticationViewGetLoggedInIndicator
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/view/getLoggedOutIndicator/
+  method: get
+  operationId: authenticationViewGetLoggedOutIndicator
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authentication/view/getSupportedAuthenticationMethods/
+  method: get
+  operationId: authenticationViewGetSupportedAuthenticationMethods
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authorization/action/setBasicAuthorizationDetectionMethod/
+  method: get
+  operationId: authorizationActionSetBasicAuthorizationDetectionMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/authorization/view/getAuthorizationDetectionMethod/
+  method: get
+  operationId: authorizationViewGetAuthorizationDetectionMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/automation/action/endDelayJob/
+  method: get
+  operationId: automationActionEndDelayJob
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/automation/action/runPlan/
+  method: get
+  operationId: automationActionRunPlan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/automation/view/planProgress/
+  method: get
+  operationId: automationViewPlanProgress
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/downloadLatestRelease/
+  method: get
+  operationId: autoupdateActionDownloadLatestRelease
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/installAddon/
+  method: get
+  operationId: autoupdateActionInstallAddon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/installLocalAddon/
+  method: get
+  operationId: autoupdateActionInstallLocalAddon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionCheckAddonUpdates/
+  method: get
+  operationId: autoupdateActionSetOptionCheckAddonUpdates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionCheckOnStart/
+  method: get
+  operationId: autoupdateActionSetOptionCheckOnStart
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionDownloadNewRelease/
+  method: get
+  operationId: autoupdateActionSetOptionDownloadNewRelease
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionInstallAddonUpdates/
+  method: get
+  operationId: autoupdateActionSetOptionInstallAddonUpdates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionInstallScannerRules/
+  method: get
+  operationId: autoupdateActionSetOptionInstallScannerRules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionReportAlphaAddons/
+  method: get
+  operationId: autoupdateActionSetOptionReportAlphaAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionReportBetaAddons/
+  method: get
+  operationId: autoupdateActionSetOptionReportBetaAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/setOptionReportReleaseAddons/
+  method: get
+  operationId: autoupdateActionSetOptionReportReleaseAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/action/uninstallAddon/
+  method: get
+  operationId: autoupdateActionUninstallAddon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/installedAddons/
+  method: get
+  operationId: autoupdateViewInstalledAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/isLatestVersion/
+  method: get
+  operationId: autoupdateViewIsLatestVersion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/latestVersionNumber/
+  method: get
+  operationId: autoupdateViewLatestVersionNumber
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/localAddons/
+  method: get
+  operationId: autoupdateViewLocalAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/marketplaceAddons/
+  method: get
+  operationId: autoupdateViewMarketplaceAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/newAddons/
+  method: get
+  operationId: autoupdateViewNewAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionAddonDirectories/
+  method: get
+  operationId: autoupdateViewOptionAddonDirectories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionCheckAddonUpdates/
+  method: get
+  operationId: autoupdateViewOptionCheckAddonUpdates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionCheckOnStart/
+  method: get
+  operationId: autoupdateViewOptionCheckOnStart
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionDayLastChecked/
+  method: get
+  operationId: autoupdateViewOptionDayLastChecked
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionDayLastInstallWarned/
+  method: get
+  operationId: autoupdateViewOptionDayLastInstallWarned
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionDayLastUpdateWarned/
+  method: get
+  operationId: autoupdateViewOptionDayLastUpdateWarned
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionDownloadDirectory/
+  method: get
+  operationId: autoupdateViewOptionDownloadDirectory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionDownloadNewRelease/
+  method: get
+  operationId: autoupdateViewOptionDownloadNewRelease
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionInstallAddonUpdates/
+  method: get
+  operationId: autoupdateViewOptionInstallAddonUpdates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionInstallScannerRules/
+  method: get
+  operationId: autoupdateViewOptionInstallScannerRules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionReportAlphaAddons/
+  method: get
+  operationId: autoupdateViewOptionReportAlphaAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionReportBetaAddons/
+  method: get
+  operationId: autoupdateViewOptionReportBetaAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/optionReportReleaseAddons/
+  method: get
+  operationId: autoupdateViewOptionReportReleaseAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/autoupdate/view/updatedAddons/
+  method: get
+  operationId: autoupdateViewUpdatedAddons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/action/addHttpBreakpoint/
+  method: get
+  operationId: breakActionAddHttpBreakpoint
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/action/break/
+  method: get
+  operationId: breakActionBreak
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/action/continue/
+  method: get
+  operationId: breakActionContinue
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/action/drop/
+  method: get
+  operationId: breakActionDrop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/action/removeHttpBreakpoint/
+  method: get
+  operationId: breakActionRemoveHttpBreakpoint
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/action/setHttpMessage/
+  method: get
+  operationId: breakActionSetHttpMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/action/step/
+  method: get
+  operationId: breakActionStep
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/view/httpMessage/
+  method: get
+  operationId: breakViewHttpMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/view/isBreakAll/
+  method: get
+  operationId: breakViewIsBreakAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/view/isBreakRequest/
+  method: get
+  operationId: breakViewIsBreakRequest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/break/view/isBreakResponse/
+  method: get
+  operationId: breakViewIsBreakResponse
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/client/action/exportClientMap/
+  method: get
+  operationId: clientActionExportClientMap
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/client/action/reportEvent/
+  method: get
+  operationId: clientActionReportEvent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/client/action/reportObject/
+  method: get
+  operationId: clientActionReportObject
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/client/action/reportZestScript/
+  method: get
+  operationId: clientActionReportZestScript
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/client/action/reportZestStatement/
+  method: get
+  operationId: clientActionReportZestStatement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/clientSpider/action/scan/
+  method: get
+  operationId: clientSpiderActionScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/clientSpider/action/stop/
+  method: get
+  operationId: clientSpiderActionStop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/clientSpider/view/status/
+  method: get
+  operationId: clientSpiderViewStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/excludeAllContextTechnologies/
+  method: get
+  operationId: contextActionExcludeAllContextTechnologies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/excludeContextTechnologies/
+  method: get
+  operationId: contextActionExcludeContextTechnologies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/excludeFromContext/
+  method: get
+  operationId: contextActionExcludeFromContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/exportContext/
+  method: get
+  operationId: contextActionExportContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/importContext/
+  method: get
+  operationId: contextActionImportContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/includeAllContextTechnologies/
+  method: get
+  operationId: contextActionIncludeAllContextTechnologies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/includeContextTechnologies/
+  method: get
+  operationId: contextActionIncludeContextTechnologies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/includeInContext/
+  method: get
+  operationId: contextActionIncludeInContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/newContext/
+  method: get
+  operationId: contextActionNewContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/removeContext/
+  method: get
+  operationId: contextActionRemoveContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/setContextCheckingStrategy/
+  method: get
+  operationId: contextActionSetContextCheckingStrategy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/setContextInScope/
+  method: get
+  operationId: contextActionSetContextInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/action/setContextRegexs/
+  method: get
+  operationId: contextActionSetContextRegexs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/context/
+  method: get
+  operationId: contextViewContext
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/contextList/
+  method: get
+  operationId: contextViewContextList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/excludeRegexs/
+  method: get
+  operationId: contextViewExcludeRegexs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/excludedTechnologyList/
+  method: get
+  operationId: contextViewExcludedTechnologyList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/includeRegexs/
+  method: get
+  operationId: contextViewIncludeRegexs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/includedTechnologyList/
+  method: get
+  operationId: contextViewIncludedTechnologyList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/technologyList/
+  method: get
+  operationId: contextViewTechnologyList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/context/view/urls/
+  method: get
+  operationId: contextViewUrls
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/accessUrl/
+  method: get
+  operationId: coreActionAccessUrl
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/addProxyChainExcludedDomain/
+  method: get
+  operationId: coreActionAddProxyChainExcludedDomain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/clearExcludedFromProxy/
+  method: get
+  operationId: coreActionClearExcludedFromProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/createSbomZip/
+  method: get
+  operationId: coreActionCreateSbomZip
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/deleteAlert/
+  method: get
+  operationId: coreActionDeleteAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/deleteAllAlerts/
+  method: get
+  operationId: coreActionDeleteAllAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/deleteSiteNode/
+  method: get
+  operationId: coreActionDeleteSiteNode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/disableAllProxyChainExcludedDomains/
+  method: get
+  operationId: coreActionDisableAllProxyChainExcludedDomains
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/disableClientCertificate/
+  method: get
+  operationId: coreActionDisableClientCertificate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/enableAllProxyChainExcludedDomains/
+  method: get
+  operationId: coreActionEnableAllProxyChainExcludedDomains
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/enablePKCS12ClientCertificate/
+  method: get
+  operationId: coreActionEnablePKCS12ClientCertificate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/excludeFromProxy/
+  method: get
+  operationId: coreActionExcludeFromProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/generateRootCA/
+  method: get
+  operationId: coreActionGenerateRootCA
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/loadSession/
+  method: get
+  operationId: coreActionLoadSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/modifyProxyChainExcludedDomain/
+  method: get
+  operationId: coreActionModifyProxyChainExcludedDomain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/newSession/
+  method: get
+  operationId: coreActionNewSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/removeProxyChainExcludedDomain/
+  method: get
+  operationId: coreActionRemoveProxyChainExcludedDomain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/runGarbageCollection/
+  method: get
+  operationId: coreActionRunGarbageCollection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/saveSession/
+  method: get
+  operationId: coreActionSaveSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/sendRequest/
+  method: get
+  operationId: coreActionSendRequest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setHomeDirectory/
+  method: get
+  operationId: coreActionSetHomeDirectory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setLogLevel/
+  method: get
+  operationId: coreActionSetLogLevel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setMode/
+  method: get
+  operationId: coreActionSetMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionAlertOverridesFilePath/
+  method: get
+  operationId: coreActionSetOptionAlertOverridesFilePath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionDefaultUserAgent/
+  method: get
+  operationId: coreActionSetOptionDefaultUserAgent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionDnsTtlSuccessfulQueries/
+  method: get
+  operationId: coreActionSetOptionDnsTtlSuccessfulQueries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionHttpStateEnabled/
+  method: get
+  operationId: coreActionSetOptionHttpStateEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionMaximumAlertInstances/
+  method: get
+  operationId: coreActionSetOptionMaximumAlertInstances
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionMergeRelatedAlerts/
+  method: get
+  operationId: coreActionSetOptionMergeRelatedAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionProxyChainName/
+  method: get
+  operationId: coreActionSetOptionProxyChainName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionProxyChainPassword/
+  method: get
+  operationId: coreActionSetOptionProxyChainPassword
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionProxyChainPort/
+  method: get
+  operationId: coreActionSetOptionProxyChainPort
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionProxyChainPrompt/
+  method: get
+  operationId: coreActionSetOptionProxyChainPrompt
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionProxyChainRealm/
+  method: get
+  operationId: coreActionSetOptionProxyChainRealm
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionProxyChainSkipName/
+  method: get
+  operationId: coreActionSetOptionProxyChainSkipName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionProxyChainUserName/
+  method: get
+  operationId: coreActionSetOptionProxyChainUserName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionSingleCookieRequestHeader/
+  method: get
+  operationId: coreActionSetOptionSingleCookieRequestHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionTimeoutInSecs/
+  method: get
+  operationId: coreActionSetOptionTimeoutInSecs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionUseProxyChain/
+  method: get
+  operationId: coreActionSetOptionUseProxyChain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionUseProxyChainAuth/
+  method: get
+  operationId: coreActionSetOptionUseProxyChainAuth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/setOptionUseSocksProxy/
+  method: get
+  operationId: coreActionSetOptionUseSocksProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/shutdown/
+  method: get
+  operationId: coreActionShutdown
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/action/snapshotSession/
+  method: get
+  operationId: coreActionSnapshotSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/fileDownload/
+  method: get
+  operationId: coreOtherFileDownload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/fileUpload/
+  method: get
+  operationId: coreOtherFileUpload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/htmlreport/
+  method: get
+  operationId: coreOtherHtmlreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/jsonreport/
+  method: get
+  operationId: coreOtherJsonreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/mdreport/
+  method: get
+  operationId: coreOtherMdreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/messageHar/
+  method: get
+  operationId: coreOtherMessageHar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/messagesHar/
+  method: get
+  operationId: coreOtherMessagesHar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/messagesHarById/
+  method: get
+  operationId: coreOtherMessagesHarById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/proxy.pac/
+  method: get
+  operationId: coreOtherProxy.pac
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/rootcert/
+  method: get
+  operationId: coreOtherRootcert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/sendHarRequest/
+  method: get
+  operationId: coreOtherSendHarRequest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/setproxy/
+  method: get
+  operationId: coreOtherSetproxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/core/other/xmlreport/
+  method: get
+  operationId: coreOtherXmlreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/alert/
+  method: get
+  operationId: coreViewAlert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/alerts/
+  method: get
+  operationId: coreViewAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/alertsSummary/
+  method: get
+  operationId: coreViewAlertsSummary
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/childNodes/
+  method: get
+  operationId: coreViewChildNodes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/excludedFromProxy/
+  method: get
+  operationId: coreViewExcludedFromProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/getLogLevel/
+  method: get
+  operationId: coreViewGetLogLevel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/homeDirectory/
+  method: get
+  operationId: coreViewHomeDirectory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/hosts/
+  method: get
+  operationId: coreViewHosts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/message/
+  method: get
+  operationId: coreViewMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/messages/
+  method: get
+  operationId: coreViewMessages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/messagesById/
+  method: get
+  operationId: coreViewMessagesById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/mode/
+  method: get
+  operationId: coreViewMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/numberOfAlerts/
+  method: get
+  operationId: coreViewNumberOfAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/numberOfMessages/
+  method: get
+  operationId: coreViewNumberOfMessages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionAlertOverridesFilePath/
+  method: get
+  operationId: coreViewOptionAlertOverridesFilePath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionDefaultUserAgent/
+  method: get
+  operationId: coreViewOptionDefaultUserAgent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionDnsTtlSuccessfulQueries/
+  method: get
+  operationId: coreViewOptionDnsTtlSuccessfulQueries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionHttpState/
+  method: get
+  operationId: coreViewOptionHttpState
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionHttpStateEnabled/
+  method: get
+  operationId: coreViewOptionHttpStateEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionMaximumAlertInstances/
+  method: get
+  operationId: coreViewOptionMaximumAlertInstances
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionMergeRelatedAlerts/
+  method: get
+  operationId: coreViewOptionMergeRelatedAlerts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyChainName/
+  method: get
+  operationId: coreViewOptionProxyChainName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyChainPassword/
+  method: get
+  operationId: coreViewOptionProxyChainPassword
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyChainPort/
+  method: get
+  operationId: coreViewOptionProxyChainPort
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyChainPrompt/
+  method: get
+  operationId: coreViewOptionProxyChainPrompt
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyChainRealm/
+  method: get
+  operationId: coreViewOptionProxyChainRealm
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyChainSkipName/
+  method: get
+  operationId: coreViewOptionProxyChainSkipName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyChainUserName/
+  method: get
+  operationId: coreViewOptionProxyChainUserName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyExcludedDomains/
+  method: get
+  operationId: coreViewOptionProxyExcludedDomains
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionProxyExcludedDomainsEnabled/
+  method: get
+  operationId: coreViewOptionProxyExcludedDomainsEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionSingleCookieRequestHeader/
+  method: get
+  operationId: coreViewOptionSingleCookieRequestHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionTimeoutInSecs/
+  method: get
+  operationId: coreViewOptionTimeoutInSecs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionUseProxyChain/
+  method: get
+  operationId: coreViewOptionUseProxyChain
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionUseProxyChainAuth/
+  method: get
+  operationId: coreViewOptionUseProxyChainAuth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/optionUseSocksProxy/
+  method: get
+  operationId: coreViewOptionUseSocksProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/proxyChainExcludedDomains/
+  method: get
+  operationId: coreViewProxyChainExcludedDomains
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/sessionLocation/
+  method: get
+  operationId: coreViewSessionLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/sites/
+  method: get
+  operationId: coreViewSites
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/urls/
+  method: get
+  operationId: coreViewUrls
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/version/
+  method: get
+  operationId: coreViewVersion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/core/view/zapHomePath/
+  method: get
+  operationId: coreViewZapHomePath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/action/addCustomPayload/
+  method: get
+  operationId: custompayloadsActionAddCustomPayload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/action/disableCustomPayload/
+  method: get
+  operationId: custompayloadsActionDisableCustomPayload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/action/disableCustomPayloads/
+  method: get
+  operationId: custompayloadsActionDisableCustomPayloads
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/action/enableCustomPayload/
+  method: get
+  operationId: custompayloadsActionEnableCustomPayload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/action/enableCustomPayloads/
+  method: get
+  operationId: custompayloadsActionEnableCustomPayloads
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/action/removeCustomPayload/
+  method: get
+  operationId: custompayloadsActionRemoveCustomPayload
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/view/customPayloads/
+  method: get
+  operationId: custompayloadsViewCustomPayloads
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/custompayloads/view/customPayloadsCategories/
+  method: get
+  operationId: custompayloadsViewCustomPayloadsCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/dev/other/openapi/
+  method: get
+  operationId: devOtherOpenapi
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/exim/action/exportSitesTree/
+  method: get
+  operationId: eximActionExportSitesTree
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/exim/action/importHar/
+  method: get
+  operationId: eximActionImportHar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/exim/action/importModsec2Logs/
+  method: get
+  operationId: eximActionImportModsec2Logs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/exim/action/importUrls/
+  method: get
+  operationId: eximActionImportUrls
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/exim/action/importZapLogs/
+  method: get
+  operationId: eximActionImportZapLogs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/exim/action/pruneSitesTree/
+  method: get
+  operationId: eximActionPruneSitesTree
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/exim/other/exportHar/
+  method: get
+  operationId: eximOtherExportHar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/exim/other/exportHarById/
+  method: get
+  operationId: eximOtherExportHarById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/exim/other/sendHarRequest/
+  method: get
+  operationId: eximOtherSendHarRequest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/forcedUser/action/setForcedUser/
+  method: get
+  operationId: forcedUserActionSetForcedUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/forcedUser/action/setForcedUserModeEnabled/
+  method: get
+  operationId: forcedUserActionSetForcedUserModeEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/forcedUser/view/getForcedUser/
+  method: get
+  operationId: forcedUserViewGetForcedUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/forcedUser/view/isForcedUserModeEnabled/
+  method: get
+  operationId: forcedUserViewIsForcedUserModeEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/importFile/
+  method: get
+  operationId: graphqlActionImportFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/importUrl/
+  method: get
+  operationId: graphqlActionImportUrl
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionArgsType/
+  method: get
+  operationId: graphqlActionSetOptionArgsType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionLenientMaxQueryDepthEnabled/
+  method: get
+  operationId: graphqlActionSetOptionLenientMaxQueryDepthEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionMaxAdditionalQueryDepth/
+  method: get
+  operationId: graphqlActionSetOptionMaxAdditionalQueryDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionMaxArgsDepth/
+  method: get
+  operationId: graphqlActionSetOptionMaxArgsDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionMaxQueryDepth/
+  method: get
+  operationId: graphqlActionSetOptionMaxQueryDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionOptionalArgsEnabled/
+  method: get
+  operationId: graphqlActionSetOptionOptionalArgsEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionQueryGenEnabled/
+  method: get
+  operationId: graphqlActionSetOptionQueryGenEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionQuerySplitType/
+  method: get
+  operationId: graphqlActionSetOptionQuerySplitType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/action/setOptionRequestMethod/
+  method: get
+  operationId: graphqlActionSetOptionRequestMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionArgsType/
+  method: get
+  operationId: graphqlViewOptionArgsType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionLenientMaxQueryDepthEnabled/
+  method: get
+  operationId: graphqlViewOptionLenientMaxQueryDepthEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionMaxAdditionalQueryDepth/
+  method: get
+  operationId: graphqlViewOptionMaxAdditionalQueryDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionMaxArgsDepth/
+  method: get
+  operationId: graphqlViewOptionMaxArgsDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionMaxQueryDepth/
+  method: get
+  operationId: graphqlViewOptionMaxQueryDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionOptionalArgsEnabled/
+  method: get
+  operationId: graphqlViewOptionOptionalArgsEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionQueryGenEnabled/
+  method: get
+  operationId: graphqlViewOptionQueryGenEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionQuerySplitType/
+  method: get
+  operationId: graphqlViewOptionQuerySplitType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/graphql/view/optionRequestMethod/
+  method: get
+  operationId: graphqlViewOptionRequestMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/addDefaultSessionToken/
+  method: get
+  operationId: httpSessionsActionAddDefaultSessionToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/addSessionToken/
+  method: get
+  operationId: httpSessionsActionAddSessionToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/createEmptySession/
+  method: get
+  operationId: httpSessionsActionCreateEmptySession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/removeDefaultSessionToken/
+  method: get
+  operationId: httpSessionsActionRemoveDefaultSessionToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/removeSession/
+  method: get
+  operationId: httpSessionsActionRemoveSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/removeSessionToken/
+  method: get
+  operationId: httpSessionsActionRemoveSessionToken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/renameSession/
+  method: get
+  operationId: httpSessionsActionRenameSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/setActiveSession/
+  method: get
+  operationId: httpSessionsActionSetActiveSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/setDefaultSessionTokenEnabled/
+  method: get
+  operationId: httpSessionsActionSetDefaultSessionTokenEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/setSessionTokenValue/
+  method: get
+  operationId: httpSessionsActionSetSessionTokenValue
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/action/unsetActiveSession/
+  method: get
+  operationId: httpSessionsActionUnsetActiveSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/view/activeSession/
+  method: get
+  operationId: httpSessionsViewActiveSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/view/defaultSessionTokens/
+  method: get
+  operationId: httpSessionsViewDefaultSessionTokens
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/view/sessionTokens/
+  method: get
+  operationId: httpSessionsViewSessionTokens
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/view/sessions/
+  method: get
+  operationId: httpSessionsViewSessions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/httpSessions/view/sites/
+  method: get
+  operationId: httpSessionsViewSites
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/log/
+  method: get
+  operationId: hudActionLog
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/recordRequest/
+  method: get
+  operationId: hudActionRecordRequest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/resetTutorialTasks/
+  method: get
+  operationId: hudActionResetTutorialTasks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionBaseDirectory/
+  method: get
+  operationId: hudActionSetOptionBaseDirectory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionDevelopmentMode/
+  method: get
+  operationId: hudActionSetOptionDevelopmentMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionEnableOnDomainMsgs/
+  method: get
+  operationId: hudActionSetOptionEnableOnDomainMsgs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionEnabledForDaemon/
+  method: get
+  operationId: hudActionSetOptionEnabledForDaemon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionEnabledForDesktop/
+  method: get
+  operationId: hudActionSetOptionEnabledForDesktop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionInScopeOnly/
+  method: get
+  operationId: hudActionSetOptionInScopeOnly
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionRemoveCSP/
+  method: get
+  operationId: hudActionSetOptionRemoveCSP
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionShowWelcomeScreen/
+  method: get
+  operationId: hudActionSetOptionShowWelcomeScreen
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionSkipTutorialTasks/
+  method: get
+  operationId: hudActionSetOptionSkipTutorialTasks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionTutorialTaskDone/
+  method: get
+  operationId: hudActionSetOptionTutorialTaskDone
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setOptionTutorialTestMode/
+  method: get
+  operationId: hudActionSetOptionTutorialTestMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/action/setUiOption/
+  method: get
+  operationId: hudActionSetUiOption
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/hud/other/changesInHtml/
+  method: get
+  operationId: hudOtherChangesInHtml
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/getUiOption/
+  method: get
+  operationId: hudViewGetUiOption
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/heartbeat/
+  method: get
+  operationId: hudViewHeartbeat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/hudAlertData/
+  method: get
+  operationId: hudViewHudAlertData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionAllowUnsafeEval/
+  method: get
+  operationId: hudViewOptionAllowUnsafeEval
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionBaseDirectory/
+  method: get
+  operationId: hudViewOptionBaseDirectory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionDevelopmentMode/
+  method: get
+  operationId: hudViewOptionDevelopmentMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionEnableOnDomainMsgs/
+  method: get
+  operationId: hudViewOptionEnableOnDomainMsgs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionEnableTelemetry/
+  method: get
+  operationId: hudViewOptionEnableTelemetry
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionEnabledForDaemon/
+  method: get
+  operationId: hudViewOptionEnabledForDaemon
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionEnabledForDesktop/
+  method: get
+  operationId: hudViewOptionEnabledForDesktop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionInScopeOnly/
+  method: get
+  operationId: hudViewOptionInScopeOnly
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionRemoveCSP/
+  method: get
+  operationId: hudViewOptionRemoveCSP
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionShowWelcomeScreen/
+  method: get
+  operationId: hudViewOptionShowWelcomeScreen
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionSkipTutorialTasks/
+  method: get
+  operationId: hudViewOptionSkipTutorialTasks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionTutorialHost/
+  method: get
+  operationId: hudViewOptionTutorialHost
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionTutorialPort/
+  method: get
+  operationId: hudViewOptionTutorialPort
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionTutorialTasksDone/
+  method: get
+  operationId: hudViewOptionTutorialTasksDone
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionTutorialTestMode/
+  method: get
+  operationId: hudViewOptionTutorialTestMode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/optionTutorialUpdates/
+  method: get
+  operationId: hudViewOptionTutorialUpdates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/tutorialUpdates/
+  method: get
+  operationId: hudViewTutorialUpdates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/hud/view/upgradedDomains/
+  method: get
+  operationId: hudViewUpgradedDomains
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/keyboard/other/cheatsheetActionOrder/
+  method: get
+  operationId: keyboardOtherCheatsheetActionOrder
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/keyboard/other/cheatsheetKeyOrder/
+  method: get
+  operationId: keyboardOtherCheatsheetKeyOrder
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/localProxies/action/addAdditionalProxy/
+  method: get
+  operationId: localProxiesActionAddAdditionalProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/localProxies/action/removeAdditionalProxy/
+  method: get
+  operationId: localProxiesActionRemoveAdditionalProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/localProxies/view/additionalProxies/
+  method: get
+  operationId: localProxiesViewAdditionalProxies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/addAlias/
+  method: get
+  operationId: networkActionAddAlias
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/addHttpProxyExclusion/
+  method: get
+  operationId: networkActionAddHttpProxyExclusion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/addLocalServer/
+  method: get
+  operationId: networkActionAddLocalServer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/addPassThrough/
+  method: get
+  operationId: networkActionAddPassThrough
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/addPkcs12ClientCertificate/
+  method: get
+  operationId: networkActionAddPkcs12ClientCertificate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/addRateLimitRule/
+  method: get
+  operationId: networkActionAddRateLimitRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/generateRootCaCert/
+  method: get
+  operationId: networkActionGenerateRootCaCert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/importRootCaCert/
+  method: get
+  operationId: networkActionImportRootCaCert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/removeAlias/
+  method: get
+  operationId: networkActionRemoveAlias
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/removeHttpProxyExclusion/
+  method: get
+  operationId: networkActionRemoveHttpProxyExclusion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/removeLocalServer/
+  method: get
+  operationId: networkActionRemoveLocalServer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/removePassThrough/
+  method: get
+  operationId: networkActionRemovePassThrough
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/removeRateLimitRule/
+  method: get
+  operationId: networkActionRemoveRateLimitRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setAliasEnabled/
+  method: get
+  operationId: networkActionSetAliasEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setConnectionTimeout/
+  method: get
+  operationId: networkActionSetConnectionTimeout
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setDefaultUserAgent/
+  method: get
+  operationId: networkActionSetDefaultUserAgent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setDnsTtlSuccessfulQueries/
+  method: get
+  operationId: networkActionSetDnsTtlSuccessfulQueries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setHttpProxy/
+  method: get
+  operationId: networkActionSetHttpProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setHttpProxyAuthEnabled/
+  method: get
+  operationId: networkActionSetHttpProxyAuthEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setHttpProxyEnabled/
+  method: get
+  operationId: networkActionSetHttpProxyEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setHttpProxyExclusionEnabled/
+  method: get
+  operationId: networkActionSetHttpProxyExclusionEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setPassThroughEnabled/
+  method: get
+  operationId: networkActionSetPassThroughEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setRateLimitRuleEnabled/
+  method: get
+  operationId: networkActionSetRateLimitRuleEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setRootCaCertValidity/
+  method: get
+  operationId: networkActionSetRootCaCertValidity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setServerCertValidity/
+  method: get
+  operationId: networkActionSetServerCertValidity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setSocksProxy/
+  method: get
+  operationId: networkActionSetSocksProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setSocksProxyEnabled/
+  method: get
+  operationId: networkActionSetSocksProxyEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setUseClientCertificate/
+  method: get
+  operationId: networkActionSetUseClientCertificate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/action/setUseGlobalHttpState/
+  method: get
+  operationId: networkActionSetUseGlobalHttpState
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/network/other/proxy.pac/
+  method: get
+  operationId: networkOtherProxy.pac
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/network/other/rootCaCert/
+  method: get
+  operationId: networkOtherRootCaCert
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/network/other/setProxy/
+  method: get
+  operationId: networkOtherSetProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getAliases/
+  method: get
+  operationId: networkViewGetAliases
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getConnectionTimeout/
+  method: get
+  operationId: networkViewGetConnectionTimeout
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getDefaultUserAgent/
+  method: get
+  operationId: networkViewGetDefaultUserAgent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getDnsTtlSuccessfulQueries/
+  method: get
+  operationId: networkViewGetDnsTtlSuccessfulQueries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getHttpProxy/
+  method: get
+  operationId: networkViewGetHttpProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getHttpProxyExclusions/
+  method: get
+  operationId: networkViewGetHttpProxyExclusions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getLocalServers/
+  method: get
+  operationId: networkViewGetLocalServers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getPassThroughs/
+  method: get
+  operationId: networkViewGetPassThroughs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getRateLimitRules/
+  method: get
+  operationId: networkViewGetRateLimitRules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getRootCaCertValidity/
+  method: get
+  operationId: networkViewGetRootCaCertValidity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getServerCertValidity/
+  method: get
+  operationId: networkViewGetServerCertValidity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/getSocksProxy/
+  method: get
+  operationId: networkViewGetSocksProxy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/isHttpProxyAuthEnabled/
+  method: get
+  operationId: networkViewIsHttpProxyAuthEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/isHttpProxyEnabled/
+  method: get
+  operationId: networkViewIsHttpProxyEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/isSocksProxyEnabled/
+  method: get
+  operationId: networkViewIsSocksProxyEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/network/view/isUseGlobalHttpState/
+  method: get
+  operationId: networkViewIsUseGlobalHttpState
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/action/setActiveScanService/
+  method: get
+  operationId: oastActionSetActiveScanService
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/action/setBoastOptions/
+  method: get
+  operationId: oastActionSetBoastOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/action/setCallbackOptions/
+  method: get
+  operationId: oastActionSetCallbackOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/action/setDaysToKeepRecords/
+  method: get
+  operationId: oastActionSetDaysToKeepRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/action/setInteractshOptions/
+  method: get
+  operationId: oastActionSetInteractshOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/view/getActiveScanService/
+  method: get
+  operationId: oastViewGetActiveScanService
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/view/getBoastOptions/
+  method: get
+  operationId: oastViewGetBoastOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/view/getCallbackOptions/
+  method: get
+  operationId: oastViewGetCallbackOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/view/getDaysToKeepRecords/
+  method: get
+  operationId: oastViewGetDaysToKeepRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/view/getInteractshOptions/
+  method: get
+  operationId: oastViewGetInteractshOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/oast/view/getServices/
+  method: get
+  operationId: oastViewGetServices
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/openapi/action/importFile/
+  method: get
+  operationId: openapiActionImportFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/openapi/action/importUrl/
+  method: get
+  operationId: openapiActionImportUrl
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/paramDigger/action/helloWorld/
+  method: get
+  operationId: paramDiggerActionHelloWorld
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/params/view/params/
+  method: get
+  operationId: paramsViewParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pnh/action/monitor/
+  method: get
+  operationId: pnhActionMonitor
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pnh/action/oracle/
+  method: get
+  operationId: pnhActionOracle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pnh/action/startMonitoring/
+  method: get
+  operationId: pnhActionStartMonitoring
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pnh/action/stopMonitoring/
+  method: get
+  operationId: pnhActionStopMonitoring
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/pnh/other/fx_pnh.xpi/
+  method: get
+  operationId: pnhOtherFx_pnh.xpi
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/pnh/other/manifest/
+  method: get
+  operationId: pnhOtherManifest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/pnh/other/pnh/
+  method: get
+  operationId: pnhOtherPnh
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/pnh/other/service/
+  method: get
+  operationId: pnhOtherService
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/postman/action/importFile/
+  method: get
+  operationId: postmanActionImportFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/postman/action/importUrl/
+  method: get
+  operationId: postmanActionImportUrl
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/clearQueue/
+  method: get
+  operationId: pscanActionClearQueue
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/disableAllScanners/
+  method: get
+  operationId: pscanActionDisableAllScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/disableAllTags/
+  method: get
+  operationId: pscanActionDisableAllTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/disableScanners/
+  method: get
+  operationId: pscanActionDisableScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/enableAllScanners/
+  method: get
+  operationId: pscanActionEnableAllScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/enableAllTags/
+  method: get
+  operationId: pscanActionEnableAllTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/enableScanners/
+  method: get
+  operationId: pscanActionEnableScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/setEnabled/
+  method: get
+  operationId: pscanActionSetEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/setMaxAlertsPerRule/
+  method: get
+  operationId: pscanActionSetMaxAlertsPerRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/setScanOnlyInScope/
+  method: get
+  operationId: pscanActionSetScanOnlyInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/action/setScannerAlertThreshold/
+  method: get
+  operationId: pscanActionSetScannerAlertThreshold
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/view/currentRule/
+  method: get
+  operationId: pscanViewCurrentRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/view/currentTasks/
+  method: get
+  operationId: pscanViewCurrentTasks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/view/maxAlertsPerRule/
+  method: get
+  operationId: pscanViewMaxAlertsPerRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/view/recordsToScan/
+  method: get
+  operationId: pscanViewRecordsToScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/view/scanOnlyInScope/
+  method: get
+  operationId: pscanViewScanOnlyInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/pscan/view/scanners/
+  method: get
+  operationId: pscanViewScanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/quickstartlaunch/other/startPage/
+  method: get
+  operationId: quickstartlaunchOtherStartPage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/replacer/action/addRule/
+  method: get
+  operationId: replacerActionAddRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/replacer/action/removeRule/
+  method: get
+  operationId: replacerActionRemoveRule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/replacer/action/setEnabled/
+  method: get
+  operationId: replacerActionSetEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/replacer/view/rules/
+  method: get
+  operationId: replacerViewRules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/reports/action/generate/
+  method: get
+  operationId: reportsActionGenerate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/reports/view/templateDetails/
+  method: get
+  operationId: reportsViewTemplateDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/reports/view/templates/
+  method: get
+  operationId: reportsViewTemplates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/retest/action/retest/
+  method: get
+  operationId: retestActionRetest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/reveal/action/setReveal/
+  method: get
+  operationId: revealActionSetReveal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/reveal/view/reveal/
+  method: get
+  operationId: revealViewReveal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/revisit/action/revisitSiteOff/
+  method: get
+  operationId: revisitActionRevisitSiteOff
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/revisit/action/revisitSiteOn/
+  method: get
+  operationId: revisitActionRevisitSiteOn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/revisit/view/revisitList/
+  method: get
+  operationId: revisitViewRevisitList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ruleConfig/action/resetAllRuleConfigValues/
+  method: get
+  operationId: ruleConfigActionResetAllRuleConfigValues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ruleConfig/action/resetRuleConfigValue/
+  method: get
+  operationId: ruleConfigActionResetRuleConfigValue
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ruleConfig/action/setRuleConfigValue/
+  method: get
+  operationId: ruleConfigActionSetRuleConfigValue
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ruleConfig/view/allRuleConfigs/
+  method: get
+  operationId: ruleConfigViewAllRuleConfigs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/ruleConfig/view/ruleConfigValue/
+  method: get
+  operationId: ruleConfigViewRuleConfigValue
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/clearGlobalCustomVar/
+  method: get
+  operationId: scriptActionClearGlobalCustomVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/clearGlobalVar/
+  method: get
+  operationId: scriptActionClearGlobalVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/clearGlobalVars/
+  method: get
+  operationId: scriptActionClearGlobalVars
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/clearScriptCustomVar/
+  method: get
+  operationId: scriptActionClearScriptCustomVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/clearScriptVar/
+  method: get
+  operationId: scriptActionClearScriptVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/clearScriptVars/
+  method: get
+  operationId: scriptActionClearScriptVars
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/disable/
+  method: get
+  operationId: scriptActionDisable
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/enable/
+  method: get
+  operationId: scriptActionEnable
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/load/
+  method: get
+  operationId: scriptActionLoad
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/remove/
+  method: get
+  operationId: scriptActionRemove
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/runStandAloneScript/
+  method: get
+  operationId: scriptActionRunStandAloneScript
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/setGlobalVar/
+  method: get
+  operationId: scriptActionSetGlobalVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/action/setScriptVar/
+  method: get
+  operationId: scriptActionSetScriptVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/globalCustomVar/
+  method: get
+  operationId: scriptViewGlobalCustomVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/globalCustomVars/
+  method: get
+  operationId: scriptViewGlobalCustomVars
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/globalVar/
+  method: get
+  operationId: scriptViewGlobalVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/globalVars/
+  method: get
+  operationId: scriptViewGlobalVars
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/listEngines/
+  method: get
+  operationId: scriptViewListEngines
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/listScripts/
+  method: get
+  operationId: scriptViewListScripts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/listTypes/
+  method: get
+  operationId: scriptViewListTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/scriptCustomVar/
+  method: get
+  operationId: scriptViewScriptCustomVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/scriptCustomVars/
+  method: get
+  operationId: scriptViewScriptCustomVars
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/scriptVar/
+  method: get
+  operationId: scriptViewScriptVar
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/script/view/scriptVars/
+  method: get
+  operationId: scriptViewScriptVars
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/search/other/harByHeaderRegex/
+  method: get
+  operationId: searchOtherHarByHeaderRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/search/other/harByNoteRegex/
+  method: get
+  operationId: searchOtherHarByNoteRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/search/other/harByRequestRegex/
+  method: get
+  operationId: searchOtherHarByRequestRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/search/other/harByResponseRegex/
+  method: get
+  operationId: searchOtherHarByResponseRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/search/other/harByTagRegex/
+  method: get
+  operationId: searchOtherHarByTagRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /OTHER/search/other/harByUrlRegex/
+  method: get
+  operationId: searchOtherHarByUrlRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/messagesByHeaderRegex/
+  method: get
+  operationId: searchViewMessagesByHeaderRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/messagesByNoteRegex/
+  method: get
+  operationId: searchViewMessagesByNoteRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/messagesByRequestRegex/
+  method: get
+  operationId: searchViewMessagesByRequestRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/messagesByResponseRegex/
+  method: get
+  operationId: searchViewMessagesByResponseRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/messagesByTagRegex/
+  method: get
+  operationId: searchViewMessagesByTagRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/messagesByUrlRegex/
+  method: get
+  operationId: searchViewMessagesByUrlRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/urlsByHeaderRegex/
+  method: get
+  operationId: searchViewUrlsByHeaderRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/urlsByNoteRegex/
+  method: get
+  operationId: searchViewUrlsByNoteRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/urlsByRequestRegex/
+  method: get
+  operationId: searchViewUrlsByRequestRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/urlsByResponseRegex/
+  method: get
+  operationId: searchViewUrlsByResponseRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/urlsByTagRegex/
+  method: get
+  operationId: searchViewUrlsByTagRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/search/view/urlsByUrlRegex/
+  method: get
+  operationId: searchViewUrlsByUrlRegex
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/addBrowserArgument/
+  method: get
+  operationId: seleniumActionAddBrowserArgument
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/launchBrowser/
+  method: get
+  operationId: seleniumActionLaunchBrowser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/removeBrowserArgument/
+  method: get
+  operationId: seleniumActionRemoveBrowserArgument
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setBrowserArgumentEnabled/
+  method: get
+  operationId: seleniumActionSetBrowserArgumentEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionChromeBinaryPath/
+  method: get
+  operationId: seleniumActionSetOptionChromeBinaryPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionChromeDriverPath/
+  method: get
+  operationId: seleniumActionSetOptionChromeDriverPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionFirefoxBinaryPath/
+  method: get
+  operationId: seleniumActionSetOptionFirefoxBinaryPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionFirefoxDefaultProfile/
+  method: get
+  operationId: seleniumActionSetOptionFirefoxDefaultProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionFirefoxDriverPath/
+  method: get
+  operationId: seleniumActionSetOptionFirefoxDriverPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionIeDriverPath/
+  method: get
+  operationId: seleniumActionSetOptionIeDriverPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionLastDirectory/
+  method: get
+  operationId: seleniumActionSetOptionLastDirectory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/action/setOptionPhantomJsBinaryPath/
+  method: get
+  operationId: seleniumActionSetOptionPhantomJsBinaryPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/getBrowserArguments/
+  method: get
+  operationId: seleniumViewGetBrowserArguments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionBrowserExtensions/
+  method: get
+  operationId: seleniumViewOptionBrowserExtensions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionChromeBinaryPath/
+  method: get
+  operationId: seleniumViewOptionChromeBinaryPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionChromeDriverPath/
+  method: get
+  operationId: seleniumViewOptionChromeDriverPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionFirefoxBinaryPath/
+  method: get
+  operationId: seleniumViewOptionFirefoxBinaryPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionFirefoxDefaultProfile/
+  method: get
+  operationId: seleniumViewOptionFirefoxDefaultProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionFirefoxDriverPath/
+  method: get
+  operationId: seleniumViewOptionFirefoxDriverPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionIeDriverPath/
+  method: get
+  operationId: seleniumViewOptionIeDriverPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionLastDirectory/
+  method: get
+  operationId: seleniumViewOptionLastDirectory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/selenium/view/optionPhantomJsBinaryPath/
+  method: get
+  operationId: seleniumViewOptionPhantomJsBinaryPath
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/sessionManagement/action/setSessionManagementMethod/
+  method: get
+  operationId: sessionManagementActionSetSessionManagementMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/sessionManagement/view/getSessionManagementMethod/
+  method: get
+  operationId: sessionManagementViewGetSessionManagementMethod
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/sessionManagement/view/getSessionManagementMethodConfigParams/
+  method: get
+  operationId: sessionManagementViewGetSessionManagementMethodConfigParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/sessionManagement/view/getSupportedSessionManagementMethods/
+  method: get
+  operationId: sessionManagementViewGetSupportedSessionManagementMethods
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/soap/action/importFile/
+  method: get
+  operationId: soapActionImportFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/soap/action/importUrl/
+  method: get
+  operationId: soapActionImportUrl
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/addDomainAlwaysInScope/
+  method: get
+  operationId: spiderActionAddDomainAlwaysInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/clearExcludedFromScan/
+  method: get
+  operationId: spiderActionClearExcludedFromScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/disableAllDomainsAlwaysInScope/
+  method: get
+  operationId: spiderActionDisableAllDomainsAlwaysInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/enableAllDomainsAlwaysInScope/
+  method: get
+  operationId: spiderActionEnableAllDomainsAlwaysInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/excludeFromScan/
+  method: get
+  operationId: spiderActionExcludeFromScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/modifyDomainAlwaysInScope/
+  method: get
+  operationId: spiderActionModifyDomainAlwaysInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/pause/
+  method: get
+  operationId: spiderActionPause
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/pauseAllScans/
+  method: get
+  operationId: spiderActionPauseAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/removeAllScans/
+  method: get
+  operationId: spiderActionRemoveAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/removeDomainAlwaysInScope/
+  method: get
+  operationId: spiderActionRemoveDomainAlwaysInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/removeScan/
+  method: get
+  operationId: spiderActionRemoveScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/resume/
+  method: get
+  operationId: spiderActionResume
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/resumeAllScans/
+  method: get
+  operationId: spiderActionResumeAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/scan/
+  method: get
+  operationId: spiderActionScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/scanAsUser/
+  method: get
+  operationId: spiderActionScanAsUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionAcceptCookies/
+  method: get
+  operationId: spiderActionSetOptionAcceptCookies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionHandleODataParametersVisited/
+  method: get
+  operationId: spiderActionSetOptionHandleODataParametersVisited
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionHandleParameters/
+  method: get
+  operationId: spiderActionSetOptionHandleParameters
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionLogoutAvoidance/
+  method: get
+  operationId: spiderActionSetOptionLogoutAvoidance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionMaxChildren/
+  method: get
+  operationId: spiderActionSetOptionMaxChildren
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionMaxDepth/
+  method: get
+  operationId: spiderActionSetOptionMaxDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionMaxDuration/
+  method: get
+  operationId: spiderActionSetOptionMaxDuration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionMaxParseSizeBytes/
+  method: get
+  operationId: spiderActionSetOptionMaxParseSizeBytes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionMaxScansInUI/
+  method: get
+  operationId: spiderActionSetOptionMaxScansInUI
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionParseComments/
+  method: get
+  operationId: spiderActionSetOptionParseComments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionParseDsStore/
+  method: get
+  operationId: spiderActionSetOptionParseDsStore
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionParseGit/
+  method: get
+  operationId: spiderActionSetOptionParseGit
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionParseRobotsTxt/
+  method: get
+  operationId: spiderActionSetOptionParseRobotsTxt
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionParseSVNEntries/
+  method: get
+  operationId: spiderActionSetOptionParseSVNEntries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionParseSitemapXml/
+  method: get
+  operationId: spiderActionSetOptionParseSitemapXml
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionPostForm/
+  method: get
+  operationId: spiderActionSetOptionPostForm
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionProcessForm/
+  method: get
+  operationId: spiderActionSetOptionProcessForm
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionSendRefererHeader/
+  method: get
+  operationId: spiderActionSetOptionSendRefererHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionShowAdvancedDialog/
+  method: get
+  operationId: spiderActionSetOptionShowAdvancedDialog
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionSkipURLString/
+  method: get
+  operationId: spiderActionSetOptionSkipURLString
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionThreadCount/
+  method: get
+  operationId: spiderActionSetOptionThreadCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/setOptionUserAgent/
+  method: get
+  operationId: spiderActionSetOptionUserAgent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/stop/
+  method: get
+  operationId: spiderActionStop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/action/stopAllScans/
+  method: get
+  operationId: spiderActionStopAllScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/addedNodes/
+  method: get
+  operationId: spiderViewAddedNodes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/allUrls/
+  method: get
+  operationId: spiderViewAllUrls
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/domainsAlwaysInScope/
+  method: get
+  operationId: spiderViewDomainsAlwaysInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/excludedFromScan/
+  method: get
+  operationId: spiderViewExcludedFromScan
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/fullResults/
+  method: get
+  operationId: spiderViewFullResults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionAcceptCookies/
+  method: get
+  operationId: spiderViewOptionAcceptCookies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionDomainsAlwaysInScope/
+  method: get
+  operationId: spiderViewOptionDomainsAlwaysInScope
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionDomainsAlwaysInScopeEnabled/
+  method: get
+  operationId: spiderViewOptionDomainsAlwaysInScopeEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionHandleODataParametersVisited/
+  method: get
+  operationId: spiderViewOptionHandleODataParametersVisited
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionHandleParameters/
+  method: get
+  operationId: spiderViewOptionHandleParameters
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionLogoutAvoidance/
+  method: get
+  operationId: spiderViewOptionLogoutAvoidance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionMaxChildren/
+  method: get
+  operationId: spiderViewOptionMaxChildren
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionMaxDepth/
+  method: get
+  operationId: spiderViewOptionMaxDepth
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionMaxDuration/
+  method: get
+  operationId: spiderViewOptionMaxDuration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionMaxParseSizeBytes/
+  method: get
+  operationId: spiderViewOptionMaxParseSizeBytes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionMaxScansInUI/
+  method: get
+  operationId: spiderViewOptionMaxScansInUI
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionParseComments/
+  method: get
+  operationId: spiderViewOptionParseComments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionParseDsStore/
+  method: get
+  operationId: spiderViewOptionParseDsStore
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionParseGit/
+  method: get
+  operationId: spiderViewOptionParseGit
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionParseRobotsTxt/
+  method: get
+  operationId: spiderViewOptionParseRobotsTxt
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionParseSVNEntries/
+  method: get
+  operationId: spiderViewOptionParseSVNEntries
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionParseSitemapXml/
+  method: get
+  operationId: spiderViewOptionParseSitemapXml
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionPostForm/
+  method: get
+  operationId: spiderViewOptionPostForm
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionProcessForm/
+  method: get
+  operationId: spiderViewOptionProcessForm
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionSendRefererHeader/
+  method: get
+  operationId: spiderViewOptionSendRefererHeader
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionShowAdvancedDialog/
+  method: get
+  operationId: spiderViewOptionShowAdvancedDialog
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionSkipURLString/
+  method: get
+  operationId: spiderViewOptionSkipURLString
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionThreadCount/
+  method: get
+  operationId: spiderViewOptionThreadCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/optionUserAgent/
+  method: get
+  operationId: spiderViewOptionUserAgent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/results/
+  method: get
+  operationId: spiderViewResults
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/scans/
+  method: get
+  operationId: spiderViewScans
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/spider/view/status/
+  method: get
+  operationId: spiderViewStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/action/clearStats/
+  method: get
+  operationId: statsActionClearStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/action/setOptionInMemoryEnabled/
+  method: get
+  operationId: statsActionSetOptionInMemoryEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/action/setOptionStatsdHost/
+  method: get
+  operationId: statsActionSetOptionStatsdHost
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/action/setOptionStatsdPort/
+  method: get
+  operationId: statsActionSetOptionStatsdPort
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/action/setOptionStatsdPrefix/
+  method: get
+  operationId: statsActionSetOptionStatsdPrefix
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/allSitesStats/
+  method: get
+  operationId: statsViewAllSitesStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/optionInMemoryEnabled/
+  method: get
+  operationId: statsViewOptionInMemoryEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/optionStatsdEnabled/
+  method: get
+  operationId: statsViewOptionStatsdEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/optionStatsdHost/
+  method: get
+  operationId: statsViewOptionStatsdHost
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/optionStatsdPort/
+  method: get
+  operationId: statsViewOptionStatsdPort
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/optionStatsdPrefix/
+  method: get
+  operationId: statsViewOptionStatsdPrefix
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/siteStats/
+  method: get
+  operationId: statsViewSiteStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/stats/view/stats/
+  method: get
+  operationId: statsViewStats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/authenticateAsUser/
+  method: get
+  operationId: usersActionAuthenticateAsUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/newUser/
+  method: get
+  operationId: usersActionNewUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/pollAsUser/
+  method: get
+  operationId: usersActionPollAsUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/removeUser/
+  method: get
+  operationId: usersActionRemoveUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/setAuthenticationCredentials/
+  method: get
+  operationId: usersActionSetAuthenticationCredentials
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/setAuthenticationState/
+  method: get
+  operationId: usersActionSetAuthenticationState
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/setCookie/
+  method: get
+  operationId: usersActionSetCookie
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/setUserEnabled/
+  method: get
+  operationId: usersActionSetUserEnabled
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/action/setUserName/
+  method: get
+  operationId: usersActionSetUserName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/view/getAuthenticationCredentials/
+  method: get
+  operationId: usersViewGetAuthenticationCredentials
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/view/getAuthenticationCredentialsConfigParams/
+  method: get
+  operationId: usersViewGetAuthenticationCredentialsConfigParams
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/view/getAuthenticationSession/
+  method: get
+  operationId: usersViewGetAuthenticationSession
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/view/getAuthenticationState/
+  method: get
+  operationId: usersViewGetAuthenticationState
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/view/getUserById/
+  method: get
+  operationId: usersViewGetUserById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/users/view/usersList/
+  method: get
+  operationId: usersViewUsersList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/wappalyzer/view/listAll/
+  method: get
+  operationId: wappalyzerViewListAll
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/wappalyzer/view/listSite/
+  method: get
+  operationId: wappalyzerViewListSite
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/wappalyzer/view/listSites/
+  method: get
+  operationId: wappalyzerViewListSites
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/websocket/action/sendTextMessage/
+  method: get
+  operationId: websocketActionSendTextMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/websocket/action/setBreakTextMessage/
+  method: get
+  operationId: websocketActionSetBreakTextMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/websocket/view/breakTextMessage/
+  method: get
+  operationId: websocketViewBreakTextMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/websocket/view/channels/
+  method: get
+  operationId: websocketViewChannels
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/websocket/view/message/
+  method: get
+  operationId: websocketViewMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /JSON/websocket/view/messages/
+  method: get
+  operationId: websocketViewMessages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
