@@ -1,0 +1,1020 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl spider API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: spider
+paths:
+  /JSON/spider/action/addDomainAlwaysInScope/:
+    parameters:
+    - name: value
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: isRegex
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: isEnabled
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Adds a new domain that's always in scope, using the specified value. Optionally sets if the new entry is enabled (default, true) and whether or not the new value is specified as a regex (default, false).
+      operationId: spiderActionAddDomainAlwaysInScope
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/clearExcludedFromScan/:
+    get:
+      description: Clears the regexes of URLs excluded from the spider scans.
+      operationId: spiderActionClearExcludedFromScan
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/disableAllDomainsAlwaysInScope/:
+    get:
+      description: Disables all domains that are always in scope.
+      operationId: spiderActionDisableAllDomainsAlwaysInScope
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/enableAllDomainsAlwaysInScope/:
+    get:
+      description: Enables all domains that are always in scope.
+      operationId: spiderActionEnableAllDomainsAlwaysInScope
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/excludeFromScan/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Adds a regex of URLs that should be excluded from the spider scans.
+      operationId: spiderActionExcludeFromScan
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/modifyDomainAlwaysInScope/:
+    parameters:
+    - name: idx
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: value
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: isRegex
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: isEnabled
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Modifies a domain that's always in scope. Allows to modify the value, if enabled or if a regex. The domain is selected with its index, which can be obtained with the view domainsAlwaysInScope.
+      operationId: spiderActionModifyDomainAlwaysInScope
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/pause/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderActionPause
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/pauseAllScans/:
+    get:
+      description: ''
+      operationId: spiderActionPauseAllScans
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/removeAllScans/:
+    get:
+      description: ''
+      operationId: spiderActionRemoveAllScans
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/removeDomainAlwaysInScope/:
+    parameters:
+    - name: idx
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Removes a domain that's always in scope, with the given index. The index can be obtained with the view domainsAlwaysInScope.
+      operationId: spiderActionRemoveDomainAlwaysInScope
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/removeScan/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderActionRemoveScan
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/resume/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderActionResume
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/resumeAllScans/:
+    get:
+      description: ''
+      operationId: spiderActionResumeAllScans
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/scan/:
+    parameters:
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: maxChildren
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: recurse
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: contextName
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: subtreeOnly
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Runs the spider against the given URL (or context). Optionally, the 'maxChildren' parameter can be set to limit the number of children scanned, the 'recurse' parameter can be used to prevent the spider from seeding recursively, the parameter 'contextName' can be used to constrain the scan to a Context and the parameter 'subtreeOnly' allows to restrict the spider under a site's subtree (using the specified 'url').
+      operationId: spiderActionScan
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/scanAsUser/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: maxChildren
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: recurse
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: subtreeOnly
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Runs the spider from the perspective of a User, obtained using the given Context ID and User ID. See 'scan' action for more details.
+      operationId: spiderActionScanAsUser
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionAcceptCookies/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not a spider process should accept cookies while spidering.
+      operationId: spiderActionSetOptionAcceptCookies
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionHandleODataParametersVisited/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionHandleODataParametersVisited
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionHandleParameters/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderActionSetOptionHandleParameters
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionLogoutAvoidance/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: A boolean (true/false) indicating if seeming logout paths/functionality should be avoided (default is false).
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the Spider should attempt to avoid logout related paths/functionality.
+      operationId: spiderActionSetOptionLogoutAvoidance
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionMaxChildren/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum number of child nodes (per node) that can be crawled, 0 means no limit.
+      operationId: spiderActionSetOptionMaxChildren
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionMaxDepth/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum depth the spider can crawl, 0 for unlimited depth.
+      operationId: spiderActionSetOptionMaxDepth
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionMaxDuration/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: spiderActionSetOptionMaxDuration
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionMaxParseSizeBytes/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The maximum size or 0 for unlimited.
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum size, in bytes, that a response might have to be parsed. This allows the spider to skip big responses/files.
+      operationId: spiderActionSetOptionMaxParseSizeBytes
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionMaxScansInUI/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: spiderActionSetOptionMaxScansInUI
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionParseComments/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionParseComments
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionParseDsStore/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionParseDsStore
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionParseGit/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionParseGit
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionParseRobotsTxt/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionParseRobotsTxt
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionParseSVNEntries/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionParseSVNEntries
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionParseSitemapXml/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionParseSitemapXml
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionPostForm/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionPostForm
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionProcessForm/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionProcessForm
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionSendRefererHeader/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the 'Referer' header should be sent while spidering.
+      operationId: spiderActionSetOptionSendRefererHeader
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionShowAdvancedDialog/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: spiderActionSetOptionShowAdvancedDialog
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionSkipURLString/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderActionSetOptionSkipURLString
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionThreadCount/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: spiderActionSetOptionThreadCount
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/setOptionUserAgent/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderActionSetOptionUserAgent
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/stop/:
+    parameters:
+    - name: scanId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderActionStop
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/action/stopAllScans/:
+    get:
+      description: ''
+      operationId: spiderActionStopAllScans
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/addedNodes/:
+    parameters:
+    - name: scanId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns a list of the names of the nodes added to the Sites tree by the specified scan.
+      operationId: spiderViewAddedNodes
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/allUrls/:
+    get:
+      description: Returns a list of unique URLs from the history table based on HTTP messages added by the Spider.
+      operationId: spiderViewAllUrls
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/domainsAlwaysInScope/:
+    get:
+      description: 'Gets all the domains that are always in scope. For each domain the following are shown: the index, the value (domain), if enabled, and if specified as a regex.'
+      operationId: spiderViewDomainsAlwaysInScope
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/excludedFromScan/:
+    get:
+      description: Gets the regexes of URLs excluded from the spider scans.
+      operationId: spiderViewExcludedFromScan
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/fullResults/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderViewFullResults
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionAcceptCookies/:
+    get:
+      description: Gets whether or not a spider process should accept cookies while spidering.
+      operationId: spiderViewOptionAcceptCookies
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionDomainsAlwaysInScope/:
+    get:
+      description: Use view domainsAlwaysInScope instead.
+      deprecated: true
+      operationId: spiderViewOptionDomainsAlwaysInScope
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionDomainsAlwaysInScopeEnabled/:
+    get:
+      description: Use view domainsAlwaysInScope instead.
+      deprecated: true
+      operationId: spiderViewOptionDomainsAlwaysInScopeEnabled
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionHandleODataParametersVisited/:
+    get:
+      description: ''
+      operationId: spiderViewOptionHandleODataParametersVisited
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionHandleParameters/:
+    get:
+      description: ''
+      operationId: spiderViewOptionHandleParameters
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionLogoutAvoidance/:
+    get:
+      description: Gets whether or not the spider should attempt to avoid logout related paths/functionality.
+      operationId: spiderViewOptionLogoutAvoidance
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionMaxChildren/:
+    get:
+      description: Gets the maximum number of child nodes (per node) that can be crawled, 0 means no limit.
+      operationId: spiderViewOptionMaxChildren
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionMaxDepth/:
+    get:
+      description: Gets the maximum depth the spider can crawl, 0 if unlimited.
+      operationId: spiderViewOptionMaxDepth
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionMaxDuration/:
+    get:
+      description: ''
+      operationId: spiderViewOptionMaxDuration
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionMaxParseSizeBytes/:
+    get:
+      description: Gets the maximum size, in bytes, that a response might have to be parsed, or 0 for unlimited.
+      operationId: spiderViewOptionMaxParseSizeBytes
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionMaxScansInUI/:
+    get:
+      description: ''
+      operationId: spiderViewOptionMaxScansInUI
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionParseComments/:
+    get:
+      description: ''
+      operationId: spiderViewOptionParseComments
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionParseDsStore/:
+    get:
+      description: ''
+      operationId: spiderViewOptionParseDsStore
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionParseGit/:
+    get:
+      description: ''
+      operationId: spiderViewOptionParseGit
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionParseRobotsTxt/:
+    get:
+      description: ''
+      operationId: spiderViewOptionParseRobotsTxt
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionParseSVNEntries/:
+    get:
+      description: ''
+      operationId: spiderViewOptionParseSVNEntries
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionParseSitemapXml/:
+    get:
+      description: ''
+      operationId: spiderViewOptionParseSitemapXml
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionPostForm/:
+    get:
+      description: ''
+      operationId: spiderViewOptionPostForm
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionProcessForm/:
+    get:
+      description: ''
+      operationId: spiderViewOptionProcessForm
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionSendRefererHeader/:
+    get:
+      description: Gets whether or not the 'Referer' header should be sent while spidering.
+      operationId: spiderViewOptionSendRefererHeader
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionShowAdvancedDialog/:
+    get:
+      description: ''
+      operationId: spiderViewOptionShowAdvancedDialog
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionSkipURLString/:
+    get:
+      description: ''
+      operationId: spiderViewOptionSkipURLString
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionThreadCount/:
+    get:
+      description: ''
+      operationId: spiderViewOptionThreadCount
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/optionUserAgent/:
+    get:
+      description: ''
+      operationId: spiderViewOptionUserAgent
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/results/:
+    parameters:
+    - name: scanId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderViewResults
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/scans/:
+    get:
+      description: ''
+      operationId: spiderViewScans
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/spider/view/status/:
+    parameters:
+    - name: scanId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: spiderViewStatus
+      tags:
+      - spider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

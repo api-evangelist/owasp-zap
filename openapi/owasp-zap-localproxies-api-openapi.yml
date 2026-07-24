@@ -1,0 +1,132 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl localProxies API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: localProxies
+paths:
+  /JSON/localProxies/action/addAdditionalProxy/:
+    parameters:
+    - name: address
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: port
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: behindNat
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: alwaysDecodeZip
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: removeUnsupportedEncodings
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: localProxiesActionAddAdditionalProxy
+      tags:
+      - localProxies
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/localProxies/action/removeAdditionalProxy/:
+    parameters:
+    - name: address
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: port
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: localProxiesActionRemoveAdditionalProxy
+      tags:
+      - localProxies
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/localProxies/view/additionalProxies/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: localProxiesViewAdditionalProxies
+      tags:
+      - localProxies
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

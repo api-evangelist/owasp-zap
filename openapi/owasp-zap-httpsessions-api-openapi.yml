@@ -1,0 +1,378 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl httpSessions API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: httpSessions
+paths:
+  /JSON/httpSessions/action/addDefaultSessionToken/:
+    parameters:
+    - name: sessionToken
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: tokenEnabled
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Adds a default session token with the given name and enabled state.
+      operationId: httpSessionsActionAddDefaultSessionToken
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/addSessionToken/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: sessionToken
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Adds the session token to the given site.
+      operationId: httpSessionsActionAddSessionToken
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/createEmptySession/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: session
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Creates an empty session for the given site. Optionally with the given name.
+      operationId: httpSessionsActionCreateEmptySession
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/removeDefaultSessionToken/:
+    parameters:
+    - name: sessionToken
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Removes the default session token with the given name.
+      operationId: httpSessionsActionRemoveDefaultSessionToken
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/removeSession/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: session
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Removes the session from the given site.
+      operationId: httpSessionsActionRemoveSession
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/removeSessionToken/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: sessionToken
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Removes the session token from the given site.
+      operationId: httpSessionsActionRemoveSessionToken
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/renameSession/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: oldSessionName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: newSessionName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Renames the session of the given site.
+      operationId: httpSessionsActionRenameSession
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/setActiveSession/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: session
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the given session as active for the given site.
+      operationId: httpSessionsActionSetActiveSession
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/setDefaultSessionTokenEnabled/:
+    parameters:
+    - name: sessionToken
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: tokenEnabled
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets whether or not the default session token with the given name is enabled.
+      operationId: httpSessionsActionSetDefaultSessionTokenEnabled
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/setSessionTokenValue/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: session
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: sessionToken
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: tokenValue
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the value of the session token of the given session for the given site.
+      operationId: httpSessionsActionSetSessionTokenValue
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/action/unsetActiveSession/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Unsets the active session of the given site.
+      operationId: httpSessionsActionUnsetActiveSession
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/view/activeSession/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the name of the active session for the given site.
+      operationId: httpSessionsViewActiveSession
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/view/defaultSessionTokens/:
+    get:
+      description: Gets the default session tokens.
+      operationId: httpSessionsViewDefaultSessionTokens
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/view/sessionTokens/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the names of the session tokens for the given site.
+      operationId: httpSessionsViewSessionTokens
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/view/sessions/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: session
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the sessions for the given site. Optionally returning just the session with the given name.
+      operationId: httpSessionsViewSessions
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/httpSessions/view/sites/:
+    get:
+      description: Gets all of the sites that have sessions.
+      operationId: httpSessionsViewSites
+      tags:
+      - httpSessions
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl replacer API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: replacer
+paths:
+  /JSON/replacer/action/addRule/:
+    parameters:
+    - name: description
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: matchType
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: matchRegex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: matchString
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: replacement
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: initiators
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: A regular expression to match the URL of the message, if empty the rule applies to all messages.
+      schema:
+        type: string
+    get:
+      description: 'Adds a replacer rule. For the parameters: desc is a user friendly description, enabled is true or false, matchType is one of [REQ_HEADER, REQ_HEADER_STR, REQ_BODY_STR, RESP_HEADER, RESP_HEADER_STR, RESP_BODY_STR], matchRegex should be true if the matchString should be treated as a regex otherwise false, matchString is the string that will be matched against, replacement is the replacement string, initiators may be blank (for all initiators) or a comma separated list of integers as defined in <a href="https://www.zaproxy.org/docs/constants/">Request Initiator Constants</a>  '
+      operationId: replacerActionAddRule
+      tags:
+      - replacer
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/replacer/action/removeRule/:
+    parameters:
+    - name: description
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Removes the rule with the given description
+      operationId: replacerActionRemoveRule
+      tags:
+      - replacer
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/replacer/action/setEnabled/:
+    parameters:
+    - name: description
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: bool
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Enables or disables the rule with the given description based on the bool parameter  '
+      operationId: replacerActionSetEnabled
+      tags:
+      - replacer
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/replacer/view/rules/:
+    get:
+      description: Returns full details of all of the rules
+      operationId: replacerViewRules
+      tags:
+      - replacer
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

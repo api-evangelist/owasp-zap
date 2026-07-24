@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl reports API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: reports
+paths:
+  /JSON/reports/action/generate/:
+    parameters:
+    - name: title
+      in: query
+      required: true
+      description: Report Title
+      schema:
+        type: string
+    - name: template
+      in: query
+      required: true
+      description: Report Template
+      schema:
+        type: string
+    - name: theme
+      in: query
+      description: Report Theme
+      schema:
+        type: string
+    - name: description
+      in: query
+      description: Report Description
+      schema:
+        type: string
+    - name: contexts
+      in: query
+      description: The name of the contexts to be included in the report, separated by '|'.
+      schema:
+        type: string
+    - name: sites
+      in: query
+      description: The site URLs that should be included in the report, separated by '|'.
+      schema:
+        type: string
+    - name: sections
+      in: query
+      description: The report sections that should be included, separated by '|'.
+      schema:
+        type: string
+    - name: includedConfidences
+      in: query
+      description: Confidences that should be included in the report, separated by '|'. Accepted values are "False Positive", "Low", "Medium", "High", and "Confirmed".
+      schema:
+        type: string
+    - name: includedRisks
+      in: query
+      description: Risks that should be included in the report, separated by '|'. Accepted values are "Informational", "Low", "Medium", and "High".
+      schema:
+        type: string
+    - name: reportFileName
+      in: query
+      description: The file name of the generated report. This value overrides the reportFileNamePattern parameter.
+      schema:
+        type: string
+    - name: reportFileNamePattern
+      in: query
+      description: Report File Name Pattern.
+      schema:
+        type: string
+    - name: reportDir
+      in: query
+      description: Path to directory in which the generated report should be placed.
+      schema:
+        type: string
+    - name: display
+      in: query
+      description: Display the generated report. Either "true" or "false".
+      schema:
+        type: string
+    get:
+      description: Generate a report with the supplied parameters.
+      operationId: reportsActionGenerate
+      tags:
+      - reports
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/reports/view/templateDetails/:
+    parameters:
+    - name: template
+      in: query
+      required: true
+      description: Template Label
+      schema:
+        type: string
+    get:
+      description: View details of the specified template.
+      operationId: reportsViewTemplateDetails
+      tags:
+      - reports
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/reports/view/templates/:
+    get:
+      description: View available templates.
+      operationId: reportsViewTemplates
+      tags:
+      - reports
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

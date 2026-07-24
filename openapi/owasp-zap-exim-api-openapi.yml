@@ -1,0 +1,223 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl exim API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: exim
+paths:
+  /JSON/exim/action/exportSitesTree/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Exports the Sites Tree in the Sites Tree YAML format.
+      operationId: eximActionExportSitesTree
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/exim/action/importHar/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Imports a HAR file.
+      operationId: eximActionImportHar
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/exim/action/importModsec2Logs/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Imports ModSecurity2 logs from the file with the given file system path.
+      operationId: eximActionImportModsec2Logs
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/exim/action/importUrls/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Imports URLs (one per line) from the file with the given file system path.
+      operationId: eximActionImportUrls
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/exim/action/importZapLogs/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Imports previously exported ZAP messages from the file with the given file system path.
+      operationId: eximActionImportZapLogs
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/exim/action/pruneSitesTree/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Prunes the Sites Tree based on a file in the Sites Tree YAML format.
+      operationId: eximActionPruneSitesTree
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /OTHER/exim/other/exportHar/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The URL below which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: The position (or offset) within the results to use as a starting position for the information returned.
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: The number of results to return.
+      schema:
+        type: string
+    get:
+      description: Gets the HTTP messages sent through/by ZAP, in HAR format, optionally filtered by URL and paginated with 'start' position and 'count' of messages
+      operationId: eximOtherExportHar
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/exim/other/exportHarById/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: The ID (number(s)) of the message(s) to be returned.
+      schema:
+        type: string
+    get:
+      description: Gets the HTTP messages with the given IDs, in HAR format.
+      operationId: eximOtherExportHarById
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/exim/other/sendHarRequest/:
+    parameters:
+    - name: request
+      in: query
+      required: true
+      description: The raw JSON of a HAR request.
+      schema:
+        type: string
+    - name: followRedirects
+      in: query
+      description: True if redirects should be followed, false otherwise.
+      schema:
+        type: string
+    get:
+      description: Sends the first HAR request entry, optionally following redirections. Returns, in HAR format, the request sent and response received and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom manual requests are not allowed in 'Safe' mode nor in 'Protected' mode if out of scope.
+      operationId: eximOtherSendHarRequest
+      tags:
+      - exim
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+components:
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+    ErrorOther:
+      description: Error of OTHER endpoints.
+      content:
+        '*/*': {}
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

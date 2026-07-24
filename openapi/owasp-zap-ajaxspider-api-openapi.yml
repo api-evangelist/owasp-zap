@@ -1,0 +1,721 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl ajaxSpider API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: ajaxSpider
+paths:
+  /JSON/ajaxSpider/action/addAllowedResource/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: The regular expression of the allowed resource.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: If the allowed resource should be enabled or not.
+      schema:
+        type: string
+    get:
+      description: Adds an allowed resource.
+      operationId: ajaxSpiderActionAddAllowedResource
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/addExcludedElement/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context.
+      schema:
+        type: string
+    - name: description
+      in: query
+      required: true
+      description: The description of the excluded element.
+      schema:
+        type: string
+    - name: element
+      in: query
+      required: true
+      description: The element to exclude.
+      schema:
+        type: string
+    - name: xpath
+      in: query
+      description: The XPath of the element.
+      schema:
+        type: string
+    - name: text
+      in: query
+      description: The text of the element.
+      schema:
+        type: string
+    - name: attributeName
+      in: query
+      description: The attribute name of the element.
+      schema:
+        type: string
+    - name: attributeValue
+      in: query
+      description: The attribute value of the element.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Adds an excluded element to a context.
+      operationId: ajaxSpiderActionAddExcludedElement
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/modifyExcludedElement/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context.
+      schema:
+        type: string
+    - name: description
+      in: query
+      required: true
+      description: The description of the excluded element.
+      schema:
+        type: string
+    - name: element
+      in: query
+      required: true
+      description: The element to exclude.
+      schema:
+        type: string
+    - name: descriptionNew
+      in: query
+      description: The new description.
+      schema:
+        type: string
+    - name: xpath
+      in: query
+      description: The XPath of the element.
+      schema:
+        type: string
+    - name: text
+      in: query
+      description: The text of the element.
+      schema:
+        type: string
+    - name: attributeName
+      in: query
+      description: The attribute name of the element.
+      schema:
+        type: string
+    - name: attributeValue
+      in: query
+      description: The attribute value of the element.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Modifies an excluded element of a context.
+      operationId: ajaxSpiderActionModifyExcludedElement
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/removeAllowedResource/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: The regular expression of the allowed resource.
+      schema:
+        type: string
+    get:
+      description: Removes an allowed resource.
+      operationId: ajaxSpiderActionRemoveAllowedResource
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/removeExcludedElement/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context.
+      schema:
+        type: string
+    - name: description
+      in: query
+      required: true
+      description: The description of the excluded element.
+      schema:
+        type: string
+    get:
+      description: Removes an excluded element from a context.
+      operationId: ajaxSpiderActionRemoveExcludedElement
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/scan/:
+    parameters:
+    - name: url
+      in: query
+      description: The starting URL (needs to include the 'scheme').
+      schema:
+        type: string
+    - name: inScope
+      in: query
+      description: A boolean (true/false) indicating whether or not the scan should be restricted to 'inScope' only resources (default value is false).
+      schema:
+        type: string
+    - name: contextName
+      in: query
+      description: The name for any defined context. If the value does not match a defined context then an error will occur.
+      schema:
+        type: string
+    - name: subtreeOnly
+      in: query
+      description: A boolean (true/false) indicating whether or not the crawl should be constrained to a specific path (default value is false).
+      schema:
+        type: string
+    get:
+      description: Runs the AJAX Spider against a given target.
+      operationId: ajaxSpiderActionScan
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/scanAsUser/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name for any defined context. If the value does not match a defined context then an error will occur.
+      schema:
+        type: string
+    - name: userName
+      in: query
+      required: true
+      description: The name of the user to be used when crawling. The "userName" should be previously defined on the context configuration.
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: The starting URL (needs to include the 'scheme').
+      schema:
+        type: string
+    - name: subtreeOnly
+      in: query
+      description: A boolean (true/false) indicating whether or not the crawl should be constrained to a specific path (default value is false).
+      schema:
+        type: string
+    get:
+      description: Runs the AJAX Spider from the perspective of a User of the web application.
+      operationId: ajaxSpiderActionScanAsUser
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setEnabledAllowedResource/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: The regular expression of the allowed resource.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: If the allowed resource should be enabled or not.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not an allowed resource is enabled.
+      operationId: ajaxSpiderActionSetEnabledAllowedResource
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionBrowserId/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: The name of the browser to be used by the AJAX Spider. (See the Selenium add-on help for a list of supported browsers.)
+      schema:
+        type: string
+    get:
+      description: Sets the configuration of the AJAX Spider to use one of the supported browsers.
+      operationId: ajaxSpiderActionSetOptionBrowserId
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionClickDefaultElems/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: A boolean (true/false) indicating if only default elements such as 'a' 'button' 'input' should be clicked (default is true).
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the AJAX Spider will only click on the default HTML elements.
+      operationId: ajaxSpiderActionSetOptionClickDefaultElems
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionClickElemsOnce/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: A boolean (true/false) indicating whether or not the AJAX Spider should only click on elements once. If this is set to false, the crawler will attempt to click multiple times; which is more rigorous but may take considerably more time (default is true).
+      schema:
+        type: boolean
+    get:
+      description: When enabled, the crawler attempts to interact with each element (e.g., by clicking) only once.
+      operationId: ajaxSpiderActionSetOptionClickElemsOnce
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionEnableExtensions/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: ajaxSpiderActionSetOptionEnableExtensions
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionEventWait/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The time that the AJAX Spider should wait for each event (default is 1000 milliseconds).
+      schema:
+        type: integer
+    get:
+      description: 'Sets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers over an element, in order for a menu to display, etc.'
+      operationId: ajaxSpiderActionSetOptionEventWait
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionLogoutAvoidance/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: A boolean (true/false) indicating if logout elements should be avoided (default is false).
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the AJAX Spider should avoid clicking logout elements.
+      operationId: ajaxSpiderActionSetOptionLogoutAvoidance
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionMaxCrawlDepth/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The maximum depth that the crawler should explore (zero means unlimited depth, default is 10).
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum depth that the crawler can reach.
+      operationId: ajaxSpiderActionSetOptionMaxCrawlDepth
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionMaxCrawlStates/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The maximum number of states that the AJAX Spider should explore (zero means unlimited crawl states, default is 0)
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum number of states that the crawler should crawl.
+      operationId: ajaxSpiderActionSetOptionMaxCrawlStates
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionMaxDuration/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The maximum amount of time that the AJAX Spider is allowed to run (zero means unlimited running time, default is 60 minutes).
+      schema:
+        type: integer
+    get:
+      description: The maximum time that the crawler is allowed to run.
+      operationId: ajaxSpiderActionSetOptionMaxDuration
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionNumberOfBrowsers/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The number of windows that the AJAX Spider can use. The more windows, the faster the process will be. However, more windows also means greater resource usage (CPU, Memory, etc), and could lead to concurrency issues depending on the app being explored (default is 1).
+      schema:
+        type: integer
+    get:
+      description: Sets the number of windows to be used by AJAX Spider.
+      operationId: ajaxSpiderActionSetOptionNumberOfBrowsers
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionRandomInputs/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: A boolean (true/false) indicating whether or not random values should be use in form fields. Otherwise, empty values are submitted (default is true).
+      schema:
+        type: boolean
+    get:
+      description: When enabled, inserts random values into form fields.
+      operationId: ajaxSpiderActionSetOptionRandomInputs
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionReloadWait/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The number of milliseconds the AJAX Spider should wait after a page is loaded (default is 1000).
+      schema:
+        type: integer
+    get:
+      description: Sets the time to wait after the page is loaded before interacting with it.
+      operationId: ajaxSpiderActionSetOptionReloadWait
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/setOptionScopeCheck/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: The scope check, either Strict or Flexible. Any other value will result in setting the default (Strict).
+      schema:
+        type: string
+    get:
+      description: Sets the scope check.
+      operationId: ajaxSpiderActionSetOptionScopeCheck
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/action/stop/:
+    get:
+      description: Stops the AJAX Spider.
+      operationId: ajaxSpiderActionStop
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/allowedResources/:
+    get:
+      description: Gets the allowed resources. The allowed resources are always fetched even if out of scope, allowing to include necessary resources (e.g. scripts) from 3rd-parties.
+      operationId: ajaxSpiderViewAllowedResources
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/excludedElements/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context.
+      schema:
+        type: string
+    get:
+      description: Gets the excluded elements. The excluded elements are not clicked during crawling, for example, to prevent logging out.
+      operationId: ajaxSpiderViewExcludedElements
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/fullResults/:
+    get:
+      description: Gets the full crawled content detected by the AJAX Spider. Returns a set of values based on 'inScope' URLs, 'outOfScope' URLs, and 'errors' encountered during the last/current run of the AJAX Spider.
+      operationId: ajaxSpiderViewFullResults
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/numberOfResults/:
+    get:
+      description: Gets the number of resources found.
+      operationId: ajaxSpiderViewNumberOfResults
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionBrowserId/:
+    get:
+      description: Gets the configured browser to use for crawling.
+      operationId: ajaxSpiderViewOptionBrowserId
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionClickDefaultElems/:
+    get:
+      description: Gets the configured value for 'Click Default Elements Only', HTML elements such as 'a', 'button', 'input', all associated with some action or links on the page.
+      operationId: ajaxSpiderViewOptionClickDefaultElems
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionClickElemsOnce/:
+    get:
+      description: Gets the value configured for the AJAX Spider to know if it should click on the elements only once.
+      operationId: ajaxSpiderViewOptionClickElemsOnce
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionEnableExtensions/:
+    get:
+      description: ''
+      operationId: ajaxSpiderViewOptionEnableExtensions
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionEventWait/:
+    get:
+      description: 'Gets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers over an element, in order for a menu to display, etc.'
+      operationId: ajaxSpiderViewOptionEventWait
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionLogoutAvoidance/:
+    get:
+      description: Gets the value of the Logout Avoidance option.
+      operationId: ajaxSpiderViewOptionLogoutAvoidance
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionMaxCrawlDepth/:
+    get:
+      description: Gets the configured value for the max crawl depth.
+      operationId: ajaxSpiderViewOptionMaxCrawlDepth
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionMaxCrawlStates/:
+    get:
+      description: Gets the configured value for the maximum crawl states allowed.
+      operationId: ajaxSpiderViewOptionMaxCrawlStates
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionMaxDuration/:
+    get:
+      description: Gets the configured max duration of the crawl, the value is in minutes.
+      operationId: ajaxSpiderViewOptionMaxDuration
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionNumberOfBrowsers/:
+    get:
+      description: Gets the configured number of browsers to be used.
+      operationId: ajaxSpiderViewOptionNumberOfBrowsers
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionRandomInputs/:
+    get:
+      description: Gets if the AJAX Spider will use random values in form fields when crawling, if set to true.
+      operationId: ajaxSpiderViewOptionRandomInputs
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionReloadWait/:
+    get:
+      description: Gets the configured time to wait after reloading the page, this value is in milliseconds.
+      operationId: ajaxSpiderViewOptionReloadWait
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/optionScopeCheck/:
+    get:
+      description: Gets the configured scope check.
+      operationId: ajaxSpiderViewOptionScopeCheck
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/results/:
+    parameters:
+    - name: start
+      in: query
+      description: The position (or offset) within the results to use as a starting position for the information returned.
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: The number of results to return.
+      schema:
+        type: string
+    get:
+      description: Gets the current results of the crawler.
+      operationId: ajaxSpiderViewResults
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ajaxSpider/view/status/:
+    get:
+      description: Gets the current status of the crawler. Actual values are Stopped and Running.
+      operationId: ajaxSpiderViewStatus
+      tags:
+      - ajaxSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

@@ -1,0 +1,141 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl client API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: client
+paths:
+  /JSON/client/action/exportClientMap/:
+    parameters:
+    - name: pathYaml
+      in: query
+      required: true
+      description: The file system path to the file.
+      schema:
+        type: string
+    get:
+      description: Exports the Client Map to a file.
+      operationId: clientActionExportClientMap
+      tags:
+      - client
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/client/action/reportEvent/:
+    parameters:
+    - name: eventJson
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: clientActionReportEvent
+      tags:
+      - client
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/client/action/reportObject/:
+    parameters:
+    - name: objectJson
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: clientActionReportObject
+      tags:
+      - client
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/client/action/reportZestScript/:
+    parameters:
+    - name: scriptJson
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: clientActionReportZestScript
+      tags:
+      - client
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/client/action/reportZestStatement/:
+    parameters:
+    - name: statementJson
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: clientActionReportZestStatement
+      tags:
+      - client
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

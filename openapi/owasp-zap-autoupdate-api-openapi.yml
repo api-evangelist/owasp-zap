@@ -1,0 +1,426 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl autoupdate API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: autoupdate
+paths:
+  /JSON/autoupdate/action/downloadLatestRelease/:
+    get:
+      description: 'Downloads the latest release, if any '
+      operationId: autoupdateActionDownloadLatestRelease
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/installAddon/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Installs or updates the specified add-on, returning when complete (i.e. not asynchronously)
+      operationId: autoupdateActionInstallAddon
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/installLocalAddon/:
+    parameters:
+    - name: file
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: autoupdateActionInstallLocalAddon
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionCheckAddonUpdates/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionCheckAddonUpdates
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionCheckOnStart/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionCheckOnStart
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionDownloadNewRelease/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionDownloadNewRelease
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionInstallAddonUpdates/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionInstallAddonUpdates
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionInstallScannerRules/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionInstallScannerRules
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionReportAlphaAddons/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionReportAlphaAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionReportBetaAddons/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionReportBetaAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/setOptionReportReleaseAddons/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: autoupdateActionSetOptionReportReleaseAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/action/uninstallAddon/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Uninstalls the specified add-on '
+      operationId: autoupdateActionUninstallAddon
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/installedAddons/:
+    get:
+      description: Return a list of all of the installed add-ons
+      operationId: autoupdateViewInstalledAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/isLatestVersion/:
+    get:
+      description: Returns 'true' if ZAP is on the latest version
+      operationId: autoupdateViewIsLatestVersion
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/latestVersionNumber/:
+    get:
+      description: Returns the latest version number
+      operationId: autoupdateViewLatestVersionNumber
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/localAddons/:
+    get:
+      description: Returns a list with all local add-ons, installed or not.
+      operationId: autoupdateViewLocalAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/marketplaceAddons/:
+    get:
+      description: Return a list of all of the add-ons on the ZAP Marketplace (this information is read once and then cached)
+      operationId: autoupdateViewMarketplaceAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/newAddons/:
+    get:
+      description: Return a list of any add-ons that have been added to the Marketplace since the last check for updates
+      operationId: autoupdateViewNewAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionAddonDirectories/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionAddonDirectories
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionCheckAddonUpdates/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionCheckAddonUpdates
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionCheckOnStart/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionCheckOnStart
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionDayLastChecked/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionDayLastChecked
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionDayLastInstallWarned/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionDayLastInstallWarned
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionDayLastUpdateWarned/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionDayLastUpdateWarned
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionDownloadDirectory/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionDownloadDirectory
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionDownloadNewRelease/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionDownloadNewRelease
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionInstallAddonUpdates/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionInstallAddonUpdates
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionInstallScannerRules/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionInstallScannerRules
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionReportAlphaAddons/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionReportAlphaAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionReportBetaAddons/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionReportBetaAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/optionReportReleaseAddons/:
+    get:
+      description: ''
+      operationId: autoupdateViewOptionReportReleaseAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/autoupdate/view/updatedAddons/:
+    get:
+      description: Return a list of any add-ons that have been changed in the Marketplace since the last check for updates
+      operationId: autoupdateViewUpdatedAddons
+      tags:
+      - autoupdate
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

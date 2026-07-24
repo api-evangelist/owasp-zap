@@ -1,0 +1,521 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl hud API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: hud
+paths:
+  /JSON/hud/action/log/:
+    parameters:
+    - name: record
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Used by the HUD to log messages from the browser
+      operationId: hudActionLog
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/recordRequest/:
+    parameters:
+    - name: header
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: body
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Used by the HUD to cache a request the user wants to send in the browser
+      operationId: hudActionRecordRequest
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/resetTutorialTasks/:
+    get:
+      description: Reset the tutorial tasks so that they must be completed again
+      operationId: hudActionResetTutorialTasks
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionBaseDirectory/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Set the base directory from which the HUD files are loaded
+      operationId: hudActionSetOptionBaseDirectory
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionDevelopmentMode/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets the boolean option 'Development mode'
+      operationId: hudActionSetOptionDevelopmentMode
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionEnableOnDomainMsgs/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: hudActionSetOptionEnableOnDomainMsgs
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionEnabledForDaemon/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: hudActionSetOptionEnabledForDaemon
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionEnabledForDesktop/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: hudActionSetOptionEnabledForDesktop
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionInScopeOnly/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets the boolean option 'In scope only'
+      operationId: hudActionSetOptionInScopeOnly
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionRemoveCSP/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets the boolean option 'Remove CSP'
+      operationId: hudActionSetOptionRemoveCSP
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionShowWelcomeScreen/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: hudActionSetOptionShowWelcomeScreen
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionSkipTutorialTasks/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: hudActionSetOptionSkipTutorialTasks
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionTutorialTaskDone/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: hudActionSetOptionTutorialTaskDone
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setOptionTutorialTestMode/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: hudActionSetOptionTutorialTestMode
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/action/setUiOption/:
+    parameters:
+    - name: key
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: value
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets a UI option with the given key and value. The key must be 50 or fewer alphanumeric characters
+      operationId: hudActionSetUiOption
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /OTHER/hud/other/changesInHtml/:
+    get:
+      description: Returns the changelog in HTML format
+      operationId: hudOtherChangesInHtml
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /JSON/hud/view/getUiOption/:
+    parameters:
+    - name: key
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets a UI option set using setUiOption. If the supplied key is not set then an empty string is returned
+      operationId: hudViewGetUiOption
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/heartbeat/:
+    get:
+      description: Used by service workers to keep alive
+      operationId: hudViewHeartbeat
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/hudAlertData/:
+    parameters:
+    - name: url
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the alert summary needed by the HUD for the specified URL
+      operationId: hudViewHudAlertData
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionAllowUnsafeEval/:
+    get:
+      description: Returns true if the 'Allow unsafe-eval' option is set
+      operationId: hudViewOptionAllowUnsafeEval
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionBaseDirectory/:
+    get:
+      description: Returns the base directory from which the HUD files are loaded
+      operationId: hudViewOptionBaseDirectory
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionDevelopmentMode/:
+    get:
+      description: Returns true if the 'Development mode' option is set
+      operationId: hudViewOptionDevelopmentMode
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionEnableOnDomainMsgs/:
+    get:
+      description: ''
+      operationId: hudViewOptionEnableOnDomainMsgs
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionEnableTelemetry/:
+    get:
+      description: ''
+      operationId: hudViewOptionEnableTelemetry
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionEnabledForDaemon/:
+    get:
+      description: ''
+      operationId: hudViewOptionEnabledForDaemon
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionEnabledForDesktop/:
+    get:
+      description: ''
+      operationId: hudViewOptionEnabledForDesktop
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionInScopeOnly/:
+    get:
+      description: Returns true if the 'In scope only' option is set
+      operationId: hudViewOptionInScopeOnly
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionRemoveCSP/:
+    get:
+      description: Returns true if the 'Remove CSP' option is set
+      operationId: hudViewOptionRemoveCSP
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionShowWelcomeScreen/:
+    get:
+      description: ''
+      operationId: hudViewOptionShowWelcomeScreen
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionSkipTutorialTasks/:
+    get:
+      description: ''
+      operationId: hudViewOptionSkipTutorialTasks
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionTutorialHost/:
+    get:
+      description: ''
+      operationId: hudViewOptionTutorialHost
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionTutorialPort/:
+    get:
+      description: ''
+      operationId: hudViewOptionTutorialPort
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionTutorialTasksDone/:
+    get:
+      description: ''
+      operationId: hudViewOptionTutorialTasksDone
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionTutorialTestMode/:
+    get:
+      description: ''
+      operationId: hudViewOptionTutorialTestMode
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/optionTutorialUpdates/:
+    get:
+      description: ''
+      operationId: hudViewOptionTutorialUpdates
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/tutorialUpdates/:
+    get:
+      description: ''
+      operationId: hudViewTutorialUpdates
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/hud/view/upgradedDomains/:
+    get:
+      description: ''
+      operationId: hudViewUpgradedDomains
+      tags:
+      - hud
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+    ErrorOther:
+      description: Error of OTHER endpoints.
+      content:
+        '*/*': {}
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

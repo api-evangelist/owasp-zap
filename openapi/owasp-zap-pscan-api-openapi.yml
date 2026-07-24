@@ -1,0 +1,263 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl pscan API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: pscan
+paths:
+  /JSON/pscan/action/clearQueue/:
+    get:
+      description: Clears the passive scan queue.
+      operationId: pscanActionClearQueue
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/disableAllScanners/:
+    get:
+      description: Disables all passive scan rules.
+      operationId: pscanActionDisableAllScanners
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/disableAllTags/:
+    get:
+      description: Disables all passive scan tags.
+      operationId: pscanActionDisableAllTags
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/disableScanners/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: A comma separated list of scan rule IDs.
+      schema:
+        type: string
+    get:
+      description: Disables passive scan rules.
+      operationId: pscanActionDisableScanners
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/enableAllScanners/:
+    get:
+      description: Enables all passive scan rules.
+      operationId: pscanActionEnableAllScanners
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/enableAllTags/:
+    get:
+      description: Enables all passive scan tags.
+      operationId: pscanActionEnableAllTags
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/enableScanners/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: A comma separated list of scan rule IDs.
+      schema:
+        type: string
+    get:
+      description: Enables passive scan rules.
+      operationId: pscanActionEnableScanners
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/setEnabled/:
+    parameters:
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: 'Sets whether or not the passive scanning is enabled (Note: the enabled state is not persisted).'
+      operationId: pscanActionSetEnabled
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/setMaxAlertsPerRule/:
+    parameters:
+    - name: maxAlerts
+      in: query
+      required: true
+      description: The maximum number of alerts.
+      schema:
+        type: string
+    get:
+      description: Sets the maximum number of alerts a passive scan rule can raise.
+      operationId: pscanActionSetMaxAlertsPerRule
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/setScanOnlyInScope/:
+    parameters:
+    - name: onlyInScope
+      in: query
+      required: true
+      description: The scan state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not the passive scan should be performed only on messages that are in scope.
+      operationId: pscanActionSetScanOnlyInScope
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/action/setScannerAlertThreshold/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: The ID of the scan rule.
+      schema:
+        type: string
+    - name: alertThreshold
+      in: query
+      required: true
+      description: 'The alert threshold: OFF, DEFAULT, LOW, MEDIUM and HIGH'
+      schema:
+        type: string
+    get:
+      description: Sets the alert threshold of a passive scan rule.
+      operationId: pscanActionSetScannerAlertThreshold
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/view/currentRule/:
+    get:
+      description: Use the currentTasks view instead.
+      deprecated: true
+      operationId: pscanViewCurrentRule
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/view/currentTasks/:
+    get:
+      description: Shows information about the passive scan tasks currently being run (if any).
+      operationId: pscanViewCurrentTasks
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/view/maxAlertsPerRule/:
+    get:
+      description: Gets the maximum number of alerts a passive scan rule should raise.
+      operationId: pscanViewMaxAlertsPerRule
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/view/recordsToScan/:
+    get:
+      description: The number of records the passive scanner still has to scan.
+      operationId: pscanViewRecordsToScan
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/view/scanOnlyInScope/:
+    get:
+      description: Tells whether or not the passive scan should be performed only on messages that are in scope.
+      operationId: pscanViewScanOnlyInScope
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/pscan/view/scanners/:
+    get:
+      description: Lists all passive scan rules with their ID, name, enabled state, and alert threshold.
+      operationId: pscanViewScanners
+      tags:
+      - pscan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

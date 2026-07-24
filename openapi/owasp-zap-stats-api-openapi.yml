@@ -1,0 +1,236 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl stats API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: stats
+paths:
+  /JSON/stats/action/clearStats/:
+    parameters:
+    - name: keyPrefix
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Clears all of the statistics
+      operationId: statsActionClearStats
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/action/setOptionInMemoryEnabled/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets whether in memory statistics are enabled
+      operationId: statsActionSetOptionInMemoryEnabled
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/action/setOptionStatsdHost/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the Statsd service hostname, supply an empty string to stop using a Statsd service
+      operationId: statsActionSetOptionStatsdHost
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/action/setOptionStatsdPort/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: Sets the Statsd service port
+      operationId: statsActionSetOptionStatsdPort
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/action/setOptionStatsdPrefix/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the prefix to be applied to all stats sent to the configured Statsd service
+      operationId: statsActionSetOptionStatsdPrefix
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/allSitesStats/:
+    parameters:
+    - name: keyPrefix
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets all of the site based statistics, optionally filtered by a key prefix
+      operationId: statsViewAllSitesStats
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/optionInMemoryEnabled/:
+    get:
+      description: Returns 'true' if in memory statistics are enabled, otherwise returns 'false'
+      operationId: statsViewOptionInMemoryEnabled
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/optionStatsdEnabled/:
+    get:
+      description: Returns 'true' if a Statsd server has been correctly configured, otherwise returns 'false'
+      operationId: statsViewOptionStatsdEnabled
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/optionStatsdHost/:
+    get:
+      description: Gets the Statsd service hostname
+      operationId: statsViewOptionStatsdHost
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/optionStatsdPort/:
+    get:
+      description: Gets the Statsd service port
+      operationId: statsViewOptionStatsdPort
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/optionStatsdPrefix/:
+    get:
+      description: Gets the prefix to be applied to all stats sent to the configured Statsd service
+      operationId: statsViewOptionStatsdPrefix
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/siteStats/:
+    parameters:
+    - name: site
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: keyPrefix
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets all of the global statistics, optionally filtered by a key prefix
+      operationId: statsViewSiteStats
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/stats/view/stats/:
+    parameters:
+    - name: keyPrefix
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Statistics
+      operationId: statsViewStats
+      tags:
+      - stats
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

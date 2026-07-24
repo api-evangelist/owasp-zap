@@ -1,0 +1,113 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl authorization API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: authorization
+paths:
+  /JSON/authorization/action/setBasicAuthorizationDetectionMethod/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: headerRegex
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: bodyRegex
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: statusCode
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: logicalOperator
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Sets the authorization detection method for a context as one that identifies un-authorized messages based on: the message''s status code or a regex pattern in the response''s header or body. Also, whether all conditions must match or just some can be specified via the logicalOperator parameter, which accepts two values: "AND" (default), "OR".  '
+      operationId: authorizationActionSetBasicAuthorizationDetectionMethod
+      tags:
+      - authorization
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authorization/view/getAuthorizationDetectionMethod/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Obtains all the configuration of the authorization detection method that is currently set for a context.
+      operationId: authorizationViewGetAuthorizationDetectionMethod
+      tags:
+      - authorization
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

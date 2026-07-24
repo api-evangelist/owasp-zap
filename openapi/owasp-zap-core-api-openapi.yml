@@ -1,0 +1,1485 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl core API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: core
+paths:
+  /JSON/core/action/accessUrl/:
+    parameters:
+    - name: url
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: followRedirects
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Convenient and simple action to access a URL, optionally following redirections. Returns the request sent and response received and followed redirections, if any. Other actions are available which offer more control on what is sent, like, 'sendRequest' or 'sendHarRequest'.
+      operationId: coreActionAccessUrl
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/addProxyChainExcludedDomain/:
+    parameters:
+    - name: value
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: isRegex
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: isEnabled
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionAddProxyChainExcludedDomain
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/clearExcludedFromProxy/:
+    get:
+      description: Clears the regexes of URLs excluded from the local proxies.
+      operationId: coreActionClearExcludedFromProxy
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/createSbomZip/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: The path of the zip file to create
+      schema:
+        type: string
+    get:
+      description: Create a zip file of the ZAP core and add-on SBOMs
+      operationId: coreActionCreateSbomZip
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/deleteAlert/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      deprecated: true
+      operationId: coreActionDeleteAlert
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/deleteAllAlerts/:
+    get:
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      deprecated: true
+      operationId: coreActionDeleteAllAlerts
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/deleteSiteNode/:
+    parameters:
+    - name: url
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: method
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: postData
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Deletes the site node found in the Sites Tree on the basis of the URL, HTTP method, and post data (if applicable and specified). '
+      operationId: coreActionDeleteSiteNode
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/disableAllProxyChainExcludedDomains/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionDisableAllProxyChainExcludedDomains
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/disableClientCertificate/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionDisableClientCertificate
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/enableAllProxyChainExcludedDomains/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionEnableAllProxyChainExcludedDomains
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/enablePKCS12ClientCertificate/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: password
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: index
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionEnablePKCS12ClientCertificate
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/excludeFromProxy/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Adds a regex of URLs that should be excluded from the local proxies.
+      operationId: coreActionExcludeFromProxy
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/generateRootCA/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionGenerateRootCA
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/loadSession/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Loads the session with the given name. If a relative path is specified it will be resolved against the "session" directory in ZAP "home" dir.
+      operationId: coreActionLoadSession
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/modifyProxyChainExcludedDomain/:
+    parameters:
+    - name: idx
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: value
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: isRegex
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: isEnabled
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionModifyProxyChainExcludedDomain
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/newSession/:
+    parameters:
+    - name: name
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: overwrite
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Creates a new session, optionally overwriting existing files. If a relative path is specified it will be resolved against the "session" directory in ZAP "home" dir.
+      operationId: coreActionNewSession
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/removeProxyChainExcludedDomain/:
+    parameters:
+    - name: idx
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionRemoveProxyChainExcludedDomain
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/runGarbageCollection/:
+    get:
+      description: ''
+      operationId: coreActionRunGarbageCollection
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/saveSession/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: The name (or path) of the session. If a relative path is specified it will be resolved against the "session" directory in ZAP "home" dir.
+      schema:
+        type: string
+    - name: overwrite
+      in: query
+      description: If existing files should be overwritten, attempting to overwrite the files of the session already in use/saved will lead to an error ("already_exists").
+      schema:
+        type: string
+    get:
+      description: Saves the session.
+      operationId: coreActionSaveSession
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/sendRequest/:
+    parameters:
+    - name: request
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: followRedirects
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sends the HTTP request, optionally following redirections. Returns the request sent and response received and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom manual requests are not allowed in 'Safe' mode nor in 'Protected' mode if out of scope.
+      operationId: coreActionSendRequest
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setHomeDirectory/:
+    parameters:
+    - name: dir
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: coreActionSetHomeDirectory
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setLogLevel/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: The logger name for which the logging level should be set.
+      schema:
+        type: string
+    - name: logLevel
+      in: query
+      required: true
+      description: The logging level which should be set.
+      schema:
+        type: string
+    get:
+      description: Sets the logging level for a given logger name.
+      operationId: coreActionSetLogLevel
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setMode/:
+    parameters:
+    - name: mode
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the mode, which may be one of [safe, protect, standard, attack]
+      operationId: coreActionSetMode
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionAlertOverridesFilePath/:
+    parameters:
+    - name: filePath
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets (or clears, if empty) the path to the file with alert overrides.
+      operationId: coreActionSetOptionAlertOverridesFilePath
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionDefaultUserAgent/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionDefaultUserAgent
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionDnsTtlSuccessfulQueries/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionDnsTtlSuccessfulQueries
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionHttpStateEnabled/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionHttpStateEnabled
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionMaximumAlertInstances/:
+    parameters:
+    - name: numberOfInstances
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the maximum number of alert instances to include in a report. A value of zero is treated as unlimited.
+      operationId: coreActionSetOptionMaximumAlertInstances
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionMergeRelatedAlerts/:
+    parameters:
+    - name: enabled
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets whether or not related alerts will be merged in any reports generated.
+      operationId: coreActionSetOptionMergeRelatedAlerts
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionProxyChainName/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionProxyChainName
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionProxyChainPassword/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionProxyChainPassword
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionProxyChainPort/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionProxyChainPort
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionProxyChainPrompt/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionProxyChainPrompt
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionProxyChainRealm/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionProxyChainRealm
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionProxyChainSkipName/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Option no longer in effective use.
+      deprecated: true
+      operationId: coreActionSetOptionProxyChainSkipName
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionProxyChainUserName/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionProxyChainUserName
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionSingleCookieRequestHeader/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Option no longer in effective use.
+      deprecated: true
+      operationId: coreActionSetOptionSingleCookieRequestHeader
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionTimeoutInSecs/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionTimeoutInSecs
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionUseProxyChain/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionUseProxyChain
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionUseProxyChainAuth/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionUseProxyChainAuth
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/setOptionUseSocksProxy/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: true if the SOCKS proxy should be used, false otherwise.
+      schema:
+        type: boolean
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreActionSetOptionUseSocksProxy
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/shutdown/:
+    get:
+      description: Shuts down ZAP
+      operationId: coreActionShutdown
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/action/snapshotSession/:
+    parameters:
+    - name: name
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: overwrite
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Snapshots the session, optionally with the given name, and overwriting existing files. If no name is specified the name of the current session with a timestamp appended is used. If a relative path is specified it will be resolved against the "session" directory in ZAP "home" dir.
+      operationId: coreActionSnapshotSession
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /OTHER/core/other/fileDownload/:
+    parameters:
+    - name: fileName
+      in: query
+      required: true
+      description: The name of the file, may include subdirectories
+      schema:
+        type: string
+    get:
+      description: Download a file from the transfer directory
+      operationId: coreOtherFileDownload
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/fileUpload/:
+    parameters:
+    - name: fileName
+      in: query
+      required: true
+      description: The name of the file, may include subdirectories.
+      schema:
+        type: string
+    - name: fileContents
+      in: query
+      required: true
+      description: The contents of the file.
+      schema:
+        type: string
+    get:
+      description: Upload a file to the transfer directory. Only POST requests accepted with encodings of "multipart/form-data" or "application/x-www-form-urlencoded".
+      operationId: coreOtherFileUpload
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/htmlreport/:
+    get:
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      deprecated: true
+      operationId: coreOtherHtmlreport
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/jsonreport/:
+    get:
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      deprecated: true
+      operationId: coreOtherJsonreport
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/mdreport/:
+    get:
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      deprecated: true
+      operationId: coreOtherMdreport
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/messageHar/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'exim' add-on instead.
+      deprecated: true
+      operationId: coreOtherMessageHar
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/messagesHar/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'exim' add-on instead.
+      deprecated: true
+      operationId: coreOtherMessagesHar
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/messagesHarById/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'exim' add-on instead.
+      deprecated: true
+      operationId: coreOtherMessagesHarById
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/proxy.pac/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreOtherProxy.pac
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/rootcert/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreOtherRootcert
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/sendHarRequest/:
+    parameters:
+    - name: request
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: followRedirects
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'exim' add-on instead.
+      deprecated: true
+      operationId: coreOtherSendHarRequest
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/setproxy/:
+    parameters:
+    - name: proxy
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreOtherSetproxy
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/core/other/xmlreport/:
+    get:
+      description: Use the 'generate' API endpoint the 'reports' component instead.
+      deprecated: true
+      operationId: coreOtherXmlreport
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /JSON/core/view/alert/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      deprecated: true
+      operationId: coreViewAlert
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/alerts/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which alerts should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      deprecated: true
+      operationId: coreViewAlerts
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/alertsSummary/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which alerts should be included.
+      schema:
+        type: string
+    get:
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      deprecated: true
+      operationId: coreViewAlertsSummary
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/childNodes/:
+    parameters:
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the child nodes underneath the specified URL in the Sites tree
+      operationId: coreViewChildNodes
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/excludedFromProxy/:
+    get:
+      description: Gets the regular expressions, applied to URLs, to exclude from the local proxies.
+      operationId: coreViewExcludedFromProxy
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/getLogLevel/:
+    parameters:
+    - name: name
+      in: query
+      description: The name for which the logger details should be provided (this value will be used as a case insensitive starts with filter).
+      schema:
+        type: string
+    get:
+      description: 'The detailed logging config, optionally filtered based on a name (ex: starts with).'
+      operationId: coreViewGetLogLevel
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/homeDirectory/:
+    get:
+      description: ''
+      deprecated: true
+      operationId: coreViewHomeDirectory
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/hosts/:
+    get:
+      description: Gets the name of the hosts accessed through/by ZAP
+      operationId: coreViewHosts
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/message/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the HTTP message with the given ID. Returns the ID, request/response headers and bodies, cookies, note, type, RTT, and timestamp.
+      operationId: coreViewMessage
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/messages/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the HTTP messages sent by ZAP, request and response, optionally filtered by URL and paginated with 'start' position and 'count' of messages
+      operationId: coreViewMessages
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/messagesById/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the HTTP messages with the given IDs.
+      operationId: coreViewMessagesById
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/mode/:
+    get:
+      description: Gets the mode
+      operationId: coreViewMode
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/numberOfAlerts/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which alerts should be included.
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Use the API endpoint with the same name in the 'alert' component instead.
+      deprecated: true
+      operationId: coreViewNumberOfAlerts
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/numberOfMessages/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    get:
+      description: Gets the number of messages, optionally filtering by URL
+      operationId: coreViewNumberOfMessages
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionAlertOverridesFilePath/:
+    get:
+      description: Gets the path to the file with alert overrides.
+      operationId: coreViewOptionAlertOverridesFilePath
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionDefaultUserAgent/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionDefaultUserAgent
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionDnsTtlSuccessfulQueries/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionDnsTtlSuccessfulQueries
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionHttpState/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionHttpState
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionHttpStateEnabled/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionHttpStateEnabled
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionMaximumAlertInstances/:
+    get:
+      description: Gets the maximum number of alert instances to include in a report.
+      operationId: coreViewOptionMaximumAlertInstances
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionMergeRelatedAlerts/:
+    get:
+      description: Gets whether or not related alerts will be merged in any reports generated.
+      operationId: coreViewOptionMergeRelatedAlerts
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyChainName/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionProxyChainName
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyChainPassword/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionProxyChainPassword
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyChainPort/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionProxyChainPort
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyChainPrompt/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionProxyChainPrompt
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyChainRealm/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionProxyChainRealm
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyChainSkipName/:
+    get:
+      description: Use view proxyChainExcludedDomains instead.
+      deprecated: true
+      operationId: coreViewOptionProxyChainSkipName
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyChainUserName/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionProxyChainUserName
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyExcludedDomains/:
+    get:
+      description: Use view proxyChainExcludedDomains instead.
+      deprecated: true
+      operationId: coreViewOptionProxyExcludedDomains
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionProxyExcludedDomainsEnabled/:
+    get:
+      description: Use view proxyChainExcludedDomains instead.
+      deprecated: true
+      operationId: coreViewOptionProxyExcludedDomainsEnabled
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionSingleCookieRequestHeader/:
+    get:
+      description: Option no longer in effective use.
+      deprecated: true
+      operationId: coreViewOptionSingleCookieRequestHeader
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionTimeoutInSecs/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionTimeoutInSecs
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionUseProxyChain/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionUseProxyChain
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionUseProxyChainAuth/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionUseProxyChainAuth
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/optionUseSocksProxy/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewOptionUseSocksProxy
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/proxyChainExcludedDomains/:
+    get:
+      description: Use the API endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: coreViewProxyChainExcludedDomains
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/sessionLocation/:
+    get:
+      description: Gets the location of the current session file
+      operationId: coreViewSessionLocation
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/sites/:
+    get:
+      description: Gets the sites accessed through/by ZAP (scheme and domain)
+      operationId: coreViewSites
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/urls/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    get:
+      description: Gets the URLs accessed through/by ZAP, optionally filtering by (base) URL.
+      operationId: coreViewUrls
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/version/:
+    get:
+      description: Gets ZAP version
+      operationId: coreViewVersion
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/core/view/zapHomePath/:
+    get:
+      description: Gets the path to ZAP's home directory.
+      operationId: coreViewZapHomePath
+      tags:
+      - core
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+    ErrorOther:
+      description: Error of OTHER endpoints.
+      content:
+        '*/*': {}
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

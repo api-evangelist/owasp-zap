@@ -1,0 +1,205 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl authentication API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: authentication
+paths:
+  /JSON/authentication/action/setAuthenticationMethod/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: authMethodName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: authMethodConfigParams
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the authentication method for the context with the given ID.
+      operationId: authenticationActionSetAuthenticationMethod
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authentication/action/setLoggedInIndicator/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: loggedInIndicatorRegex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the logged in indicator for the context with the given ID.
+      operationId: authenticationActionSetLoggedInIndicator
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authentication/action/setLoggedOutIndicator/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: loggedOutIndicatorRegex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the logged out indicator for the context with the given ID.
+      operationId: authenticationActionSetLoggedOutIndicator
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authentication/view/getAuthenticationMethod/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the name of the authentication method for the context with the given ID.
+      operationId: authenticationViewGetAuthenticationMethod
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authentication/view/getAuthenticationMethodConfigParams/:
+    parameters:
+    - name: authMethodName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the configuration parameters for the authentication method with the given name.
+      operationId: authenticationViewGetAuthenticationMethodConfigParams
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authentication/view/getLoggedInIndicator/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the logged in indicator for the context with the given ID.
+      operationId: authenticationViewGetLoggedInIndicator
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authentication/view/getLoggedOutIndicator/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the logged out indicator for the context with the given ID.
+      operationId: authenticationViewGetLoggedOutIndicator
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/authentication/view/getSupportedAuthenticationMethods/:
+    get:
+      description: Gets the name of the authentication methods.
+      operationId: authenticationViewGetSupportedAuthenticationMethods
+      tags:
+      - authentication
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

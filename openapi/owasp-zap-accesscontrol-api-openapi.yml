@@ -1,0 +1,152 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: accessControl
+paths:
+  /JSON/accessControl/action/scan/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanAsUnAuthUser
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: raiseAlert
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: alertRiskLevel
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Starts an Access Control scan with the given context ID and user ID. (Optional parameters: user ID for Unauthenticated user, boolean identifying whether or not Alerts are raised, and the Risk level for the Alerts.) [This assumes the Access Control rules were previously established via ZAP gui and the necessary Context exported/imported.]'
+      operationId: accessControlActionScan
+      tags:
+      - accessControl
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/accessControl/action/writeHTMLreport/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: fileName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Generates an Access Control report for the given context ID and saves it based on the provided filename (path). '
+      operationId: accessControlActionWriteHTMLreport
+      tags:
+      - accessControl
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/accessControl/view/getScanProgress/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the Access Control scan progress (percentage integer) for the given context ID.
+      operationId: accessControlViewGetScanProgress
+      tags:
+      - accessControl
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/accessControl/view/getScanStatus/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the Access Control scan status (description string) for the given context ID.
+      operationId: accessControlViewGetScanStatus
+      tags:
+      - accessControl
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

@@ -1,0 +1,329 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl graphql API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: graphql
+paths:
+  /JSON/graphql/action/importFile/:
+    parameters:
+    - name: endurl
+      in: query
+      required: true
+      description: The Endpoint URL.
+      schema:
+        type: string
+    - name: file
+      in: query
+      required: true
+      description: The File That Contains the GraphQL Schema.
+      schema:
+        type: string
+    get:
+      description: Imports a GraphQL Schema from a File.
+      operationId: graphqlActionImportFile
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/importUrl/:
+    parameters:
+    - name: endurl
+      in: query
+      required: true
+      description: The Endpoint URL.
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: The URL Locating the GraphQL Schema.
+      schema:
+        type: string
+    get:
+      description: Imports a GraphQL Schema from a URL.
+      operationId: graphqlActionImportUrl
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionArgsType/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: Can be "INLINE", "VARIABLES", or "BOTH".
+      schema:
+        type: string
+    get:
+      description: Sets how arguments are specified.
+      operationId: graphqlActionSetOptionArgsType
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionLenientMaxQueryDepthEnabled/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: Enforce Leniently (true or false).
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not Maximum Query Depth is enforced leniently.
+      operationId: graphqlActionSetOptionLenientMaxQueryDepthEnabled
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionMaxAdditionalQueryDepth/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The Maximum Additional Depth.
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum additional query generation depth (used if enforced leniently).
+      operationId: graphqlActionSetOptionMaxAdditionalQueryDepth
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionMaxArgsDepth/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The Maximum Depth.
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum arguments generation depth.
+      operationId: graphqlActionSetOptionMaxArgsDepth
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionMaxQueryDepth/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The Maximum Depth.
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum query generation depth.
+      operationId: graphqlActionSetOptionMaxQueryDepth
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionOptionalArgsEnabled/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: Specify Optional Arguments (true or false).
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not Optional Arguments should be specified.
+      operationId: graphqlActionSetOptionOptionalArgsEnabled
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionQueryGenEnabled/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: Enable query generation (true or false).
+      schema:
+        type: boolean
+    get:
+      description: Sets whether the query generator is enabled.
+      operationId: graphqlActionSetOptionQueryGenEnabled
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionQuerySplitType/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: Can be "LEAF", "ROOT_FIELD", or "OPERATION".
+      schema:
+        type: string
+    get:
+      description: Sets the level for which a single query is generated.
+      operationId: graphqlActionSetOptionQuerySplitType
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/action/setOptionRequestMethod/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: Can be "POST_JSON", "POST_GRAPHQL", or "GET".
+      schema:
+        type: string
+    get:
+      description: Sets the request method.
+      operationId: graphqlActionSetOptionRequestMethod
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionArgsType/:
+    get:
+      description: Returns how arguments are currently specified.
+      operationId: graphqlViewOptionArgsType
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionLenientMaxQueryDepthEnabled/:
+    get:
+      description: Returns whether or not lenient maximum query generation depth is enabled.
+      operationId: graphqlViewOptionLenientMaxQueryDepthEnabled
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionMaxAdditionalQueryDepth/:
+    get:
+      description: Returns the current maximum additional query generation depth.
+      operationId: graphqlViewOptionMaxAdditionalQueryDepth
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionMaxArgsDepth/:
+    get:
+      description: Returns the current maximum arguments generation depth.
+      operationId: graphqlViewOptionMaxArgsDepth
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionMaxQueryDepth/:
+    get:
+      description: Returns the current maximum query generation depth.
+      operationId: graphqlViewOptionMaxQueryDepth
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionOptionalArgsEnabled/:
+    get:
+      description: Returns whether or not optional arguments are currently specified.
+      operationId: graphqlViewOptionOptionalArgsEnabled
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionQueryGenEnabled/:
+    get:
+      description: Returns whether the query generator is enabled.
+      operationId: graphqlViewOptionQueryGenEnabled
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionQuerySplitType/:
+    get:
+      description: Returns the current level for which a single query is generated.
+      operationId: graphqlViewOptionQuerySplitType
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/graphql/view/optionRequestMethod/:
+    get:
+      description: Returns the current request method.
+      operationId: graphqlViewOptionRequestMethod
+      tags:
+      - graphql
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

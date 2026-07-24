@@ -1,0 +1,132 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl ruleConfig API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: ruleConfig
+paths:
+  /JSON/ruleConfig/action/resetAllRuleConfigValues/:
+    get:
+      description: Reset all of the rule configurations
+      operationId: ruleConfigActionResetAllRuleConfigValues
+      tags:
+      - ruleConfig
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ruleConfig/action/resetRuleConfigValue/:
+    parameters:
+    - name: key
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Reset the specified rule configuration, which must already exist
+      operationId: ruleConfigActionResetRuleConfigValue
+      tags:
+      - ruleConfig
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ruleConfig/action/setRuleConfigValue/:
+    parameters:
+    - name: key
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: value
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Set the specified rule configuration, which must already exist
+      operationId: ruleConfigActionSetRuleConfigValue
+      tags:
+      - ruleConfig
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ruleConfig/view/allRuleConfigs/:
+    get:
+      description: Show all of the rule configurations
+      operationId: ruleConfigViewAllRuleConfigs
+      tags:
+      - ruleConfig
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ruleConfig/view/ruleConfigValue/:
+    parameters:
+    - name: key
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Show the specified rule configuration
+      operationId: ruleConfigViewRuleConfigValue
+      tags:
+      - ruleConfig
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

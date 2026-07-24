@@ -1,0 +1,462 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl context API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: context
+paths:
+  /JSON/context/action/excludeAllContextTechnologies/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: Excludes all built in technologies from a context
+      operationId: contextActionExcludeAllContextTechnologies
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/excludeContextTechnologies/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: technologyNames
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Excludes technologies with the given names, separated by a comma, from a context
+      operationId: contextActionExcludeContextTechnologies
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/excludeFromContext/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Add exclude regex to context
+      operationId: contextActionExcludeFromContext
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/exportContext/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: contextFile
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Exports the context with the given name to a file. If a relative file path is specified it will be resolved against the "contexts" directory in ZAP "home" dir.
+      operationId: contextActionExportContext
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/importContext/:
+    parameters:
+    - name: contextFile
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Imports a context from a file. If a relative file path is specified it will be resolved against the "contexts" directory in ZAP "home" dir.
+      operationId: contextActionImportContext
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/includeAllContextTechnologies/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: Includes all built in technologies in to a context
+      operationId: contextActionIncludeAllContextTechnologies
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/includeContextTechnologies/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: technologyNames
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Includes technologies with the given names, separated by a comma, to a context
+      operationId: contextActionIncludeContextTechnologies
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/includeInContext/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Add include regex to context
+      operationId: contextActionIncludeInContext
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/newContext/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: Creates a new context with the given name in the current session
+      operationId: contextActionNewContext
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/removeContext/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: Removes a context in the current session
+      operationId: contextActionRemoveContext
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/setContextCheckingStrategy/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: checkingStrategy
+      in: query
+      required: true
+      description: One of EACH_RESP, EACH_REQ, EACH_REQ_RESP, POLL_URL
+      schema:
+        type: string
+    - name: pollUrl
+      in: query
+      description: The URL for ZAP to poll, must be supplied if checkingStrategy = POLL_URL, otherwise ignored
+      schema:
+        type: string
+    - name: pollData
+      in: query
+      description: The POST data to supply to the pollUrl, option and only takes effect if checkingStrategy = POLL_URL
+      schema:
+        type: string
+    - name: pollHeaders
+      in: query
+      description: Any additional headers that need to be added to the poll request, separated by '\n' characters, only takes effect if checkingStrategy = POLL_URL
+      schema:
+        type: string
+    - name: pollFrequency
+      in: query
+      description: An integer greater than zero, must be supplied if checkingStrategy = POLL_URL, otherwise ignored
+      schema:
+        type: string
+    - name: pollFrequencyUnits
+      in: query
+      description: One of REQUESTS, SECONDS, must be supplied if checkingStrategy = POLL_URL, otherwise ignored
+      schema:
+        type: string
+    get:
+      description: Set the checking strategy for a context - this defines how ZAP checks that a request is authenticated
+      operationId: contextActionSetContextCheckingStrategy
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/setContextInScope/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: booleanInScope
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets a context to in scope (contexts are in scope by default)
+      operationId: contextActionSetContextInScope
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/action/setContextRegexs/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    - name: incRegexs
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: excRegexs
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Set the regexs to include and exclude for a context, both supplied as JSON string arrays
+      operationId: contextActionSetContextRegexs
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/context/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: List the information about the named context
+      operationId: contextViewContext
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/contextList/:
+    get:
+      description: List context names of current session
+      operationId: contextViewContextList
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/excludeRegexs/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: List excluded regexs for context
+      operationId: contextViewExcludeRegexs
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/excludedTechnologyList/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: Lists the names of all technologies excluded from a context
+      operationId: contextViewExcludedTechnologyList
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/includeRegexs/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: List included regexs for context
+      operationId: contextViewIncludeRegexs
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/includedTechnologyList/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: Lists the names of all technologies included in a context
+      operationId: contextViewIncludedTechnologyList
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/technologyList/:
+    get:
+      description: Lists the names of all built in technologies
+      operationId: contextViewTechnologyList
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/context/view/urls/:
+    parameters:
+    - name: contextName
+      in: query
+      required: true
+      description: The name of the context
+      schema:
+        type: string
+    get:
+      description: Lists the URLs accessed through/by ZAP, that belong to the context with the given name.
+      operationId: contextViewUrls
+      tags:
+      - context
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

@@ -1,0 +1,225 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl oast API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: oast
+paths:
+  /JSON/oast/action/setActiveScanService/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: The name of the service.
+      schema:
+        type: string
+    get:
+      description: Sets the service used with the active scanner.
+      operationId: oastActionSetActiveScanService
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/action/setBoastOptions/:
+    parameters:
+    - name: server
+      in: query
+      required: true
+      description: The server URL.
+      schema:
+        type: string
+    - name: pollInSecs
+      in: query
+      required: true
+      description: The polling frequency.
+      schema:
+        type: string
+    get:
+      description: Sets the BOAST options.
+      operationId: oastActionSetBoastOptions
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/action/setCallbackOptions/:
+    parameters:
+    - name: localAddress
+      in: query
+      required: true
+      description: The local address
+      schema:
+        type: string
+    - name: remoteAddress
+      in: query
+      required: true
+      description: The remote address.
+      schema:
+        type: string
+    - name: port
+      in: query
+      required: true
+      description: The port to listen on.
+      schema:
+        type: string
+    get:
+      description: Sets the Callback options.
+      operationId: oastActionSetCallbackOptions
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/action/setDaysToKeepRecords/:
+    parameters:
+    - name: days
+      in: query
+      required: true
+      description: The number of days.
+      schema:
+        type: string
+    get:
+      description: Sets the number of days the OAST records will be kept for.
+      operationId: oastActionSetDaysToKeepRecords
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/action/setInteractshOptions/:
+    parameters:
+    - name: server
+      in: query
+      required: true
+      description: The server URL.
+      schema:
+        type: string
+    - name: pollInSecs
+      in: query
+      required: true
+      description: The polling frequency.
+      schema:
+        type: string
+    - name: authToken
+      in: query
+      required: true
+      description: The Interactsh authentication token.
+      schema:
+        type: string
+    get:
+      description: Sets the Interactsh options.
+      operationId: oastActionSetInteractshOptions
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/view/getActiveScanService/:
+    get:
+      description: Gets the service used with the active scanner, if any.
+      operationId: oastViewGetActiveScanService
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/view/getBoastOptions/:
+    get:
+      description: Gets the BOAST options.
+      operationId: oastViewGetBoastOptions
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/view/getCallbackOptions/:
+    get:
+      description: Gets the Callback options.
+      operationId: oastViewGetCallbackOptions
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/view/getDaysToKeepRecords/:
+    get:
+      description: Gets the number of days the OAST records will be kept for.
+      operationId: oastViewGetDaysToKeepRecords
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/view/getInteractshOptions/:
+    get:
+      description: Gets the Interactsh options.
+      operationId: oastViewGetInteractshOptions
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/oast/view/getServices/:
+    get:
+      description: Gets all of the services.
+      operationId: oastViewGetServices
+      tags:
+      - oast
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

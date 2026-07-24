@@ -1,0 +1,864 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl network API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: network
+paths:
+  /JSON/network/action/addAlias/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: The name of the alias.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Adds an alias for the local servers/proxies.
+      operationId: networkActionAddAlias
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/addHttpProxyExclusion/:
+    parameters:
+    - name: host
+      in: query
+      required: true
+      description: The value of the host, a regular expression.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Adds a host to be excluded from the HTTP proxy.
+      operationId: networkActionAddHttpProxyExclusion
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/addLocalServer/:
+    parameters:
+    - name: address
+      in: query
+      required: true
+      description: The address of the local server/proxy.
+      schema:
+        type: string
+    - name: port
+      in: query
+      required: true
+      description: The port of the local server/proxy.
+      schema:
+        type: string
+    - name: api
+      in: query
+      description: If the ZAP API is available, true or false.
+      schema:
+        type: string
+    - name: proxy
+      in: query
+      description: If the local server should proxy, true or false.
+      schema:
+        type: string
+    - name: behindNat
+      in: query
+      description: If the local server is behind NAT, true or false.
+      schema:
+        type: string
+    - name: decodeResponse
+      in: query
+      description: If the response should be decoded, true or false.
+      schema:
+        type: string
+    - name: removeAcceptEncoding
+      in: query
+      description: If the request header Accept-Encoding should be removed, true or false.
+      schema:
+        type: string
+    get:
+      description: Adds a local server/proxy.
+      operationId: networkActionAddLocalServer
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/addPassThrough/:
+    parameters:
+    - name: authority
+      in: query
+      required: true
+      description: The value of the authority, can be a regular expression.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Adds an authority to pass-through the local proxies.
+      operationId: networkActionAddPassThrough
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/addPkcs12ClientCertificate/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: The file path.
+      schema:
+        type: string
+    - name: password
+      in: query
+      required: true
+      description: The password for the file.
+      schema:
+        type: string
+    - name: index
+      in: query
+      description: The index of the certificate in the file, defaults to 0.
+      schema:
+        type: string
+    get:
+      description: Adds a client certificate contained in a PKCS#12 file, the certificate is automatically set as active and used.
+      operationId: networkActionAddPkcs12ClientCertificate
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/addRateLimitRule/:
+    parameters:
+    - name: description
+      in: query
+      required: true
+      description: A description that allows you to identify the rule. Each rule must have a unique description.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    - name: matchRegex
+      in: query
+      required: true
+      description: Regex used to match the host.
+      schema:
+        type: string
+    - name: matchString
+      in: query
+      required: true
+      description: Plain string match is handled based on DNS conventions. If the string has one or two components.
+      schema:
+        type: string
+    - name: requestsPerSecond
+      in: query
+      required: true
+      description: The maximum number of requests per second.
+      schema:
+        type: string
+    - name: groupBy
+      in: query
+      required: true
+      description: 'How to group hosts when applying rate limiting: rule or host'
+      schema:
+        type: string
+    get:
+      description: Adds a rate limit rule
+      operationId: networkActionAddRateLimitRule
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/generateRootCaCert/:
+    get:
+      description: Generates a new Root CA certificate, used to issue server certificates.
+      operationId: networkActionGenerateRootCaCert
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/importRootCaCert/:
+    parameters:
+    - name: filePath
+      in: query
+      required: true
+      description: The file system path to the PEM file, containing the certificate and private key.
+      schema:
+        type: string
+    get:
+      description: Imports a Root CA certificate to be used to issue server certificates.
+      operationId: networkActionImportRootCaCert
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/removeAlias/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: The name of the alias.
+      schema:
+        type: string
+    get:
+      description: Removes an alias.
+      operationId: networkActionRemoveAlias
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/removeHttpProxyExclusion/:
+    parameters:
+    - name: host
+      in: query
+      required: true
+      description: The value of the host.
+      schema:
+        type: string
+    get:
+      description: Removes an HTTP proxy exclusion.
+      operationId: networkActionRemoveHttpProxyExclusion
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/removeLocalServer/:
+    parameters:
+    - name: address
+      in: query
+      required: true
+      description: The address of the local server/proxy.
+      schema:
+        type: string
+    - name: port
+      in: query
+      required: true
+      description: The port of the local server/proxy.
+      schema:
+        type: string
+    get:
+      description: Removes a local server/proxy.
+      operationId: networkActionRemoveLocalServer
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/removePassThrough/:
+    parameters:
+    - name: authority
+      in: query
+      required: true
+      description: The value of the authority.
+      schema:
+        type: string
+    get:
+      description: Removes a pass-through.
+      operationId: networkActionRemovePassThrough
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/removeRateLimitRule/:
+    parameters:
+    - name: description
+      in: query
+      required: true
+      description: The description of the rule to remove.
+      schema:
+        type: string
+    get:
+      description: Remove a rate limit rule
+      operationId: networkActionRemoveRateLimitRule
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setAliasEnabled/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: The name of the alias.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not an alias is enabled.
+      operationId: networkActionSetAliasEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setConnectionTimeout/:
+    parameters:
+    - name: timeout
+      in: query
+      required: true
+      description: The timeout, in seconds.
+      schema:
+        type: string
+    get:
+      description: Sets the timeout, for reads and connects.
+      operationId: networkActionSetConnectionTimeout
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setDefaultUserAgent/:
+    parameters:
+    - name: userAgent
+      in: query
+      required: true
+      description: The default user-agent.
+      schema:
+        type: string
+    get:
+      description: Sets the default user-agent.
+      operationId: networkActionSetDefaultUserAgent
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setDnsTtlSuccessfulQueries/:
+    parameters:
+    - name: ttl
+      in: query
+      required: true
+      description: The TTL, in seconds. Negative number, cache forever. Zero, disables caching. Positive number, the number of seconds the successful DNS queries will be cached.
+      schema:
+        type: string
+    get:
+      description: Sets the TTL of successful DNS queries.
+      operationId: networkActionSetDnsTtlSuccessfulQueries
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setHttpProxy/:
+    parameters:
+    - name: host
+      in: query
+      required: true
+      description: The host, name or address.
+      schema:
+        type: string
+    - name: port
+      in: query
+      required: true
+      description: The port.
+      schema:
+        type: string
+    - name: realm
+      in: query
+      description: The authentication realm.
+      schema:
+        type: string
+    - name: username
+      in: query
+      description: The user name.
+      schema:
+        type: string
+    - name: password
+      in: query
+      description: The password.
+      schema:
+        type: string
+    get:
+      description: Sets the HTTP proxy configuration.
+      operationId: networkActionSetHttpProxy
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setHttpProxyAuthEnabled/:
+    parameters:
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not the HTTP proxy authentication is enabled.
+      operationId: networkActionSetHttpProxyAuthEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setHttpProxyEnabled/:
+    parameters:
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not the HTTP proxy is enabled.
+      operationId: networkActionSetHttpProxyEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setHttpProxyExclusionEnabled/:
+    parameters:
+    - name: host
+      in: query
+      required: true
+      description: The value of the host.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not an HTTP proxy exclusion is enabled.
+      operationId: networkActionSetHttpProxyExclusionEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setPassThroughEnabled/:
+    parameters:
+    - name: authority
+      in: query
+      required: true
+      description: The value of the authority.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not a pass-through is enabled.
+      operationId: networkActionSetPassThroughEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setRateLimitRuleEnabled/:
+    parameters:
+    - name: description
+      in: query
+      required: true
+      description: The description of the rule to modify.
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Set enabled state for a rate limit rule.
+      operationId: networkActionSetRateLimitRuleEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setRootCaCertValidity/:
+    parameters:
+    - name: validity
+      in: query
+      required: true
+      description: The number of days that the generated Root CA certificate will be valid for.
+      schema:
+        type: string
+    get:
+      description: Sets the Root CA certificate validity. Used when generating a new Root CA certificate.
+      operationId: networkActionSetRootCaCertValidity
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setServerCertValidity/:
+    parameters:
+    - name: validity
+      in: query
+      required: true
+      description: The number of days that the generated server certificates will be valid for.
+      schema:
+        type: string
+    get:
+      description: Sets the server certificate validity. Used when generating server certificates.
+      operationId: networkActionSetServerCertValidity
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setSocksProxy/:
+    parameters:
+    - name: host
+      in: query
+      required: true
+      description: The host, name or address.
+      schema:
+        type: string
+    - name: port
+      in: query
+      required: true
+      description: The port.
+      schema:
+        type: string
+    - name: version
+      in: query
+      description: The SOCKS version.
+      schema:
+        type: string
+    - name: useDns
+      in: query
+      description: If the names should be resolved by the SOCKS proxy, true or false.
+      schema:
+        type: string
+    - name: username
+      in: query
+      description: The user name.
+      schema:
+        type: string
+    - name: password
+      in: query
+      description: The password.
+      schema:
+        type: string
+    get:
+      description: Sets the SOCKS proxy configuration.
+      operationId: networkActionSetSocksProxy
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setSocksProxyEnabled/:
+    parameters:
+    - name: enabled
+      in: query
+      required: true
+      description: The enabled state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not the SOCKS proxy is enabled.
+      operationId: networkActionSetSocksProxyEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setUseClientCertificate/:
+    parameters:
+    - name: use
+      in: query
+      required: true
+      description: The use state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not to use the active client certificate.
+      operationId: networkActionSetUseClientCertificate
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/action/setUseGlobalHttpState/:
+    parameters:
+    - name: use
+      in: query
+      required: true
+      description: The use state, true or false.
+      schema:
+        type: string
+    get:
+      description: Sets whether or not to use the global HTTP state.
+      operationId: networkActionSetUseGlobalHttpState
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /OTHER/network/other/proxy.pac/:
+    get:
+      description: Provides a PAC file, proxying through the main proxy.
+      operationId: networkOtherProxy.pac
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/network/other/rootCaCert/:
+    get:
+      description: Gets the Root CA certificate used to issue server certificates. Suitable to import into client applications (e.g. browsers).
+      operationId: networkOtherRootCaCert
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/network/other/setProxy/:
+    parameters:
+    - name: proxy
+      in: query
+      required: true
+      description: The JSON object containing the HTTP proxy configuration.
+      schema:
+        type: string
+    get:
+      description: Sets the HTTP proxy configuration.
+      operationId: networkOtherSetProxy
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /JSON/network/view/getAliases/:
+    get:
+      description: Gets the aliases used to identify the local servers/proxies.
+      operationId: networkViewGetAliases
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getConnectionTimeout/:
+    get:
+      description: Gets the connection timeout, in seconds.
+      operationId: networkViewGetConnectionTimeout
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getDefaultUserAgent/:
+    get:
+      description: Gets the default user-agent.
+      operationId: networkViewGetDefaultUserAgent
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getDnsTtlSuccessfulQueries/:
+    get:
+      description: Gets the TTL (in seconds) of successful DNS queries.
+      operationId: networkViewGetDnsTtlSuccessfulQueries
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getHttpProxy/:
+    get:
+      description: Gets the HTTP proxy.
+      operationId: networkViewGetHttpProxy
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getHttpProxyExclusions/:
+    get:
+      description: Gets the HTTP proxy exclusions.
+      operationId: networkViewGetHttpProxyExclusions
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getLocalServers/:
+    get:
+      description: Gets the local servers/proxies.
+      operationId: networkViewGetLocalServers
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getPassThroughs/:
+    get:
+      description: Gets the authorities that will pass-through the local proxies.
+      operationId: networkViewGetPassThroughs
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getRateLimitRules/:
+    get:
+      description: List of rate limit rules.
+      operationId: networkViewGetRateLimitRules
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getRootCaCertValidity/:
+    get:
+      description: Gets the Root CA certificate validity, in days. Used when generating a new Root CA certificate.
+      operationId: networkViewGetRootCaCertValidity
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getServerCertValidity/:
+    get:
+      description: Gets the server certificate validity, in days. Used when generating server certificates.
+      operationId: networkViewGetServerCertValidity
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/getSocksProxy/:
+    get:
+      description: Gets the SOCKS proxy.
+      operationId: networkViewGetSocksProxy
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/isHttpProxyAuthEnabled/:
+    get:
+      description: Tells whether or not the HTTP proxy authentication is enabled.
+      operationId: networkViewIsHttpProxyAuthEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/isHttpProxyEnabled/:
+    get:
+      description: Tells whether or not the HTTP proxy is enabled.
+      operationId: networkViewIsHttpProxyEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/isSocksProxyEnabled/:
+    get:
+      description: Tells whether or not the SOCKS proxy is enabled.
+      operationId: networkViewIsSocksProxyEnabled
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/network/view/isUseGlobalHttpState/:
+    get:
+      description: Tells whether or not to use global HTTP state.
+      operationId: networkViewIsUseGlobalHttpState
+      tags:
+      - network
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+    ErrorOther:
+      description: Error of OTHER endpoints.
+      content:
+        '*/*': {}
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

@@ -1,0 +1,1424 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl ascan API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: ascan
+paths:
+  /JSON/ascan/action/addExcludedParam/:
+    parameters:
+    - name: name
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Adds a new parameter excluded from the scan, using the specified name. Optionally sets if the new entry applies to a specific URL (default, all URLs) and sets the ID of the type of the parameter (default, ID of any type). The type IDs can be obtained with the view excludedParamTypes. '
+      operationId: ascanActionAddExcludedParam
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/addScanPolicy/:
+    parameters:
+    - name: scanPolicyName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: alertThreshold
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: attackStrength
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionAddScanPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/clearExcludedFromScan/:
+    get:
+      description: Clears the regexes of URLs excluded from the active scans.
+      operationId: ascanActionClearExcludedFromScan
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/disableAllScanners/:
+    parameters:
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Disables all scan rules of the scan policy with the given name, or the default if none given.
+      operationId: ascanActionDisableAllScanners
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/disableScanners/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Disables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given name, or the default if none given.
+      operationId: ascanActionDisableScanners
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/enableAllScanners/:
+    parameters:
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Enables all scan rules of the scan policy with the given name, or the default if none given.
+      operationId: ascanActionEnableAllScanners
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/enableScanners/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Enables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given name, or the default if none given.
+      operationId: ascanActionEnableScanners
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/excludeFromScan/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Adds a regex of URLs that should be excluded from the active scans.
+      operationId: ascanActionExcludeFromScan
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/importScanPolicy/:
+    parameters:
+    - name: path
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Imports a Scan Policy using the given file system path.
+      operationId: ascanActionImportScanPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/modifyExcludedParam/:
+    parameters:
+    - name: idx
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: name
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: type
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Modifies a parameter excluded from the scan. Allows to modify the name, the URL and the type of parameter. The parameter is selected with its index, which can be obtained with the view excludedParams.
+      operationId: ascanActionModifyExcludedParam
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/pause/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionPause
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/pauseAllScans/:
+    get:
+      description: ''
+      operationId: ascanActionPauseAllScans
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/removeAllScans/:
+    get:
+      description: ''
+      operationId: ascanActionRemoveAllScans
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/removeExcludedParam/:
+    parameters:
+    - name: idx
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Removes a parameter excluded from the scan, with the given index. The index can be obtained with the view excludedParams.
+      operationId: ascanActionRemoveExcludedParam
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/removeScan/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionRemoveScan
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/removeScanPolicy/:
+    parameters:
+    - name: scanPolicyName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionRemoveScanPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/resume/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionResume
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/resumeAllScans/:
+    get:
+      description: ''
+      operationId: ascanActionResumeAllScans
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/scan/:
+    parameters:
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: recurse
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: inScopeOnly
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: method
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: postData
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: contextId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Runs the active scanner against the given URL or Context. Optionally, the 'recurse' parameter can be used to scan URLs under the given URL, the parameter 'inScopeOnly' can be used to constrain the scan to URLs that are in scope (ignored if a Context is specified), the parameter 'scanPolicyName' allows to specify the scan policy (if none is given it uses the default scan policy), the parameters 'method' and 'postData' allow to select a given request in conjunction with the given URL.
+      operationId: ascanActionScan
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/scanAsUser/:
+    parameters:
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: contextId
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: userId
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: recurse
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: method
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: postData
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Active Scans from the perspective of a User, obtained using the given Context ID and User ID. See 'scan' action for more details.
+      operationId: ascanActionScanAsUser
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setEnabledPolicies/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionSetEnabledPolicies
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionAddQueryParam/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the active scanner should add a query param to GET requests which do not have parameters to start with.
+      operationId: ascanActionSetOptionAddQueryParam
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionAllowAttackOnStart/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: ascanActionSetOptionAllowAttackOnStart
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionAttackPolicy/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionSetOptionAttackPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionDefaultPolicy/:
+    parameters:
+    - name: String
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionSetOptionDefaultPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionDelayInMs/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: ascanActionSetOptionDelayInMs
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionEncodeCookieValues/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the active scanner should encode cookie values.
+      operationId: ascanActionSetOptionEncodeCookieValues
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionHandleAntiCSRFTokens/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: ascanActionSetOptionHandleAntiCSRFTokens
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionHostPerScan/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionHostPerScan
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionInjectPluginIdInHeader/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID of the scan rule that's sending the requests.
+      operationId: ascanActionSetOptionInjectPluginIdInHeader
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionMaxAlertsPerRule/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: The maximum alerts.
+      schema:
+        type: integer
+    get:
+      description: Sets the maximum number of alerts that a rule can raise before being skipped.
+      operationId: ascanActionSetOptionMaxAlertsPerRule
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionMaxChartTimeInMins/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionMaxChartTimeInMins
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionMaxResultsToList/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionMaxResultsToList
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionMaxRuleDurationInMins/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionMaxRuleDurationInMins
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionMaxScanDurationInMins/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionMaxScanDurationInMins
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionMaxScansInUI/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionMaxScansInUI
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionPromptInAttackMode/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: ascanActionSetOptionPromptInAttackMode
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionPromptToClearFinishedScans/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: ascanActionSetOptionPromptToClearFinishedScans
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionRescanInAttackMode/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: ascanActionSetOptionRescanInAttackMode
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionScanHeadersAllRequests/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters, through the query or request body.
+      operationId: ascanActionSetOptionScanHeadersAllRequests
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionScanNullJsonValues/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: true to scan null values, false otherwise.
+      schema:
+        type: boolean
+    get:
+      description: Sets whether or not the active scanner should scan null JSON values.
+      operationId: ascanActionSetOptionScanNullJsonValues
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionShowAdvancedDialog/:
+    parameters:
+    - name: Boolean
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: boolean
+    get:
+      description: ''
+      operationId: ascanActionSetOptionShowAdvancedDialog
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionTargetParamsEnabledRPC/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionTargetParamsEnabledRPC
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionTargetParamsInjectable/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionTargetParamsInjectable
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setOptionThreadPerHost/:
+    parameters:
+    - name: Integer
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: integer
+    get:
+      description: ''
+      operationId: ascanActionSetOptionThreadPerHost
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setPolicyAlertThreshold/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: alertThreshold
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionSetPolicyAlertThreshold
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setPolicyAttackStrength/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: attackStrength
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionSetPolicyAttackStrength
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setScannerAlertThreshold/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: alertThreshold
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionSetScannerAlertThreshold
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/setScannerAttackStrength/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: attackStrength
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionSetScannerAttackStrength
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/skipScanner/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scannerId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Skips the scan rule using the given IDs of the scan and the scan rule.
+      operationId: ascanActionSkipScanner
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/stop/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionStop
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/stopAllScans/:
+    get:
+      description: ''
+      operationId: ascanActionStopAllScans
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/action/updateScanPolicy/:
+    parameters:
+    - name: scanPolicyName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: alertThreshold
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: attackStrength
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanActionUpdateScanPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/alertsIds/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the IDs of the alerts raised during the scan with the given ID. An alert can be obtained with 'alert' core view.
+      operationId: ascanViewAlertsIds
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/attackModeQueue/:
+    get:
+      description: ''
+      operationId: ascanViewAttackModeQueue
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/excludedFromScan/:
+    get:
+      description: Gets the regexes of URLs excluded from the active scans.
+      operationId: ascanViewExcludedFromScan
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/excludedParamTypes/:
+    get:
+      description: 'Gets all the types of excluded parameters. For each type the following are shown: the ID and the name.'
+      operationId: ascanViewExcludedParamTypes
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/excludedParams/:
+    get:
+      description: 'Gets all the parameters that are excluded. For each parameter the following are shown: the name, the URL, and the parameter type.'
+      operationId: ascanViewExcludedParams
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/messagesIds/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the IDs of the messages sent during the scan with the given ID. A message can be obtained with 'message' core view.
+      operationId: ascanViewMessagesIds
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionAddQueryParam/:
+    get:
+      description: Tells whether or not the active scanner should add a query parameter to GET request that don't have parameters to start with.
+      operationId: ascanViewOptionAddQueryParam
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionAllowAttackOnStart/:
+    get:
+      description: ''
+      operationId: ascanViewOptionAllowAttackOnStart
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionAttackPolicy/:
+    get:
+      description: ''
+      operationId: ascanViewOptionAttackPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionDefaultPolicy/:
+    get:
+      description: ''
+      operationId: ascanViewOptionDefaultPolicy
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionDelayInMs/:
+    get:
+      description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
+      deprecated: true
+      operationId: ascanViewOptionDelayInMs
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionEncodeCookieValues/:
+    get:
+      description: Tells whether or not the active scanner should encode cookie values.
+      operationId: ascanViewOptionEncodeCookieValues
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionExcludedParamList/:
+    get:
+      description: Use view excludedParams instead.
+      deprecated: true
+      operationId: ascanViewOptionExcludedParamList
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionHandleAntiCSRFTokens/:
+    get:
+      description: ''
+      operationId: ascanViewOptionHandleAntiCSRFTokens
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionHostPerScan/:
+    get:
+      description: ''
+      operationId: ascanViewOptionHostPerScan
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionInjectPluginIdInHeader/:
+    get:
+      description: Tells whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID of the scan rule that's sending the requests.
+      operationId: ascanViewOptionInjectPluginIdInHeader
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionMaxAlertsPerRule/:
+    get:
+      description: Gets the maximum number of alerts that a rule can raise before being skipped.
+      operationId: ascanViewOptionMaxAlertsPerRule
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionMaxChartTimeInMins/:
+    get:
+      description: ''
+      operationId: ascanViewOptionMaxChartTimeInMins
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionMaxResultsToList/:
+    get:
+      description: ''
+      operationId: ascanViewOptionMaxResultsToList
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionMaxRuleDurationInMins/:
+    get:
+      description: ''
+      operationId: ascanViewOptionMaxRuleDurationInMins
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionMaxScanDurationInMins/:
+    get:
+      description: ''
+      operationId: ascanViewOptionMaxScanDurationInMins
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionMaxScansInUI/:
+    get:
+      description: ''
+      operationId: ascanViewOptionMaxScansInUI
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionPromptInAttackMode/:
+    get:
+      description: ''
+      operationId: ascanViewOptionPromptInAttackMode
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionPromptToClearFinishedScans/:
+    get:
+      description: ''
+      operationId: ascanViewOptionPromptToClearFinishedScans
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionRescanInAttackMode/:
+    get:
+      description: ''
+      operationId: ascanViewOptionRescanInAttackMode
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionScanHeadersAllRequests/:
+    get:
+      description: Tells whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters, through the query or request body.
+      operationId: ascanViewOptionScanHeadersAllRequests
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionScanNullJsonValues/:
+    get:
+      description: Tells whether or not the active scanner should scan null JSON values.
+      operationId: ascanViewOptionScanNullJsonValues
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionShowAdvancedDialog/:
+    get:
+      description: ''
+      operationId: ascanViewOptionShowAdvancedDialog
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionTargetParamsEnabledRPC/:
+    get:
+      description: ''
+      operationId: ascanViewOptionTargetParamsEnabledRPC
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionTargetParamsInjectable/:
+    get:
+      description: ''
+      operationId: ascanViewOptionTargetParamsInjectable
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/optionThreadPerHost/:
+    get:
+      description: ''
+      operationId: ascanViewOptionThreadPerHost
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/policies/:
+    parameters:
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: policyId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanViewPolicies
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/scanPolicyNames/:
+    get:
+      description: ''
+      operationId: ascanViewScanPolicyNames
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/scanProgress/:
+    parameters:
+    - name: scanId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanViewScanProgress
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/scanners/:
+    parameters:
+    - name: scanPolicyName
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: policyId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the scan rules, optionally, of the given scan policy or scanner policy/category ID.
+      operationId: ascanViewScanners
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/scans/:
+    get:
+      description: ''
+      operationId: ascanViewScans
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/ascan/view/status/:
+    parameters:
+    - name: scanId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: ''
+      operationId: ascanViewStatus
+      tags:
+      - ascan
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

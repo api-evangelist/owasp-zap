@@ -1,0 +1,138 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl clientSpider API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: clientSpider
+paths:
+  /JSON/clientSpider/action/scan/:
+    parameters:
+    - name: browser
+      in: query
+      description: The ID of the browser. See Selenium documentation for valid IDs.
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: The URL from where to start the spider.
+      schema:
+        type: string
+    - name: contextName
+      in: query
+      description: The name of the context.
+      schema:
+        type: string
+    - name: userName
+      in: query
+      description: The name of the user.
+      schema:
+        type: string
+    - name: subtreeOnly
+      in: query
+      description: true to spider only under the subtree, false otherwise.
+      schema:
+        type: string
+    - name: maxCrawlDepth
+      in: query
+      description: Maximum Crawl Depth (0 is unlimited).
+      schema:
+        type: string
+    - name: pageLoadTime
+      in: query
+      description: Page Load Time (seconds).
+      schema:
+        type: string
+    get:
+      description: Starts a client spider scan.
+      operationId: clientSpiderActionScan
+      tags:
+      - clientSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/clientSpider/action/stop/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: The ID of the client spider scan.
+      schema:
+        type: string
+    get:
+      description: Stops a client spider scan.
+      operationId: clientSpiderActionStop
+      tags:
+      - clientSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/clientSpider/view/status/:
+    parameters:
+    - name: scanId
+      in: query
+      required: true
+      description: The ID of the client spider scan.
+      schema:
+        type: string
+    get:
+      description: Gets the status of a client spider scan.
+      operationId: clientSpiderViewStatus
+      tags:
+      - clientSpider
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

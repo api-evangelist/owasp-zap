@@ -1,0 +1,471 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl script API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: script
+paths:
+  /JSON/script/action/clearGlobalCustomVar/:
+    parameters:
+    - name: varKey
+      in: query
+      required: true
+      description: The key of the variable.
+      schema:
+        type: string
+    get:
+      description: Clears a global custom variable.
+      operationId: scriptActionClearGlobalCustomVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/clearGlobalVar/:
+    parameters:
+    - name: varKey
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Clears the global variable with the given key.
+      operationId: scriptActionClearGlobalVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/clearGlobalVars/:
+    get:
+      description: Clears the global variables.
+      operationId: scriptActionClearGlobalVars
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/clearScriptCustomVar/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: The name of the script.
+      schema:
+        type: string
+    - name: varKey
+      in: query
+      required: true
+      description: The key of the variable.
+      schema:
+        type: string
+    get:
+      description: Clears a script custom variable.
+      operationId: scriptActionClearScriptCustomVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/clearScriptVar/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: varKey
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Clears the variable with the given key of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
+      operationId: scriptActionClearScriptVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/clearScriptVars/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Clears the variables of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
+      operationId: scriptActionClearScriptVars
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/disable/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Disables the script with the given name
+      operationId: scriptActionDisable
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/enable/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Enables the script with the given name
+      operationId: scriptActionEnable
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/load/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scriptType
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scriptEngine
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: fileName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: scriptDescription
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: charset
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Loads a script into ZAP from the given local file, with the given name, type and engine, optionally with a description, and a charset name to read the script (the charset name is required if the script is not in UTF-8, for example, in ISO-8859-1).
+      operationId: scriptActionLoad
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/remove/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Removes the script with the given name
+      operationId: scriptActionRemove
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/runStandAloneScript/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Runs the stand alone script with the given name
+      operationId: scriptActionRunStandAloneScript
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/setGlobalVar/:
+    parameters:
+    - name: varKey
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: varValue
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the value of the global variable with the given key.
+      operationId: scriptActionSetGlobalVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/action/setScriptVar/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: varKey
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: varValue
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the value of the variable with the given key of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
+      operationId: scriptActionSetScriptVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/globalCustomVar/:
+    parameters:
+    - name: varKey
+      in: query
+      required: true
+      description: The key of the variable.
+      schema:
+        type: string
+    get:
+      description: Gets the value (string representation) of a global custom variable. Returns an API error (DOES_NOT_EXIST) if no value was previously set.
+      operationId: scriptViewGlobalCustomVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/globalCustomVars/:
+    get:
+      description: Gets all the global custom variables (key/value pairs, the value is the string representation).
+      operationId: scriptViewGlobalCustomVars
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/globalVar/:
+    parameters:
+    - name: varKey
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the value of the global variable with the given key. Returns an API error (DOES_NOT_EXIST) if no value was previously set.
+      operationId: scriptViewGlobalVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/globalVars/:
+    get:
+      description: Gets all the global variables (key/value pairs).
+      operationId: scriptViewGlobalVars
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/listEngines/:
+    get:
+      description: Lists the script engines available
+      operationId: scriptViewListEngines
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/listScripts/:
+    get:
+      description: Lists the scripts available, with its engine, name, description, type and error state.
+      operationId: scriptViewListScripts
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/listTypes/:
+    get:
+      description: Lists the script types available.
+      operationId: scriptViewListTypes
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/scriptCustomVar/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: The name of the script.
+      schema:
+        type: string
+    - name: varKey
+      in: query
+      required: true
+      description: The key of the variable.
+      schema:
+        type: string
+    get:
+      description: Gets the value (string representation) of a custom variable. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists or if no value was previously set.
+      operationId: scriptViewScriptCustomVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/scriptCustomVars/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: The name of the script.
+      schema:
+        type: string
+    get:
+      description: Gets all the custom variables (key/value pairs, the value is the string representation) of a script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
+      operationId: scriptViewScriptCustomVars
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/scriptVar/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: varKey
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the value of the variable with the given key for the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists or if no value was previously set.
+      operationId: scriptViewScriptVar
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/script/view/scriptVars/:
+    parameters:
+    - name: scriptName
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets all the variables (key/value pairs) of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
+      operationId: scriptViewScriptVars
+      tags:
+      - script
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

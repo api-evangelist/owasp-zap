@@ -1,0 +1,199 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl custompayloads API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: custompayloads
+paths:
+  /JSON/custompayloads/action/addCustomPayload/:
+    parameters:
+    - name: category
+      in: query
+      required: true
+      description: The category for the new payload.
+      schema:
+        type: string
+    - name: payload
+      in: query
+      description: The payload to be added.
+      schema:
+        type: string
+    get:
+      description: Adds a new payload.
+      operationId: custompayloadsActionAddCustomPayload
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/custompayloads/action/disableCustomPayload/:
+    parameters:
+    - name: category
+      in: query
+      required: true
+      description: The category for the payload being disabled.
+      schema:
+        type: string
+    - name: payload
+      in: query
+      description: The payload being disabled.
+      schema:
+        type: string
+    get:
+      description: Disables a given payload.
+      operationId: custompayloadsActionDisableCustomPayload
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/custompayloads/action/disableCustomPayloads/:
+    parameters:
+    - name: category
+      in: query
+      description: The category for which the payloads should be disabled (leave empty for all).
+      schema:
+        type: string
+    get:
+      description: Disables payloads for a given category.
+      operationId: custompayloadsActionDisableCustomPayloads
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/custompayloads/action/enableCustomPayload/:
+    parameters:
+    - name: category
+      in: query
+      required: true
+      description: The category for the payload being enabled.
+      schema:
+        type: string
+    - name: payload
+      in: query
+      description: The payload being enabled.
+      schema:
+        type: string
+    get:
+      description: Enables a given payload.
+      operationId: custompayloadsActionEnableCustomPayload
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/custompayloads/action/enableCustomPayloads/:
+    parameters:
+    - name: category
+      in: query
+      description: The category for which the payloads should be enabled (leave empty for all).
+      schema:
+        type: string
+    get:
+      description: Enables payloads for a given category.
+      operationId: custompayloadsActionEnableCustomPayloads
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/custompayloads/action/removeCustomPayload/:
+    parameters:
+    - name: category
+      in: query
+      required: true
+      description: The category of the payload being removed.
+      schema:
+        type: string
+    - name: payload
+      in: query
+      description: The payload being removed.
+      schema:
+        type: string
+    get:
+      description: Removes a payload.
+      operationId: custompayloadsActionRemoveCustomPayload
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/custompayloads/view/customPayloads/:
+    parameters:
+    - name: category
+      in: query
+      description: The category for which the payloads should be displayed.
+      schema:
+        type: string
+    get:
+      description: Lists all the payloads currently loaded (category, payload, enabled state). Optionally filtered by category.
+      operationId: custompayloadsViewCustomPayloads
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/custompayloads/view/customPayloadsCategories/:
+    get:
+      description: Lists all available categories.
+      operationId: custompayloadsViewCustomPayloadsCategories
+      tags:
+      - custompayloads
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

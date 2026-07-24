@@ -1,0 +1,441 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl alert API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: alert
+paths:
+  /JSON/alert/action/addAlert/:
+    parameters:
+    - name: messageId
+      in: query
+      required: true
+      description: The ID of the message to which the alert should be associated.
+      schema:
+        type: string
+    - name: name
+      in: query
+      required: true
+      description: The name of the alert.
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      required: true
+      description: The numeric risk representation ('0 - Informational' through '3 - High').
+      schema:
+        type: string
+    - name: confidenceId
+      in: query
+      required: true
+      description: The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available]).
+      schema:
+        type: string
+    - name: description
+      in: query
+      required: true
+      description: The description to be set to the alert.
+      schema:
+        type: string
+    - name: param
+      in: query
+      description: The name of the parameter applicable to the alert.
+      schema:
+        type: string
+    - name: attack
+      in: query
+      description: 'The attack (ex: injected string) used by the scan rule.'
+      schema:
+        type: string
+    - name: otherInfo
+      in: query
+      description: Other information about the alert or test.
+      schema:
+        type: string
+    - name: solution
+      in: query
+      description: The solution for the alert.
+      schema:
+        type: string
+    - name: references
+      in: query
+      description: The reference details for the alert.
+      schema:
+        type: string
+    - name: evidence
+      in: query
+      description: The evidence associated with the alert.
+      schema:
+        type: string
+    - name: cweId
+      in: query
+      description: The CWE identifier associated with the alert.
+      schema:
+        type: string
+    - name: wascId
+      in: query
+      description: The WASC identifier associated with the alert.
+      schema:
+        type: string
+    get:
+      description: Add an alert associated with the given message ID, with the provided details. (The ID of the created alert is returned.)
+      operationId: alertActionAddAlert
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/action/deleteAlert/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: 'Deletes the alert with the given ID. '
+      operationId: alertActionDeleteAlert
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/action/deleteAlerts/:
+    parameters:
+    - name: contextName
+      in: query
+      description: The name of the Context for which the alerts should be deleted.
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which alerts should be deleted.
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      description: The numeric risk representation ('0 - Informational' through '3 - High').
+      schema:
+        type: string
+    get:
+      description: Deletes all the alerts optionally filtered by URL which fall within the Context with the provided name, risk, or base URL.
+      operationId: alertActionDeleteAlerts
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/action/deleteAllAlerts/:
+    get:
+      description: Deletes all alerts of the current session.
+      operationId: alertActionDeleteAllAlerts
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/action/updateAlert/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: The ID of the alert to update.
+      schema:
+        type: string
+    - name: name
+      in: query
+      required: true
+      description: The name of the alert.
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      required: true
+      description: The numeric risk representation ('0 - Informational' through '3 - High').
+      schema:
+        type: string
+    - name: confidenceId
+      in: query
+      required: true
+      description: The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available]).
+      schema:
+        type: string
+    - name: description
+      in: query
+      required: true
+      description: The description to be set to the alert.
+      schema:
+        type: string
+    - name: param
+      in: query
+      description: The name of the parameter applicable to the alert.
+      schema:
+        type: string
+    - name: attack
+      in: query
+      description: 'The attack (ex: injected string) used by the scan rule.'
+      schema:
+        type: string
+    - name: otherInfo
+      in: query
+      description: Other information about the alert or test.
+      schema:
+        type: string
+    - name: solution
+      in: query
+      description: The solution for the alert.
+      schema:
+        type: string
+    - name: references
+      in: query
+      description: The reference details for the alert.
+      schema:
+        type: string
+    - name: evidence
+      in: query
+      description: The evidence associated with the alert.
+      schema:
+        type: string
+    - name: cweId
+      in: query
+      description: The CWE identifier associated with the alert.
+      schema:
+        type: string
+    - name: wascId
+      in: query
+      description: The WASC identifier associated with the alert.
+      schema:
+        type: string
+    get:
+      description: Update the alert with the given ID, with the provided details.
+      operationId: alertActionUpdateAlert
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/action/updateAlertsConfidence/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: The IDs of the alerts to update (comma separated values).
+      schema:
+        type: string
+    - name: confidenceId
+      in: query
+      required: true
+      description: The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available]).
+      schema:
+        type: string
+    get:
+      description: Update the confidence of the alerts.
+      operationId: alertActionUpdateAlertsConfidence
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/action/updateAlertsRisk/:
+    parameters:
+    - name: ids
+      in: query
+      required: true
+      description: The IDs of the alerts to update (comma separated values).
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      required: true
+      description: The numeric risk representation ('0 - Informational' through '3 - High').
+      schema:
+        type: string
+    get:
+      description: Update the risk of the alerts.
+      operationId: alertActionUpdateAlertsRisk
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/view/alert/:
+    parameters:
+    - name: id
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the alert with the given ID, the corresponding HTTP message can be obtained with the 'messageId' field and 'message' API method
+      operationId: alertViewAlert
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/view/alertCountsByRisk/:
+    parameters:
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: recurse
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets a count of the alerts, optionally filtered as per alertsPerRisk
+      operationId: alertViewAlertCountsByRisk
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/view/alerts/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which alerts should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: contextName
+      in: query
+      description: Optionally, the Context name which the Alerts' URLs are associated with.
+      schema:
+        type: string
+    get:
+      description: Gets the alerts raised by ZAP, optionally filtering by URL or riskId, and paginating with 'start' position and 'count' of alerts
+      operationId: alertViewAlerts
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/view/alertsByRisk/:
+    parameters:
+    - name: url
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: recurse
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets a summary of the alerts, optionally filtered by a 'url'. If 'recurse' is true then all alerts that apply to urls that start with the specified 'url' will be returned, otherwise only those on exactly the same 'url' (ignoring url parameters)
+      operationId: alertViewAlertsByRisk
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/view/alertsSummary/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which alerts should be included.
+      schema:
+        type: string
+    get:
+      description: Gets number of alerts grouped by each risk level, optionally filtering by URL
+      operationId: alertViewAlertsSummary
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alert/view/numberOfAlerts/:
+    parameters:
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which alerts should be included.
+      schema:
+        type: string
+    - name: riskId
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Gets the number of alerts, optionally filtering by URL or riskId
+      operationId: alertViewNumberOfAlerts
+      tags:
+      - alert
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

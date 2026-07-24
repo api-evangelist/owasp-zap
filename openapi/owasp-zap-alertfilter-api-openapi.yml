@@ -1,0 +1,440 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl alertFilter API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: alertFilter
+paths:
+  /JSON/alertFilter/action/addAlertFilter/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The numeric ID of the context for which the filter should be added.
+      schema:
+        type: string
+    - name: ruleId
+      in: query
+      required: true
+      description: The numeric ID of the rule for which the filter should apply.
+      schema:
+        type: string
+    - name: newLevel
+      in: query
+      required: true
+      description: The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive'].
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: The URL for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: urlIsRegex
+      in: query
+      description: A boolean indicating whether or not the URL is a regex.
+      schema:
+        type: string
+    - name: parameter
+      in: query
+      description: The parameter name for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: A boolean indicating whether or not the filter should be enabled.
+      schema:
+        type: string
+    - name: parameterIsRegex
+      in: query
+      description: A boolean indicating whether or not the parameter name is a regex.
+      schema:
+        type: string
+    - name: attack
+      in: query
+      description: The attack value for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: attackIsRegex
+      in: query
+      description: A boolean indicating whether or not the attack value is a regex.
+      schema:
+        type: string
+    - name: evidence
+      in: query
+      description: The evidence value for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: evidenceIsRegex
+      in: query
+      description: A boolean indicating whether or not the evidence value is a regex.
+      schema:
+        type: string
+    - name: methods
+      in: query
+      description: The HTTP methods (comma separated) for which the filter should apply.
+      schema:
+        type: string
+    get:
+      description: Adds a new alert filter for the context with the given ID.
+      operationId: alertFilterActionAddAlertFilter
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/addGlobalAlertFilter/:
+    parameters:
+    - name: ruleId
+      in: query
+      required: true
+      description: The numeric ID of the rule for which the filter should apply.
+      schema:
+        type: string
+    - name: newLevel
+      in: query
+      required: true
+      description: The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive'].
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: The URL for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: urlIsRegex
+      in: query
+      description: A boolean indicating whether or not the URL is a regex.
+      schema:
+        type: string
+    - name: parameter
+      in: query
+      description: The parameter name for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: A boolean indicating whether or not the filter should be enabled.
+      schema:
+        type: string
+    - name: parameterIsRegex
+      in: query
+      description: A boolean indicating whether or not the parameter name is a regex.
+      schema:
+        type: string
+    - name: attack
+      in: query
+      description: The attack value for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: attackIsRegex
+      in: query
+      description: A boolean indicating whether or not the attack value is a regex.
+      schema:
+        type: string
+    - name: evidence
+      in: query
+      description: The evidence value for which the filter should apply (can be regex).
+      schema:
+        type: string
+    - name: evidenceIsRegex
+      in: query
+      description: A boolean indicating whether or not the evidence value is a regex.
+      schema:
+        type: string
+    - name: methods
+      in: query
+      description: The HTTP methods (comma separated) for which the filter should apply.
+      schema:
+        type: string
+    get:
+      description: Adds a new global alert filter.
+      operationId: alertFilterActionAddGlobalAlertFilter
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/applyAll/:
+    get:
+      description: Applies all currently enabled Global and Context alert filters.
+      operationId: alertFilterActionApplyAll
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/applyContext/:
+    get:
+      description: Applies all currently enabled Context alert filters.
+      operationId: alertFilterActionApplyContext
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/applyGlobal/:
+    get:
+      description: Applies all currently enabled Global alert filters.
+      operationId: alertFilterActionApplyGlobal
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/removeAlertFilter/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The numeric ID of the context for which the filter should be removed.
+      schema:
+        type: string
+    - name: ruleId
+      in: query
+      required: true
+      description: The numeric ID of the rule for which the filter applies.
+      schema:
+        type: string
+    - name: newLevel
+      in: query
+      required: true
+      description: The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive'].
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: The URL for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: urlIsRegex
+      in: query
+      description: A boolean indicating whether or not the URL is a regex.
+      schema:
+        type: string
+    - name: parameter
+      in: query
+      description: The parameter name for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: A boolean indicating whether or not the filter should be enabled.
+      schema:
+        type: string
+    - name: parameterIsRegex
+      in: query
+      description: A boolean indicating whether or not the parameter name is a regex.
+      schema:
+        type: string
+    - name: attack
+      in: query
+      description: The attack value for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: attackIsRegex
+      in: query
+      description: A boolean indicating whether or not the attack value is a regex.
+      schema:
+        type: string
+    - name: evidence
+      in: query
+      description: The evidence value for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: evidenceIsRegex
+      in: query
+      description: A boolean indicating whether or not the evidence value is a regex.
+      schema:
+        type: string
+    - name: methods
+      in: query
+      description: The HTTP methods (comma separated) for which the filter applies.
+      schema:
+        type: string
+    get:
+      description: Removes an alert filter from the context with the given ID.
+      operationId: alertFilterActionRemoveAlertFilter
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/removeGlobalAlertFilter/:
+    parameters:
+    - name: ruleId
+      in: query
+      required: true
+      description: The numeric ID of the rule for which the filter applies.
+      schema:
+        type: string
+    - name: newLevel
+      in: query
+      required: true
+      description: The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive'].
+      schema:
+        type: string
+    - name: url
+      in: query
+      description: The URL for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: urlIsRegex
+      in: query
+      description: A boolean indicating whether or not the URL is a regex.
+      schema:
+        type: string
+    - name: parameter
+      in: query
+      description: The parameter name for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      description: A boolean indicating whether or not the filter should be enabled.
+      schema:
+        type: string
+    - name: parameterIsRegex
+      in: query
+      description: A boolean indicating whether or not the parameter name is a regex.
+      schema:
+        type: string
+    - name: attack
+      in: query
+      description: The attack value for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: attackIsRegex
+      in: query
+      description: A boolean indicating whether or not the attack value is a regex.
+      schema:
+        type: string
+    - name: evidence
+      in: query
+      description: The evidence value for which the filter applies (can be regex).
+      schema:
+        type: string
+    - name: evidenceIsRegex
+      in: query
+      description: A boolean indicating whether or not the evidence value is a regex.
+      schema:
+        type: string
+    - name: methods
+      in: query
+      description: The HTTP methods (comma separated) for which the filter applies.
+      schema:
+        type: string
+    get:
+      description: Removes a global alert filter.
+      operationId: alertFilterActionRemoveGlobalAlertFilter
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/testAll/:
+    get:
+      description: Tests all currently enabled Global and Context alert filters.
+      operationId: alertFilterActionTestAll
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/testContext/:
+    get:
+      description: Tests all currently enabled Context alert filters.
+      operationId: alertFilterActionTestContext
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/action/testGlobal/:
+    get:
+      description: Tests all currently enabled Global alert filters.
+      operationId: alertFilterActionTestGlobal
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/view/alertFilterList/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The numeric ID of the context for which the filters should be listed.
+      schema:
+        type: string
+    get:
+      description: Lists the alert filters of the context with the given ID.
+      operationId: alertFilterViewAlertFilterList
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/alertFilter/view/globalAlertFilterList/:
+    get:
+      description: Lists the global alert filters.
+      operationId: alertFilterViewGlobalAlertFilterList
+      tags:
+      - alertFilter
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

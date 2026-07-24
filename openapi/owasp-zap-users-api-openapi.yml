@@ -1,0 +1,438 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl users API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: users
+paths:
+  /JSON/users/action/authenticateAsUser/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    get:
+      description: Tries to authenticate as the identified user, returning the authentication request and whether it appears to have succeeded.
+      operationId: usersActionAuthenticateAsUser
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/newUser/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: name
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Creates a new user with the given name for the context with the given ID.
+      operationId: usersActionNewUser
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/pollAsUser/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    get:
+      description: Tries to poll as the identified user, returning the authentication request and whether it appears to have succeeded. This will only work if the polling verification strategy has been configured.
+      operationId: usersActionPollAsUser
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/removeUser/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    get:
+      description: Removes the user with the given ID that belongs to the context with the given ID.
+      operationId: usersActionRemoveUser
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/setAuthenticationCredentials/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    - name: authCredentialsConfigParams
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets the authentication credentials for the user with the given ID that belongs to the context with the given ID.
+      operationId: usersActionSetAuthenticationCredentials
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/setAuthenticationState/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    - name: lastPollResult
+      in: query
+      description: Last Poll Result - optional, should be 'true' or 'false'.
+      schema:
+        type: string
+    - name: lastPollTimeInMs
+      in: query
+      description: Last Poll Time in Milliseconds - optional, should be a long or 'NOW' for the current time in ms.
+      schema:
+        type: string
+    - name: requestsSinceLastPoll
+      in: query
+      description: Requests Since Last Poll - optional, should be an integer.
+      schema:
+        type: string
+    get:
+      description: Sets fields in the authentication state for the user identified by the Context and User Ids.
+      operationId: usersActionSetAuthenticationState
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/setCookie/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    - name: domain
+      in: query
+      required: true
+      description: The Cookie Domain
+      schema:
+        type: string
+    - name: name
+      in: query
+      required: true
+      description: The Cookie Name
+      schema:
+        type: string
+    - name: value
+      in: query
+      required: true
+      description: The Cookie Value
+      schema:
+        type: string
+    - name: path
+      in: query
+      description: The Cookie Path - optional default no path
+      schema:
+        type: string
+    - name: secure
+      in: query
+      description: If the Cookie is secure - optional default false
+      schema:
+        type: string
+    get:
+      description: Sets the specified cookie for the user identified by the Context and User Ids.
+      operationId: usersActionSetCookie
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/setUserEnabled/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    - name: enabled
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Sets whether or not the user, with the given ID that belongs to the context with the given ID, should be enabled.
+      operationId: usersActionSetUserEnabled
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/action/setUserName/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    - name: name
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Renames the user with the given ID that belongs to the context with the given ID.
+      operationId: usersActionSetUserName
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/view/getAuthenticationCredentials/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: the User ID
+      schema:
+        type: string
+    get:
+      description: Gets the authentication credentials of the user with given ID that belongs to the context with the given ID.
+      operationId: usersViewGetAuthenticationCredentials
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/view/getAuthenticationCredentialsConfigParams/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    get:
+      description: Gets the configuration parameters for the credentials of the context with the given ID.
+      operationId: usersViewGetAuthenticationCredentialsConfigParams
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/view/getAuthenticationSession/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    get:
+      description: Gets the authentication session information for the user identified by the Context and User Ids, e.g. cookies and realm credentials.
+      operationId: usersViewGetAuthenticationSession
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/view/getAuthenticationState/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    get:
+      description: Gets the authentication state information for the user identified by the Context and User Ids.
+      operationId: usersViewGetAuthenticationState
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/view/getUserById/:
+    parameters:
+    - name: contextId
+      in: query
+      required: true
+      description: The Context ID
+      schema:
+        type: string
+    - name: userId
+      in: query
+      required: true
+      description: The User ID
+      schema:
+        type: string
+    get:
+      description: Gets the data of the user with the given ID that belongs to the context with the given ID.
+      operationId: usersViewGetUserById
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/users/view/usersList/:
+    parameters:
+    - name: contextId
+      in: query
+      description: The Context ID
+      schema:
+        type: string
+    get:
+      description: Gets a list of users that belong to the context with the given ID, or all users if none provided.
+      operationId: usersViewUsersList
+      tags:
+      - users
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query

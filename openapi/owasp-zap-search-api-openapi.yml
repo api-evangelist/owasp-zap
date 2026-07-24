@@ -1,0 +1,623 @@
+openapi: 3.0.3
+info:
+  title: ZAP accessControl search API
+  description: The HTTP API for controlling and accessing ZAP.
+  contact:
+    name: ZAP User Group
+    url: https://groups.google.com/group/zaproxy-users
+    email: zaproxy-users@googlegroups.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 2.16.1
+servers:
+- url: http://zap
+  description: The URL while proxying through ZAP.
+- url: http://{address}:{port}
+  description: The URL of a Local Proxy of ZAP.
+  variables:
+    address:
+      description: The address ZAP is listening on.
+      default: 127.0.0.1
+    port:
+      description: The port ZAP is bound to.
+      default: '8080'
+security:
+- {}
+- apiKeyHeader: []
+- apiKeyQuery: []
+tags:
+- name: search
+paths:
+  /OTHER/search/other/harByHeaderRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages, in HAR format, that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchOtherHarByHeaderRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/search/other/harByNoteRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages, in HAR format, that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchOtherHarByNoteRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/search/other/harByRequestRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages, in HAR format, that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchOtherHarByRequestRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/search/other/harByResponseRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages, in HAR format, that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchOtherHarByResponseRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/search/other/harByTagRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages, in HAR format, that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchOtherHarByTagRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /OTHER/search/other/harByUrlRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages, in HAR format, that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchOtherHarByUrlRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorOther'
+  /JSON/search/view/messagesByHeaderRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewMessagesByHeaderRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/messagesByNoteRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewMessagesByNoteRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/messagesByRequestRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewMessagesByRequestRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/messagesByResponseRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewMessagesByResponseRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/messagesByTagRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewMessagesByTagRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/messagesByUrlRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which messages should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the HTTP messages that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewMessagesByUrlRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/urlsByHeaderRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the URLs of the HTTP messages that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewUrlsByHeaderRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/urlsByNoteRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the URLs of the HTTP messages that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewUrlsByNoteRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/urlsByRequestRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the URLs of the HTTP messages that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewUrlsByRequestRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/urlsByResponseRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the URLs of the HTTP messages that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewUrlsByResponseRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/urlsByTagRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the URLs of the HTTP messages that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewUrlsByTagRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+  /JSON/search/view/urlsByUrlRegex/:
+    parameters:
+    - name: regex
+      in: query
+      required: true
+      description: ''
+      schema:
+        type: string
+    - name: baseurl
+      in: query
+      description: The highest URL in the Sites tree under which URLs should be included.
+      schema:
+        type: string
+    - name: start
+      in: query
+      description: ''
+      schema:
+        type: string
+    - name: count
+      in: query
+      description: ''
+      schema:
+        type: string
+    get:
+      description: Returns the URLs of the HTTP messages that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages.
+      operationId: searchViewUrlsByUrlRegex
+      tags:
+      - search
+      responses:
+        default:
+          $ref: '#/components/responses/ErrorJson'
+components:
+  schemas:
+    ErrorJson:
+      type: object
+      required:
+      - code
+      - message
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
+    ErrorOther:
+      description: Error of OTHER endpoints.
+      content:
+        '*/*': {}
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: X-ZAP-API-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: apikey
+      in: query
