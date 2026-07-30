@@ -5,7 +5,20 @@ description: >-
   and web applications during development and testing. ZAP exposes a comprehensive HTTP API for controlling and
   automating scans, spidering, authentication, alerts, reporting, and more.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/owasp-zap.png
 tags:
   - Security Testing
   - Application Security
@@ -17,29 +30,888 @@ created: '2026-03-25'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: owasp-zap:owasp-zap
-    name: OWASP ZAP API
-    description: >-
-      The HTTP API for controlling and accessing ZAP. Supports automation of access control scans, active and passive
-      scanning, spidering, authentication, alerts, contexts, reports, scripts, and many more ZAP components.
-    humanURL: https://www.zaproxy.org
-    baseURL: http://zap
-    tags:
-      - Security Testing
-      - Application Security
-      - Vulnerability Scanning
-      - Testing
-    properties:
-      - type: Documentation
-        url: https://www.zaproxy.org/docs/
-      - type: API Documentation
-        url: https://www.zaproxy.org/docs/api/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/owasp-zap/refs/heads/main/openapi/owasp-zap-openapi.yml
-      - type: GitHubRepository
-        url: https://github.com/zaproxy/zaproxy
-      - type: GitHub API Docs
-        url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-accesscontrol-api
+  name: OWASP ZAP accessControl API
+  description: The accessControl API from OWASP ZAP — 4 operation(s) for accesscontrol.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - accessControl
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-accesscontrol-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-acsrf-api
+  name: OWASP ZAP acsrf API
+  description: The acsrf API from OWASP ZAP — 6 operation(s) for acsrf.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - acsrf
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-acsrf-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-ajaxspider-api
+  name: OWASP ZAP ajaxSpider API
+  description: The ajaxSpider API from OWASP ZAP — 41 operation(s) for ajaxspider.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - ajaxSpider
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-ajaxspider-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-alert-api
+  name: OWASP ZAP alert API
+  description: The alert API from OWASP ZAP — 13 operation(s) for alert.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - alert
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-alert-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-alertfilter-api
+  name: OWASP ZAP alertFilter API
+  description: The alertFilter API from OWASP ZAP — 12 operation(s) for alertfilter.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - alertFilter
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-alertfilter-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-ascan-api
+  name: OWASP ZAP ascan API
+  description: The ascan API from OWASP ZAP — 90 operation(s) for ascan.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - ascan
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-ascan-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-authentication-api
+  name: OWASP ZAP authentication API
+  description: The authentication API from OWASP ZAP — 8 operation(s) for authentication.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-authorization-api
+  name: OWASP ZAP authorization API
+  description: The authorization API from OWASP ZAP — 2 operation(s) for authorization.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - authorization
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-authorization-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-automation-api
+  name: OWASP ZAP automation API
+  description: The automation API from OWASP ZAP — 3 operation(s) for automation.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - automation
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-automation-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-autoupdate-api
+  name: OWASP ZAP autoupdate API
+  description: The autoupdate API from OWASP ZAP — 32 operation(s) for autoupdate.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - autoupdate
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-autoupdate-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-break-api
+  name: OWASP ZAP break API
+  description: The break API from OWASP ZAP — 11 operation(s) for break.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - break
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-break-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-client-api
+  name: OWASP ZAP client API
+  description: The client API from OWASP ZAP — 5 operation(s) for client.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - client
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-client-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-clientspider-api
+  name: OWASP ZAP clientSpider API
+  description: The clientSpider API from OWASP ZAP — 3 operation(s) for clientspider.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - clientSpider
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-clientspider-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-context-api
+  name: OWASP ZAP context API
+  description: The context API from OWASP ZAP — 21 operation(s) for context.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - context
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-context-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-core-api
+  name: OWASP ZAP core API
+  description: The core API from OWASP ZAP — 97 operation(s) for core.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - core
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-core-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-custompayloads-api
+  name: OWASP ZAP custompayloads API
+  description: The custompayloads API from OWASP ZAP — 8 operation(s) for custompayloads.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - custompayloads
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-custompayloads-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-dev-api
+  name: OWASP ZAP dev API
+  description: The dev API from OWASP ZAP — 1 operation(s) for dev.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - dev
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-dev-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-exim-api
+  name: OWASP ZAP exim API
+  description: The exim API from OWASP ZAP — 9 operation(s) for exim.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - exim
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-exim-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-forceduser-api
+  name: OWASP ZAP forcedUser API
+  description: The forcedUser API from OWASP ZAP — 4 operation(s) for forceduser.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - forcedUser
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-forceduser-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-graphql-api
+  name: OWASP ZAP graphql API
+  description: The graphql API from OWASP ZAP — 20 operation(s) for graphql.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - graphql
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-graphql-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-httpsessions-api
+  name: OWASP ZAP httpSessions API
+  description: The httpSessions API from OWASP ZAP — 16 operation(s) for httpsessions.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - httpSessions
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-httpsessions-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-hud-api
+  name: OWASP ZAP hud API
+  description: The hud API from OWASP ZAP — 37 operation(s) for hud.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - hud
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-hud-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-keyboard-api
+  name: OWASP ZAP keyboard API
+  description: The keyboard API from OWASP ZAP — 2 operation(s) for keyboard.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - keyboard
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-keyboard-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-localproxies-api
+  name: OWASP ZAP localProxies API
+  description: The localProxies API from OWASP ZAP — 3 operation(s) for localproxies.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - localProxies
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-localproxies-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-network-api
+  name: OWASP ZAP network API
+  description: The network API from OWASP ZAP — 48 operation(s) for network.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - network
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-network-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-oast-api
+  name: OWASP ZAP oast API
+  description: The oast API from OWASP ZAP — 11 operation(s) for oast.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - oast
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-oast-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-openapi-api
+  name: OWASP ZAP openapi API
+  description: The openapi API from OWASP ZAP — 2 operation(s) for openapi.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - openapi
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-openapi-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-paramdigger-api
+  name: OWASP ZAP paramDigger API
+  description: The paramDigger API from OWASP ZAP — 1 operation(s) for paramdigger.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - paramDigger
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-paramdigger-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-params-api
+  name: OWASP ZAP params API
+  description: The params API from OWASP ZAP — 1 operation(s) for params.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - params
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-params-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-pnh-api
+  name: OWASP ZAP pnh API
+  description: The pnh API from OWASP ZAP — 8 operation(s) for pnh.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - pnh
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-pnh-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-postman-api
+  name: OWASP ZAP postman API
+  description: The postman API from OWASP ZAP — 2 operation(s) for postman.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - postman
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-postman-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-pscan-api
+  name: OWASP ZAP pscan API
+  description: The pscan API from OWASP ZAP — 17 operation(s) for pscan.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - pscan
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-pscan-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-quickstartlaunch-api
+  name: OWASP ZAP quickstartlaunch API
+  description: The quickstartlaunch API from OWASP ZAP — 1 operation(s) for quickstartlaunch.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - quickstartlaunch
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-quickstartlaunch-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-replacer-api
+  name: OWASP ZAP replacer API
+  description: The replacer API from OWASP ZAP — 4 operation(s) for replacer.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - replacer
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-replacer-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-reports-api
+  name: OWASP ZAP reports API
+  description: The reports API from OWASP ZAP — 3 operation(s) for reports.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - reports
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-reports-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-retest-api
+  name: OWASP ZAP retest API
+  description: The retest API from OWASP ZAP — 1 operation(s) for retest.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - retest
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-retest-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-reveal-api
+  name: OWASP ZAP reveal API
+  description: The reveal API from OWASP ZAP — 2 operation(s) for reveal.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - reveal
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-reveal-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-revisit-api
+  name: OWASP ZAP revisit API
+  description: The revisit API from OWASP ZAP — 3 operation(s) for revisit.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - revisit
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-revisit-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-ruleconfig-api
+  name: OWASP ZAP ruleConfig API
+  description: The ruleConfig API from OWASP ZAP — 5 operation(s) for ruleconfig.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - ruleConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-ruleconfig-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-script-api
+  name: OWASP ZAP script API
+  description: The script API from OWASP ZAP — 24 operation(s) for script.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - script
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-script-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-search-api
+  name: OWASP ZAP search API
+  description: The search API from OWASP ZAP — 18 operation(s) for search.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - search
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-selenium-api
+  name: OWASP ZAP selenium API
+  description: The selenium API from OWASP ZAP — 22 operation(s) for selenium.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - selenium
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-selenium-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-sessionmanagement-api
+  name: OWASP ZAP sessionManagement API
+  description: The sessionManagement API from OWASP ZAP — 4 operation(s) for sessionmanagement.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - sessionManagement
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-sessionmanagement-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-soap-api
+  name: OWASP ZAP soap API
+  description: The soap API from OWASP ZAP — 2 operation(s) for soap.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - soap
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-soap-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-spider-api
+  name: OWASP ZAP spider API
+  description: The spider API from OWASP ZAP — 71 operation(s) for spider.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - spider
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-spider-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-stats-api
+  name: OWASP ZAP stats API
+  description: The stats API from OWASP ZAP — 13 operation(s) for stats.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - stats
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-stats-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-users-api
+  name: OWASP ZAP users API
+  description: The users API from OWASP ZAP — 15 operation(s) for users.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - users
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-users-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-wappalyzer-api
+  name: OWASP ZAP wappalyzer API
+  description: The wappalyzer API from OWASP ZAP — 3 operation(s) for wappalyzer.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - wappalyzer
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-wappalyzer-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
+- aid: owasp-zap:owasp-zap-websocket-api
+  name: OWASP ZAP websocket API
+  description: The websocket API from OWASP ZAP — 6 operation(s) for websocket.
+  humanURL: https://www.zaproxy.org
+  baseURL: http://zap
+  tags:
+  - websocket
+  properties:
+  - type: OpenAPI
+    url: openapi/owasp-zap-websocket-api-openapi.yml
+  - type: Documentation
+    url: https://www.zaproxy.org/docs/
+  - type: API Documentation
+    url: https://www.zaproxy.org/docs/api/
+  - type: GitHubRepository
+    url: https://github.com/zaproxy/zaproxy
+  - type: GitHub API Docs
+    url: https://github.com/zaproxy/zap-api-docs
 common:
   - type: AgenticAccess
     url: agentic-access/owasp-zap-agentic-access.yml
