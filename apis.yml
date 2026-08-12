@@ -913,6 +913,9 @@ apis:
   - type: GitHub API Docs
     url: https://github.com/zaproxy/zap-api-docs
 common:
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/zaproxy/zaproxy/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/owasp-zap-agentic-access.yml
   - type: VulnerabilityDisclosure
