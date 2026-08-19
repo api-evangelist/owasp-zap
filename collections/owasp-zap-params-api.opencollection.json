@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl params API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "params",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "paramsViewParams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/params/view/params/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Shows the parameters for the specified site, or for all sites if the site is not specified"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

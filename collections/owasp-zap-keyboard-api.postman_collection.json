@@ -1,0 +1,213 @@
+{
+  "item": [
+    {
+      "id": "a5aa5875-9fa0-46d5-8ba3-241a399a7af6",
+      "name": "keyboard",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "640efb35-f7b6-4c1a-ba1c-67b0768e5a50",
+          "name": "keyboard Other Cheatsheet Action Order",
+          "request": {
+            "name": "keyboard Other Cheatsheet Action Order",
+            "description": {
+              "content": "Lists the keyboard shortcuts sorted by action, optionally, showing actions without shortcut set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "OTHER",
+                "keyboard",
+                "other",
+                "cheatsheetActionOrder",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "incUnset",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83aa8559-8c80-4bec-88d5-170655fd31e0",
+              "name": "Error of OTHER endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OTHER",
+                    "keyboard",
+                    "other",
+                    "cheatsheetActionOrder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "incUnset",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9abb24e2-134d-4bce-8f04-d79e6910b40b",
+          "name": "keyboard Other Cheatsheet Key Order",
+          "request": {
+            "name": "keyboard Other Cheatsheet Key Order",
+            "description": {
+              "content": "Lists the keyboard shortcuts sorted by keyboard shortcut, optionally, showing actions without shortcut set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "OTHER",
+                "keyboard",
+                "other",
+                "cheatsheetKeyOrder",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "incUnset",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "848439e2-dd29-4d4b-bf37-e76c277a5ea9",
+              "name": "Error of OTHER endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OTHER",
+                    "keyboard",
+                    "other",
+                    "cheatsheetKeyOrder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "incUnset",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "63f74a8d-2ebf-4593-ab3e-cbfce9bee1fa",
+    "name": "ZAP accessControl keyboard API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

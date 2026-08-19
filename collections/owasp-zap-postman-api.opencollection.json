@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl postman API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "postman",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "postmanActionImportFile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/postman/action/importFile/",
+            "params": [
+              {
+                "name": "file",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endpointUrl",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "postmanActionImportUrl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/postman/action/importUrl/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endpointUrl",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

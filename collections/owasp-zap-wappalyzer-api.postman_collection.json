@@ -1,0 +1,281 @@
+{
+  "item": [
+    {
+      "id": "03caed0d-86ea-4e19-8cc3-63935622c7bf",
+      "name": "wappalyzer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "57c9f3de-cbaa-4fc0-bfe5-1c90f5dab8f3",
+          "name": "wappalyzer View List All",
+          "request": {
+            "name": "wappalyzer View List All",
+            "description": {
+              "content": "Lists all sites and their associated applications (technologies).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "wappalyzer",
+                "view",
+                "listAll",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22a0e707-171d-4ebf-8b46-37439bf264f2",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "wappalyzer",
+                    "view",
+                    "listAll",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "670fcdef-c083-4694-9a10-77fd2d13e163",
+          "name": "wappalyzer View List Site",
+          "request": {
+            "name": "wappalyzer View List Site",
+            "description": {
+              "content": "Lists all the applications (technologies) associated with a specific site.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "wappalyzer",
+                "view",
+                "listSite",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "site",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "016090f8-e0ca-41c6-b0c1-767545b5f190",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "wappalyzer",
+                    "view",
+                    "listSite",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "site",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "189b172d-73c6-478d-b8ca-c0739ebd6bb5",
+          "name": "wappalyzer View List Sites",
+          "request": {
+            "name": "wappalyzer View List Sites",
+            "description": {
+              "content": "Lists all the sites recognized by the Technology Detection add-on.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "wappalyzer",
+                "view",
+                "listSites",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30ed0f0b-4014-4b00-9970-abea383f546f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "wappalyzer",
+                    "view",
+                    "listSites",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "5e63757d-cb88-4717-8532-a7ba53eec762",
+    "name": "ZAP accessControl wappalyzer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

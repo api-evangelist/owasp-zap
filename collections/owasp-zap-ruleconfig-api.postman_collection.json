@@ -1,0 +1,470 @@
+{
+  "item": [
+    {
+      "id": "3fc7d7fd-90ea-4f05-b9a5-90912f38b0ed",
+      "name": "ruleConfig",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4b24378b-beb4-4eeb-84e2-05538f2b17a6",
+          "name": "rule Config Action Reset All Rule Config Values",
+          "request": {
+            "name": "rule Config Action Reset All Rule Config Values",
+            "description": {
+              "content": "Reset all of the rule configurations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ruleConfig",
+                "action",
+                "resetAllRuleConfigValues",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ab1c40b-7467-4f54-a819-d01d613aca6e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ruleConfig",
+                    "action",
+                    "resetAllRuleConfigValues",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01c4cd3c-4b3b-48c5-9a7b-c0dd75339803",
+          "name": "rule Config Action Reset Rule Config Value",
+          "request": {
+            "name": "rule Config Action Reset Rule Config Value",
+            "description": {
+              "content": "Reset the specified rule configuration, which must already exist",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ruleConfig",
+                "action",
+                "resetRuleConfigValue",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e24392bd-bb6f-42f2-9a10-ef4c6c61daa7",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ruleConfig",
+                    "action",
+                    "resetRuleConfigValue",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0a78a92-64ac-4024-80bd-3dc2c607da8d",
+          "name": "rule Config Action Set Rule Config Value",
+          "request": {
+            "name": "rule Config Action Set Rule Config Value",
+            "description": {
+              "content": "Set the specified rule configuration, which must already exist",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ruleConfig",
+                "action",
+                "setRuleConfigValue",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "762e3728-3b3d-4454-95c8-d53cb1a2995b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ruleConfig",
+                    "action",
+                    "setRuleConfigValue",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd0b216a-ef06-4a28-8fac-cc29a8673ff3",
+          "name": "rule Config View All Rule Configs",
+          "request": {
+            "name": "rule Config View All Rule Configs",
+            "description": {
+              "content": "Show all of the rule configurations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ruleConfig",
+                "view",
+                "allRuleConfigs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c29e151c-08f3-4e5c-b5c0-3ef3f9f07b28",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ruleConfig",
+                    "view",
+                    "allRuleConfigs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c93b4d4d-8985-4135-934c-456424c97b95",
+          "name": "rule Config View Rule Config Value",
+          "request": {
+            "name": "rule Config View Rule Config Value",
+            "description": {
+              "content": "Show the specified rule configuration",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ruleConfig",
+                "view",
+                "ruleConfigValue",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "152f6c44-3a33-4204-8515-f0c150623fe3",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ruleConfig",
+                    "view",
+                    "ruleConfigValue",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "6ffeeb30-ec58-4b1b-8ad3-305c1d6aeccc",
+    "name": "ZAP accessControl ruleConfig API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

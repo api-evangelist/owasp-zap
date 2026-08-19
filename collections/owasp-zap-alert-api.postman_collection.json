@@ -1,0 +1,1535 @@
+{
+  "item": [
+    {
+      "id": "a4f3ce82-4b86-4ca5-8e34-c7172b6f3e20",
+      "name": "alert",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0698062a-1610-4492-948c-5cc1fccd3c86",
+          "name": "alert Action Add Alert",
+          "request": {
+            "name": "alert Action Add Alert",
+            "description": {
+              "content": "Add an alert associated with the given message ID, with the provided details. (The ID of the created alert is returned.)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "action",
+                "addAlert",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "messageId",
+                  "value": "<string>",
+                  "description": "(Required) The ID of the message to which the alert should be associated."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "riskId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric risk representation ('0 - Informational' through '3 - High')."
+                },
+                {
+                  "disabled": false,
+                  "key": "confidenceId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available])."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) The description to be set to the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "param",
+                  "value": "<string>",
+                  "description": "The name of the parameter applicable to the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "attack",
+                  "value": "<string>",
+                  "description": "The attack (ex: injected string) used by the scan rule."
+                },
+                {
+                  "disabled": false,
+                  "key": "otherInfo",
+                  "value": "<string>",
+                  "description": "Other information about the alert or test."
+                },
+                {
+                  "disabled": false,
+                  "key": "solution",
+                  "value": "<string>",
+                  "description": "The solution for the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "references",
+                  "value": "<string>",
+                  "description": "The reference details for the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<string>",
+                  "description": "The evidence associated with the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "cweId",
+                  "value": "<string>",
+                  "description": "The CWE identifier associated with the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "wascId",
+                  "value": "<string>",
+                  "description": "The WASC identifier associated with the alert."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0d815973-b276-491c-9d48-8f5229899bcb",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "action",
+                    "addAlert",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "messageId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "riskId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confidenceId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "param",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attack",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "otherInfo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "solution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "references",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidence",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cweId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wascId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "00f2e881-4501-4e8c-9088-24b014ec4966",
+          "name": "alert Action Delete Alert",
+          "request": {
+            "name": "alert Action Delete Alert",
+            "description": {
+              "content": "Deletes the alert with the given ID. ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "action",
+                "deleteAlert",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1030eaae-bf7e-4d78-95aa-253363186d92",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "action",
+                    "deleteAlert",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de942cb8-c22a-487a-8861-622d8aa63ac8",
+          "name": "alert Action Delete Alerts",
+          "request": {
+            "name": "alert Action Delete Alerts",
+            "description": {
+              "content": "Deletes all the alerts optionally filtered by URL which fall within the Context with the provided name, risk, or base URL.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "action",
+                "deleteAlerts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "The name of the Context for which the alerts should be deleted."
+                },
+                {
+                  "disabled": false,
+                  "key": "baseurl",
+                  "value": "<string>",
+                  "description": "The highest URL in the Sites tree under which alerts should be deleted."
+                },
+                {
+                  "disabled": false,
+                  "key": "riskId",
+                  "value": "<string>",
+                  "description": "The numeric risk representation ('0 - Informational' through '3 - High')."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ace1797-091f-4bba-b2bb-5d7ac114833e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "action",
+                    "deleteAlerts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "baseurl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "riskId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7bd280bb-148f-40f6-9002-09f3cf3c38f4",
+          "name": "alert Action Delete All Alerts",
+          "request": {
+            "name": "alert Action Delete All Alerts",
+            "description": {
+              "content": "Deletes all alerts of the current session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "action",
+                "deleteAllAlerts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7a9a4a4-4961-41d9-bf43-66dcea6a6964",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "action",
+                    "deleteAllAlerts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a49aa4d8-7517-4489-b121-4b341d04b603",
+          "name": "alert Action Update Alert",
+          "request": {
+            "name": "alert Action Update Alert",
+            "description": {
+              "content": "Update the alert with the given ID, with the provided details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "action",
+                "updateAlert",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) The ID of the alert to update."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "riskId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric risk representation ('0 - Informational' through '3 - High')."
+                },
+                {
+                  "disabled": false,
+                  "key": "confidenceId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available])."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) The description to be set to the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "param",
+                  "value": "<string>",
+                  "description": "The name of the parameter applicable to the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "attack",
+                  "value": "<string>",
+                  "description": "The attack (ex: injected string) used by the scan rule."
+                },
+                {
+                  "disabled": false,
+                  "key": "otherInfo",
+                  "value": "<string>",
+                  "description": "Other information about the alert or test."
+                },
+                {
+                  "disabled": false,
+                  "key": "solution",
+                  "value": "<string>",
+                  "description": "The solution for the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "references",
+                  "value": "<string>",
+                  "description": "The reference details for the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<string>",
+                  "description": "The evidence associated with the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "cweId",
+                  "value": "<string>",
+                  "description": "The CWE identifier associated with the alert."
+                },
+                {
+                  "disabled": false,
+                  "key": "wascId",
+                  "value": "<string>",
+                  "description": "The WASC identifier associated with the alert."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "026f3510-f858-4c39-ba8b-84e77d8e8070",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "action",
+                    "updateAlert",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "riskId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confidenceId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "param",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attack",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "otherInfo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "solution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "references",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidence",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cweId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "wascId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e36dfd76-4c1d-4301-8a7e-b356a7a3d17a",
+          "name": "alert Action Update Alerts Confidence",
+          "request": {
+            "name": "alert Action Update Alerts Confidence",
+            "description": {
+              "content": "Update the confidence of the alerts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "action",
+                "updateAlertsConfidence",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "(Required) The IDs of the alerts to update (comma separated values)."
+                },
+                {
+                  "disabled": false,
+                  "key": "confidenceId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available])."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "816ed35a-a26d-4871-9383-b5373bf4a992",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "action",
+                    "updateAlertsConfidence",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confidenceId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6abb8cc0-880f-4b63-9d28-e75db67b84fe",
+          "name": "alert Action Update Alerts Risk",
+          "request": {
+            "name": "alert Action Update Alerts Risk",
+            "description": {
+              "content": "Update the risk of the alerts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "action",
+                "updateAlertsRisk",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ids",
+                  "value": "<string>",
+                  "description": "(Required) The IDs of the alerts to update (comma separated values)."
+                },
+                {
+                  "disabled": false,
+                  "key": "riskId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric risk representation ('0 - Informational' through '3 - High')."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2991c81-1566-4f06-a133-d280ee85a1c9",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "action",
+                    "updateAlertsRisk",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "riskId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d69dd145-d6ea-4541-b5b0-40177115ff67",
+          "name": "alert View Alert",
+          "request": {
+            "name": "alert View Alert",
+            "description": {
+              "content": "Gets the alert with the given ID, the corresponding HTTP message can be obtained with the 'messageId' field and 'message' API method",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "view",
+                "alert",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "edbf1163-edb4-409e-8668-ece2793b6a11",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "view",
+                    "alert",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "914699ec-b9f1-4c17-b516-fe377b557829",
+          "name": "alert View Alert Counts By Risk",
+          "request": {
+            "name": "alert View Alert Counts By Risk",
+            "description": {
+              "content": "Gets a count of the alerts, optionally filtered as per alertsPerRisk",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "view",
+                "alertCountsByRisk",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "recurse",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3982106d-a9f2-47e1-851f-1a32c184ac78",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "view",
+                    "alertCountsByRisk",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "recurse",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "935f6e46-dec0-43d7-83f7-8eabc8e7db83",
+          "name": "alert View Alerts",
+          "request": {
+            "name": "alert View Alerts",
+            "description": {
+              "content": "Gets the alerts raised by ZAP, optionally filtering by URL or riskId, and paginating with 'start' position and 'count' of alerts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "view",
+                "alerts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "baseurl",
+                  "value": "<string>",
+                  "description": "The highest URL in the Sites tree under which alerts should be included."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "riskId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "Optionally, the Context name which the Alerts' URLs are associated with."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5223c7c2-7be8-4e2a-b095-6c82cb439be3",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "view",
+                    "alerts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "baseurl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "riskId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1266a6fa-f714-4a99-9d40-9905fac824a9",
+          "name": "alert View Alerts By Risk",
+          "request": {
+            "name": "alert View Alerts By Risk",
+            "description": {
+              "content": "Gets a summary of the alerts, optionally filtered by a 'url'. If 'recurse' is true then all alerts that apply to urls that start with the specified 'url' will be returned, otherwise only those on exactly the same 'url' (ignoring url parameters)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "view",
+                "alertsByRisk",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "recurse",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e7fe373a-00f8-4423-af51-cdd424781832",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "view",
+                    "alertsByRisk",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "recurse",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3156b915-6cb9-4af3-8dcf-06028e60763c",
+          "name": "alert View Alerts Summary",
+          "request": {
+            "name": "alert View Alerts Summary",
+            "description": {
+              "content": "Gets number of alerts grouped by each risk level, optionally filtering by URL",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "view",
+                "alertsSummary",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "baseurl",
+                  "value": "<string>",
+                  "description": "The highest URL in the Sites tree under which alerts should be included."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fafdcd21-796f-4a82-a9df-b95868d26edb",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "view",
+                    "alertsSummary",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "baseurl",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79dbb70b-a063-4f44-9a1e-5f426167c0fb",
+          "name": "alert View Number Of Alerts",
+          "request": {
+            "name": "alert View Number Of Alerts",
+            "description": {
+              "content": "Gets the number of alerts, optionally filtering by URL or riskId",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alert",
+                "view",
+                "numberOfAlerts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "baseurl",
+                  "value": "<string>",
+                  "description": "The highest URL in the Sites tree under which alerts should be included."
+                },
+                {
+                  "disabled": false,
+                  "key": "riskId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8647b793-9a9c-4810-91d1-46695f9f7378",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alert",
+                    "view",
+                    "numberOfAlerts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "baseurl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "riskId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "f4644fd2-9bd9-4202-b491-4ea50b71ff2d",
+    "name": "ZAP accessControl alert API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

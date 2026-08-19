@@ -1,0 +1,4427 @@
+{
+  "item": [
+    {
+      "id": "c9f34cf7-378f-4cf1-ab20-65807f384d35",
+      "name": "network",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a50733ec-65af-4c7a-9054-a0e659f1ed9a",
+          "name": "network Action Add Alias",
+          "request": {
+            "name": "network Action Add Alias",
+            "description": {
+              "content": "Adds an alias for the local servers/proxies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "addAlias",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the alias."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "08cf888f-278c-4897-bbe8-14b7526917a9",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "addAlias",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9450b99c-6e9f-4150-ad60-d0c0d21836ae",
+          "name": "network Action Add Http Proxy Exclusion",
+          "request": {
+            "name": "network Action Add Http Proxy Exclusion",
+            "description": {
+              "content": "Adds a host to be excluded from the HTTP proxy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "addHttpProxyExclusion",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "host",
+                  "value": "<string>",
+                  "description": "(Required) The value of the host, a regular expression."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb95391e-0064-4975-bb76-2644a6bf9b24",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "addHttpProxyExclusion",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "host",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53a1f451-8790-4811-8ea6-553a0166d168",
+          "name": "network Action Add Local Server",
+          "request": {
+            "name": "network Action Add Local Server",
+            "description": {
+              "content": "Adds a local server/proxy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "addLocalServer",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "(Required) The address of the local server/proxy."
+                },
+                {
+                  "disabled": false,
+                  "key": "port",
+                  "value": "<string>",
+                  "description": "(Required) The port of the local server/proxy."
+                },
+                {
+                  "disabled": false,
+                  "key": "api",
+                  "value": "<string>",
+                  "description": "If the ZAP API is available, true or false."
+                },
+                {
+                  "disabled": false,
+                  "key": "proxy",
+                  "value": "<string>",
+                  "description": "If the local server should proxy, true or false."
+                },
+                {
+                  "disabled": false,
+                  "key": "behindNat",
+                  "value": "<string>",
+                  "description": "If the local server is behind NAT, true or false."
+                },
+                {
+                  "disabled": false,
+                  "key": "decodeResponse",
+                  "value": "<string>",
+                  "description": "If the response should be decoded, true or false."
+                },
+                {
+                  "disabled": false,
+                  "key": "removeAcceptEncoding",
+                  "value": "<string>",
+                  "description": "If the request header Accept-Encoding should be removed, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "defe092a-f8aa-4cdb-ba6f-37e72ebc867c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "addLocalServer",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "port",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "proxy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "behindNat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "decodeResponse",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "removeAcceptEncoding",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe383063-a21e-4019-90c2-caa94a8ad1cb",
+          "name": "network Action Add Pass Through",
+          "request": {
+            "name": "network Action Add Pass Through",
+            "description": {
+              "content": "Adds an authority to pass-through the local proxies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "addPassThrough",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "authority",
+                  "value": "<string>",
+                  "description": "(Required) The value of the authority, can be a regular expression."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99dc9f2f-58c1-442b-abc8-495c28708d58",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "addPassThrough",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authority",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f5c744c-a152-45d6-a4f2-4413da248592",
+          "name": "network Action Add Pkcs12Client Certificate",
+          "request": {
+            "name": "network Action Add Pkcs12Client Certificate",
+            "description": {
+              "content": "Adds a client certificate contained in a PKCS#12 file, the certificate is automatically set as active and used.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "addPkcs12ClientCertificate",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filePath",
+                  "value": "<string>",
+                  "description": "(Required) The file path."
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "(Required) The password for the file."
+                },
+                {
+                  "disabled": false,
+                  "key": "index",
+                  "value": "<string>",
+                  "description": "The index of the certificate in the file, defaults to 0."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26e09286-9f7d-42cd-a131-965705b91c3a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "addPkcs12ClientCertificate",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filePath",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "index",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "caf3d754-a2bf-4bc2-a2ac-8564a1e55520",
+          "name": "network Action Add Rate Limit Rule",
+          "request": {
+            "name": "network Action Add Rate Limit Rule",
+            "description": {
+              "content": "Adds a rate limit rule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "addRateLimitRule",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) A description that allows you to identify the rule. Each rule must have a unique description."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                },
+                {
+                  "disabled": false,
+                  "key": "matchRegex",
+                  "value": "<string>",
+                  "description": "(Required) Regex used to match the host."
+                },
+                {
+                  "disabled": false,
+                  "key": "matchString",
+                  "value": "<string>",
+                  "description": "(Required) Plain string match is handled based on DNS conventions. If the string has one or two components."
+                },
+                {
+                  "disabled": false,
+                  "key": "requestsPerSecond",
+                  "value": "<string>",
+                  "description": "(Required) The maximum number of requests per second."
+                },
+                {
+                  "disabled": false,
+                  "key": "groupBy",
+                  "value": "<string>",
+                  "description": "(Required) How to group hosts when applying rate limiting: rule or host"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01d1e561-8993-488e-8e05-ba8e11878504",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "addRateLimitRule",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "matchRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "matchString",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "requestsPerSecond",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groupBy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2200fc0-63db-4797-b677-af1ed885ceaa",
+          "name": "network Action Generate Root Ca Cert",
+          "request": {
+            "name": "network Action Generate Root Ca Cert",
+            "description": {
+              "content": "Generates a new Root CA certificate, used to issue server certificates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "generateRootCaCert",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ac6f296-82af-44d8-bbc1-4df0e5919e6c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "generateRootCaCert",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f22c03be-dba2-4534-8b55-6d4d447837e1",
+          "name": "network Action Import Root Ca Cert",
+          "request": {
+            "name": "network Action Import Root Ca Cert",
+            "description": {
+              "content": "Imports a Root CA certificate to be used to issue server certificates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "importRootCaCert",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filePath",
+                  "value": "<string>",
+                  "description": "(Required) The file system path to the PEM file, containing the certificate and private key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d3001bc-ad32-4044-95b0-fc1d7f380629",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "importRootCaCert",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filePath",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27ca491d-9abc-4ed4-b24b-d39b44c083bd",
+          "name": "network Action Remove Alias",
+          "request": {
+            "name": "network Action Remove Alias",
+            "description": {
+              "content": "Removes an alias.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "removeAlias",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the alias."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d10a2aac-b0a3-4e1a-bbcf-a0aa0f8a5e80",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "removeAlias",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa96d121-2d32-481f-bb06-8c54e7eb6781",
+          "name": "network Action Remove Http Proxy Exclusion",
+          "request": {
+            "name": "network Action Remove Http Proxy Exclusion",
+            "description": {
+              "content": "Removes an HTTP proxy exclusion.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "removeHttpProxyExclusion",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "host",
+                  "value": "<string>",
+                  "description": "(Required) The value of the host."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90701fb4-e31e-4cc4-8045-d08ff63766a1",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "removeHttpProxyExclusion",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "host",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bf5a1a3-b08d-4837-b970-219cd51bb5d9",
+          "name": "network Action Remove Local Server",
+          "request": {
+            "name": "network Action Remove Local Server",
+            "description": {
+              "content": "Removes a local server/proxy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "removeLocalServer",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "(Required) The address of the local server/proxy."
+                },
+                {
+                  "disabled": false,
+                  "key": "port",
+                  "value": "<string>",
+                  "description": "(Required) The port of the local server/proxy."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2966f4e-e6a4-4fb9-8d87-8351dba19dcf",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "removeLocalServer",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "port",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5c21b012-93cf-4e00-81eb-8c8fa3df6449",
+          "name": "network Action Remove Pass Through",
+          "request": {
+            "name": "network Action Remove Pass Through",
+            "description": {
+              "content": "Removes a pass-through.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "removePassThrough",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "authority",
+                  "value": "<string>",
+                  "description": "(Required) The value of the authority."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57f811dd-0ee4-43a5-a356-96cf330d9e04",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "removePassThrough",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authority",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8cef894-fd46-44bf-b5e5-3596c9690f2e",
+          "name": "network Action Remove Rate Limit Rule",
+          "request": {
+            "name": "network Action Remove Rate Limit Rule",
+            "description": {
+              "content": "Remove a rate limit rule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "removeRateLimitRule",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) The description of the rule to remove."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b5f4470-a016-4a14-9448-b98411165610",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "removeRateLimitRule",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e13a649d-29da-4a8d-bfe3-542289134680",
+          "name": "network Action Set Alias Enabled",
+          "request": {
+            "name": "network Action Set Alias Enabled",
+            "description": {
+              "content": "Sets whether or not an alias is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setAliasEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the alias."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec6f11db-99b9-42a7-8d04-ef5ce8b0d5c6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setAliasEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ee67c07-b3d7-43a4-93c4-69778ff0b257",
+          "name": "network Action Set Connection Timeout",
+          "request": {
+            "name": "network Action Set Connection Timeout",
+            "description": {
+              "content": "Sets the timeout, for reads and connects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setConnectionTimeout",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "timeout",
+                  "value": "<string>",
+                  "description": "(Required) The timeout, in seconds."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4f3bac6-270a-4d3f-860d-e9e1e796082d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setConnectionTimeout",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "timeout",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a1c3d23-4fcc-46a9-a349-b73ffe5a62cd",
+          "name": "network Action Set Default User Agent",
+          "request": {
+            "name": "network Action Set Default User Agent",
+            "description": {
+              "content": "Sets the default user-agent.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setDefaultUserAgent",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "userAgent",
+                  "value": "<string>",
+                  "description": "(Required) The default user-agent."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a341ad20-b048-42f1-a2cf-56cad0ff88c6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setDefaultUserAgent",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "userAgent",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d597d9b-f65a-496e-af3d-6f56fc6837cd",
+          "name": "network Action Set Dns Ttl Successful Queries",
+          "request": {
+            "name": "network Action Set Dns Ttl Successful Queries",
+            "description": {
+              "content": "Sets the TTL of successful DNS queries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setDnsTtlSuccessfulQueries",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ttl",
+                  "value": "<string>",
+                  "description": "(Required) The TTL, in seconds. Negative number, cache forever. Zero, disables caching. Positive number, the number of seconds the successful DNS queries will be cached."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44a38606-a797-404f-9ca1-c0660567f6ba",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setDnsTtlSuccessfulQueries",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ttl",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25b79b58-4270-4826-8516-1c35a69891ac",
+          "name": "network Action Set Http Proxy",
+          "request": {
+            "name": "network Action Set Http Proxy",
+            "description": {
+              "content": "Sets the HTTP proxy configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setHttpProxy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "host",
+                  "value": "<string>",
+                  "description": "(Required) The host, name or address."
+                },
+                {
+                  "disabled": false,
+                  "key": "port",
+                  "value": "<string>",
+                  "description": "(Required) The port."
+                },
+                {
+                  "disabled": false,
+                  "key": "realm",
+                  "value": "<string>",
+                  "description": "The authentication realm."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "The user name."
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "The password."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a28ea93-09ca-4866-b8b8-3a2a28a548d7",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setHttpProxy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "host",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "port",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "realm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4da57363-c0f1-42c4-89ac-a2b55e49a8da",
+          "name": "network Action Set Http Proxy Auth Enabled",
+          "request": {
+            "name": "network Action Set Http Proxy Auth Enabled",
+            "description": {
+              "content": "Sets whether or not the HTTP proxy authentication is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setHttpProxyAuthEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9642852-37ec-4021-8ebe-435246626fc4",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setHttpProxyAuthEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fc12984-2591-46a1-9641-574e3ed5f5e3",
+          "name": "network Action Set Http Proxy Enabled",
+          "request": {
+            "name": "network Action Set Http Proxy Enabled",
+            "description": {
+              "content": "Sets whether or not the HTTP proxy is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setHttpProxyEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7b18edf-8c89-459a-8413-87a9022568e9",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setHttpProxyEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6dbe793-af85-44ca-b1b3-c2739e846712",
+          "name": "network Action Set Http Proxy Exclusion Enabled",
+          "request": {
+            "name": "network Action Set Http Proxy Exclusion Enabled",
+            "description": {
+              "content": "Sets whether or not an HTTP proxy exclusion is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setHttpProxyExclusionEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "host",
+                  "value": "<string>",
+                  "description": "(Required) The value of the host."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8181f569-50e8-4e54-b34a-38a83d23e3be",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setHttpProxyExclusionEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "host",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29b40245-605a-4f03-954a-4cb492ecfc62",
+          "name": "network Action Set Pass Through Enabled",
+          "request": {
+            "name": "network Action Set Pass Through Enabled",
+            "description": {
+              "content": "Sets whether or not a pass-through is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setPassThroughEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "authority",
+                  "value": "<string>",
+                  "description": "(Required) The value of the authority."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56249b73-e6e3-47f2-b3b5-856d7da28d6d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setPassThroughEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authority",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99ecd23d-8514-4e2f-9e70-a4c64bc6f598",
+          "name": "network Action Set Rate Limit Rule Enabled",
+          "request": {
+            "name": "network Action Set Rate Limit Rule Enabled",
+            "description": {
+              "content": "Set enabled state for a rate limit rule.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setRateLimitRuleEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) The description of the rule to modify."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bbe0881a-f29d-4b50-83f0-807cffc10d9f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setRateLimitRuleEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35e2822f-d272-41ad-b90c-abdfd8d958a5",
+          "name": "network Action Set Root Ca Cert Validity",
+          "request": {
+            "name": "network Action Set Root Ca Cert Validity",
+            "description": {
+              "content": "Sets the Root CA certificate validity. Used when generating a new Root CA certificate.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setRootCaCertValidity",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "validity",
+                  "value": "<string>",
+                  "description": "(Required) The number of days that the generated Root CA certificate will be valid for."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a44f176-759e-4d0f-b0d1-3e60bab0c010",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setRootCaCertValidity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "validity",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "877c85dd-d99a-4edd-94e1-7fdf455ee62b",
+          "name": "network Action Set Server Cert Validity",
+          "request": {
+            "name": "network Action Set Server Cert Validity",
+            "description": {
+              "content": "Sets the server certificate validity. Used when generating server certificates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setServerCertValidity",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "validity",
+                  "value": "<string>",
+                  "description": "(Required) The number of days that the generated server certificates will be valid for."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31feb4d3-c47f-4c2c-bbd7-a0a58b6b747b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setServerCertValidity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "validity",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e06fe6a-77d7-4802-87c2-7228daa4e481",
+          "name": "network Action Set Socks Proxy",
+          "request": {
+            "name": "network Action Set Socks Proxy",
+            "description": {
+              "content": "Sets the SOCKS proxy configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setSocksProxy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "host",
+                  "value": "<string>",
+                  "description": "(Required) The host, name or address."
+                },
+                {
+                  "disabled": false,
+                  "key": "port",
+                  "value": "<string>",
+                  "description": "(Required) The port."
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "The SOCKS version."
+                },
+                {
+                  "disabled": false,
+                  "key": "useDns",
+                  "value": "<string>",
+                  "description": "If the names should be resolved by the SOCKS proxy, true or false."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "The user name."
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "The password."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "561c82cd-79d8-4214-9e02-08f68a1440f1",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setSocksProxy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "host",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "port",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "useDns",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3701a4a-c04c-42fb-b23f-8638388c1853",
+          "name": "network Action Set Socks Proxy Enabled",
+          "request": {
+            "name": "network Action Set Socks Proxy Enabled",
+            "description": {
+              "content": "Sets whether or not the SOCKS proxy is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setSocksProxyEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "000e210b-776b-4924-a95f-5f286e972e91",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setSocksProxyEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35d386f1-d755-4d83-b23d-ec5a3a9be4da",
+          "name": "network Action Set Use Client Certificate",
+          "request": {
+            "name": "network Action Set Use Client Certificate",
+            "description": {
+              "content": "Sets whether or not to use the active client certificate.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setUseClientCertificate",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "use",
+                  "value": "<string>",
+                  "description": "(Required) The use state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82be0d08-b16f-47dc-b48d-a4d9898adcce",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setUseClientCertificate",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "use",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e865d1cf-d4d0-46ec-8647-d17348af6533",
+          "name": "network Action Set Use Global Http State",
+          "request": {
+            "name": "network Action Set Use Global Http State",
+            "description": {
+              "content": "Sets whether or not to use the global HTTP state.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "action",
+                "setUseGlobalHttpState",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "use",
+                  "value": "<string>",
+                  "description": "(Required) The use state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "86146190-88cb-484f-9f97-09c80b746464",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "action",
+                    "setUseGlobalHttpState",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "use",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2203cab4-d230-4731-b2b3-7b848fd0b6fc",
+          "name": "network Other Proxy.pac",
+          "request": {
+            "name": "network Other Proxy.pac",
+            "description": {
+              "content": "Provides a PAC file, proxying through the main proxy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "OTHER",
+                "network",
+                "other",
+                "proxy.pac",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d69b956-ce46-411f-a817-43781cd4b77b",
+              "name": "Error of OTHER endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OTHER",
+                    "network",
+                    "other",
+                    "proxy.pac",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e5298e4-e26b-41cd-8c37-0116b2255166",
+          "name": "network Other Root Ca Cert",
+          "request": {
+            "name": "network Other Root Ca Cert",
+            "description": {
+              "content": "Gets the Root CA certificate used to issue server certificates. Suitable to import into client applications (e.g. browsers).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "OTHER",
+                "network",
+                "other",
+                "rootCaCert",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ce864e4b-0321-49cc-a492-e825a86b4ac5",
+              "name": "Error of OTHER endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OTHER",
+                    "network",
+                    "other",
+                    "rootCaCert",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e06de605-5df6-44dd-9951-c92397d5aa50",
+          "name": "network Other Set Proxy",
+          "request": {
+            "name": "network Other Set Proxy",
+            "description": {
+              "content": "Sets the HTTP proxy configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "OTHER",
+                "network",
+                "other",
+                "setProxy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "proxy",
+                  "value": "<string>",
+                  "description": "(Required) The JSON object containing the HTTP proxy configuration."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e0517df-80b4-4040-b0ff-6f04f74907f0",
+              "name": "Error of OTHER endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OTHER",
+                    "network",
+                    "other",
+                    "setProxy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "proxy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "490ab02f-a28b-4ae0-9b79-0bd36ba2833d",
+          "name": "network View Get Aliases",
+          "request": {
+            "name": "network View Get Aliases",
+            "description": {
+              "content": "Gets the aliases used to identify the local servers/proxies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getAliases",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f363dade-75ad-499a-9bbc-5a08be720dbe",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getAliases",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cb2a6e2-31e4-4f3e-bace-4628240fb0d6",
+          "name": "network View Get Connection Timeout",
+          "request": {
+            "name": "network View Get Connection Timeout",
+            "description": {
+              "content": "Gets the connection timeout, in seconds.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getConnectionTimeout",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1eba65d8-4b8e-43dd-b2c2-ee56a1c06692",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getConnectionTimeout",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66283fce-7763-4fc8-a121-cc18f5d2858e",
+          "name": "network View Get Default User Agent",
+          "request": {
+            "name": "network View Get Default User Agent",
+            "description": {
+              "content": "Gets the default user-agent.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getDefaultUserAgent",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9bdb6cc-06f4-4e43-85a9-7a88e93ede43",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getDefaultUserAgent",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94c8d986-0c07-4a8a-80e5-9d8f07ea08ab",
+          "name": "network View Get Dns Ttl Successful Queries",
+          "request": {
+            "name": "network View Get Dns Ttl Successful Queries",
+            "description": {
+              "content": "Gets the TTL (in seconds) of successful DNS queries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getDnsTtlSuccessfulQueries",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "69b0bc29-588b-4cb1-87f5-86720ffb6e4d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getDnsTtlSuccessfulQueries",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e383a38c-9d7c-4499-a675-b9da79829c77",
+          "name": "network View Get Http Proxy",
+          "request": {
+            "name": "network View Get Http Proxy",
+            "description": {
+              "content": "Gets the HTTP proxy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getHttpProxy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32c358c9-7a7a-40d2-bf21-a63f86b657ec",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getHttpProxy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6920ffcd-e4b4-48af-a75c-aaeb16e9b5b8",
+          "name": "network View Get Http Proxy Exclusions",
+          "request": {
+            "name": "network View Get Http Proxy Exclusions",
+            "description": {
+              "content": "Gets the HTTP proxy exclusions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getHttpProxyExclusions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3902caa8-2095-4273-a7ab-e107d6b06efa",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getHttpProxyExclusions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbaa2c5a-0245-4b27-bbe9-dd87c03a33fd",
+          "name": "network View Get Local Servers",
+          "request": {
+            "name": "network View Get Local Servers",
+            "description": {
+              "content": "Gets the local servers/proxies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getLocalServers",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1cea2de0-23d8-41e3-bf86-58767f49be8a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getLocalServers",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83d160f9-b0f1-4ead-a8f9-0f6b51389ef8",
+          "name": "network View Get Pass Throughs",
+          "request": {
+            "name": "network View Get Pass Throughs",
+            "description": {
+              "content": "Gets the authorities that will pass-through the local proxies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getPassThroughs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c5cdec1-a570-442f-b9f3-99e8e99a0e9a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getPassThroughs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d43db710-44f8-4399-9e78-3ca2df441b15",
+          "name": "network View Get Rate Limit Rules",
+          "request": {
+            "name": "network View Get Rate Limit Rules",
+            "description": {
+              "content": "List of rate limit rules.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getRateLimitRules",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "611333f5-d419-4ded-a510-c5aa76be4c5b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getRateLimitRules",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7d90c8d-d383-4516-86cd-eca63349eadf",
+          "name": "network View Get Root Ca Cert Validity",
+          "request": {
+            "name": "network View Get Root Ca Cert Validity",
+            "description": {
+              "content": "Gets the Root CA certificate validity, in days. Used when generating a new Root CA certificate.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getRootCaCertValidity",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68438695-e336-429e-9234-3fe0b9f2ef1c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getRootCaCertValidity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01812dda-0533-4588-8080-3f918417e600",
+          "name": "network View Get Server Cert Validity",
+          "request": {
+            "name": "network View Get Server Cert Validity",
+            "description": {
+              "content": "Gets the server certificate validity, in days. Used when generating server certificates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getServerCertValidity",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fcf804cd-c3a2-48ce-9f8c-1956d0518f10",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getServerCertValidity",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e06a9532-6e6d-4034-9c22-c71ea09c5fdf",
+          "name": "network View Get Socks Proxy",
+          "request": {
+            "name": "network View Get Socks Proxy",
+            "description": {
+              "content": "Gets the SOCKS proxy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "getSocksProxy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e21bb511-565b-441e-9d15-c3369506a16c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "getSocksProxy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b287d3c0-679e-4837-9588-e8cf65da1351",
+          "name": "network View Is Http Proxy Auth Enabled",
+          "request": {
+            "name": "network View Is Http Proxy Auth Enabled",
+            "description": {
+              "content": "Tells whether or not the HTTP proxy authentication is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "isHttpProxyAuthEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c5aee2b8-cf67-4115-90a1-22e2bf0436bc",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "isHttpProxyAuthEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e9e1c3e-4590-48db-b526-1d15d8867fea",
+          "name": "network View Is Http Proxy Enabled",
+          "request": {
+            "name": "network View Is Http Proxy Enabled",
+            "description": {
+              "content": "Tells whether or not the HTTP proxy is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "isHttpProxyEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0a59a3a-2c20-46b3-8b82-7a4c6e432d8a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "isHttpProxyEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03b23c71-1bfd-417d-b1cf-be6060a7ad9c",
+          "name": "network View Is Socks Proxy Enabled",
+          "request": {
+            "name": "network View Is Socks Proxy Enabled",
+            "description": {
+              "content": "Tells whether or not the SOCKS proxy is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "isSocksProxyEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "832518cc-7af8-41de-8f85-d7768cefdba6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "isSocksProxyEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17f61981-da36-4a61-8a27-41ba87b6a337",
+          "name": "network View Is Use Global Http State",
+          "request": {
+            "name": "network View Is Use Global Http State",
+            "description": {
+              "content": "Tells whether or not to use global HTTP state.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "network",
+                "view",
+                "isUseGlobalHttpState",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25bfe48e-951e-4f8b-a1f2-357a193b0317",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "network",
+                    "view",
+                    "isUseGlobalHttpState",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "b64b1ee7-905b-4ccf-89e0-1c7f1d8de8fe",
+    "name": "ZAP accessControl network API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

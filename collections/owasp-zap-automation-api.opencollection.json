@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl automation API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "automation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "automationActionEndDelayJob",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/automation/action/endDelayJob/"
+          }
+        },
+        {
+          "info": {
+            "name": "automationActionRunPlan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/automation/action/runPlan/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "automationViewPlanProgress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/automation/view/planProgress/",
+            "params": [
+              {
+                "name": "planId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

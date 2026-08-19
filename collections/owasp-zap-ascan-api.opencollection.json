@@ -1,0 +1,1507 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl ascan API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ascan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ascanActionAddExcludedParam",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/addExcludedParam/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a new parameter excluded from the scan, using the specified name. Optionally sets if the new entry applies to a specific URL (default, all URLs) and sets the ID of the type of the parameter (default, ID of any type). The type IDs can be obtained with the view excludedParamTypes. "
+        },
+        {
+          "info": {
+            "name": "ascanActionAddScanPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/addScanPolicy/",
+            "params": [
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "alertThreshold",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "attackStrength",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionClearExcludedFromScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/clearExcludedFromScan/"
+          },
+          "docs": "Clears the regexes of URLs excluded from the active scans."
+        },
+        {
+          "info": {
+            "name": "ascanActionDisableAllScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/disableAllScanners/",
+            "params": [
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Disables all scan rules of the scan policy with the given name, or the default if none given."
+        },
+        {
+          "info": {
+            "name": "ascanActionDisableScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/disableScanners/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Disables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given name, or the default if none given."
+        },
+        {
+          "info": {
+            "name": "ascanActionEnableAllScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/enableAllScanners/",
+            "params": [
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enables all scan rules of the scan policy with the given name, or the default if none given."
+        },
+        {
+          "info": {
+            "name": "ascanActionEnableScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/enableScanners/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enables the scan rules with the given IDs (comma separated list of IDs) of the scan policy with the given name, or the default if none given."
+        },
+        {
+          "info": {
+            "name": "ascanActionExcludeFromScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/excludeFromScan/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a regex of URLs that should be excluded from the active scans."
+        },
+        {
+          "info": {
+            "name": "ascanActionImportScanPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/importScanPolicy/",
+            "params": [
+              {
+                "name": "path",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Imports a Scan Policy using the given file system path."
+        },
+        {
+          "info": {
+            "name": "ascanActionModifyExcludedParam",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/modifyExcludedParam/",
+            "params": [
+              {
+                "name": "idx",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Modifies a parameter excluded from the scan. Allows to modify the name, the URL and the type of parameter. The parameter is selected with its index, which can be obtained with the view excludedParams."
+        },
+        {
+          "info": {
+            "name": "ascanActionPause",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/pause/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionPauseAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/pauseAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionRemoveAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/removeAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionRemoveExcludedParam",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/removeExcludedParam/",
+            "params": [
+              {
+                "name": "idx",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes a parameter excluded from the scan, with the given index. The index can be obtained with the view excludedParams."
+        },
+        {
+          "info": {
+            "name": "ascanActionRemoveScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/removeScan/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionRemoveScanPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/removeScanPolicy/",
+            "params": [
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionResume",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/resume/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionResumeAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/resumeAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/scan/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "recurse",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "inScopeOnly",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "method",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "postData",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Runs the active scanner against the given URL or Context. Optionally, the 'recurse' parameter can be used to scan URLs under the given URL, the parameter 'inScopeOnly' can be used to constrain the scan to URLs that are in scope (ignored if a Context is specified), the parameter 'scanPolicyName' allows to specify the scan policy (if none is given it uses the default scan policy), the parameters 'method' and 'postData' allow to select a given request in conjunction with the given URL."
+        },
+        {
+          "info": {
+            "name": "ascanActionScanAsUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/scanAsUser/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "recurse",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "method",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "postData",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Active Scans from the perspective of a User, obtained using the given Context ID and User ID. See 'scan' action for more details."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetEnabledPolicies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setEnabledPolicies/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionAddQueryParam",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionAddQueryParam/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not the active scanner should add a query param to GET requests which do not have parameters to start with."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionAllowAttackOnStart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionAllowAttackOnStart/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionAttackPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionAttackPolicy/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionDefaultPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionDefaultPolicy/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionDelayInMs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionDelayInMs/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This option has been superseded. Use the API rate limit endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionEncodeCookieValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionEncodeCookieValues/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not the active scanner should encode cookie values."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionHandleAntiCSRFTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionHandleAntiCSRFTokens/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionHostPerScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionHostPerScan/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionInjectPluginIdInHeader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionInjectPluginIdInHeader/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID of the scan rule that's sending the requests."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionMaxAlertsPerRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionMaxAlertsPerRule/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The maximum alerts."
+              }
+            ]
+          },
+          "docs": "Sets the maximum number of alerts that a rule can raise before being skipped."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionMaxChartTimeInMins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionMaxChartTimeInMins/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionMaxResultsToList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionMaxResultsToList/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionMaxRuleDurationInMins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionMaxRuleDurationInMins/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionMaxScanDurationInMins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionMaxScanDurationInMins/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionMaxScansInUI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionMaxScansInUI/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionPromptInAttackMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionPromptInAttackMode/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionPromptToClearFinishedScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionPromptToClearFinishedScans/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionRescanInAttackMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionRescanInAttackMode/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionScanHeadersAllRequests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionScanHeadersAllRequests/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters, through the query or request body."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionScanNullJsonValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionScanNullJsonValues/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "true to scan null values, false otherwise."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the active scanner should scan null JSON values."
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionShowAdvancedDialog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionShowAdvancedDialog/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionTargetParamsEnabledRPC",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionTargetParamsEnabledRPC/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionTargetParamsInjectable",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionTargetParamsInjectable/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetOptionThreadPerHost",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setOptionThreadPerHost/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetPolicyAlertThreshold",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setPolicyAlertThreshold/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "alertThreshold",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetPolicyAttackStrength",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setPolicyAttackStrength/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "attackStrength",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetScannerAlertThreshold",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setScannerAlertThreshold/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "alertThreshold",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSetScannerAttackStrength",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/setScannerAttackStrength/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "attackStrength",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionSkipScanner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/skipScanner/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scannerId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Skips the scan rule using the given IDs of the scan and the scan rule."
+        },
+        {
+          "info": {
+            "name": "ascanActionStop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/stop/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionStopAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/stopAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanActionUpdateScanPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/action/updateScanPolicy/",
+            "params": [
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "alertThreshold",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "attackStrength",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewAlertsIds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/alertsIds/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the IDs of the alerts raised during the scan with the given ID. An alert can be obtained with 'alert' core view."
+        },
+        {
+          "info": {
+            "name": "ascanViewAttackModeQueue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/attackModeQueue/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewExcludedFromScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/excludedFromScan/"
+          },
+          "docs": "Gets the regexes of URLs excluded from the active scans."
+        },
+        {
+          "info": {
+            "name": "ascanViewExcludedParamTypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/excludedParamTypes/"
+          },
+          "docs": "Gets all the types of excluded parameters. For each type the following are shown: the ID and the name."
+        },
+        {
+          "info": {
+            "name": "ascanViewExcludedParams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/excludedParams/"
+          },
+          "docs": "Gets all the parameters that are excluded. For each parameter the following are shown: the name, the URL, and the parameter type."
+        },
+        {
+          "info": {
+            "name": "ascanViewMessagesIds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/messagesIds/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the IDs of the messages sent during the scan with the given ID. A message can be obtained with 'message' core view."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionAddQueryParam",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionAddQueryParam/"
+          },
+          "docs": "Tells whether or not the active scanner should add a query parameter to GET request that don't have parameters to start with."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionAllowAttackOnStart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionAllowAttackOnStart/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionAttackPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionAttackPolicy/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionDefaultPolicy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionDefaultPolicy/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionDelayInMs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionDelayInMs/"
+          },
+          "docs": "This option has been superseded. Use the API rate limit endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionEncodeCookieValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionEncodeCookieValues/"
+          },
+          "docs": "Tells whether or not the active scanner should encode cookie values."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionExcludedParamList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionExcludedParamList/"
+          },
+          "docs": "Use view excludedParams instead."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionHandleAntiCSRFTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionHandleAntiCSRFTokens/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionHostPerScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionHostPerScan/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionInjectPluginIdInHeader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionInjectPluginIdInHeader/"
+          },
+          "docs": "Tells whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID of the scan rule that's sending the requests."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionMaxAlertsPerRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionMaxAlertsPerRule/"
+          },
+          "docs": "Gets the maximum number of alerts that a rule can raise before being skipped."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionMaxChartTimeInMins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionMaxChartTimeInMins/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionMaxResultsToList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionMaxResultsToList/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionMaxRuleDurationInMins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionMaxRuleDurationInMins/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionMaxScanDurationInMins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionMaxScanDurationInMins/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionMaxScansInUI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionMaxScansInUI/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionPromptInAttackMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionPromptInAttackMode/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionPromptToClearFinishedScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionPromptToClearFinishedScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionRescanInAttackMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionRescanInAttackMode/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionScanHeadersAllRequests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionScanHeadersAllRequests/"
+          },
+          "docs": "Tells whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters, through the query or request body."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionScanNullJsonValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionScanNullJsonValues/"
+          },
+          "docs": "Tells whether or not the active scanner should scan null JSON values."
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionShowAdvancedDialog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionShowAdvancedDialog/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionTargetParamsEnabledRPC",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionTargetParamsEnabledRPC/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionTargetParamsInjectable",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionTargetParamsInjectable/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewOptionThreadPerHost",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/optionThreadPerHost/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewPolicies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/policies/",
+            "params": [
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewScanPolicyNames",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/scanPolicyNames/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewScanProgress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/scanProgress/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/scanners/",
+            "params": [
+              {
+                "name": "scanPolicyName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "policyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the scan rules, optionally, of the given scan policy or scanner policy/category ID."
+        },
+        {
+          "info": {
+            "name": "ascanViewScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/scans/"
+          }
+        },
+        {
+          "info": {
+            "name": "ascanViewStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ascan/view/status/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,203 @@
+{
+  "item": [
+    {
+      "id": "ee3badb1-632c-4be3-8c74-84b4c3d4f04c",
+      "name": "reveal",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c2d3a732-3ac4-42cd-a5e5-60ea12b36e54",
+          "name": "reveal Action Set Reveal",
+          "request": {
+            "name": "reveal Action Set Reveal",
+            "description": {
+              "content": "Sets if shows hidden fields and enables disabled fields",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "reveal",
+                "action",
+                "setReveal",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reveal",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91dce977-fb5b-4a50-8d01-e4e0b57e5c43",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "reveal",
+                    "action",
+                    "setReveal",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reveal",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c8b3287-113a-4ab4-9bfa-d046875e4964",
+          "name": "reveal View Reveal",
+          "request": {
+            "name": "reveal View Reveal",
+            "description": {
+              "content": "Tells if shows hidden fields and enables disabled fields",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "reveal",
+                "view",
+                "reveal",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1f9d5c18-7738-4606-ae7b-5be628279a32",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "reveal",
+                    "view",
+                    "reveal",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "10d5e0cc-525c-41e5-b94a-8ea32af80d8d",
+    "name": "ZAP accessControl reveal API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

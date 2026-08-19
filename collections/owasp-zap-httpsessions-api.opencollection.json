@@ -1,0 +1,357 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl httpSessions API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "httpSessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "httpSessionsActionAddDefaultSessionToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/addDefaultSessionToken/",
+            "params": [
+              {
+                "name": "sessionToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tokenEnabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a default session token with the given name and enabled state."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionAddSessionToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/addSessionToken/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sessionToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds the session token to the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionCreateEmptySession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/createEmptySession/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Creates an empty session for the given site. Optionally with the given name."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionRemoveDefaultSessionToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/removeDefaultSessionToken/",
+            "params": [
+              {
+                "name": "sessionToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes the default session token with the given name."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionRemoveSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/removeSession/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes the session from the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionRemoveSessionToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/removeSessionToken/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sessionToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes the session token from the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionRenameSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/renameSession/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "oldSessionName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "newSessionName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Renames the session of the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionSetActiveSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/setActiveSession/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the given session as active for the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionSetDefaultSessionTokenEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/setDefaultSessionTokenEnabled/",
+            "params": [
+              {
+                "name": "sessionToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tokenEnabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not the default session token with the given name is enabled."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionSetSessionTokenValue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/setSessionTokenValue/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sessionToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tokenValue",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the value of the session token of the given session for the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsActionUnsetActiveSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/action/unsetActiveSession/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Unsets the active session of the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsViewActiveSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/view/activeSession/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the name of the active session for the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsViewDefaultSessionTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/view/defaultSessionTokens/"
+          },
+          "docs": "Gets the default session tokens."
+        },
+        {
+          "info": {
+            "name": "httpSessionsViewSessionTokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/view/sessionTokens/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the names of the session tokens for the given site."
+        },
+        {
+          "info": {
+            "name": "httpSessionsViewSessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/view/sessions/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "session",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the sessions for the given site. Optionally returning just the session with the given name."
+        },
+        {
+          "info": {
+            "name": "httpSessionsViewSites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/httpSessions/view/sites/"
+          },
+          "docs": "Gets all of the sites that have sessions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

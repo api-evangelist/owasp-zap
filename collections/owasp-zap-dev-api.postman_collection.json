@@ -1,0 +1,113 @@
+{
+  "item": [
+    {
+      "id": "9244ca64-12bb-487e-a4d3-1ec274690b5d",
+      "name": "dev",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "097b5ef1-b80a-448e-9087-31ad04342ec2",
+          "name": "dev Other Openapi",
+          "request": {
+            "name": "dev Other Openapi",
+            "description": {
+              "content": "Provides the OpenAPI definition of the ZAP API, in YAML format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "OTHER",
+                "dev",
+                "other",
+                "openapi",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d700fd2b-3f43-496e-900f-73b565d31644",
+              "name": "Error of OTHER endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OTHER",
+                    "dev",
+                    "other",
+                    "openapi",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "880aabd3-94a1-455e-bba9-f2baa30087a9",
+    "name": "ZAP accessControl dev API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

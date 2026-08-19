@@ -1,0 +1,1491 @@
+{
+  "item": [
+    {
+      "id": "923c5248-662d-4842-917e-f2add189bd8b",
+      "name": "alertFilter",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fb5a75d9-5be3-47b0-a51f-50f8b0f12117",
+          "name": "alert Filter Action Add Alert Filter",
+          "request": {
+            "name": "alert Filter Action Add Alert Filter",
+            "description": {
+              "content": "Adds a new alert filter for the context with the given ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "addAlertFilter",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric ID of the context for which the filter should be added."
+                },
+                {
+                  "disabled": false,
+                  "key": "ruleId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric ID of the rule for which the filter should apply."
+                },
+                {
+                  "disabled": false,
+                  "key": "newLevel",
+                  "value": "<string>",
+                  "description": "(Required) The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The URL for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "urlIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the URL is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameter",
+                  "value": "<string>",
+                  "description": "The parameter name for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the filter should be enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameterIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the parameter name is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "attack",
+                  "value": "<string>",
+                  "description": "The attack value for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "attackIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the attack value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<string>",
+                  "description": "The evidence value for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidenceIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the evidence value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "methods",
+                  "value": "<string>",
+                  "description": "The HTTP methods (comma separated) for which the filter should apply."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "978c8ed6-c7dd-4530-9ef0-c14c00445611",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "addAlertFilter",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ruleId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "newLevel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "urlIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameterIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attack",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attackIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidence",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidenceIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "methods",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf27cb90-fe03-4ee5-a536-1af51c61121b",
+          "name": "alert Filter Action Add Global Alert Filter",
+          "request": {
+            "name": "alert Filter Action Add Global Alert Filter",
+            "description": {
+              "content": "Adds a new global alert filter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "addGlobalAlertFilter",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ruleId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric ID of the rule for which the filter should apply."
+                },
+                {
+                  "disabled": false,
+                  "key": "newLevel",
+                  "value": "<string>",
+                  "description": "(Required) The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The URL for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "urlIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the URL is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameter",
+                  "value": "<string>",
+                  "description": "The parameter name for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the filter should be enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameterIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the parameter name is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "attack",
+                  "value": "<string>",
+                  "description": "The attack value for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "attackIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the attack value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<string>",
+                  "description": "The evidence value for which the filter should apply (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidenceIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the evidence value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "methods",
+                  "value": "<string>",
+                  "description": "The HTTP methods (comma separated) for which the filter should apply."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0109be96-b3ed-45f4-8cb9-b640c69acac3",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "addGlobalAlertFilter",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ruleId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "newLevel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "urlIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameterIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attack",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attackIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidence",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidenceIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "methods",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73d816c3-309c-4708-8d56-fba30af97791",
+          "name": "alert Filter Action Apply All",
+          "request": {
+            "name": "alert Filter Action Apply All",
+            "description": {
+              "content": "Applies all currently enabled Global and Context alert filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "applyAll",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36274b07-026b-4eae-a692-320adeb79565",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "applyAll",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0e891fb-9b26-4ed2-86f2-1ed5df6060bc",
+          "name": "alert Filter Action Apply Context",
+          "request": {
+            "name": "alert Filter Action Apply Context",
+            "description": {
+              "content": "Applies all currently enabled Context alert filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "applyContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9874b026-54bf-424c-a252-5cf56a644309",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "applyContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45f8a275-68e6-4b8d-b267-154470bb39e9",
+          "name": "alert Filter Action Apply Global",
+          "request": {
+            "name": "alert Filter Action Apply Global",
+            "description": {
+              "content": "Applies all currently enabled Global alert filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "applyGlobal",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "02c23151-9d8d-49fa-8726-fbd164ef8f26",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "applyGlobal",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5dea1f83-eb63-4b33-a0f5-65ae12c58d26",
+          "name": "alert Filter Action Remove Alert Filter",
+          "request": {
+            "name": "alert Filter Action Remove Alert Filter",
+            "description": {
+              "content": "Removes an alert filter from the context with the given ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "removeAlertFilter",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric ID of the context for which the filter should be removed."
+                },
+                {
+                  "disabled": false,
+                  "key": "ruleId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric ID of the rule for which the filter applies."
+                },
+                {
+                  "disabled": false,
+                  "key": "newLevel",
+                  "value": "<string>",
+                  "description": "(Required) The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The URL for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "urlIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the URL is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameter",
+                  "value": "<string>",
+                  "description": "The parameter name for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the filter should be enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameterIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the parameter name is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "attack",
+                  "value": "<string>",
+                  "description": "The attack value for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "attackIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the attack value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<string>",
+                  "description": "The evidence value for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidenceIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the evidence value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "methods",
+                  "value": "<string>",
+                  "description": "The HTTP methods (comma separated) for which the filter applies."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18690920-b347-41e5-a38c-4b4619b1d35f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "removeAlertFilter",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ruleId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "newLevel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "urlIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameterIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attack",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attackIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidence",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidenceIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "methods",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77ceaa53-b050-4d28-9719-7fb2bb008571",
+          "name": "alert Filter Action Remove Global Alert Filter",
+          "request": {
+            "name": "alert Filter Action Remove Global Alert Filter",
+            "description": {
+              "content": "Removes a global alert filter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "removeGlobalAlertFilter",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ruleId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric ID of the rule for which the filter applies."
+                },
+                {
+                  "disabled": false,
+                  "key": "newLevel",
+                  "value": "<string>",
+                  "description": "(Required) The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The URL for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "urlIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the URL is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameter",
+                  "value": "<string>",
+                  "description": "The parameter name for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the filter should be enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "parameterIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the parameter name is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "attack",
+                  "value": "<string>",
+                  "description": "The attack value for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "attackIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the attack value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidence",
+                  "value": "<string>",
+                  "description": "The evidence value for which the filter applies (can be regex)."
+                },
+                {
+                  "disabled": false,
+                  "key": "evidenceIsRegex",
+                  "value": "<string>",
+                  "description": "A boolean indicating whether or not the evidence value is a regex."
+                },
+                {
+                  "disabled": false,
+                  "key": "methods",
+                  "value": "<string>",
+                  "description": "The HTTP methods (comma separated) for which the filter applies."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "35ecceb0-a691-4564-a0d5-ace14395aa23",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "removeGlobalAlertFilter",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ruleId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "newLevel",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "urlIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parameterIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attack",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attackIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidence",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "evidenceIsRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "methods",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7dc385e7-3f94-4294-9ca7-aa2b67a3d21b",
+          "name": "alert Filter Action Test All",
+          "request": {
+            "name": "alert Filter Action Test All",
+            "description": {
+              "content": "Tests all currently enabled Global and Context alert filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "testAll",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4330599-11fc-45dd-9826-8dbcdfc6cf5f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "testAll",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b939dd6-645d-4416-b849-55950f249581",
+          "name": "alert Filter Action Test Context",
+          "request": {
+            "name": "alert Filter Action Test Context",
+            "description": {
+              "content": "Tests all currently enabled Context alert filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "testContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c712bca8-b766-44a0-9781-981eeee17071",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "testContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9ea48a3-6ea0-4b85-883e-97c5b092308a",
+          "name": "alert Filter Action Test Global",
+          "request": {
+            "name": "alert Filter Action Test Global",
+            "description": {
+              "content": "Tests all currently enabled Global alert filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "action",
+                "testGlobal",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c025e576-3b83-4516-a6bb-6fd0226580e8",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "action",
+                    "testGlobal",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2176d069-28fe-430c-9e68-55b0ff748e1f",
+          "name": "alert Filter View Alert Filter List",
+          "request": {
+            "name": "alert Filter View Alert Filter List",
+            "description": {
+              "content": "Lists the alert filters of the context with the given ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "view",
+                "alertFilterList",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextId",
+                  "value": "<string>",
+                  "description": "(Required) The numeric ID of the context for which the filters should be listed."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ecd74813-0dd8-44de-a221-bf8e769d57dc",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "view",
+                    "alertFilterList",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f0efc2a0-5d19-44c3-9527-aa5803736f0c",
+          "name": "alert Filter View Global Alert Filter List",
+          "request": {
+            "name": "alert Filter View Global Alert Filter List",
+            "description": {
+              "content": "Lists the global alert filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "alertFilter",
+                "view",
+                "globalAlertFilterList",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1680fa88-ae03-401c-ba1a-819f0a77925d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "alertFilter",
+                    "view",
+                    "globalAlertFilterList",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "f0db2880-2d00-4d8a-95b0-1df8243af3cc",
+    "name": "ZAP accessControl alertFilter API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

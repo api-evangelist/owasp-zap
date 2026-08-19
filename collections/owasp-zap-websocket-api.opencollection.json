@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl websocket API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "websocket",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "websocketActionSendTextMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/websocket/action/sendTextMessage/",
+            "params": [
+              {
+                "name": "channelId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outgoing",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "message",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sends the specified message on the channel specified by channelId, if outgoing is 'True' then the message will be sent to the server and if it is 'False' then it will be sent to the client"
+        },
+        {
+          "info": {
+            "name": "websocketActionSetBreakTextMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/websocket/action/setBreakTextMessage/",
+            "params": [
+              {
+                "name": "message",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outgoing",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the text message for an intercepted websockets message"
+        },
+        {
+          "info": {
+            "name": "websocketViewBreakTextMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/websocket/view/breakTextMessage/"
+          },
+          "docs": "Returns a text representation of an intercepted websockets message"
+        },
+        {
+          "info": {
+            "name": "websocketViewChannels",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/websocket/view/channels/"
+          },
+          "docs": "Returns all of the registered web socket channels"
+        },
+        {
+          "info": {
+            "name": "websocketViewMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/websocket/view/message/",
+            "params": [
+              {
+                "name": "channelId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns full details of the message specified by the channelId and messageId"
+        },
+        {
+          "info": {
+            "name": "websocketViewMessages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/websocket/view/messages/",
+            "params": [
+              {
+                "name": "channelId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "payloadPreviewLength",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of all of the messages that meet the given criteria (all optional), where channelId is a channel identifier, start is the offset to start returning messages from (starting from 0), count is the number of messages to return (default no limit) and payloadPreviewLength is the maximum number bytes to return for the payload contents"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

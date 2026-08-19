@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl forcedUser API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "forcedUser",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "forcedUserActionSetForcedUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/forcedUser/action/setForcedUser/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the user (ID) that should be used in 'forced user' mode for the given context (ID)"
+        },
+        {
+          "info": {
+            "name": "forcedUserActionSetForcedUserModeEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/forcedUser/action/setForcedUserModeEnabled/",
+            "params": [
+              {
+                "name": "boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets if 'forced user' mode should be enabled or not"
+        },
+        {
+          "info": {
+            "name": "forcedUserViewGetForcedUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/forcedUser/view/getForcedUser/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the user (ID) set as 'forced user' for the given context (ID)"
+        },
+        {
+          "info": {
+            "name": "forcedUserViewIsForcedUserModeEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/forcedUser/view/isForcedUserModeEnabled/"
+          },
+          "docs": "Returns 'true' if 'forced user' mode is enabled, 'false' otherwise"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

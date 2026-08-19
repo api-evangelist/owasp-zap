@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl reveal API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "reveal",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "revealActionSetReveal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/reveal/action/setReveal/",
+            "params": [
+              {
+                "name": "reveal",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets if shows hidden fields and enables disabled fields"
+        },
+        {
+          "info": {
+            "name": "revealViewReveal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/reveal/view/reveal/"
+          },
+          "docs": "Tells if shows hidden fields and enables disabled fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

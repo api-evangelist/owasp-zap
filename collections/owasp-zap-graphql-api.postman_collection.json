@@ -1,0 +1,1747 @@
+{
+  "item": [
+    {
+      "id": "a302c126-2e70-49e9-bd20-7eb9655a04c1",
+      "name": "graphql",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c1c50b43-6199-4b0c-905e-4b55ac510ba1",
+          "name": "graphql Action Import File",
+          "request": {
+            "name": "graphql Action Import File",
+            "description": {
+              "content": "Imports a GraphQL Schema from a File.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "importFile",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "endurl",
+                  "value": "<string>",
+                  "description": "(Required) The Endpoint URL."
+                },
+                {
+                  "disabled": false,
+                  "key": "file",
+                  "value": "<string>",
+                  "description": "(Required) The File That Contains the GraphQL Schema."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d775a268-a243-4380-8996-26c7e39bf96e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "importFile",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "endurl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "file",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9aac7901-e2cf-46ce-80b1-a7a50a385d94",
+          "name": "graphql Action Import Url",
+          "request": {
+            "name": "graphql Action Import Url",
+            "description": {
+              "content": "Imports a GraphQL Schema from a URL.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "importUrl",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "endurl",
+                  "value": "<string>",
+                  "description": "(Required) The Endpoint URL."
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The URL Locating the GraphQL Schema."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b932aeb-1f15-4ec8-8c4d-935dfc48c079",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "importUrl",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "endurl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c30d2f3-a764-4e03-a385-7e6b0bd97bf7",
+          "name": "graphql Action Set Option Args Type",
+          "request": {
+            "name": "graphql Action Set Option Args Type",
+            "description": {
+              "content": "Sets how arguments are specified.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionArgsType",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "String",
+                  "value": "<string>",
+                  "description": "(Required) Can be \"INLINE\", \"VARIABLES\", or \"BOTH\"."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f449d4e2-5dcb-47d5-b634-8f0ad0fbdcb6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionArgsType",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "String",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d24f47c-61a0-4c29-aa4e-03f58ee81254",
+          "name": "graphql Action Set Option Lenient Max Query Depth Enabled",
+          "request": {
+            "name": "graphql Action Set Option Lenient Max Query Depth Enabled",
+            "description": {
+              "content": "Sets whether or not Maximum Query Depth is enforced leniently.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionLenientMaxQueryDepthEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) Enforce Leniently (true or false)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4578850-5488-4a4f-b823-c9855cdeba35",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionLenientMaxQueryDepthEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ad7a163-f111-4d49-a9c8-926f63359c9c",
+          "name": "graphql Action Set Option Max Additional Query Depth",
+          "request": {
+            "name": "graphql Action Set Option Max Additional Query Depth",
+            "description": {
+              "content": "Sets the maximum additional query generation depth (used if enforced leniently).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionMaxAdditionalQueryDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The Maximum Additional Depth."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d61311b-1d64-4699-9867-0efbf56c4f13",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionMaxAdditionalQueryDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e4f14017-3d06-4c0d-997a-d7d8b5fe9e9a",
+          "name": "graphql Action Set Option Max Args Depth",
+          "request": {
+            "name": "graphql Action Set Option Max Args Depth",
+            "description": {
+              "content": "Sets the maximum arguments generation depth.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionMaxArgsDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The Maximum Depth."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "52f0909e-3e6a-438c-9bc0-6924d850d2cc",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionMaxArgsDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2484e621-281f-4e13-bc97-9752b2fdd23e",
+          "name": "graphql Action Set Option Max Query Depth",
+          "request": {
+            "name": "graphql Action Set Option Max Query Depth",
+            "description": {
+              "content": "Sets the maximum query generation depth.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionMaxQueryDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The Maximum Depth."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ae911d5-0b5d-43bb-902c-6b41b9caac62",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionMaxQueryDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d72378e-db87-465a-bfde-892d3b06b67e",
+          "name": "graphql Action Set Option Optional Args Enabled",
+          "request": {
+            "name": "graphql Action Set Option Optional Args Enabled",
+            "description": {
+              "content": "Sets whether or not Optional Arguments should be specified.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionOptionalArgsEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) Specify Optional Arguments (true or false)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c188512d-a87b-40e4-a6cd-5c13cacb2c84",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionOptionalArgsEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65e8f363-884b-46f1-9347-679b66c28c6c",
+          "name": "graphql Action Set Option Query Gen Enabled",
+          "request": {
+            "name": "graphql Action Set Option Query Gen Enabled",
+            "description": {
+              "content": "Sets whether the query generator is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionQueryGenEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) Enable query generation (true or false)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "264b32c4-0dd9-40e1-9f08-1da582136a22",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionQueryGenEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9af2cf2-3e6f-4e50-b839-1cdb314ac218",
+          "name": "graphql Action Set Option Query Split Type",
+          "request": {
+            "name": "graphql Action Set Option Query Split Type",
+            "description": {
+              "content": "Sets the level for which a single query is generated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionQuerySplitType",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "String",
+                  "value": "<string>",
+                  "description": "(Required) Can be \"LEAF\", \"ROOT_FIELD\", or \"OPERATION\"."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5aea2bec-b1f3-43b1-9b79-3f64fb337891",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionQuerySplitType",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "String",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f877076-6294-4e8f-86f3-f24a673eb8d8",
+          "name": "graphql Action Set Option Request Method",
+          "request": {
+            "name": "graphql Action Set Option Request Method",
+            "description": {
+              "content": "Sets the request method.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "action",
+                "setOptionRequestMethod",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "String",
+                  "value": "<string>",
+                  "description": "(Required) Can be \"POST_JSON\", \"POST_GRAPHQL\", or \"GET\"."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd249b5b-1601-4d7c-8c53-d5d5fde3869d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "action",
+                    "setOptionRequestMethod",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "String",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dce170a2-85df-4149-b5f1-4794e9039192",
+          "name": "graphql View Option Args Type",
+          "request": {
+            "name": "graphql View Option Args Type",
+            "description": {
+              "content": "Returns how arguments are currently specified.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionArgsType",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbacd042-29f9-42ac-993a-8b0784a6c859",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionArgsType",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e584cc38-d1a6-4b5b-abd3-21d9cdf7a6bd",
+          "name": "graphql View Option Lenient Max Query Depth Enabled",
+          "request": {
+            "name": "graphql View Option Lenient Max Query Depth Enabled",
+            "description": {
+              "content": "Returns whether or not lenient maximum query generation depth is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionLenientMaxQueryDepthEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14790ac1-0ae2-4d7e-845b-2e8060deedc9",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionLenientMaxQueryDepthEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4acb0b8a-4a5a-4fd1-be86-2059722c6874",
+          "name": "graphql View Option Max Additional Query Depth",
+          "request": {
+            "name": "graphql View Option Max Additional Query Depth",
+            "description": {
+              "content": "Returns the current maximum additional query generation depth.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionMaxAdditionalQueryDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a345d44-91fc-4b60-a07e-6602d5420178",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionMaxAdditionalQueryDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c3c0ae4-1299-4398-bd9d-a19040829b61",
+          "name": "graphql View Option Max Args Depth",
+          "request": {
+            "name": "graphql View Option Max Args Depth",
+            "description": {
+              "content": "Returns the current maximum arguments generation depth.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionMaxArgsDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ddfd5390-2f42-4256-98ee-4b5b467c18a0",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionMaxArgsDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e1b33a4-705b-4357-9803-38331b2d7566",
+          "name": "graphql View Option Max Query Depth",
+          "request": {
+            "name": "graphql View Option Max Query Depth",
+            "description": {
+              "content": "Returns the current maximum query generation depth.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionMaxQueryDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54187268-6a48-4f8e-bfe8-e1e7e3d1ef7c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionMaxQueryDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b4eacb0-8649-40b7-91db-7d440de2b356",
+          "name": "graphql View Option Optional Args Enabled",
+          "request": {
+            "name": "graphql View Option Optional Args Enabled",
+            "description": {
+              "content": "Returns whether or not optional arguments are currently specified.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionOptionalArgsEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b1a65b2-3805-456b-9c95-d3f2d0d8cfc4",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionOptionalArgsEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "10995f2a-d2a0-4b4f-bbb9-c669d26ac07f",
+          "name": "graphql View Option Query Gen Enabled",
+          "request": {
+            "name": "graphql View Option Query Gen Enabled",
+            "description": {
+              "content": "Returns whether the query generator is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionQueryGenEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0004281-bff7-48f8-91ef-a0d8b7f0f594",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionQueryGenEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc7363ab-7581-4ceb-b04e-1843a552e3bc",
+          "name": "graphql View Option Query Split Type",
+          "request": {
+            "name": "graphql View Option Query Split Type",
+            "description": {
+              "content": "Returns the current level for which a single query is generated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionQuerySplitType",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "368c728d-a178-476a-832e-dffdd7fcf998",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionQuerySplitType",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b715c7fd-cebd-47de-a5ee-74ea33feaa4f",
+          "name": "graphql View Option Request Method",
+          "request": {
+            "name": "graphql View Option Request Method",
+            "description": {
+              "content": "Returns the current request method.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "graphql",
+                "view",
+                "optionRequestMethod",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5003e14-aa1b-461a-a221-33592a8998ad",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "graphql",
+                    "view",
+                    "optionRequestMethod",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "ab562825-fe7b-4bbb-98a5-0f1ff1efd428",
+    "name": "ZAP accessControl graphql API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

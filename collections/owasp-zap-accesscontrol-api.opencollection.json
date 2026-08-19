@@ -1,0 +1,115 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "accessControl",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "accessControlActionScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/accessControl/action/scan/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scanAsUnAuthUser",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "raiseAlert",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "alertRiskLevel",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Starts an Access Control scan with the given context ID and user ID. (Optional parameters: user ID for Unauthenticated user, boolean identifying whether or not Alerts are raised, and the Risk level for the Alerts.) [This assumes the Access Control rules were previously established via ZAP gui and the necessary Context exported/imported.]"
+        },
+        {
+          "info": {
+            "name": "accessControlActionWriteHTMLreport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/accessControl/action/writeHTMLreport/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Generates an Access Control report for the given context ID and saves it based on the provided filename (path). "
+        },
+        {
+          "info": {
+            "name": "accessControlViewGetScanProgress",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/accessControl/view/getScanProgress/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the Access Control scan progress (percentage integer) for the given context ID."
+        },
+        {
+          "info": {
+            "name": "accessControlViewGetScanStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/accessControl/view/getScanStatus/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the Access Control scan status (description string) for the given context ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,175 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl authentication API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "authenticationActionSetAuthenticationMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/action/setAuthenticationMethod/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "authMethodName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "authMethodConfigParams",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the authentication method for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "authenticationActionSetLoggedInIndicator",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/action/setLoggedInIndicator/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loggedInIndicatorRegex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the logged in indicator for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "authenticationActionSetLoggedOutIndicator",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/action/setLoggedOutIndicator/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "loggedOutIndicatorRegex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the logged out indicator for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "authenticationViewGetAuthenticationMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/view/getAuthenticationMethod/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the name of the authentication method for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "authenticationViewGetAuthenticationMethodConfigParams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/view/getAuthenticationMethodConfigParams/",
+            "params": [
+              {
+                "name": "authMethodName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the configuration parameters for the authentication method with the given name."
+        },
+        {
+          "info": {
+            "name": "authenticationViewGetLoggedInIndicator",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/view/getLoggedInIndicator/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the logged in indicator for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "authenticationViewGetLoggedOutIndicator",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/view/getLoggedOutIndicator/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the logged out indicator for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "authenticationViewGetSupportedAuthenticationMethods",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authentication/view/getSupportedAuthenticationMethods/"
+          },
+          "docs": "Gets the name of the authentication methods."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

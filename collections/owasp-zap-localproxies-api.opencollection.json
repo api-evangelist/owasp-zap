@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl localProxies API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "localProxies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "localProxiesActionAddAdditionalProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/localProxies/action/addAdditionalProxy/",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "port",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "behindNat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "alwaysDecodeZip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "removeUnsupportedEncodings",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "localProxiesActionRemoveAdditionalProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/localProxies/action/removeAdditionalProxy/",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "port",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "localProxiesViewAdditionalProxies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/localProxies/view/additionalProxies/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

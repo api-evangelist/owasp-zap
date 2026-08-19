@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl keyboard API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "keyboard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "keyboardOtherCheatsheetActionOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/keyboard/other/cheatsheetActionOrder/",
+            "params": [
+              {
+                "name": "incUnset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists the keyboard shortcuts sorted by action, optionally, showing actions without shortcut set."
+        },
+        {
+          "info": {
+            "name": "keyboardOtherCheatsheetKeyOrder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/keyboard/other/cheatsheetKeyOrder/",
+            "params": [
+              {
+                "name": "incUnset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists the keyboard shortcuts sorted by keyboard shortcut, optionally, showing actions without shortcut set."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

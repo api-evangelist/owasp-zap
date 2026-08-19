@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl replacer API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "replacer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "replacerActionAddRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/replacer/action/addRule/",
+            "params": [
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchRegex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchString",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "replacement",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "initiators",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "A regular expression to match the URL of the message, if empty the rule applies to all messages."
+              }
+            ]
+          },
+          "docs": "Adds a replacer rule. For the parameters: desc is a user friendly description, enabled is true or false, matchType is one of [REQ_HEADER, REQ_HEADER_STR, REQ_BODY_STR, RESP_HEADER, RESP_HEADER_STR, RESP_BODY_STR], matchRegex should be true if the matchString should be treated as a regex otherwise false, matchString is the string that will be matched against, replacement is the replacement string, initiators may be blank (for all initiators) or a comma separated list of integers as defined in <a "
+        },
+        {
+          "info": {
+            "name": "replacerActionRemoveRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/replacer/action/removeRule/",
+            "params": [
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes the rule with the given description"
+        },
+        {
+          "info": {
+            "name": "replacerActionSetEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/replacer/action/setEnabled/",
+            "params": [
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bool",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enables or disables the rule with the given description based on the bool parameter  "
+        },
+        {
+          "info": {
+            "name": "replacerViewRules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/replacer/view/rules/"
+          },
+          "docs": "Returns full details of all of the rules"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

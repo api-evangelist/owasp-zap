@@ -1,0 +1,457 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl alert API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "alert",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "alertActionAddAlert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/action/addAlert/",
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the message to which the alert should be associated."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the alert."
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High')."
+              },
+              {
+                "name": "confidenceId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available])."
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description to be set to the alert."
+              },
+              {
+                "name": "param",
+                "value": "",
+                "type": "query",
+                "description": "The name of the parameter applicable to the alert."
+              },
+              {
+                "name": "attack",
+                "value": "",
+                "type": "query",
+                "description": "The attack (ex: injected string) used by the scan rule."
+              },
+              {
+                "name": "otherInfo",
+                "value": "",
+                "type": "query",
+                "description": "Other information about the alert or test."
+              },
+              {
+                "name": "solution",
+                "value": "",
+                "type": "query",
+                "description": "The solution for the alert."
+              },
+              {
+                "name": "references",
+                "value": "",
+                "type": "query",
+                "description": "The reference details for the alert."
+              },
+              {
+                "name": "evidence",
+                "value": "",
+                "type": "query",
+                "description": "The evidence associated with the alert."
+              },
+              {
+                "name": "cweId",
+                "value": "",
+                "type": "query",
+                "description": "The CWE identifier associated with the alert."
+              },
+              {
+                "name": "wascId",
+                "value": "",
+                "type": "query",
+                "description": "The WASC identifier associated with the alert."
+              }
+            ]
+          },
+          "docs": "Add an alert associated with the given message ID, with the provided details. (The ID of the created alert is returned.)"
+        },
+        {
+          "info": {
+            "name": "alertActionDeleteAlert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/action/deleteAlert/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Deletes the alert with the given ID. "
+        },
+        {
+          "info": {
+            "name": "alertActionDeleteAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/action/deleteAlerts/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the Context for which the alerts should be deleted."
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which alerts should be deleted."
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High')."
+              }
+            ]
+          },
+          "docs": "Deletes all the alerts optionally filtered by URL which fall within the Context with the provided name, risk, or base URL."
+        },
+        {
+          "info": {
+            "name": "alertActionDeleteAllAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/action/deleteAllAlerts/"
+          },
+          "docs": "Deletes all alerts of the current session."
+        },
+        {
+          "info": {
+            "name": "alertActionUpdateAlert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/action/updateAlert/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the alert to update."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the alert."
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High')."
+              },
+              {
+                "name": "confidenceId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available])."
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description to be set to the alert."
+              },
+              {
+                "name": "param",
+                "value": "",
+                "type": "query",
+                "description": "The name of the parameter applicable to the alert."
+              },
+              {
+                "name": "attack",
+                "value": "",
+                "type": "query",
+                "description": "The attack (ex: injected string) used by the scan rule."
+              },
+              {
+                "name": "otherInfo",
+                "value": "",
+                "type": "query",
+                "description": "Other information about the alert or test."
+              },
+              {
+                "name": "solution",
+                "value": "",
+                "type": "query",
+                "description": "The solution for the alert."
+              },
+              {
+                "name": "references",
+                "value": "",
+                "type": "query",
+                "description": "The reference details for the alert."
+              },
+              {
+                "name": "evidence",
+                "value": "",
+                "type": "query",
+                "description": "The evidence associated with the alert."
+              },
+              {
+                "name": "cweId",
+                "value": "",
+                "type": "query",
+                "description": "The CWE identifier associated with the alert."
+              },
+              {
+                "name": "wascId",
+                "value": "",
+                "type": "query",
+                "description": "The WASC identifier associated with the alert."
+              }
+            ]
+          },
+          "docs": "Update the alert with the given ID, with the provided details."
+        },
+        {
+          "info": {
+            "name": "alertActionUpdateAlertsConfidence",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/action/updateAlertsConfidence/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "The IDs of the alerts to update (comma separated values)."
+              },
+              {
+                "name": "confidenceId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric confidence representation ('1 - Low' through '3 - High' [user set values '0 - False Positive', and '4 - User Confirmed' are also available])."
+              }
+            ]
+          },
+          "docs": "Update the confidence of the alerts."
+        },
+        {
+          "info": {
+            "name": "alertActionUpdateAlertsRisk",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/action/updateAlertsRisk/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "The IDs of the alerts to update (comma separated values)."
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High')."
+              }
+            ]
+          },
+          "docs": "Update the risk of the alerts."
+        },
+        {
+          "info": {
+            "name": "alertViewAlert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/view/alert/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the alert with the given ID, the corresponding HTTP message can be obtained with the 'messageId' field and 'message' API method"
+        },
+        {
+          "info": {
+            "name": "alertViewAlertCountsByRisk",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/view/alertCountsByRisk/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "recurse",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets a count of the alerts, optionally filtered as per alertsPerRisk"
+        },
+        {
+          "info": {
+            "name": "alertViewAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/view/alerts/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which alerts should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "Optionally, the Context name which the Alerts' URLs are associated with."
+              }
+            ]
+          },
+          "docs": "Gets the alerts raised by ZAP, optionally filtering by URL or riskId, and paginating with 'start' position and 'count' of alerts"
+        },
+        {
+          "info": {
+            "name": "alertViewAlertsByRisk",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/view/alertsByRisk/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "recurse",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets a summary of the alerts, optionally filtered by a 'url'. If 'recurse' is true then all alerts that apply to urls that start with the specified 'url' will be returned, otherwise only those on exactly the same 'url' (ignoring url parameters)"
+        },
+        {
+          "info": {
+            "name": "alertViewAlertsSummary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/view/alertsSummary/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which alerts should be included."
+              }
+            ]
+          },
+          "docs": "Gets number of alerts grouped by each risk level, optionally filtering by URL"
+        },
+        {
+          "info": {
+            "name": "alertViewNumberOfAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alert/view/numberOfAlerts/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which alerts should be included."
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the number of alerts, optionally filtering by URL or riskId"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

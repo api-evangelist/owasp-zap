@@ -1,0 +1,443 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl users API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "usersActionAuthenticateAsUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/authenticateAsUser/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              }
+            ]
+          },
+          "docs": "Tries to authenticate as the identified user, returning the authentication request and whether it appears to have succeeded."
+        },
+        {
+          "info": {
+            "name": "usersActionNewUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/newUser/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Creates a new user with the given name for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "usersActionPollAsUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/pollAsUser/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              }
+            ]
+          },
+          "docs": "Tries to poll as the identified user, returning the authentication request and whether it appears to have succeeded. This will only work if the polling verification strategy has been configured."
+        },
+        {
+          "info": {
+            "name": "usersActionRemoveUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/removeUser/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              }
+            ]
+          },
+          "docs": "Removes the user with the given ID that belongs to the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "usersActionSetAuthenticationCredentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/setAuthenticationCredentials/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              },
+              {
+                "name": "authCredentialsConfigParams",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the authentication credentials for the user with the given ID that belongs to the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "usersActionSetAuthenticationState",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/setAuthenticationState/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              },
+              {
+                "name": "lastPollResult",
+                "value": "",
+                "type": "query",
+                "description": "Last Poll Result - optional, should be 'true' or 'false'."
+              },
+              {
+                "name": "lastPollTimeInMs",
+                "value": "",
+                "type": "query",
+                "description": "Last Poll Time in Milliseconds - optional, should be a long or 'NOW' for the current time in ms."
+              },
+              {
+                "name": "requestsSinceLastPoll",
+                "value": "",
+                "type": "query",
+                "description": "Requests Since Last Poll - optional, should be an integer."
+              }
+            ]
+          },
+          "docs": "Sets fields in the authentication state for the user identified by the Context and User Ids."
+        },
+        {
+          "info": {
+            "name": "usersActionSetCookie",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/setCookie/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              },
+              {
+                "name": "domain",
+                "value": "",
+                "type": "query",
+                "description": "The Cookie Domain"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The Cookie Name"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query",
+                "description": "The Cookie Value"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "query",
+                "description": "The Cookie Path - optional default no path"
+              },
+              {
+                "name": "secure",
+                "value": "",
+                "type": "query",
+                "description": "If the Cookie is secure - optional default false"
+              }
+            ]
+          },
+          "docs": "Sets the specified cookie for the user identified by the Context and User Ids."
+        },
+        {
+          "info": {
+            "name": "usersActionSetUserEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/setUserEnabled/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not the user, with the given ID that belongs to the context with the given ID, should be enabled."
+        },
+        {
+          "info": {
+            "name": "usersActionSetUserName",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/action/setUserName/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Renames the user with the given ID that belongs to the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "usersViewGetAuthenticationCredentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/view/getAuthenticationCredentials/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "the User ID"
+              }
+            ]
+          },
+          "docs": "Gets the authentication credentials of the user with given ID that belongs to the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "usersViewGetAuthenticationCredentialsConfigParams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/view/getAuthenticationCredentialsConfigParams/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              }
+            ]
+          },
+          "docs": "Gets the configuration parameters for the credentials of the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "usersViewGetAuthenticationSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/view/getAuthenticationSession/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              }
+            ]
+          },
+          "docs": "Gets the authentication session information for the user identified by the Context and User Ids, e.g. cookies and realm credentials."
+        },
+        {
+          "info": {
+            "name": "usersViewGetAuthenticationState",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/view/getAuthenticationState/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              }
+            ]
+          },
+          "docs": "Gets the authentication state information for the user identified by the Context and User Ids."
+        },
+        {
+          "info": {
+            "name": "usersViewGetUserById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/view/getUserById/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The User ID"
+              }
+            ]
+          },
+          "docs": "Gets the data of the user with the given ID that belongs to the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "usersViewUsersList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/users/view/usersList/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The Context ID"
+              }
+            ]
+          },
+          "docs": "Gets a list of users that belong to the context with the given ID, or all users if none provided."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

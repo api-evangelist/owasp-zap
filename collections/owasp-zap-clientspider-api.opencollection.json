@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl clientSpider API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "clientSpider",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "clientSpiderActionScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/clientSpider/action/scan/",
+            "params": [
+              {
+                "name": "browser",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the browser. See Selenium documentation for valid IDs."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL from where to start the spider."
+              },
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context."
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the user."
+              },
+              {
+                "name": "subtreeOnly",
+                "value": "",
+                "type": "query",
+                "description": "true to spider only under the subtree, false otherwise."
+              },
+              {
+                "name": "maxCrawlDepth",
+                "value": "",
+                "type": "query",
+                "description": "Maximum Crawl Depth (0 is unlimited)."
+              },
+              {
+                "name": "pageLoadTime",
+                "value": "",
+                "type": "query",
+                "description": "Page Load Time (seconds)."
+              }
+            ]
+          },
+          "docs": "Starts a client spider scan."
+        },
+        {
+          "info": {
+            "name": "clientSpiderActionStop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/clientSpider/action/stop/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the client spider scan."
+              }
+            ]
+          },
+          "docs": "Stops a client spider scan."
+        },
+        {
+          "info": {
+            "name": "clientSpiderViewStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/clientSpider/view/status/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the client spider scan."
+              }
+            ]
+          },
+          "docs": "Gets the status of a client spider scan."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

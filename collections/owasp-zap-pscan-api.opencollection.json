@@ -1,0 +1,259 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl pscan API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pscan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "pscanActionClearQueue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/clearQueue/"
+          },
+          "docs": "Clears the passive scan queue."
+        },
+        {
+          "info": {
+            "name": "pscanActionDisableAllScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/disableAllScanners/"
+          },
+          "docs": "Disables all passive scan rules."
+        },
+        {
+          "info": {
+            "name": "pscanActionDisableAllTags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/disableAllTags/"
+          },
+          "docs": "Disables all passive scan tags."
+        },
+        {
+          "info": {
+            "name": "pscanActionDisableScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/disableScanners/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of scan rule IDs."
+              }
+            ]
+          },
+          "docs": "Disables passive scan rules."
+        },
+        {
+          "info": {
+            "name": "pscanActionEnableAllScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/enableAllScanners/"
+          },
+          "docs": "Enables all passive scan rules."
+        },
+        {
+          "info": {
+            "name": "pscanActionEnableAllTags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/enableAllTags/"
+          },
+          "docs": "Enables all passive scan tags."
+        },
+        {
+          "info": {
+            "name": "pscanActionEnableScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/enableScanners/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "A comma separated list of scan rule IDs."
+              }
+            ]
+          },
+          "docs": "Enables passive scan rules."
+        },
+        {
+          "info": {
+            "name": "pscanActionSetEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/setEnabled/",
+            "params": [
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the passive scanning is enabled (Note: the enabled state is not persisted)."
+        },
+        {
+          "info": {
+            "name": "pscanActionSetMaxAlertsPerRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/setMaxAlertsPerRule/",
+            "params": [
+              {
+                "name": "maxAlerts",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of alerts."
+              }
+            ]
+          },
+          "docs": "Sets the maximum number of alerts a passive scan rule can raise."
+        },
+        {
+          "info": {
+            "name": "pscanActionSetScanOnlyInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/setScanOnlyInScope/",
+            "params": [
+              {
+                "name": "onlyInScope",
+                "value": "",
+                "type": "query",
+                "description": "The scan state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the passive scan should be performed only on messages that are in scope."
+        },
+        {
+          "info": {
+            "name": "pscanActionSetScannerAlertThreshold",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/action/setScannerAlertThreshold/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the scan rule."
+              },
+              {
+                "name": "alertThreshold",
+                "value": "",
+                "type": "query",
+                "description": "The alert threshold: OFF, DEFAULT, LOW, MEDIUM and HIGH"
+              }
+            ]
+          },
+          "docs": "Sets the alert threshold of a passive scan rule."
+        },
+        {
+          "info": {
+            "name": "pscanViewCurrentRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/view/currentRule/"
+          },
+          "docs": "Use the currentTasks view instead."
+        },
+        {
+          "info": {
+            "name": "pscanViewCurrentTasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/view/currentTasks/"
+          },
+          "docs": "Shows information about the passive scan tasks currently being run (if any)."
+        },
+        {
+          "info": {
+            "name": "pscanViewMaxAlertsPerRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/view/maxAlertsPerRule/"
+          },
+          "docs": "Gets the maximum number of alerts a passive scan rule should raise."
+        },
+        {
+          "info": {
+            "name": "pscanViewRecordsToScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/view/recordsToScan/"
+          },
+          "docs": "The number of records the passive scanner still has to scan."
+        },
+        {
+          "info": {
+            "name": "pscanViewScanOnlyInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/view/scanOnlyInScope/"
+          },
+          "docs": "Tells whether or not the passive scan should be performed only on messages that are in scope."
+        },
+        {
+          "info": {
+            "name": "pscanViewScanners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pscan/view/scanners/"
+          },
+          "docs": "Lists all passive scan rules with their ID, name, enabled state, and alert threshold."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,222 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl stats API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "statsActionClearStats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/action/clearStats/",
+            "params": [
+              {
+                "name": "keyPrefix",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Clears all of the statistics"
+        },
+        {
+          "info": {
+            "name": "statsActionSetOptionInMemoryEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/action/setOptionInMemoryEnabled/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether in memory statistics are enabled"
+        },
+        {
+          "info": {
+            "name": "statsActionSetOptionStatsdHost",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/action/setOptionStatsdHost/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the Statsd service hostname, supply an empty string to stop using a Statsd service"
+        },
+        {
+          "info": {
+            "name": "statsActionSetOptionStatsdPort",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/action/setOptionStatsdPort/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the Statsd service port"
+        },
+        {
+          "info": {
+            "name": "statsActionSetOptionStatsdPrefix",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/action/setOptionStatsdPrefix/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the prefix to be applied to all stats sent to the configured Statsd service"
+        },
+        {
+          "info": {
+            "name": "statsViewAllSitesStats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/allSitesStats/",
+            "params": [
+              {
+                "name": "keyPrefix",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets all of the site based statistics, optionally filtered by a key prefix"
+        },
+        {
+          "info": {
+            "name": "statsViewOptionInMemoryEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/optionInMemoryEnabled/"
+          },
+          "docs": "Returns 'true' if in memory statistics are enabled, otherwise returns 'false'"
+        },
+        {
+          "info": {
+            "name": "statsViewOptionStatsdEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/optionStatsdEnabled/"
+          },
+          "docs": "Returns 'true' if a Statsd server has been correctly configured, otherwise returns 'false'"
+        },
+        {
+          "info": {
+            "name": "statsViewOptionStatsdHost",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/optionStatsdHost/"
+          },
+          "docs": "Gets the Statsd service hostname"
+        },
+        {
+          "info": {
+            "name": "statsViewOptionStatsdPort",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/optionStatsdPort/"
+          },
+          "docs": "Gets the Statsd service port"
+        },
+        {
+          "info": {
+            "name": "statsViewOptionStatsdPrefix",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/optionStatsdPrefix/"
+          },
+          "docs": "Gets the prefix to be applied to all stats sent to the configured Statsd service"
+        },
+        {
+          "info": {
+            "name": "statsViewSiteStats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/siteStats/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "keyPrefix",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets all of the global statistics, optionally filtered by a key prefix"
+        },
+        {
+          "info": {
+            "name": "statsViewStats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/stats/view/stats/",
+            "params": [
+              {
+                "name": "keyPrefix",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Statistics"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

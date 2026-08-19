@@ -1,0 +1,3759 @@
+{
+  "item": [
+    {
+      "id": "5ab12c71-24ad-4a94-a00c-06ee40f027fb",
+      "name": "ajaxSpider",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5a7c2d6d-98fb-4031-954b-d9e48b1fec9a",
+          "name": "ajax Spider Action Add Allowed Resource",
+          "request": {
+            "name": "ajax Spider Action Add Allowed Resource",
+            "description": {
+              "content": "Adds an allowed resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "addAllowedResource",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "regex",
+                  "value": "<string>",
+                  "description": "(Required) The regular expression of the allowed resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "If the allowed resource should be enabled or not."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3893e812-ae54-4561-a9cd-0386b969de1c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "addAllowedResource",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "regex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d207f38c-047d-418c-b58c-7979f5427ed9",
+          "name": "ajax Spider Action Add Excluded Element",
+          "request": {
+            "name": "ajax Spider Action Add Excluded Element",
+            "description": {
+              "content": "Adds an excluded element to a context.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "addExcludedElement",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) The description of the excluded element."
+                },
+                {
+                  "disabled": false,
+                  "key": "element",
+                  "value": "<string>",
+                  "description": "(Required) The element to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "xpath",
+                  "value": "<string>",
+                  "description": "The XPath of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "text",
+                  "value": "<string>",
+                  "description": "The text of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "attributeName",
+                  "value": "<string>",
+                  "description": "The attribute name of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "attributeValue",
+                  "value": "<string>",
+                  "description": "The attribute value of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23e99975-9bf1-47af-b11c-85c361bc3fec",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "addExcludedElement",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "element",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "xpath",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attributeName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attributeValue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "acfa416d-a09e-4f87-9146-760aab007ca4",
+          "name": "ajax Spider Action Modify Excluded Element",
+          "request": {
+            "name": "ajax Spider Action Modify Excluded Element",
+            "description": {
+              "content": "Modifies an excluded element of a context.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "modifyExcludedElement",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) The description of the excluded element."
+                },
+                {
+                  "disabled": false,
+                  "key": "element",
+                  "value": "<string>",
+                  "description": "(Required) The element to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "descriptionNew",
+                  "value": "<string>",
+                  "description": "The new description."
+                },
+                {
+                  "disabled": false,
+                  "key": "xpath",
+                  "value": "<string>",
+                  "description": "The XPath of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "text",
+                  "value": "<string>",
+                  "description": "The text of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "attributeName",
+                  "value": "<string>",
+                  "description": "The attribute name of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "attributeValue",
+                  "value": "<string>",
+                  "description": "The attribute value of the element."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "The enabled state, true or false."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b619b1c5-0bee-415c-a897-643867a2b287",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "modifyExcludedElement",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "element",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "descriptionNew",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "xpath",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attributeName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "attributeValue",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2250ab34-9584-4aa7-be5b-140d20472c82",
+          "name": "ajax Spider Action Remove Allowed Resource",
+          "request": {
+            "name": "ajax Spider Action Remove Allowed Resource",
+            "description": {
+              "content": "Removes an allowed resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "removeAllowedResource",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "regex",
+                  "value": "<string>",
+                  "description": "(Required) The regular expression of the allowed resource."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b842847a-e576-4c5f-befa-e0be88d4366a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "removeAllowedResource",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "regex",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7655385-c4d8-4ecc-bb72-fb940be2d149",
+          "name": "ajax Spider Action Remove Excluded Element",
+          "request": {
+            "name": "ajax Spider Action Remove Excluded Element",
+            "description": {
+              "content": "Removes an excluded element from a context.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "removeExcludedElement",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "(Required) The description of the excluded element."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5c1153c-cb53-4bbe-a1cb-eeda65ddeb77",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "removeExcludedElement",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b183e6f-e22a-4946-9707-588d50b20e73",
+          "name": "ajax Spider Action Scan",
+          "request": {
+            "name": "ajax Spider Action Scan",
+            "description": {
+              "content": "Runs the AJAX Spider against a given target.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "scan",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The starting URL (needs to include the 'scheme')."
+                },
+                {
+                  "disabled": false,
+                  "key": "inScope",
+                  "value": "<string>",
+                  "description": "A boolean (true/false) indicating whether or not the scan should be restricted to 'inScope' only resources (default value is false)."
+                },
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "The name for any defined context. If the value does not match a defined context then an error will occur."
+                },
+                {
+                  "disabled": false,
+                  "key": "subtreeOnly",
+                  "value": "<string>",
+                  "description": "A boolean (true/false) indicating whether or not the crawl should be constrained to a specific path (default value is false)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13c56b32-067f-496b-8fc2-b25a60afa5ca",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "scan",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "inScope",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subtreeOnly",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4ea578c-840e-4d6e-895e-a88aa0724e29",
+          "name": "ajax Spider Action Scan As User",
+          "request": {
+            "name": "ajax Spider Action Scan As User",
+            "description": {
+              "content": "Runs the AJAX Spider from the perspective of a User of the web application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "scanAsUser",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name for any defined context. If the value does not match a defined context then an error will occur."
+                },
+                {
+                  "disabled": false,
+                  "key": "userName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the user to be used when crawling. The \"userName\" should be previously defined on the context configuration."
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The starting URL (needs to include the 'scheme')."
+                },
+                {
+                  "disabled": false,
+                  "key": "subtreeOnly",
+                  "value": "<string>",
+                  "description": "A boolean (true/false) indicating whether or not the crawl should be constrained to a specific path (default value is false)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0de08d5-ae5c-499b-a806-e4dcceb7987a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "scanAsUser",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subtreeOnly",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b476a3ac-39be-4f58-a693-6bde20a87f71",
+          "name": "ajax Spider Action Set Enabled Allowed Resource",
+          "request": {
+            "name": "ajax Spider Action Set Enabled Allowed Resource",
+            "description": {
+              "content": "Sets whether or not an allowed resource is enabled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setEnabledAllowedResource",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "regex",
+                  "value": "<string>",
+                  "description": "(Required) The regular expression of the allowed resource."
+                },
+                {
+                  "disabled": false,
+                  "key": "enabled",
+                  "value": "<string>",
+                  "description": "(Required) If the allowed resource should be enabled or not."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff93182c-2f6f-45d5-99a7-c7dc3592855d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setEnabledAllowedResource",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "regex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "enabled",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3fb8c669-3221-48b6-bfe5-9495d144bcaf",
+          "name": "ajax Spider Action Set Option Browser Id",
+          "request": {
+            "name": "ajax Spider Action Set Option Browser Id",
+            "description": {
+              "content": "Sets the configuration of the AJAX Spider to use one of the supported browsers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionBrowserId",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "String",
+                  "value": "<string>",
+                  "description": "(Required) The name of the browser to be used by the AJAX Spider. (See the Selenium add-on help for a list of supported browsers.)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3ca2948-3464-4c95-91ef-0c66d97bb8b1",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionBrowserId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "String",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30b11b57-12de-4d36-a74b-5049a8ade7ee",
+          "name": "ajax Spider Action Set Option Click Default Elems",
+          "request": {
+            "name": "ajax Spider Action Set Option Click Default Elems",
+            "description": {
+              "content": "Sets whether or not the AJAX Spider will only click on the default HTML elements.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionClickDefaultElems",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) A boolean (true/false) indicating if only default elements such as 'a' 'button' 'input' should be clicked (default is true)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b48aefb1-d4e7-47f5-918d-f87849f4b1a7",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionClickDefaultElems",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f8e0453-5f6f-4627-b43e-ab5a12136e5e",
+          "name": "ajax Spider Action Set Option Click Elems Once",
+          "request": {
+            "name": "ajax Spider Action Set Option Click Elems Once",
+            "description": {
+              "content": "When enabled, the crawler attempts to interact with each element (e.g., by clicking) only once.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionClickElemsOnce",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) A boolean (true/false) indicating whether or not the AJAX Spider should only click on elements once. If this is set to false, the crawler will attempt to click multiple times; which is more rigorous but may take considerably more time (default is true)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f57b5d08-bb27-439c-aebd-ead49f0ed1e6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionClickElemsOnce",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fac25821-e33d-49b1-8fe5-c9d47ee5129b",
+          "name": "ajax Spider Action Set Option Enable Extensions",
+          "request": {
+            "name": "ajax Spider Action Set Option Enable Extensions",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionEnableExtensions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f75c3e97-3490-435d-81dc-92c72f57362e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionEnableExtensions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69c79b52-8e17-4dd5-b749-353891ec7a24",
+          "name": "ajax Spider Action Set Option Event Wait",
+          "request": {
+            "name": "ajax Spider Action Set Option Event Wait",
+            "description": {
+              "content": "Sets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers over an element, in order for a menu to display, etc.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionEventWait",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The time that the AJAX Spider should wait for each event (default is 1000 milliseconds)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bd1c2c0e-a6ed-44a0-b1a3-1e91683754e5",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionEventWait",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a74aedc-f102-4abb-9148-ddbc2ead0b0a",
+          "name": "ajax Spider Action Set Option Logout Avoidance",
+          "request": {
+            "name": "ajax Spider Action Set Option Logout Avoidance",
+            "description": {
+              "content": "Sets whether or not the AJAX Spider should avoid clicking logout elements.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionLogoutAvoidance",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) A boolean (true/false) indicating if logout elements should be avoided (default is false)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc0a0c94-97a7-4bba-9dec-4d3cfbfc2b05",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionLogoutAvoidance",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b33c88f-6110-48de-a4f6-bb75563351c5",
+          "name": "ajax Spider Action Set Option Max Crawl Depth",
+          "request": {
+            "name": "ajax Spider Action Set Option Max Crawl Depth",
+            "description": {
+              "content": "Sets the maximum depth that the crawler can reach.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionMaxCrawlDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The maximum depth that the crawler should explore (zero means unlimited depth, default is 10)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ddd4851e-5ec1-44b6-88e0-c22ae321bc1a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionMaxCrawlDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88f46c47-a0ce-4e6e-a4e2-603e63364f99",
+          "name": "ajax Spider Action Set Option Max Crawl States",
+          "request": {
+            "name": "ajax Spider Action Set Option Max Crawl States",
+            "description": {
+              "content": "Sets the maximum number of states that the crawler should crawl.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionMaxCrawlStates",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The maximum number of states that the AJAX Spider should explore (zero means unlimited crawl states, default is 0)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67d9de95-e8af-4105-9c36-0eb95bd7ecd8",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionMaxCrawlStates",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b78d81a2-76ce-452e-bfc4-3a6071978913",
+          "name": "ajax Spider Action Set Option Max Duration",
+          "request": {
+            "name": "ajax Spider Action Set Option Max Duration",
+            "description": {
+              "content": "The maximum time that the crawler is allowed to run.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionMaxDuration",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The maximum amount of time that the AJAX Spider is allowed to run (zero means unlimited running time, default is 60 minutes)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90fd10b5-c21c-44d9-8cb9-76c90b46e94c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionMaxDuration",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2efd0b86-1861-4a22-8fee-c0d182204264",
+          "name": "ajax Spider Action Set Option Number Of Browsers",
+          "request": {
+            "name": "ajax Spider Action Set Option Number Of Browsers",
+            "description": {
+              "content": "Sets the number of windows to be used by AJAX Spider.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionNumberOfBrowsers",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The number of windows that the AJAX Spider can use. The more windows, the faster the process will be. However, more windows also means greater resource usage (CPU, Memory, etc), and could lead to concurrency issues depending on the app being explored (default is 1)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e82de55-3af2-455c-94e1-ed0ae57497d6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionNumberOfBrowsers",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac5e79ad-089b-4e81-b732-ce593a053c5e",
+          "name": "ajax Spider Action Set Option Random Inputs",
+          "request": {
+            "name": "ajax Spider Action Set Option Random Inputs",
+            "description": {
+              "content": "When enabled, inserts random values into form fields.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionRandomInputs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) A boolean (true/false) indicating whether or not random values should be use in form fields. Otherwise, empty values are submitted (default is true)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ce73b27-1d68-43d1-842e-5af375a2e083",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionRandomInputs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6dc2ec49-87b9-4d56-b4c6-a1ae9a6c2576",
+          "name": "ajax Spider Action Set Option Reload Wait",
+          "request": {
+            "name": "ajax Spider Action Set Option Reload Wait",
+            "description": {
+              "content": "Sets the time to wait after the page is loaded before interacting with it.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionReloadWait",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Integer",
+                  "value": "<integer>",
+                  "description": "(Required) The number of milliseconds the AJAX Spider should wait after a page is loaded (default is 1000)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bbaf8846-de9c-49c1-8df2-8b8c4b0b2443",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionReloadWait",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Integer",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e744a15-7360-44b7-9a8c-08513da6af9f",
+          "name": "ajax Spider Action Set Option Scope Check",
+          "request": {
+            "name": "ajax Spider Action Set Option Scope Check",
+            "description": {
+              "content": "Sets the scope check.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "setOptionScopeCheck",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "String",
+                  "value": "<string>",
+                  "description": "(Required) The scope check, either Strict or Flexible. Any other value will result in setting the default (Strict)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25fee4bf-bdc5-40ff-bc7d-ca428f302c3e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "setOptionScopeCheck",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "String",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "532f2550-2154-435b-87b7-2738bb6b591f",
+          "name": "ajax Spider Action Stop",
+          "request": {
+            "name": "ajax Spider Action Stop",
+            "description": {
+              "content": "Stops the AJAX Spider.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "action",
+                "stop",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79a8ff9e-301c-4f83-be31-4d2d61ce2c65",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "action",
+                    "stop",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49b71179-dd11-4b30-b936-ab1067c87f02",
+          "name": "ajax Spider View Allowed Resources",
+          "request": {
+            "name": "ajax Spider View Allowed Resources",
+            "description": {
+              "content": "Gets the allowed resources. The allowed resources are always fetched even if out of scope, allowing to include necessary resources (e.g. scripts) from 3rd-parties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "allowedResources",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "153d39aa-a390-46c2-9235-54dcd9a74c51",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "allowedResources",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75346ddf-6a1b-49d0-89bd-5849f153d5fe",
+          "name": "ajax Spider View Excluded Elements",
+          "request": {
+            "name": "ajax Spider View Excluded Elements",
+            "description": {
+              "content": "Gets the excluded elements. The excluded elements are not clicked during crawling, for example, to prevent logging out.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "excludedElements",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2cc79e82-23f1-47cb-8909-c45234d23a2e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "excludedElements",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e8bb8e3-d9cb-4cd5-bed9-0a9146ccbbd8",
+          "name": "ajax Spider View Full Results",
+          "request": {
+            "name": "ajax Spider View Full Results",
+            "description": {
+              "content": "Gets the full crawled content detected by the AJAX Spider. Returns a set of values based on 'inScope' URLs, 'outOfScope' URLs, and 'errors' encountered during the last/current run of the AJAX Spider.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "fullResults",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18f4b3a1-a3a7-475c-a84f-862a01f067fa",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "fullResults",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94d6a33d-1808-4c84-8390-05da94799ac8",
+          "name": "ajax Spider View Number Of Results",
+          "request": {
+            "name": "ajax Spider View Number Of Results",
+            "description": {
+              "content": "Gets the number of resources found.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "numberOfResults",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "04248935-0544-43d8-92a4-248a261d998f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "numberOfResults",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bab53d0d-e10d-4237-a109-797469d62f6b",
+          "name": "ajax Spider View Option Browser Id",
+          "request": {
+            "name": "ajax Spider View Option Browser Id",
+            "description": {
+              "content": "Gets the configured browser to use for crawling.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionBrowserId",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68f77b39-b8c3-4d11-9129-bec8675eaf32",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionBrowserId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f71bbff-da3b-4938-a7f5-adb26470b11a",
+          "name": "ajax Spider View Option Click Default Elems",
+          "request": {
+            "name": "ajax Spider View Option Click Default Elems",
+            "description": {
+              "content": "Gets the configured value for 'Click Default Elements Only', HTML elements such as 'a', 'button', 'input', all associated with some action or links on the page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionClickDefaultElems",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c2273d6-51f7-4c83-980b-f7c91fd886bd",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionClickDefaultElems",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55d7515f-2e8b-49d7-8ad8-1c030c7e87ba",
+          "name": "ajax Spider View Option Click Elems Once",
+          "request": {
+            "name": "ajax Spider View Option Click Elems Once",
+            "description": {
+              "content": "Gets the value configured for the AJAX Spider to know if it should click on the elements only once.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionClickElemsOnce",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6b71e82-13f6-4a64-b482-96b2fe299847",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionClickElemsOnce",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2b97af7c-261e-420a-a0e3-7928d1d4163b",
+          "name": "ajax Spider View Option Enable Extensions",
+          "request": {
+            "name": "ajax Spider View Option Enable Extensions",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionEnableExtensions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c87d3232-f37c-4ae8-9dee-7f510d797b6c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionEnableExtensions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f160b448-151d-44a2-9099-d00978f6ed53",
+          "name": "ajax Spider View Option Event Wait",
+          "request": {
+            "name": "ajax Spider View Option Event Wait",
+            "description": {
+              "content": "Gets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers over an element, in order for a menu to display, etc.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionEventWait",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4bcb3780-a486-460c-aadc-7190c32767aa",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionEventWait",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b626c36-09a8-4cfc-81f7-81e0193b2a27",
+          "name": "ajax Spider View Option Logout Avoidance",
+          "request": {
+            "name": "ajax Spider View Option Logout Avoidance",
+            "description": {
+              "content": "Gets the value of the Logout Avoidance option.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionLogoutAvoidance",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37431fbe-557e-4f92-8605-fd59f98a86a9",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionLogoutAvoidance",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa1f4583-e053-47f9-93de-13eae9725faf",
+          "name": "ajax Spider View Option Max Crawl Depth",
+          "request": {
+            "name": "ajax Spider View Option Max Crawl Depth",
+            "description": {
+              "content": "Gets the configured value for the max crawl depth.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionMaxCrawlDepth",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb6ec305-0f85-4265-8884-e34d86086993",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionMaxCrawlDepth",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76008711-8390-4dfe-b1cc-4f61e45f510a",
+          "name": "ajax Spider View Option Max Crawl States",
+          "request": {
+            "name": "ajax Spider View Option Max Crawl States",
+            "description": {
+              "content": "Gets the configured value for the maximum crawl states allowed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionMaxCrawlStates",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4ba3621-b515-4e49-bd63-94996bda8697",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionMaxCrawlStates",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2da78f36-7e73-42dc-879f-263985a5f140",
+          "name": "ajax Spider View Option Max Duration",
+          "request": {
+            "name": "ajax Spider View Option Max Duration",
+            "description": {
+              "content": "Gets the configured max duration of the crawl, the value is in minutes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionMaxDuration",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "363d711d-97cf-4a04-b712-a341fb41184b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionMaxDuration",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75acf3d0-34bc-49c1-a90e-6a3bf679bfab",
+          "name": "ajax Spider View Option Number Of Browsers",
+          "request": {
+            "name": "ajax Spider View Option Number Of Browsers",
+            "description": {
+              "content": "Gets the configured number of browsers to be used.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionNumberOfBrowsers",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d30558de-60a3-453d-a896-7110e3b4489f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionNumberOfBrowsers",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79f16207-d965-4822-a6cb-579221e91781",
+          "name": "ajax Spider View Option Random Inputs",
+          "request": {
+            "name": "ajax Spider View Option Random Inputs",
+            "description": {
+              "content": "Gets if the AJAX Spider will use random values in form fields when crawling, if set to true.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionRandomInputs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e265ba07-44b4-40bb-a271-b79f379ac300",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionRandomInputs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c33cbe40-ae40-4953-9596-c006de0640f4",
+          "name": "ajax Spider View Option Reload Wait",
+          "request": {
+            "name": "ajax Spider View Option Reload Wait",
+            "description": {
+              "content": "Gets the configured time to wait after reloading the page, this value is in milliseconds.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionReloadWait",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29b9e439-cc4a-4bc3-9eb4-d93f95b79696",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionReloadWait",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "588b803a-2ce6-4060-86a0-91af7cce1bdf",
+          "name": "ajax Spider View Option Scope Check",
+          "request": {
+            "name": "ajax Spider View Option Scope Check",
+            "description": {
+              "content": "Gets the configured scope check.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "optionScopeCheck",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fff99316-45cd-4be4-9aca-28edbe0b9595",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "optionScopeCheck",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9cec9e1c-9ea2-43b0-904c-2de26c48774a",
+          "name": "ajax Spider View Results",
+          "request": {
+            "name": "ajax Spider View Results",
+            "description": {
+              "content": "Gets the current results of the crawler.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "results",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "The position (or offset) within the results to use as a starting position for the information returned."
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<string>",
+                  "description": "The number of results to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "077bc34d-185a-4ec0-b5bb-7ec00f14c704",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "results",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2aa6e2d-ef00-4c97-88b3-357e305403ab",
+          "name": "ajax Spider View Status",
+          "request": {
+            "name": "ajax Spider View Status",
+            "description": {
+              "content": "Gets the current status of the crawler. Actual values are Stopped and Running.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "ajaxSpider",
+                "view",
+                "status",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c32bfe65-0d86-45cc-a15d-218b459c03b3",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "ajaxSpider",
+                    "view",
+                    "status",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "58ec5e6b-733e-4c11-8f0e-8de4d100db8e",
+    "name": "ZAP accessControl ajaxSpider API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

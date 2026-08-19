@@ -1,0 +1,209 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl oast API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "oast",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "oastActionSetActiveScanService",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/action/setActiveScanService/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the service."
+              }
+            ]
+          },
+          "docs": "Sets the service used with the active scanner."
+        },
+        {
+          "info": {
+            "name": "oastActionSetBoastOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/action/setBoastOptions/",
+            "params": [
+              {
+                "name": "server",
+                "value": "",
+                "type": "query",
+                "description": "The server URL."
+              },
+              {
+                "name": "pollInSecs",
+                "value": "",
+                "type": "query",
+                "description": "The polling frequency."
+              }
+            ]
+          },
+          "docs": "Sets the BOAST options."
+        },
+        {
+          "info": {
+            "name": "oastActionSetCallbackOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/action/setCallbackOptions/",
+            "params": [
+              {
+                "name": "localAddress",
+                "value": "",
+                "type": "query",
+                "description": "The local address"
+              },
+              {
+                "name": "remoteAddress",
+                "value": "",
+                "type": "query",
+                "description": "The remote address."
+              },
+              {
+                "name": "port",
+                "value": "",
+                "type": "query",
+                "description": "The port to listen on."
+              }
+            ]
+          },
+          "docs": "Sets the Callback options."
+        },
+        {
+          "info": {
+            "name": "oastActionSetDaysToKeepRecords",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/action/setDaysToKeepRecords/",
+            "params": [
+              {
+                "name": "days",
+                "value": "",
+                "type": "query",
+                "description": "The number of days."
+              }
+            ]
+          },
+          "docs": "Sets the number of days the OAST records will be kept for."
+        },
+        {
+          "info": {
+            "name": "oastActionSetInteractshOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/action/setInteractshOptions/",
+            "params": [
+              {
+                "name": "server",
+                "value": "",
+                "type": "query",
+                "description": "The server URL."
+              },
+              {
+                "name": "pollInSecs",
+                "value": "",
+                "type": "query",
+                "description": "The polling frequency."
+              },
+              {
+                "name": "authToken",
+                "value": "",
+                "type": "query",
+                "description": "The Interactsh authentication token."
+              }
+            ]
+          },
+          "docs": "Sets the Interactsh options."
+        },
+        {
+          "info": {
+            "name": "oastViewGetActiveScanService",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/view/getActiveScanService/"
+          },
+          "docs": "Gets the service used with the active scanner, if any."
+        },
+        {
+          "info": {
+            "name": "oastViewGetBoastOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/view/getBoastOptions/"
+          },
+          "docs": "Gets the BOAST options."
+        },
+        {
+          "info": {
+            "name": "oastViewGetCallbackOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/view/getCallbackOptions/"
+          },
+          "docs": "Gets the Callback options."
+        },
+        {
+          "info": {
+            "name": "oastViewGetDaysToKeepRecords",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/view/getDaysToKeepRecords/"
+          },
+          "docs": "Gets the number of days the OAST records will be kept for."
+        },
+        {
+          "info": {
+            "name": "oastViewGetInteractshOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/view/getInteractshOptions/"
+          },
+          "docs": "Gets the Interactsh options."
+        },
+        {
+          "info": {
+            "name": "oastViewGetServices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/oast/view/getServices/"
+          },
+          "docs": "Gets all of the services."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

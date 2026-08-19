@@ -1,0 +1,2041 @@
+{
+  "item": [
+    {
+      "id": "5585d91e-bdf9-4cc8-b0c1-76fdbe5b0a1c",
+      "name": "context",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0a9ea4a8-7612-4fef-acf5-47484100b379",
+          "name": "context Action Exclude All Context Technologies",
+          "request": {
+            "name": "context Action Exclude All Context Technologies",
+            "description": {
+              "content": "Excludes all built in technologies from a context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "excludeAllContextTechnologies",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9dcc9fe-9bbc-486a-a0da-556b44e7661d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "excludeAllContextTechnologies",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86b35b5a-8a03-43b0-af82-e0658b8da582",
+          "name": "context Action Exclude Context Technologies",
+          "request": {
+            "name": "context Action Exclude Context Technologies",
+            "description": {
+              "content": "Excludes technologies with the given names, separated by a comma, from a context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "excludeContextTechnologies",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "technologyNames",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c439491b-55f1-49e2-bec7-94aedd546f27",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "excludeContextTechnologies",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "technologyNames",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b176185-1098-4c0f-be1e-e5436445b1bf",
+          "name": "context Action Exclude From Context",
+          "request": {
+            "name": "context Action Exclude From Context",
+            "description": {
+              "content": "Add exclude regex to context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "excludeFromContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "regex",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3db158fb-95c1-4246-819a-41f18ef28fb7",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "excludeFromContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regex",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2829d17-b074-4280-af66-76fc339324d9",
+          "name": "context Action Export Context",
+          "request": {
+            "name": "context Action Export Context",
+            "description": {
+              "content": "Exports the context with the given name to a file. If a relative file path is specified it will be resolved against the \"contexts\" directory in ZAP \"home\" dir.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "exportContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "contextFile",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "efda0e1c-e16a-46c8-9520-801d7a242549",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "exportContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contextFile",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b27a6ea2-3e66-4600-8b6c-a7d07fdeda67",
+          "name": "context Action Import Context",
+          "request": {
+            "name": "context Action Import Context",
+            "description": {
+              "content": "Imports a context from a file. If a relative file path is specified it will be resolved against the \"contexts\" directory in ZAP \"home\" dir.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "importContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextFile",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da269115-148b-4c35-8d06-1895a56f3d3b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "importContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextFile",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf4794b2-0d4a-49b8-a808-0e775b59a3cb",
+          "name": "context Action Include All Context Technologies",
+          "request": {
+            "name": "context Action Include All Context Technologies",
+            "description": {
+              "content": "Includes all built in technologies in to a context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "includeAllContextTechnologies",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da8fce9e-497b-4205-8ef6-ca5e2e3c19b9",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "includeAllContextTechnologies",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f6f16b1-4442-44ef-9be6-7c8ce99c05e4",
+          "name": "context Action Include Context Technologies",
+          "request": {
+            "name": "context Action Include Context Technologies",
+            "description": {
+              "content": "Includes technologies with the given names, separated by a comma, to a context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "includeContextTechnologies",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "technologyNames",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4baf3804-4b20-4aaf-a196-eac9720b1c3b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "includeContextTechnologies",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "technologyNames",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52187e3f-fdb7-49f7-81e4-0bb3a0c77663",
+          "name": "context Action Include In Context",
+          "request": {
+            "name": "context Action Include In Context",
+            "description": {
+              "content": "Add include regex to context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "includeInContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "regex",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cba25091-888b-4481-86f0-8fe3b7048d17",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "includeInContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "regex",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "915703bb-7515-4644-9913-9fc2e24838aa",
+          "name": "context Action New Context",
+          "request": {
+            "name": "context Action New Context",
+            "description": {
+              "content": "Creates a new context with the given name in the current session",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "newContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70431c1c-87c8-424a-8c12-ced47bad0bf6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "newContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eaef47c5-e724-4fc7-a93c-fcedc63d1961",
+          "name": "context Action Remove Context",
+          "request": {
+            "name": "context Action Remove Context",
+            "description": {
+              "content": "Removes a context in the current session",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "removeContext",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c839535-123e-4435-afc2-fab4f2597118",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "removeContext",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60e0a6c7-ec44-418e-9a47-308aa081b8ab",
+          "name": "context Action Set Context Checking Strategy",
+          "request": {
+            "name": "context Action Set Context Checking Strategy",
+            "description": {
+              "content": "Set the checking strategy for a context - this defines how ZAP checks that a request is authenticated",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "setContextCheckingStrategy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "checkingStrategy",
+                  "value": "<string>",
+                  "description": "(Required) One of EACH_RESP, EACH_REQ, EACH_REQ_RESP, POLL_URL"
+                },
+                {
+                  "disabled": false,
+                  "key": "pollUrl",
+                  "value": "<string>",
+                  "description": "The URL for ZAP to poll, must be supplied if checkingStrategy = POLL_URL, otherwise ignored"
+                },
+                {
+                  "disabled": false,
+                  "key": "pollData",
+                  "value": "<string>",
+                  "description": "The POST data to supply to the pollUrl, option and only takes effect if checkingStrategy = POLL_URL"
+                },
+                {
+                  "disabled": false,
+                  "key": "pollHeaders",
+                  "value": "<string>",
+                  "description": "Any additional headers that need to be added to the poll request, separated by '\\n' characters, only takes effect if checkingStrategy = POLL_URL"
+                },
+                {
+                  "disabled": false,
+                  "key": "pollFrequency",
+                  "value": "<string>",
+                  "description": "An integer greater than zero, must be supplied if checkingStrategy = POLL_URL, otherwise ignored"
+                },
+                {
+                  "disabled": false,
+                  "key": "pollFrequencyUnits",
+                  "value": "<string>",
+                  "description": "One of REQUESTS, SECONDS, must be supplied if checkingStrategy = POLL_URL, otherwise ignored"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b29329b-c4fc-4219-9f76-7424a1926b7e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "setContextCheckingStrategy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "checkingStrategy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pollUrl",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pollData",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pollHeaders",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pollFrequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pollFrequencyUnits",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3cb54f98-29a0-4f70-9034-d6a5ae72d40b",
+          "name": "context Action Set Context In Scope",
+          "request": {
+            "name": "context Action Set Context In Scope",
+            "description": {
+              "content": "Sets a context to in scope (contexts are in scope by default)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "setContextInScope",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "booleanInScope",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11131d84-e0f3-4bdb-9b53-289ae11d3cb6",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "setContextInScope",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "booleanInScope",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "547a0a1d-24de-44d3-8b2a-c84a1d803dc1",
+          "name": "context Action Set Context Regexs",
+          "request": {
+            "name": "context Action Set Context Regexs",
+            "description": {
+              "content": "Set the regexs to include and exclude for a context, both supplied as JSON string arrays",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "action",
+                "setContextRegexs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                },
+                {
+                  "disabled": false,
+                  "key": "incRegexs",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "excRegexs",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdb62ed4-4646-4ad9-92c5-dc241ffc800f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "action",
+                    "setContextRegexs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "incRegexs",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "excRegexs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79aa9fdf-d622-4f2f-be29-fb171fc8ec5d",
+          "name": "context View Context",
+          "request": {
+            "name": "context View Context",
+            "description": {
+              "content": "List the information about the named context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "context",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3d839c8-d215-4682-aeec-f62dafc2f204",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "context",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e4e4b26-9663-4b12-b370-2a5b916a2e58",
+          "name": "context View Context List",
+          "request": {
+            "name": "context View Context List",
+            "description": {
+              "content": "List context names of current session",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "contextList",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eeb5633c-9550-4714-a4ab-7ccccf124b9a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "contextList",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "220d267d-c82a-4faf-af8c-0eb829e4fda5",
+          "name": "context View Exclude Regexs",
+          "request": {
+            "name": "context View Exclude Regexs",
+            "description": {
+              "content": "List excluded regexs for context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "excludeRegexs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b835d475-f3ee-444e-bd42-afa73e01321d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "excludeRegexs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85fb9edd-8c45-48af-852a-e93644598faf",
+          "name": "context View Excluded Technology List",
+          "request": {
+            "name": "context View Excluded Technology List",
+            "description": {
+              "content": "Lists the names of all technologies excluded from a context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "excludedTechnologyList",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a64acf31-de8f-46c8-b310-5dfb13615d84",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "excludedTechnologyList",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bffb9ed4-f73e-465b-8090-b5284e4a065e",
+          "name": "context View Include Regexs",
+          "request": {
+            "name": "context View Include Regexs",
+            "description": {
+              "content": "List included regexs for context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "includeRegexs",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "317d4a55-d985-476b-a39a-d253972f0dd7",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "includeRegexs",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd8625dd-9ff1-4ae1-9ce9-f5f47e875eeb",
+          "name": "context View Included Technology List",
+          "request": {
+            "name": "context View Included Technology List",
+            "description": {
+              "content": "Lists the names of all technologies included in a context",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "includedTechnologyList",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5013ef62-e879-491a-b015-0af8d639f9b5",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "includedTechnologyList",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74d56cf0-6bfd-43c5-a0cb-55a9e536d4a1",
+          "name": "context View Technology List",
+          "request": {
+            "name": "context View Technology List",
+            "description": {
+              "content": "Lists the names of all built in technologies",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "technologyList",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a787758-e97c-4cc0-825e-b6470c1e1e3b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "technologyList",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b78586ca-b73d-4d60-a742-1ac5ea83291a",
+          "name": "context View Urls",
+          "request": {
+            "name": "context View Urls",
+            "description": {
+              "content": "Lists the URLs accessed through/by ZAP, that belong to the context with the given name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "context",
+                "view",
+                "urls",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "(Required) The name of the context"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18aa0b37-0311-465e-a9b8-7830578014e5",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "context",
+                    "view",
+                    "urls",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "2a48c170-639d-46bc-aae4-a6a4c5005a49",
+    "name": "ZAP accessControl context API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

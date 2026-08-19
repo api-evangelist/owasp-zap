@@ -1,0 +1,626 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl search API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "searchOtherHarByHeaderRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/search/other/harByHeaderRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages, in HAR format, that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchOtherHarByNoteRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/search/other/harByNoteRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages, in HAR format, that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchOtherHarByRequestRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/search/other/harByRequestRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages, in HAR format, that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchOtherHarByResponseRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/search/other/harByResponseRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages, in HAR format, that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchOtherHarByTagRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/search/other/harByTagRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages, in HAR format, that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchOtherHarByUrlRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/search/other/harByUrlRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages, in HAR format, that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewMessagesByHeaderRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/messagesByHeaderRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewMessagesByNoteRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/messagesByNoteRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewMessagesByRequestRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/messagesByRequestRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewMessagesByResponseRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/messagesByResponseRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewMessagesByTagRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/messagesByTagRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewMessagesByUrlRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/messagesByUrlRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the HTTP messages that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewUrlsByHeaderRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/urlsByHeaderRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the URLs of the HTTP messages that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewUrlsByNoteRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/urlsByNoteRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the URLs of the HTTP messages that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewUrlsByRequestRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/urlsByRequestRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the URLs of the HTTP messages that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewUrlsByResponseRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/urlsByResponseRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the URLs of the HTTP messages that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewUrlsByTagRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/urlsByTagRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the URLs of the HTTP messages that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        },
+        {
+          "info": {
+            "name": "searchViewUrlsByUrlRegex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/search/view/urlsByUrlRegex/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the URLs of the HTTP messages that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,413 @@
+{
+  "item": [
+    {
+      "id": "f2af9b56-2349-4d63-a801-001deddec5b5",
+      "name": "reports",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bfd64279-5146-4a72-929f-b71c65c8413f",
+          "name": "reports Action Generate",
+          "request": {
+            "name": "reports Action Generate",
+            "description": {
+              "content": "Generate a report with the supplied parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "reports",
+                "action",
+                "generate",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "title",
+                  "value": "<string>",
+                  "description": "(Required) Report Title"
+                },
+                {
+                  "disabled": false,
+                  "key": "template",
+                  "value": "<string>",
+                  "description": "(Required) Report Template"
+                },
+                {
+                  "disabled": false,
+                  "key": "theme",
+                  "value": "<string>",
+                  "description": "Report Theme"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Report Description"
+                },
+                {
+                  "disabled": false,
+                  "key": "contexts",
+                  "value": "<string>",
+                  "description": "The name of the contexts to be included in the report, separated by '|'."
+                },
+                {
+                  "disabled": false,
+                  "key": "sites",
+                  "value": "<string>",
+                  "description": "The site URLs that should be included in the report, separated by '|'."
+                },
+                {
+                  "disabled": false,
+                  "key": "sections",
+                  "value": "<string>",
+                  "description": "The report sections that should be included, separated by '|'."
+                },
+                {
+                  "disabled": false,
+                  "key": "includedConfidences",
+                  "value": "<string>",
+                  "description": "Confidences that should be included in the report, separated by '|'. Accepted values are \"False Positive\", \"Low\", \"Medium\", \"High\", and \"Confirmed\"."
+                },
+                {
+                  "disabled": false,
+                  "key": "includedRisks",
+                  "value": "<string>",
+                  "description": "Risks that should be included in the report, separated by '|'. Accepted values are \"Informational\", \"Low\", \"Medium\", and \"High\"."
+                },
+                {
+                  "disabled": false,
+                  "key": "reportFileName",
+                  "value": "<string>",
+                  "description": "The file name of the generated report. This value overrides the reportFileNamePattern parameter."
+                },
+                {
+                  "disabled": false,
+                  "key": "reportFileNamePattern",
+                  "value": "<string>",
+                  "description": "Report File Name Pattern."
+                },
+                {
+                  "disabled": false,
+                  "key": "reportDir",
+                  "value": "<string>",
+                  "description": "Path to directory in which the generated report should be placed."
+                },
+                {
+                  "disabled": false,
+                  "key": "display",
+                  "value": "<string>",
+                  "description": "Display the generated report. Either \"true\" or \"false\"."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eb1c75f9-95b8-4135-b20a-efb2f3dff4d2",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "reports",
+                    "action",
+                    "generate",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "title",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "template",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "theme",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contexts",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sites",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sections",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includedConfidences",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includedRisks",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportFileName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportFileNamePattern",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reportDir",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "display",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7592c9b-3410-401c-92cc-efad26383e6b",
+          "name": "reports View Template Details",
+          "request": {
+            "name": "reports View Template Details",
+            "description": {
+              "content": "View details of the specified template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "reports",
+                "view",
+                "templateDetails",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "template",
+                  "value": "<string>",
+                  "description": "(Required) Template Label"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb8e4e0f-6a25-4f99-aef9-e2a347af0fe5",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "reports",
+                    "view",
+                    "templateDetails",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "template",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27eb79d5-1b77-4a2f-87a0-fc4c13b0120c",
+          "name": "reports View Templates",
+          "request": {
+            "name": "reports View Templates",
+            "description": {
+              "content": "View available templates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "reports",
+                "view",
+                "templates",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff4ab481-8bf3-44f8-b3d9-cd54e0eb80c0",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "reports",
+                    "view",
+                    "templates",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "6ee01b6d-b73f-45fc-9462-73e0b703d10f",
+    "name": "ZAP accessControl reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

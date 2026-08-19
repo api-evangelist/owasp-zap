@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl openapi API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "openapi",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "openapiActionImportFile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/openapi/action/importFile/",
+            "params": [
+              {
+                "name": "file",
+                "value": "",
+                "type": "query",
+                "description": "The file that contains the OpenAPI definition."
+              },
+              {
+                "name": "target",
+                "value": "",
+                "type": "query",
+                "description": "The Target URL to override the server URL present in the definition."
+              },
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the context. Defaults to the first context, if any."
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the user."
+              }
+            ]
+          },
+          "docs": "Imports an OpenAPI definition from a local file."
+        },
+        {
+          "info": {
+            "name": "openapiActionImportUrl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/openapi/action/importUrl/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL locating the OpenAPI definition."
+              },
+              {
+                "name": "hostOverride",
+                "value": "",
+                "type": "query",
+                "description": "The Target URL (called hostOverride for historical reasons) to override the server URL present in the definition."
+              },
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the context. Defaults to the first context, if any."
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the user."
+              }
+            ]
+          },
+          "docs": "Imports an OpenAPI definition from a URL."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

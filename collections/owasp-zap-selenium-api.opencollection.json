@@ -1,0 +1,381 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl selenium API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "selenium",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "seleniumActionAddBrowserArgument",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/addBrowserArgument/",
+            "params": [
+              {
+                "name": "browser",
+                "value": "",
+                "type": "query",
+                "description": "The browser, chrome or firefox."
+              },
+              {
+                "name": "argument",
+                "value": "",
+                "type": "query",
+                "description": "The argument."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Adds a browser argument."
+        },
+        {
+          "info": {
+            "name": "seleniumActionLaunchBrowser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/launchBrowser/",
+            "params": [
+              {
+                "name": "browser",
+                "value": "",
+                "type": "query",
+                "description": "The browser, chrome or firefox."
+              }
+            ]
+          },
+          "docs": "Launches a browser proxying through ZAP, for manual usage."
+        },
+        {
+          "info": {
+            "name": "seleniumActionRemoveBrowserArgument",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/removeBrowserArgument/",
+            "params": [
+              {
+                "name": "browser",
+                "value": "",
+                "type": "query",
+                "description": "The browser, chrome or firefox."
+              },
+              {
+                "name": "argument",
+                "value": "",
+                "type": "query",
+                "description": "The argument."
+              }
+            ]
+          },
+          "docs": "Removes a browser argument."
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetBrowserArgumentEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setBrowserArgumentEnabled/",
+            "params": [
+              {
+                "name": "browser",
+                "value": "",
+                "type": "query",
+                "description": "The browser, chrome or firefox."
+              },
+              {
+                "name": "argument",
+                "value": "",
+                "type": "query",
+                "description": "The argument."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not a browser argument is enabled."
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionChromeBinaryPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionChromeBinaryPath/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the current path to Chrome binary"
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionChromeDriverPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionChromeDriverPath/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the current path to ChromeDriver"
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionFirefoxBinaryPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionFirefoxBinaryPath/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the current path to Firefox binary"
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionFirefoxDefaultProfile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionFirefoxDefaultProfile/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionFirefoxDriverPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionFirefoxDriverPath/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the current path to Firefox driver (geckodriver)"
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionIeDriverPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionIeDriverPath/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Option no longer in effective use."
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionLastDirectory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionLastDirectory/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "seleniumActionSetOptionPhantomJsBinaryPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/action/setOptionPhantomJsBinaryPath/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Option no longer in effective use."
+        },
+        {
+          "info": {
+            "name": "seleniumViewGetBrowserArguments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/getBrowserArguments/",
+            "params": [
+              {
+                "name": "browser",
+                "value": "",
+                "type": "query",
+                "description": "The browser, chrome or firefox."
+              }
+            ]
+          },
+          "docs": "Gets the browser arguments."
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionBrowserExtensions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionBrowserExtensions/"
+          }
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionChromeBinaryPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionChromeBinaryPath/"
+          },
+          "docs": "Returns the current path to Chrome binary"
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionChromeDriverPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionChromeDriverPath/"
+          },
+          "docs": "Returns the current path to ChromeDriver"
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionFirefoxBinaryPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionFirefoxBinaryPath/"
+          },
+          "docs": "Returns the current path to Firefox binary"
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionFirefoxDefaultProfile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionFirefoxDefaultProfile/"
+          }
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionFirefoxDriverPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionFirefoxDriverPath/"
+          },
+          "docs": "Returns the current path to Firefox driver (geckodriver)"
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionIeDriverPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionIeDriverPath/"
+          },
+          "docs": "Option no longer in effective use."
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionLastDirectory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionLastDirectory/"
+          }
+        },
+        {
+          "info": {
+            "name": "seleniumViewOptionPhantomJsBinaryPath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/selenium/view/optionPhantomJsBinaryPath/"
+          },
+          "docs": "Option no longer in effective use."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

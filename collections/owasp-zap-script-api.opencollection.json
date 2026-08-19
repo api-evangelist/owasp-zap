@@ -1,0 +1,475 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl script API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "script",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "scriptActionClearGlobalCustomVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/clearGlobalCustomVar/",
+            "params": [
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query",
+                "description": "The key of the variable."
+              }
+            ]
+          },
+          "docs": "Clears a global custom variable."
+        },
+        {
+          "info": {
+            "name": "scriptActionClearGlobalVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/clearGlobalVar/",
+            "params": [
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Clears the global variable with the given key."
+        },
+        {
+          "info": {
+            "name": "scriptActionClearGlobalVars",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/clearGlobalVars/"
+          },
+          "docs": "Clears the global variables."
+        },
+        {
+          "info": {
+            "name": "scriptActionClearScriptCustomVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/clearScriptCustomVar/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the script."
+              },
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query",
+                "description": "The key of the variable."
+              }
+            ]
+          },
+          "docs": "Clears a script custom variable."
+        },
+        {
+          "info": {
+            "name": "scriptActionClearScriptVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/clearScriptVar/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Clears the variable with the given key of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists."
+        },
+        {
+          "info": {
+            "name": "scriptActionClearScriptVars",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/clearScriptVars/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Clears the variables of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists."
+        },
+        {
+          "info": {
+            "name": "scriptActionDisable",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/disable/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Disables the script with the given name"
+        },
+        {
+          "info": {
+            "name": "scriptActionEnable",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/enable/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enables the script with the given name"
+        },
+        {
+          "info": {
+            "name": "scriptActionLoad",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/load/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scriptType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scriptEngine",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scriptDescription",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "charset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Loads a script into ZAP from the given local file, with the given name, type and engine, optionally with a description, and a charset name to read the script (the charset name is required if the script is not in UTF-8, for example, in ISO-8859-1)."
+        },
+        {
+          "info": {
+            "name": "scriptActionRemove",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/remove/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes the script with the given name"
+        },
+        {
+          "info": {
+            "name": "scriptActionRunStandAloneScript",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/runStandAloneScript/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Runs the stand alone script with the given name"
+        },
+        {
+          "info": {
+            "name": "scriptActionSetGlobalVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/setGlobalVar/",
+            "params": [
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "varValue",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the value of the global variable with the given key."
+        },
+        {
+          "info": {
+            "name": "scriptActionSetScriptVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/action/setScriptVar/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "varValue",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the value of the variable with the given key of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists."
+        },
+        {
+          "info": {
+            "name": "scriptViewGlobalCustomVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/globalCustomVar/",
+            "params": [
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query",
+                "description": "The key of the variable."
+              }
+            ]
+          },
+          "docs": "Gets the value (string representation) of a global custom variable. Returns an API error (DOES_NOT_EXIST) if no value was previously set."
+        },
+        {
+          "info": {
+            "name": "scriptViewGlobalCustomVars",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/globalCustomVars/"
+          },
+          "docs": "Gets all the global custom variables (key/value pairs, the value is the string representation)."
+        },
+        {
+          "info": {
+            "name": "scriptViewGlobalVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/globalVar/",
+            "params": [
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the value of the global variable with the given key. Returns an API error (DOES_NOT_EXIST) if no value was previously set."
+        },
+        {
+          "info": {
+            "name": "scriptViewGlobalVars",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/globalVars/"
+          },
+          "docs": "Gets all the global variables (key/value pairs)."
+        },
+        {
+          "info": {
+            "name": "scriptViewListEngines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/listEngines/"
+          },
+          "docs": "Lists the script engines available"
+        },
+        {
+          "info": {
+            "name": "scriptViewListScripts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/listScripts/"
+          },
+          "docs": "Lists the scripts available, with its engine, name, description, type and error state."
+        },
+        {
+          "info": {
+            "name": "scriptViewListTypes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/listTypes/"
+          },
+          "docs": "Lists the script types available."
+        },
+        {
+          "info": {
+            "name": "scriptViewScriptCustomVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/scriptCustomVar/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the script."
+              },
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query",
+                "description": "The key of the variable."
+              }
+            ]
+          },
+          "docs": "Gets the value (string representation) of a custom variable. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists or if no value was previously set."
+        },
+        {
+          "info": {
+            "name": "scriptViewScriptCustomVars",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/scriptCustomVars/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the script."
+              }
+            ]
+          },
+          "docs": "Gets all the custom variables (key/value pairs, the value is the string representation) of a script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists."
+        },
+        {
+          "info": {
+            "name": "scriptViewScriptVar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/scriptVar/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "varKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the value of the variable with the given key for the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists or if no value was previously set."
+        },
+        {
+          "info": {
+            "name": "scriptViewScriptVars",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/script/view/scriptVars/",
+            "params": [
+              {
+                "name": "scriptName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets all the variables (key/value pairs) of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

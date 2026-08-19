@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl sessionManagement API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "sessionManagement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "sessionManagementActionSetSessionManagementMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/sessionManagement/action/setSessionManagementMethod/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "methodName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "methodConfigParams",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the session management method for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "sessionManagementViewGetSessionManagementMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/sessionManagement/view/getSessionManagementMethod/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the name of the session management method for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "sessionManagementViewGetSessionManagementMethodConfigParams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/sessionManagement/view/getSessionManagementMethodConfigParams/",
+            "params": [
+              {
+                "name": "methodName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the configuration parameters for the session management method with the given name."
+        },
+        {
+          "info": {
+            "name": "sessionManagementViewGetSupportedSessionManagementMethods",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/sessionManagement/view/getSupportedSessionManagementMethods/"
+          },
+          "docs": "Gets the name of the session management methods."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

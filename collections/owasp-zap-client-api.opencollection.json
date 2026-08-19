@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl client API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "client",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "clientActionExportClientMap",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/client/action/exportClientMap/",
+            "params": [
+              {
+                "name": "pathYaml",
+                "value": "",
+                "type": "query",
+                "description": "The file system path to the file."
+              }
+            ]
+          },
+          "docs": "Exports the Client Map to a file."
+        },
+        {
+          "info": {
+            "name": "clientActionReportEvent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/client/action/reportEvent/",
+            "params": [
+              {
+                "name": "eventJson",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "clientActionReportObject",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/client/action/reportObject/",
+            "params": [
+              {
+                "name": "objectJson",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "clientActionReportZestScript",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/client/action/reportZestScript/",
+            "params": [
+              {
+                "name": "scriptJson",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "clientActionReportZestStatement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/client/action/reportZestStatement/",
+            "params": [
+              {
+                "name": "statementJson",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

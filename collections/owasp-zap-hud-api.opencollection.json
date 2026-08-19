@@ -1,0 +1,527 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl hud API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "hud",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "hudActionLog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/log/",
+            "params": [
+              {
+                "name": "record",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Used by the HUD to log messages from the browser"
+        },
+        {
+          "info": {
+            "name": "hudActionRecordRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/recordRequest/",
+            "params": [
+              {
+                "name": "header",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "body",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Used by the HUD to cache a request the user wants to send in the browser"
+        },
+        {
+          "info": {
+            "name": "hudActionResetTutorialTasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/resetTutorialTasks/"
+          },
+          "docs": "Reset the tutorial tasks so that they must be completed again"
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionBaseDirectory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionBaseDirectory/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Set the base directory from which the HUD files are loaded"
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionDevelopmentMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionDevelopmentMode/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the boolean option 'Development mode'"
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionEnableOnDomainMsgs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionEnableOnDomainMsgs/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionEnabledForDaemon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionEnabledForDaemon/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionEnabledForDesktop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionEnabledForDesktop/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionInScopeOnly",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionInScopeOnly/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the boolean option 'In scope only'"
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionRemoveCSP",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionRemoveCSP/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the boolean option 'Remove CSP'"
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionShowWelcomeScreen",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionShowWelcomeScreen/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionSkipTutorialTasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionSkipTutorialTasks/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionTutorialTaskDone",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionTutorialTaskDone/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "hudActionSetOptionTutorialTestMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setOptionTutorialTestMode/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "hudActionSetUiOption",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/action/setUiOption/",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets a UI option with the given key and value. The key must be 50 or fewer alphanumeric characters"
+        },
+        {
+          "info": {
+            "name": "hudOtherChangesInHtml",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/hud/other/changesInHtml/"
+          },
+          "docs": "Returns the changelog in HTML format"
+        },
+        {
+          "info": {
+            "name": "hudViewGetUiOption",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/getUiOption/",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets a UI option set using setUiOption. If the supplied key is not set then an empty string is returned"
+        },
+        {
+          "info": {
+            "name": "hudViewHeartbeat",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/heartbeat/"
+          },
+          "docs": "Used by service workers to keep alive"
+        },
+        {
+          "info": {
+            "name": "hudViewHudAlertData",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/hudAlertData/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the alert summary needed by the HUD for the specified URL"
+        },
+        {
+          "info": {
+            "name": "hudViewOptionAllowUnsafeEval",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionAllowUnsafeEval/"
+          },
+          "docs": "Returns true if the 'Allow unsafe-eval' option is set"
+        },
+        {
+          "info": {
+            "name": "hudViewOptionBaseDirectory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionBaseDirectory/"
+          },
+          "docs": "Returns the base directory from which the HUD files are loaded"
+        },
+        {
+          "info": {
+            "name": "hudViewOptionDevelopmentMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionDevelopmentMode/"
+          },
+          "docs": "Returns true if the 'Development mode' option is set"
+        },
+        {
+          "info": {
+            "name": "hudViewOptionEnableOnDomainMsgs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionEnableOnDomainMsgs/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionEnableTelemetry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionEnableTelemetry/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionEnabledForDaemon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionEnabledForDaemon/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionEnabledForDesktop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionEnabledForDesktop/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionInScopeOnly",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionInScopeOnly/"
+          },
+          "docs": "Returns true if the 'In scope only' option is set"
+        },
+        {
+          "info": {
+            "name": "hudViewOptionRemoveCSP",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionRemoveCSP/"
+          },
+          "docs": "Returns true if the 'Remove CSP' option is set"
+        },
+        {
+          "info": {
+            "name": "hudViewOptionShowWelcomeScreen",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionShowWelcomeScreen/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionSkipTutorialTasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionSkipTutorialTasks/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionTutorialHost",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionTutorialHost/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionTutorialPort",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionTutorialPort/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionTutorialTasksDone",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionTutorialTasksDone/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionTutorialTestMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionTutorialTestMode/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewOptionTutorialUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/optionTutorialUpdates/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewTutorialUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/tutorialUpdates/"
+          }
+        },
+        {
+          "info": {
+            "name": "hudViewUpgradedDomains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/hud/view/upgradedDomains/"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,958 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl network API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "network",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "networkActionAddAlias",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/addAlias/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the alias."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Adds an alias for the local servers/proxies."
+        },
+        {
+          "info": {
+            "name": "networkActionAddHttpProxyExclusion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/addHttpProxyExclusion/",
+            "params": [
+              {
+                "name": "host",
+                "value": "",
+                "type": "query",
+                "description": "The value of the host, a regular expression."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Adds a host to be excluded from the HTTP proxy."
+        },
+        {
+          "info": {
+            "name": "networkActionAddLocalServer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/addLocalServer/",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "The address of the local server/proxy."
+              },
+              {
+                "name": "port",
+                "value": "",
+                "type": "query",
+                "description": "The port of the local server/proxy."
+              },
+              {
+                "name": "api",
+                "value": "",
+                "type": "query",
+                "description": "If the ZAP API is available, true or false."
+              },
+              {
+                "name": "proxy",
+                "value": "",
+                "type": "query",
+                "description": "If the local server should proxy, true or false."
+              },
+              {
+                "name": "behindNat",
+                "value": "",
+                "type": "query",
+                "description": "If the local server is behind NAT, true or false."
+              },
+              {
+                "name": "decodeResponse",
+                "value": "",
+                "type": "query",
+                "description": "If the response should be decoded, true or false."
+              },
+              {
+                "name": "removeAcceptEncoding",
+                "value": "",
+                "type": "query",
+                "description": "If the request header Accept-Encoding should be removed, true or false."
+              }
+            ]
+          },
+          "docs": "Adds a local server/proxy."
+        },
+        {
+          "info": {
+            "name": "networkActionAddPassThrough",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/addPassThrough/",
+            "params": [
+              {
+                "name": "authority",
+                "value": "",
+                "type": "query",
+                "description": "The value of the authority, can be a regular expression."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Adds an authority to pass-through the local proxies."
+        },
+        {
+          "info": {
+            "name": "networkActionAddPkcs12ClientCertificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/addPkcs12ClientCertificate/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query",
+                "description": "The file path."
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "The password for the file."
+              },
+              {
+                "name": "index",
+                "value": "",
+                "type": "query",
+                "description": "The index of the certificate in the file, defaults to 0."
+              }
+            ]
+          },
+          "docs": "Adds a client certificate contained in a PKCS#12 file, the certificate is automatically set as active and used."
+        },
+        {
+          "info": {
+            "name": "networkActionAddRateLimitRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/addRateLimitRule/",
+            "params": [
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "A description that allows you to identify the rule. Each rule must have a unique description."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              },
+              {
+                "name": "matchRegex",
+                "value": "",
+                "type": "query",
+                "description": "Regex used to match the host."
+              },
+              {
+                "name": "matchString",
+                "value": "",
+                "type": "query",
+                "description": "Plain string match is handled based on DNS conventions. If the string has one or two components."
+              },
+              {
+                "name": "requestsPerSecond",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of requests per second."
+              },
+              {
+                "name": "groupBy",
+                "value": "",
+                "type": "query",
+                "description": "How to group hosts when applying rate limiting: rule or host"
+              }
+            ]
+          },
+          "docs": "Adds a rate limit rule"
+        },
+        {
+          "info": {
+            "name": "networkActionGenerateRootCaCert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/generateRootCaCert/"
+          },
+          "docs": "Generates a new Root CA certificate, used to issue server certificates."
+        },
+        {
+          "info": {
+            "name": "networkActionImportRootCaCert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/importRootCaCert/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query",
+                "description": "The file system path to the PEM file, containing the certificate and private key."
+              }
+            ]
+          },
+          "docs": "Imports a Root CA certificate to be used to issue server certificates."
+        },
+        {
+          "info": {
+            "name": "networkActionRemoveAlias",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/removeAlias/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the alias."
+              }
+            ]
+          },
+          "docs": "Removes an alias."
+        },
+        {
+          "info": {
+            "name": "networkActionRemoveHttpProxyExclusion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/removeHttpProxyExclusion/",
+            "params": [
+              {
+                "name": "host",
+                "value": "",
+                "type": "query",
+                "description": "The value of the host."
+              }
+            ]
+          },
+          "docs": "Removes an HTTP proxy exclusion."
+        },
+        {
+          "info": {
+            "name": "networkActionRemoveLocalServer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/removeLocalServer/",
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "The address of the local server/proxy."
+              },
+              {
+                "name": "port",
+                "value": "",
+                "type": "query",
+                "description": "The port of the local server/proxy."
+              }
+            ]
+          },
+          "docs": "Removes a local server/proxy."
+        },
+        {
+          "info": {
+            "name": "networkActionRemovePassThrough",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/removePassThrough/",
+            "params": [
+              {
+                "name": "authority",
+                "value": "",
+                "type": "query",
+                "description": "The value of the authority."
+              }
+            ]
+          },
+          "docs": "Removes a pass-through."
+        },
+        {
+          "info": {
+            "name": "networkActionRemoveRateLimitRule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/removeRateLimitRule/",
+            "params": [
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description of the rule to remove."
+              }
+            ]
+          },
+          "docs": "Remove a rate limit rule"
+        },
+        {
+          "info": {
+            "name": "networkActionSetAliasEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setAliasEnabled/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the alias."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not an alias is enabled."
+        },
+        {
+          "info": {
+            "name": "networkActionSetConnectionTimeout",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setConnectionTimeout/",
+            "params": [
+              {
+                "name": "timeout",
+                "value": "",
+                "type": "query",
+                "description": "The timeout, in seconds."
+              }
+            ]
+          },
+          "docs": "Sets the timeout, for reads and connects."
+        },
+        {
+          "info": {
+            "name": "networkActionSetDefaultUserAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setDefaultUserAgent/",
+            "params": [
+              {
+                "name": "userAgent",
+                "value": "",
+                "type": "query",
+                "description": "The default user-agent."
+              }
+            ]
+          },
+          "docs": "Sets the default user-agent."
+        },
+        {
+          "info": {
+            "name": "networkActionSetDnsTtlSuccessfulQueries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setDnsTtlSuccessfulQueries/",
+            "params": [
+              {
+                "name": "ttl",
+                "value": "",
+                "type": "query",
+                "description": "The TTL, in seconds. Negative number, cache forever. Zero, disables caching. Positive number, the number of seconds the successful DNS queries will be cached."
+              }
+            ]
+          },
+          "docs": "Sets the TTL of successful DNS queries."
+        },
+        {
+          "info": {
+            "name": "networkActionSetHttpProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setHttpProxy/",
+            "params": [
+              {
+                "name": "host",
+                "value": "",
+                "type": "query",
+                "description": "The host, name or address."
+              },
+              {
+                "name": "port",
+                "value": "",
+                "type": "query",
+                "description": "The port."
+              },
+              {
+                "name": "realm",
+                "value": "",
+                "type": "query",
+                "description": "The authentication realm."
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "The user name."
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "The password."
+              }
+            ]
+          },
+          "docs": "Sets the HTTP proxy configuration."
+        },
+        {
+          "info": {
+            "name": "networkActionSetHttpProxyAuthEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setHttpProxyAuthEnabled/",
+            "params": [
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the HTTP proxy authentication is enabled."
+        },
+        {
+          "info": {
+            "name": "networkActionSetHttpProxyEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setHttpProxyEnabled/",
+            "params": [
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the HTTP proxy is enabled."
+        },
+        {
+          "info": {
+            "name": "networkActionSetHttpProxyExclusionEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setHttpProxyExclusionEnabled/",
+            "params": [
+              {
+                "name": "host",
+                "value": "",
+                "type": "query",
+                "description": "The value of the host."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not an HTTP proxy exclusion is enabled."
+        },
+        {
+          "info": {
+            "name": "networkActionSetPassThroughEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setPassThroughEnabled/",
+            "params": [
+              {
+                "name": "authority",
+                "value": "",
+                "type": "query",
+                "description": "The value of the authority."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not a pass-through is enabled."
+        },
+        {
+          "info": {
+            "name": "networkActionSetRateLimitRuleEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setRateLimitRuleEnabled/",
+            "params": [
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description of the rule to modify."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Set enabled state for a rate limit rule."
+        },
+        {
+          "info": {
+            "name": "networkActionSetRootCaCertValidity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setRootCaCertValidity/",
+            "params": [
+              {
+                "name": "validity",
+                "value": "",
+                "type": "query",
+                "description": "The number of days that the generated Root CA certificate will be valid for."
+              }
+            ]
+          },
+          "docs": "Sets the Root CA certificate validity. Used when generating a new Root CA certificate."
+        },
+        {
+          "info": {
+            "name": "networkActionSetServerCertValidity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setServerCertValidity/",
+            "params": [
+              {
+                "name": "validity",
+                "value": "",
+                "type": "query",
+                "description": "The number of days that the generated server certificates will be valid for."
+              }
+            ]
+          },
+          "docs": "Sets the server certificate validity. Used when generating server certificates."
+        },
+        {
+          "info": {
+            "name": "networkActionSetSocksProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setSocksProxy/",
+            "params": [
+              {
+                "name": "host",
+                "value": "",
+                "type": "query",
+                "description": "The host, name or address."
+              },
+              {
+                "name": "port",
+                "value": "",
+                "type": "query",
+                "description": "The port."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "The SOCKS version."
+              },
+              {
+                "name": "useDns",
+                "value": "",
+                "type": "query",
+                "description": "If the names should be resolved by the SOCKS proxy, true or false."
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "The user name."
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "The password."
+              }
+            ]
+          },
+          "docs": "Sets the SOCKS proxy configuration."
+        },
+        {
+          "info": {
+            "name": "networkActionSetSocksProxyEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setSocksProxyEnabled/",
+            "params": [
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the SOCKS proxy is enabled."
+        },
+        {
+          "info": {
+            "name": "networkActionSetUseClientCertificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setUseClientCertificate/",
+            "params": [
+              {
+                "name": "use",
+                "value": "",
+                "type": "query",
+                "description": "The use state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not to use the active client certificate."
+        },
+        {
+          "info": {
+            "name": "networkActionSetUseGlobalHttpState",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/action/setUseGlobalHttpState/",
+            "params": [
+              {
+                "name": "use",
+                "value": "",
+                "type": "query",
+                "description": "The use state, true or false."
+              }
+            ]
+          },
+          "docs": "Sets whether or not to use the global HTTP state."
+        },
+        {
+          "info": {
+            "name": "networkOtherProxy.pac",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/network/other/proxy.pac/"
+          },
+          "docs": "Provides a PAC file, proxying through the main proxy."
+        },
+        {
+          "info": {
+            "name": "networkOtherRootCaCert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/network/other/rootCaCert/"
+          },
+          "docs": "Gets the Root CA certificate used to issue server certificates. Suitable to import into client applications (e.g. browsers)."
+        },
+        {
+          "info": {
+            "name": "networkOtherSetProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/network/other/setProxy/",
+            "params": [
+              {
+                "name": "proxy",
+                "value": "",
+                "type": "query",
+                "description": "The JSON object containing the HTTP proxy configuration."
+              }
+            ]
+          },
+          "docs": "Sets the HTTP proxy configuration."
+        },
+        {
+          "info": {
+            "name": "networkViewGetAliases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getAliases/"
+          },
+          "docs": "Gets the aliases used to identify the local servers/proxies."
+        },
+        {
+          "info": {
+            "name": "networkViewGetConnectionTimeout",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getConnectionTimeout/"
+          },
+          "docs": "Gets the connection timeout, in seconds."
+        },
+        {
+          "info": {
+            "name": "networkViewGetDefaultUserAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getDefaultUserAgent/"
+          },
+          "docs": "Gets the default user-agent."
+        },
+        {
+          "info": {
+            "name": "networkViewGetDnsTtlSuccessfulQueries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getDnsTtlSuccessfulQueries/"
+          },
+          "docs": "Gets the TTL (in seconds) of successful DNS queries."
+        },
+        {
+          "info": {
+            "name": "networkViewGetHttpProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getHttpProxy/"
+          },
+          "docs": "Gets the HTTP proxy."
+        },
+        {
+          "info": {
+            "name": "networkViewGetHttpProxyExclusions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getHttpProxyExclusions/"
+          },
+          "docs": "Gets the HTTP proxy exclusions."
+        },
+        {
+          "info": {
+            "name": "networkViewGetLocalServers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getLocalServers/"
+          },
+          "docs": "Gets the local servers/proxies."
+        },
+        {
+          "info": {
+            "name": "networkViewGetPassThroughs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getPassThroughs/"
+          },
+          "docs": "Gets the authorities that will pass-through the local proxies."
+        },
+        {
+          "info": {
+            "name": "networkViewGetRateLimitRules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getRateLimitRules/"
+          },
+          "docs": "List of rate limit rules."
+        },
+        {
+          "info": {
+            "name": "networkViewGetRootCaCertValidity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getRootCaCertValidity/"
+          },
+          "docs": "Gets the Root CA certificate validity, in days. Used when generating a new Root CA certificate."
+        },
+        {
+          "info": {
+            "name": "networkViewGetServerCertValidity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getServerCertValidity/"
+          },
+          "docs": "Gets the server certificate validity, in days. Used when generating server certificates."
+        },
+        {
+          "info": {
+            "name": "networkViewGetSocksProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/getSocksProxy/"
+          },
+          "docs": "Gets the SOCKS proxy."
+        },
+        {
+          "info": {
+            "name": "networkViewIsHttpProxyAuthEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/isHttpProxyAuthEnabled/"
+          },
+          "docs": "Tells whether or not the HTTP proxy authentication is enabled."
+        },
+        {
+          "info": {
+            "name": "networkViewIsHttpProxyEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/isHttpProxyEnabled/"
+          },
+          "docs": "Tells whether or not the HTTP proxy is enabled."
+        },
+        {
+          "info": {
+            "name": "networkViewIsSocksProxyEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/isSocksProxyEnabled/"
+          },
+          "docs": "Tells whether or not the SOCKS proxy is enabled."
+        },
+        {
+          "info": {
+            "name": "networkViewIsUseGlobalHttpState",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/network/view/isUseGlobalHttpState/"
+          },
+          "docs": "Tells whether or not to use global HTTP state."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

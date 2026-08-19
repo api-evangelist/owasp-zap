@@ -1,0 +1,338 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl graphql API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "graphql",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "graphqlActionImportFile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/importFile/",
+            "params": [
+              {
+                "name": "endurl",
+                "value": "",
+                "type": "query",
+                "description": "The Endpoint URL."
+              },
+              {
+                "name": "file",
+                "value": "",
+                "type": "query",
+                "description": "The File That Contains the GraphQL Schema."
+              }
+            ]
+          },
+          "docs": "Imports a GraphQL Schema from a File."
+        },
+        {
+          "info": {
+            "name": "graphqlActionImportUrl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/importUrl/",
+            "params": [
+              {
+                "name": "endurl",
+                "value": "",
+                "type": "query",
+                "description": "The Endpoint URL."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL Locating the GraphQL Schema."
+              }
+            ]
+          },
+          "docs": "Imports a GraphQL Schema from a URL."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionArgsType",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionArgsType/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query",
+                "description": "Can be \"INLINE\", \"VARIABLES\", or \"BOTH\"."
+              }
+            ]
+          },
+          "docs": "Sets how arguments are specified."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionLenientMaxQueryDepthEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionLenientMaxQueryDepthEnabled/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "Enforce Leniently (true or false)."
+              }
+            ]
+          },
+          "docs": "Sets whether or not Maximum Query Depth is enforced leniently."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionMaxAdditionalQueryDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionMaxAdditionalQueryDepth/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The Maximum Additional Depth."
+              }
+            ]
+          },
+          "docs": "Sets the maximum additional query generation depth (used if enforced leniently)."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionMaxArgsDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionMaxArgsDepth/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The Maximum Depth."
+              }
+            ]
+          },
+          "docs": "Sets the maximum arguments generation depth."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionMaxQueryDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionMaxQueryDepth/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The Maximum Depth."
+              }
+            ]
+          },
+          "docs": "Sets the maximum query generation depth."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionOptionalArgsEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionOptionalArgsEnabled/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "Specify Optional Arguments (true or false)."
+              }
+            ]
+          },
+          "docs": "Sets whether or not Optional Arguments should be specified."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionQueryGenEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionQueryGenEnabled/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "Enable query generation (true or false)."
+              }
+            ]
+          },
+          "docs": "Sets whether the query generator is enabled."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionQuerySplitType",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionQuerySplitType/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query",
+                "description": "Can be \"LEAF\", \"ROOT_FIELD\", or \"OPERATION\"."
+              }
+            ]
+          },
+          "docs": "Sets the level for which a single query is generated."
+        },
+        {
+          "info": {
+            "name": "graphqlActionSetOptionRequestMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/action/setOptionRequestMethod/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query",
+                "description": "Can be \"POST_JSON\", \"POST_GRAPHQL\", or \"GET\"."
+              }
+            ]
+          },
+          "docs": "Sets the request method."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionArgsType",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionArgsType/"
+          },
+          "docs": "Returns how arguments are currently specified."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionLenientMaxQueryDepthEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionLenientMaxQueryDepthEnabled/"
+          },
+          "docs": "Returns whether or not lenient maximum query generation depth is enabled."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionMaxAdditionalQueryDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionMaxAdditionalQueryDepth/"
+          },
+          "docs": "Returns the current maximum additional query generation depth."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionMaxArgsDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionMaxArgsDepth/"
+          },
+          "docs": "Returns the current maximum arguments generation depth."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionMaxQueryDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionMaxQueryDepth/"
+          },
+          "docs": "Returns the current maximum query generation depth."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionOptionalArgsEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionOptionalArgsEnabled/"
+          },
+          "docs": "Returns whether or not optional arguments are currently specified."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionQueryGenEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionQueryGenEnabled/"
+          },
+          "docs": "Returns whether the query generator is enabled."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionQuerySplitType",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionQuerySplitType/"
+          },
+          "docs": "Returns the current level for which a single query is generated."
+        },
+        {
+          "info": {
+            "name": "graphqlViewOptionRequestMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/graphql/view/optionRequestMethod/"
+          },
+          "docs": "Returns the current request method."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

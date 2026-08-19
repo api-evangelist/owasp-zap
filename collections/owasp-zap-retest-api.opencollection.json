@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl retest API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "retest",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "retestActionRetest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/retest/action/retest/",
+            "params": [
+              {
+                "name": "alertIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

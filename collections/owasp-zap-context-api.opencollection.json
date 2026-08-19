@@ -1,0 +1,476 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl context API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "context",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "contextActionExcludeAllContextTechnologies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/excludeAllContextTechnologies/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "Excludes all built in technologies from a context"
+        },
+        {
+          "info": {
+            "name": "contextActionExcludeContextTechnologies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/excludeContextTechnologies/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "technologyNames",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Excludes technologies with the given names, separated by a comma, from a context"
+        },
+        {
+          "info": {
+            "name": "contextActionExcludeFromContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/excludeFromContext/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add exclude regex to context"
+        },
+        {
+          "info": {
+            "name": "contextActionExportContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/exportContext/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "contextFile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Exports the context with the given name to a file. If a relative file path is specified it will be resolved against the \"contexts\" directory in ZAP \"home\" dir."
+        },
+        {
+          "info": {
+            "name": "contextActionImportContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/importContext/",
+            "params": [
+              {
+                "name": "contextFile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Imports a context from a file. If a relative file path is specified it will be resolved against the \"contexts\" directory in ZAP \"home\" dir."
+        },
+        {
+          "info": {
+            "name": "contextActionIncludeAllContextTechnologies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/includeAllContextTechnologies/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "Includes all built in technologies in to a context"
+        },
+        {
+          "info": {
+            "name": "contextActionIncludeContextTechnologies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/includeContextTechnologies/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "technologyNames",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Includes technologies with the given names, separated by a comma, to a context"
+        },
+        {
+          "info": {
+            "name": "contextActionIncludeInContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/includeInContext/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add include regex to context"
+        },
+        {
+          "info": {
+            "name": "contextActionNewContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/newContext/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "Creates a new context with the given name in the current session"
+        },
+        {
+          "info": {
+            "name": "contextActionRemoveContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/removeContext/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "Removes a context in the current session"
+        },
+        {
+          "info": {
+            "name": "contextActionSetContextCheckingStrategy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/setContextCheckingStrategy/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "checkingStrategy",
+                "value": "",
+                "type": "query",
+                "description": "One of EACH_RESP, EACH_REQ, EACH_REQ_RESP, POLL_URL"
+              },
+              {
+                "name": "pollUrl",
+                "value": "",
+                "type": "query",
+                "description": "The URL for ZAP to poll, must be supplied if checkingStrategy = POLL_URL, otherwise ignored"
+              },
+              {
+                "name": "pollData",
+                "value": "",
+                "type": "query",
+                "description": "The POST data to supply to the pollUrl, option and only takes effect if checkingStrategy = POLL_URL"
+              },
+              {
+                "name": "pollHeaders",
+                "value": "",
+                "type": "query",
+                "description": "Any additional headers that need to be added to the poll request, separated by '\\n' characters, only takes effect if checkingStrategy = POLL_URL"
+              },
+              {
+                "name": "pollFrequency",
+                "value": "",
+                "type": "query",
+                "description": "An integer greater than zero, must be supplied if checkingStrategy = POLL_URL, otherwise ignored"
+              },
+              {
+                "name": "pollFrequencyUnits",
+                "value": "",
+                "type": "query",
+                "description": "One of REQUESTS, SECONDS, must be supplied if checkingStrategy = POLL_URL, otherwise ignored"
+              }
+            ]
+          },
+          "docs": "Set the checking strategy for a context - this defines how ZAP checks that a request is authenticated"
+        },
+        {
+          "info": {
+            "name": "contextActionSetContextInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/setContextInScope/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "booleanInScope",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets a context to in scope (contexts are in scope by default)"
+        },
+        {
+          "info": {
+            "name": "contextActionSetContextRegexs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/action/setContextRegexs/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              },
+              {
+                "name": "incRegexs",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excRegexs",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Set the regexs to include and exclude for a context, both supplied as JSON string arrays"
+        },
+        {
+          "info": {
+            "name": "contextViewContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/context/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "List the information about the named context"
+        },
+        {
+          "info": {
+            "name": "contextViewContextList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/contextList/"
+          },
+          "docs": "List context names of current session"
+        },
+        {
+          "info": {
+            "name": "contextViewExcludeRegexs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/excludeRegexs/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "List excluded regexs for context"
+        },
+        {
+          "info": {
+            "name": "contextViewExcludedTechnologyList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/excludedTechnologyList/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "Lists the names of all technologies excluded from a context"
+        },
+        {
+          "info": {
+            "name": "contextViewIncludeRegexs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/includeRegexs/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "List included regexs for context"
+        },
+        {
+          "info": {
+            "name": "contextViewIncludedTechnologyList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/includedTechnologyList/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "Lists the names of all technologies included in a context"
+        },
+        {
+          "info": {
+            "name": "contextViewTechnologyList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/technologyList/"
+          },
+          "docs": "Lists the names of all built in technologies"
+        },
+        {
+          "info": {
+            "name": "contextViewUrls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/context/view/urls/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context"
+              }
+            ]
+          },
+          "docs": "Lists the URLs accessed through/by ZAP, that belong to the context with the given name."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl acsrf API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "acsrf",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "acsrfActionAddOptionToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/acsrf/action/addOptionToken/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds an anti-CSRF token with the given name, enabled by default"
+        },
+        {
+          "info": {
+            "name": "acsrfActionRemoveOptionToken",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/acsrf/action/removeOptionToken/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes the anti-CSRF token with the given name"
+        },
+        {
+          "info": {
+            "name": "acsrfActionSetOptionPartialMatchingEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/acsrf/action/setOptionPartialMatchingEnabled/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Define if ZAP should detect CSRF tokens by searching for partial matches."
+        },
+        {
+          "info": {
+            "name": "acsrfOtherGenForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/acsrf/other/genForm/",
+            "params": [
+              {
+                "name": "hrefId",
+                "value": "",
+                "type": "query",
+                "description": "Define which request will be used"
+              },
+              {
+                "name": "actionUrl",
+                "value": "",
+                "type": "query",
+                "description": "Define the action URL to be used in the generated form"
+              }
+            ]
+          },
+          "docs": "Generate a form for testing lack of anti-CSRF tokens - typically invoked via ZAP"
+        },
+        {
+          "info": {
+            "name": "acsrfViewOptionPartialMatchingEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/acsrf/view/optionPartialMatchingEnabled/"
+          },
+          "docs": "Define if ZAP should detect CSRF tokens by searching for partial matches"
+        },
+        {
+          "info": {
+            "name": "acsrfViewOptionTokensNames",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/acsrf/view/optionTokensNames/"
+          },
+          "docs": "Lists the names of all anti-CSRF tokens"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

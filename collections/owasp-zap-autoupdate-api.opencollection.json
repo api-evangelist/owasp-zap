@@ -1,0 +1,425 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl autoupdate API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "autoupdate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "autoupdateActionDownloadLatestRelease",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/downloadLatestRelease/"
+          },
+          "docs": "Downloads the latest release, if any "
+        },
+        {
+          "info": {
+            "name": "autoupdateActionInstallAddon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/installAddon/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Installs or updates the specified add-on, returning when complete (i.e. not asynchronously)"
+        },
+        {
+          "info": {
+            "name": "autoupdateActionInstallLocalAddon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/installLocalAddon/",
+            "params": [
+              {
+                "name": "file",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionCheckAddonUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionCheckAddonUpdates/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionCheckOnStart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionCheckOnStart/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionDownloadNewRelease",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionDownloadNewRelease/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionInstallAddonUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionInstallAddonUpdates/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionInstallScannerRules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionInstallScannerRules/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionReportAlphaAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionReportAlphaAddons/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionReportBetaAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionReportBetaAddons/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionSetOptionReportReleaseAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/setOptionReportReleaseAddons/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateActionUninstallAddon",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/action/uninstallAddon/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Uninstalls the specified add-on "
+        },
+        {
+          "info": {
+            "name": "autoupdateViewInstalledAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/installedAddons/"
+          },
+          "docs": "Return a list of all of the installed add-ons"
+        },
+        {
+          "info": {
+            "name": "autoupdateViewIsLatestVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/isLatestVersion/"
+          },
+          "docs": "Returns 'true' if ZAP is on the latest version"
+        },
+        {
+          "info": {
+            "name": "autoupdateViewLatestVersionNumber",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/latestVersionNumber/"
+          },
+          "docs": "Returns the latest version number"
+        },
+        {
+          "info": {
+            "name": "autoupdateViewLocalAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/localAddons/"
+          },
+          "docs": "Returns a list with all local add-ons, installed or not."
+        },
+        {
+          "info": {
+            "name": "autoupdateViewMarketplaceAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/marketplaceAddons/"
+          },
+          "docs": "Return a list of all of the add-ons on the ZAP Marketplace (this information is read once and then cached)"
+        },
+        {
+          "info": {
+            "name": "autoupdateViewNewAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/newAddons/"
+          },
+          "docs": "Return a list of any add-ons that have been added to the Marketplace since the last check for updates"
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionAddonDirectories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionAddonDirectories/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionCheckAddonUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionCheckAddonUpdates/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionCheckOnStart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionCheckOnStart/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionDayLastChecked",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionDayLastChecked/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionDayLastInstallWarned",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionDayLastInstallWarned/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionDayLastUpdateWarned",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionDayLastUpdateWarned/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionDownloadDirectory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionDownloadDirectory/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionDownloadNewRelease",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionDownloadNewRelease/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionInstallAddonUpdates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionInstallAddonUpdates/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionInstallScannerRules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionInstallScannerRules/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionReportAlphaAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionReportAlphaAddons/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionReportBetaAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionReportBetaAddons/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewOptionReportReleaseAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/optionReportReleaseAddons/"
+          }
+        },
+        {
+          "info": {
+            "name": "autoupdateViewUpdatedAddons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/autoupdate/view/updatedAddons/"
+          },
+          "docs": "Return a list of any add-ons that have been changed in the Marketplace since the last check for updates"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

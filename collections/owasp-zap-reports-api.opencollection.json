@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl reports API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "reportsActionGenerate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/reports/action/generate/",
+            "params": [
+              {
+                "name": "title",
+                "value": "",
+                "type": "query",
+                "description": "Report Title"
+              },
+              {
+                "name": "template",
+                "value": "",
+                "type": "query",
+                "description": "Report Template"
+              },
+              {
+                "name": "theme",
+                "value": "",
+                "type": "query",
+                "description": "Report Theme"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Report Description"
+              },
+              {
+                "name": "contexts",
+                "value": "",
+                "type": "query",
+                "description": "The name of the contexts to be included in the report, separated by '|'."
+              },
+              {
+                "name": "sites",
+                "value": "",
+                "type": "query",
+                "description": "The site URLs that should be included in the report, separated by '|'."
+              },
+              {
+                "name": "sections",
+                "value": "",
+                "type": "query",
+                "description": "The report sections that should be included, separated by '|'."
+              },
+              {
+                "name": "includedConfidences",
+                "value": "",
+                "type": "query",
+                "description": "Confidences that should be included in the report, separated by '|'. Accepted values are \"False Positive\", \"Low\", \"Medium\", \"High\", and \"Confirmed\"."
+              },
+              {
+                "name": "includedRisks",
+                "value": "",
+                "type": "query",
+                "description": "Risks that should be included in the report, separated by '|'. Accepted values are \"Informational\", \"Low\", \"Medium\", and \"High\"."
+              },
+              {
+                "name": "reportFileName",
+                "value": "",
+                "type": "query",
+                "description": "The file name of the generated report. This value overrides the reportFileNamePattern parameter."
+              },
+              {
+                "name": "reportFileNamePattern",
+                "value": "",
+                "type": "query",
+                "description": "Report File Name Pattern."
+              },
+              {
+                "name": "reportDir",
+                "value": "",
+                "type": "query",
+                "description": "Path to directory in which the generated report should be placed."
+              },
+              {
+                "name": "display",
+                "value": "",
+                "type": "query",
+                "description": "Display the generated report. Either \"true\" or \"false\"."
+              }
+            ]
+          },
+          "docs": "Generate a report with the supplied parameters."
+        },
+        {
+          "info": {
+            "name": "reportsViewTemplateDetails",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/reports/view/templateDetails/",
+            "params": [
+              {
+                "name": "template",
+                "value": "",
+                "type": "query",
+                "description": "Template Label"
+              }
+            ]
+          },
+          "docs": "View details of the specified template."
+        },
+        {
+          "info": {
+            "name": "reportsViewTemplates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/reports/view/templates/"
+          },
+          "docs": "View available templates."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

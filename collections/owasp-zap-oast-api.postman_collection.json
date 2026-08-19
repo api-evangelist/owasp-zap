@@ -1,0 +1,1003 @@
+{
+  "item": [
+    {
+      "id": "c68a672e-9575-44b4-8daf-0a5bff3b3d3b",
+      "name": "oast",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fa7916b4-9fb6-4c54-84b0-fa0874489361",
+          "name": "oast Action Set Active Scan Service",
+          "request": {
+            "name": "oast Action Set Active Scan Service",
+            "description": {
+              "content": "Sets the service used with the active scanner.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "action",
+                "setActiveScanService",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) The name of the service."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40d0169f-b819-4d55-8744-530f32dee021",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "action",
+                    "setActiveScanService",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1beeb98-aa56-4863-a6ec-ea00ca88daea",
+          "name": "oast Action Set Boast Options",
+          "request": {
+            "name": "oast Action Set Boast Options",
+            "description": {
+              "content": "Sets the BOAST options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "action",
+                "setBoastOptions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "server",
+                  "value": "<string>",
+                  "description": "(Required) The server URL."
+                },
+                {
+                  "disabled": false,
+                  "key": "pollInSecs",
+                  "value": "<string>",
+                  "description": "(Required) The polling frequency."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d63a01aa-40ee-4ee3-bcdf-095bc80e0d3d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "action",
+                    "setBoastOptions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pollInSecs",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8dd607a-c118-4407-a2e3-eda954a231f7",
+          "name": "oast Action Set Callback Options",
+          "request": {
+            "name": "oast Action Set Callback Options",
+            "description": {
+              "content": "Sets the Callback options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "action",
+                "setCallbackOptions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "localAddress",
+                  "value": "<string>",
+                  "description": "(Required) The local address"
+                },
+                {
+                  "disabled": false,
+                  "key": "remoteAddress",
+                  "value": "<string>",
+                  "description": "(Required) The remote address."
+                },
+                {
+                  "disabled": false,
+                  "key": "port",
+                  "value": "<string>",
+                  "description": "(Required) The port to listen on."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "743fdcf4-5b8d-4f61-9cad-e3ddacc4283a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "action",
+                    "setCallbackOptions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "localAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "remoteAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "port",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f7ec27d-ab6d-48b4-b075-97f0e256860c",
+          "name": "oast Action Set Days To Keep Records",
+          "request": {
+            "name": "oast Action Set Days To Keep Records",
+            "description": {
+              "content": "Sets the number of days the OAST records will be kept for.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "action",
+                "setDaysToKeepRecords",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "days",
+                  "value": "<string>",
+                  "description": "(Required) The number of days."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9eedf03-dfe1-4243-8d71-298e3d7ca33f",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "action",
+                    "setDaysToKeepRecords",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "days",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e124e72-2d46-42b4-ab73-c399c2dadf62",
+          "name": "oast Action Set Interactsh Options",
+          "request": {
+            "name": "oast Action Set Interactsh Options",
+            "description": {
+              "content": "Sets the Interactsh options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "action",
+                "setInteractshOptions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "server",
+                  "value": "<string>",
+                  "description": "(Required) The server URL."
+                },
+                {
+                  "disabled": false,
+                  "key": "pollInSecs",
+                  "value": "<string>",
+                  "description": "(Required) The polling frequency."
+                },
+                {
+                  "disabled": false,
+                  "key": "authToken",
+                  "value": "<string>",
+                  "description": "(Required) The Interactsh authentication token."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba4336a6-57da-4818-8b29-2e3d3762398e",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "action",
+                    "setInteractshOptions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pollInSecs",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "authToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfa75406-8781-4fb9-93ae-c77397331148",
+          "name": "oast View Get Active Scan Service",
+          "request": {
+            "name": "oast View Get Active Scan Service",
+            "description": {
+              "content": "Gets the service used with the active scanner, if any.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "view",
+                "getActiveScanService",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ad6c46c-9f72-4885-9f81-3bb92f74473a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "view",
+                    "getActiveScanService",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fad86d43-3b29-4c72-9948-7d0881258d10",
+          "name": "oast View Get Boast Options",
+          "request": {
+            "name": "oast View Get Boast Options",
+            "description": {
+              "content": "Gets the BOAST options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "view",
+                "getBoastOptions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "939e581e-f244-430f-8a13-08742d07916b",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "view",
+                    "getBoastOptions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49e58758-2da7-481d-a233-f2beabebc94d",
+          "name": "oast View Get Callback Options",
+          "request": {
+            "name": "oast View Get Callback Options",
+            "description": {
+              "content": "Gets the Callback options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "view",
+                "getCallbackOptions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95b13e69-5743-4e31-b9be-096b0b67faae",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "view",
+                    "getCallbackOptions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f65cc639-161a-48b5-820c-b994bfd8f436",
+          "name": "oast View Get Days To Keep Records",
+          "request": {
+            "name": "oast View Get Days To Keep Records",
+            "description": {
+              "content": "Gets the number of days the OAST records will be kept for.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "view",
+                "getDaysToKeepRecords",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c86229b-a287-4888-9920-d548ae184227",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "view",
+                    "getDaysToKeepRecords",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92cc4799-29f2-400b-8965-4ed235672d3e",
+          "name": "oast View Get Interactsh Options",
+          "request": {
+            "name": "oast View Get Interactsh Options",
+            "description": {
+              "content": "Gets the Interactsh options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "view",
+                "getInteractshOptions",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ff9a2a6-7561-4933-9387-4003d6b21418",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "view",
+                    "getInteractshOptions",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ecf836c2-c097-43b5-aef8-665807b4cb62",
+          "name": "oast View Get Services",
+          "request": {
+            "name": "oast View Get Services",
+            "description": {
+              "content": "Gets all of the services.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "oast",
+                "view",
+                "getServices",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6364a2f9-f82f-47ca-a8c1-e1cf0a107c33",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "oast",
+                    "view",
+                    "getServices",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "24ae299a-027d-46f1-a88d-d9843a39a29b",
+    "name": "ZAP accessControl oast API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

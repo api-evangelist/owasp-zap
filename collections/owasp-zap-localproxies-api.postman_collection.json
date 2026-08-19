@@ -1,0 +1,340 @@
+{
+  "item": [
+    {
+      "id": "56768d58-0af2-44da-afb3-8d155a6a03c3",
+      "name": "localProxies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8840e6f9-fc29-4354-88c5-16138ad765d5",
+          "name": "local Proxies Action Add Additional Proxy",
+          "request": {
+            "name": "local Proxies Action Add Additional Proxy",
+            "description": {
+              "content": "Use the API endpoints in the 'network' component instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "localProxies",
+                "action",
+                "addAdditionalProxy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "port",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "behindNat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "alwaysDecodeZip",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "removeUnsupportedEncodings",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dec59237-04c1-4114-aa08-6060c6c52a83",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "localProxies",
+                    "action",
+                    "addAdditionalProxy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "port",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "behindNat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "alwaysDecodeZip",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "removeUnsupportedEncodings",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d10417c8-7705-4376-9f5f-700e00899bf1",
+          "name": "local Proxies Action Remove Additional Proxy",
+          "request": {
+            "name": "local Proxies Action Remove Additional Proxy",
+            "description": {
+              "content": "Use the API endpoints in the 'network' component instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "localProxies",
+                "action",
+                "removeAdditionalProxy",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "port",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d1250f0-b0e4-4cd1-9366-a152746912ab",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "localProxies",
+                    "action",
+                    "removeAdditionalProxy",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "port",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96e21186-1d31-4008-8b71-29da1bd44c89",
+          "name": "local Proxies View Additional Proxies",
+          "request": {
+            "name": "local Proxies View Additional Proxies",
+            "description": {
+              "content": "Use the API endpoints in the 'network' component instead.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "localProxies",
+                "view",
+                "additionalProxies",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30bfc663-dcfc-4a84-882f-385ba36c9f22",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "localProxies",
+                    "view",
+                    "additionalProxies",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "774c2a4a-bea0-4d37-8f1c-76ad5c321732",
+    "name": "ZAP accessControl localProxies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

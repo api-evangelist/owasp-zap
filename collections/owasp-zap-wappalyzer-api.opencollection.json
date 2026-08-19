@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl wappalyzer API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "wappalyzer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "wappalyzerViewListAll",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/wappalyzer/view/listAll/"
+          },
+          "docs": "Lists all sites and their associated applications (technologies)."
+        },
+        {
+          "info": {
+            "name": "wappalyzerViewListSite",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/wappalyzer/view/listSite/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists all the applications (technologies) associated with a specific site."
+        },
+        {
+          "info": {
+            "name": "wappalyzerViewListSites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/wappalyzer/view/listSites/"
+          },
+          "docs": "Lists all the sites recognized by the Technology Detection add-on."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

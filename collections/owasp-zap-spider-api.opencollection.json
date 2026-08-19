@@ -1,0 +1,1079 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl spider API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "spider",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "spiderActionAddDomainAlwaysInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/addDomainAlwaysInScope/",
+            "params": [
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRegex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isEnabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a new domain that's always in scope, using the specified value. Optionally sets if the new entry is enabled (default, true) and whether or not the new value is specified as a regex (default, false)."
+        },
+        {
+          "info": {
+            "name": "spiderActionClearExcludedFromScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/clearExcludedFromScan/"
+          },
+          "docs": "Clears the regexes of URLs excluded from the spider scans."
+        },
+        {
+          "info": {
+            "name": "spiderActionDisableAllDomainsAlwaysInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/disableAllDomainsAlwaysInScope/"
+          },
+          "docs": "Disables all domains that are always in scope."
+        },
+        {
+          "info": {
+            "name": "spiderActionEnableAllDomainsAlwaysInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/enableAllDomainsAlwaysInScope/"
+          },
+          "docs": "Enables all domains that are always in scope."
+        },
+        {
+          "info": {
+            "name": "spiderActionExcludeFromScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/excludeFromScan/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a regex of URLs that should be excluded from the spider scans."
+        },
+        {
+          "info": {
+            "name": "spiderActionModifyDomainAlwaysInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/modifyDomainAlwaysInScope/",
+            "params": [
+              {
+                "name": "idx",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRegex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isEnabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Modifies a domain that's always in scope. Allows to modify the value, if enabled or if a regex. The domain is selected with its index, which can be obtained with the view domainsAlwaysInScope."
+        },
+        {
+          "info": {
+            "name": "spiderActionPause",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/pause/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionPauseAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/pauseAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionRemoveAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/removeAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionRemoveDomainAlwaysInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/removeDomainAlwaysInScope/",
+            "params": [
+              {
+                "name": "idx",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Removes a domain that's always in scope, with the given index. The index can be obtained with the view domainsAlwaysInScope."
+        },
+        {
+          "info": {
+            "name": "spiderActionRemoveScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/removeScan/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionResume",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/resume/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionResumeAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/resumeAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/scan/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxChildren",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "recurse",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "subtreeOnly",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Runs the spider against the given URL (or context). Optionally, the 'maxChildren' parameter can be set to limit the number of children scanned, the 'recurse' parameter can be used to prevent the spider from seeding recursively, the parameter 'contextName' can be used to constrain the scan to a Context and the parameter 'subtreeOnly' allows to restrict the spider under a site's subtree (using the specified 'url')."
+        },
+        {
+          "info": {
+            "name": "spiderActionScanAsUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/scanAsUser/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxChildren",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "recurse",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "subtreeOnly",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Runs the spider from the perspective of a User, obtained using the given Context ID and User ID. See 'scan' action for more details."
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionAcceptCookies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionAcceptCookies/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not a spider process should accept cookies while spidering."
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionHandleODataParametersVisited",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionHandleODataParametersVisited/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionHandleParameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionHandleParameters/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionLogoutAvoidance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionLogoutAvoidance/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating if seeming logout paths/functionality should be avoided (default is false)."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the Spider should attempt to avoid logout related paths/functionality."
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionMaxChildren",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionMaxChildren/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the maximum number of child nodes (per node) that can be crawled, 0 means no limit."
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionMaxDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionMaxDepth/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the maximum depth the spider can crawl, 0 for unlimited depth."
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionMaxDuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionMaxDuration/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionMaxParseSizeBytes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionMaxParseSizeBytes/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The maximum size or 0 for unlimited."
+              }
+            ]
+          },
+          "docs": "Sets the maximum size, in bytes, that a response might have to be parsed. This allows the spider to skip big responses/files."
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionMaxScansInUI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionMaxScansInUI/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionParseComments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionParseComments/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionParseDsStore",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionParseDsStore/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionParseGit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionParseGit/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionParseRobotsTxt",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionParseRobotsTxt/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionParseSVNEntries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionParseSVNEntries/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionParseSitemapXml",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionParseSitemapXml/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionPostForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionPostForm/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionProcessForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionProcessForm/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionSendRefererHeader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionSendRefererHeader/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not the 'Referer' header should be sent while spidering."
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionShowAdvancedDialog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionShowAdvancedDialog/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionSkipURLString",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionSkipURLString/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionThreadCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionThreadCount/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionSetOptionUserAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/setOptionUserAgent/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionStop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/stop/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderActionStopAllScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/action/stopAllScans/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewAddedNodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/addedNodes/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of the names of the nodes added to the Sites tree by the specified scan."
+        },
+        {
+          "info": {
+            "name": "spiderViewAllUrls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/allUrls/"
+          },
+          "docs": "Returns a list of unique URLs from the history table based on HTTP messages added by the Spider."
+        },
+        {
+          "info": {
+            "name": "spiderViewDomainsAlwaysInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/domainsAlwaysInScope/"
+          },
+          "docs": "Gets all the domains that are always in scope. For each domain the following are shown: the index, the value (domain), if enabled, and if specified as a regex."
+        },
+        {
+          "info": {
+            "name": "spiderViewExcludedFromScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/excludedFromScan/"
+          },
+          "docs": "Gets the regexes of URLs excluded from the spider scans."
+        },
+        {
+          "info": {
+            "name": "spiderViewFullResults",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/fullResults/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionAcceptCookies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionAcceptCookies/"
+          },
+          "docs": "Gets whether or not a spider process should accept cookies while spidering."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionDomainsAlwaysInScope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionDomainsAlwaysInScope/"
+          },
+          "docs": "Use view domainsAlwaysInScope instead."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionDomainsAlwaysInScopeEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionDomainsAlwaysInScopeEnabled/"
+          },
+          "docs": "Use view domainsAlwaysInScope instead."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionHandleODataParametersVisited",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionHandleODataParametersVisited/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionHandleParameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionHandleParameters/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionLogoutAvoidance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionLogoutAvoidance/"
+          },
+          "docs": "Gets whether or not the spider should attempt to avoid logout related paths/functionality."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionMaxChildren",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionMaxChildren/"
+          },
+          "docs": "Gets the maximum number of child nodes (per node) that can be crawled, 0 means no limit."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionMaxDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionMaxDepth/"
+          },
+          "docs": "Gets the maximum depth the spider can crawl, 0 if unlimited."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionMaxDuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionMaxDuration/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionMaxParseSizeBytes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionMaxParseSizeBytes/"
+          },
+          "docs": "Gets the maximum size, in bytes, that a response might have to be parsed, or 0 for unlimited."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionMaxScansInUI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionMaxScansInUI/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionParseComments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionParseComments/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionParseDsStore",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionParseDsStore/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionParseGit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionParseGit/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionParseRobotsTxt",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionParseRobotsTxt/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionParseSVNEntries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionParseSVNEntries/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionParseSitemapXml",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionParseSitemapXml/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionPostForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionPostForm/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionProcessForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionProcessForm/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionSendRefererHeader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionSendRefererHeader/"
+          },
+          "docs": "Gets whether or not the 'Referer' header should be sent while spidering."
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionShowAdvancedDialog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionShowAdvancedDialog/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionSkipURLString",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionSkipURLString/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionThreadCount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionThreadCount/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewOptionUserAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/optionUserAgent/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewResults",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/results/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewScans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/scans/"
+          }
+        },
+        {
+          "info": {
+            "name": "spiderViewStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/spider/view/status/",
+            "params": [
+              {
+                "name": "scanId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

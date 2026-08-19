@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl ruleConfig API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ruleConfig",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ruleConfigActionResetAllRuleConfigValues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ruleConfig/action/resetAllRuleConfigValues/"
+          },
+          "docs": "Reset all of the rule configurations"
+        },
+        {
+          "info": {
+            "name": "ruleConfigActionResetRuleConfigValue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ruleConfig/action/resetRuleConfigValue/",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Reset the specified rule configuration, which must already exist"
+        },
+        {
+          "info": {
+            "name": "ruleConfigActionSetRuleConfigValue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ruleConfig/action/setRuleConfigValue/",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Set the specified rule configuration, which must already exist"
+        },
+        {
+          "info": {
+            "name": "ruleConfigViewAllRuleConfigs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ruleConfig/view/allRuleConfigs/"
+          },
+          "docs": "Show all of the rule configurations"
+        },
+        {
+          "info": {
+            "name": "ruleConfigViewRuleConfigValue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ruleConfig/view/ruleConfigValue/",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Show the specified rule configuration"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

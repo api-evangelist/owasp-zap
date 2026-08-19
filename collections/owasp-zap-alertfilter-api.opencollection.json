@@ -1,0 +1,466 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl alertFilter API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "alertFilter",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "alertFilterActionAddAlertFilter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/addAlertFilter/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric ID of the context for which the filter should be added."
+              },
+              {
+                "name": "ruleId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric ID of the rule for which the filter should apply."
+              },
+              {
+                "name": "newLevel",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "urlIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the URL is a regex."
+              },
+              {
+                "name": "parameter",
+                "value": "",
+                "type": "query",
+                "description": "The parameter name for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the filter should be enabled."
+              },
+              {
+                "name": "parameterIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the parameter name is a regex."
+              },
+              {
+                "name": "attack",
+                "value": "",
+                "type": "query",
+                "description": "The attack value for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "attackIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the attack value is a regex."
+              },
+              {
+                "name": "evidence",
+                "value": "",
+                "type": "query",
+                "description": "The evidence value for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "evidenceIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the evidence value is a regex."
+              },
+              {
+                "name": "methods",
+                "value": "",
+                "type": "query",
+                "description": "The HTTP methods (comma separated) for which the filter should apply."
+              }
+            ]
+          },
+          "docs": "Adds a new alert filter for the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionAddGlobalAlertFilter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/addGlobalAlertFilter/",
+            "params": [
+              {
+                "name": "ruleId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric ID of the rule for which the filter should apply."
+              },
+              {
+                "name": "newLevel",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "urlIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the URL is a regex."
+              },
+              {
+                "name": "parameter",
+                "value": "",
+                "type": "query",
+                "description": "The parameter name for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the filter should be enabled."
+              },
+              {
+                "name": "parameterIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the parameter name is a regex."
+              },
+              {
+                "name": "attack",
+                "value": "",
+                "type": "query",
+                "description": "The attack value for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "attackIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the attack value is a regex."
+              },
+              {
+                "name": "evidence",
+                "value": "",
+                "type": "query",
+                "description": "The evidence value for which the filter should apply (can be regex)."
+              },
+              {
+                "name": "evidenceIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the evidence value is a regex."
+              },
+              {
+                "name": "methods",
+                "value": "",
+                "type": "query",
+                "description": "The HTTP methods (comma separated) for which the filter should apply."
+              }
+            ]
+          },
+          "docs": "Adds a new global alert filter."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionApplyAll",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/applyAll/"
+          },
+          "docs": "Applies all currently enabled Global and Context alert filters."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionApplyContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/applyContext/"
+          },
+          "docs": "Applies all currently enabled Context alert filters."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionApplyGlobal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/applyGlobal/"
+          },
+          "docs": "Applies all currently enabled Global alert filters."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionRemoveAlertFilter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/removeAlertFilter/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric ID of the context for which the filter should be removed."
+              },
+              {
+                "name": "ruleId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric ID of the rule for which the filter applies."
+              },
+              {
+                "name": "newLevel",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL for which the filter applies (can be regex)."
+              },
+              {
+                "name": "urlIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the URL is a regex."
+              },
+              {
+                "name": "parameter",
+                "value": "",
+                "type": "query",
+                "description": "The parameter name for which the filter applies (can be regex)."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the filter should be enabled."
+              },
+              {
+                "name": "parameterIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the parameter name is a regex."
+              },
+              {
+                "name": "attack",
+                "value": "",
+                "type": "query",
+                "description": "The attack value for which the filter applies (can be regex)."
+              },
+              {
+                "name": "attackIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the attack value is a regex."
+              },
+              {
+                "name": "evidence",
+                "value": "",
+                "type": "query",
+                "description": "The evidence value for which the filter applies (can be regex)."
+              },
+              {
+                "name": "evidenceIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the evidence value is a regex."
+              },
+              {
+                "name": "methods",
+                "value": "",
+                "type": "query",
+                "description": "The HTTP methods (comma separated) for which the filter applies."
+              }
+            ]
+          },
+          "docs": "Removes an alert filter from the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionRemoveGlobalAlertFilter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/removeGlobalAlertFilter/",
+            "params": [
+              {
+                "name": "ruleId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric ID of the rule for which the filter applies."
+              },
+              {
+                "name": "newLevel",
+                "value": "",
+                "type": "query",
+                "description": "The numeric risk representation ('0 - Informational' through '3 - High') ['-1 - False Positive']."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The URL for which the filter applies (can be regex)."
+              },
+              {
+                "name": "urlIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the URL is a regex."
+              },
+              {
+                "name": "parameter",
+                "value": "",
+                "type": "query",
+                "description": "The parameter name for which the filter applies (can be regex)."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the filter should be enabled."
+              },
+              {
+                "name": "parameterIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the parameter name is a regex."
+              },
+              {
+                "name": "attack",
+                "value": "",
+                "type": "query",
+                "description": "The attack value for which the filter applies (can be regex)."
+              },
+              {
+                "name": "attackIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the attack value is a regex."
+              },
+              {
+                "name": "evidence",
+                "value": "",
+                "type": "query",
+                "description": "The evidence value for which the filter applies (can be regex)."
+              },
+              {
+                "name": "evidenceIsRegex",
+                "value": "",
+                "type": "query",
+                "description": "A boolean indicating whether or not the evidence value is a regex."
+              },
+              {
+                "name": "methods",
+                "value": "",
+                "type": "query",
+                "description": "The HTTP methods (comma separated) for which the filter applies."
+              }
+            ]
+          },
+          "docs": "Removes a global alert filter."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionTestAll",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/testAll/"
+          },
+          "docs": "Tests all currently enabled Global and Context alert filters."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionTestContext",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/testContext/"
+          },
+          "docs": "Tests all currently enabled Context alert filters."
+        },
+        {
+          "info": {
+            "name": "alertFilterActionTestGlobal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/action/testGlobal/"
+          },
+          "docs": "Tests all currently enabled Global alert filters."
+        },
+        {
+          "info": {
+            "name": "alertFilterViewAlertFilterList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/view/alertFilterList/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query",
+                "description": "The numeric ID of the context for which the filters should be listed."
+              }
+            ]
+          },
+          "docs": "Lists the alert filters of the context with the given ID."
+        },
+        {
+          "info": {
+            "name": "alertFilterViewGlobalAlertFilterList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/alertFilter/view/globalAlertFilterList/"
+          },
+          "docs": "Lists the global alert filters."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

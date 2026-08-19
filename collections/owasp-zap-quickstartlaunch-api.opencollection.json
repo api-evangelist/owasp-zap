@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl quickstartlaunch API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "quickstartlaunch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "quickstartlaunchOtherStartPage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/quickstartlaunch/other/startPage/"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

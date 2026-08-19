@@ -1,0 +1,186 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl custompayloads API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "custompayloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "custompayloadsActionAddCustomPayload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/action/addCustomPayload/",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The category for the new payload."
+              },
+              {
+                "name": "payload",
+                "value": "",
+                "type": "query",
+                "description": "The payload to be added."
+              }
+            ]
+          },
+          "docs": "Adds a new payload."
+        },
+        {
+          "info": {
+            "name": "custompayloadsActionDisableCustomPayload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/action/disableCustomPayload/",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The category for the payload being disabled."
+              },
+              {
+                "name": "payload",
+                "value": "",
+                "type": "query",
+                "description": "The payload being disabled."
+              }
+            ]
+          },
+          "docs": "Disables a given payload."
+        },
+        {
+          "info": {
+            "name": "custompayloadsActionDisableCustomPayloads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/action/disableCustomPayloads/",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The category for which the payloads should be disabled (leave empty for all)."
+              }
+            ]
+          },
+          "docs": "Disables payloads for a given category."
+        },
+        {
+          "info": {
+            "name": "custompayloadsActionEnableCustomPayload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/action/enableCustomPayload/",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The category for the payload being enabled."
+              },
+              {
+                "name": "payload",
+                "value": "",
+                "type": "query",
+                "description": "The payload being enabled."
+              }
+            ]
+          },
+          "docs": "Enables a given payload."
+        },
+        {
+          "info": {
+            "name": "custompayloadsActionEnableCustomPayloads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/action/enableCustomPayloads/",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The category for which the payloads should be enabled (leave empty for all)."
+              }
+            ]
+          },
+          "docs": "Enables payloads for a given category."
+        },
+        {
+          "info": {
+            "name": "custompayloadsActionRemoveCustomPayload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/action/removeCustomPayload/",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The category of the payload being removed."
+              },
+              {
+                "name": "payload",
+                "value": "",
+                "type": "query",
+                "description": "The payload being removed."
+              }
+            ]
+          },
+          "docs": "Removes a payload."
+        },
+        {
+          "info": {
+            "name": "custompayloadsViewCustomPayloads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/view/customPayloads/",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "The category for which the payloads should be displayed."
+              }
+            ]
+          },
+          "docs": "Lists all the payloads currently loaded (category, payload, enabled state). Optionally filtered by category."
+        },
+        {
+          "info": {
+            "name": "custompayloadsViewCustomPayloadsCategories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/custompayloads/view/customPayloadsCategories/"
+          },
+          "docs": "Lists all available categories."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

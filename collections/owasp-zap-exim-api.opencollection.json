@@ -1,0 +1,201 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl exim API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "exim",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "eximActionExportSitesTree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/exim/action/exportSitesTree/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Exports the Sites Tree in the Sites Tree YAML format."
+        },
+        {
+          "info": {
+            "name": "eximActionImportHar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/exim/action/importHar/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Imports a HAR file."
+        },
+        {
+          "info": {
+            "name": "eximActionImportModsec2Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/exim/action/importModsec2Logs/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Imports ModSecurity2 logs from the file with the given file system path."
+        },
+        {
+          "info": {
+            "name": "eximActionImportUrls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/exim/action/importUrls/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Imports URLs (one per line) from the file with the given file system path."
+        },
+        {
+          "info": {
+            "name": "eximActionImportZapLogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/exim/action/importZapLogs/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Imports previously exported ZAP messages from the file with the given file system path."
+        },
+        {
+          "info": {
+            "name": "eximActionPruneSitesTree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/exim/action/pruneSitesTree/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Prunes the Sites Tree based on a file in the Sites Tree YAML format."
+        },
+        {
+          "info": {
+            "name": "eximOtherExportHar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/exim/other/exportHar/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The URL below which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "The position (or offset) within the results to use as a starting position for the information returned."
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query",
+                "description": "The number of results to return."
+              }
+            ]
+          },
+          "docs": "Gets the HTTP messages sent through/by ZAP, in HAR format, optionally filtered by URL and paginated with 'start' position and 'count' of messages"
+        },
+        {
+          "info": {
+            "name": "eximOtherExportHarById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/exim/other/exportHarById/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query",
+                "description": "The ID (number(s)) of the message(s) to be returned."
+              }
+            ]
+          },
+          "docs": "Gets the HTTP messages with the given IDs, in HAR format."
+        },
+        {
+          "info": {
+            "name": "eximOtherSendHarRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/exim/other/sendHarRequest/",
+            "params": [
+              {
+                "name": "request",
+                "value": "",
+                "type": "query",
+                "description": "The raw JSON of a HAR request."
+              },
+              {
+                "name": "followRedirects",
+                "value": "",
+                "type": "query",
+                "description": "True if redirects should be followed, false otherwise."
+              }
+            ]
+          },
+          "docs": "Sends the first HAR request entry, optionally following redirections. Returns, in HAR format, the request sent and response received and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom manual requests are not allowed in 'Safe' mode nor in 'Protected' mode if out of scope."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

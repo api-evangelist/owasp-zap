@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl authorization API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "authorization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "authorizationActionSetBasicAuthorizationDetectionMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authorization/action/setBasicAuthorizationDetectionMethod/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "headerRegex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bodyRegex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statusCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "logicalOperator",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the authorization detection method for a context as one that identifies un-authorized messages based on: the message's status code or a regex pattern in the response's header or body. Also, whether all conditions must match or just some can be specified via the logicalOperator parameter, which accepts two values: \"AND\" (default), \"OR\".  "
+        },
+        {
+          "info": {
+            "name": "authorizationViewGetAuthorizationDetectionMethod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/authorization/view/getAuthorizationDetectionMethod/",
+            "params": [
+              {
+                "name": "contextId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Obtains all the configuration of the authorization detection method that is currently set for a context."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

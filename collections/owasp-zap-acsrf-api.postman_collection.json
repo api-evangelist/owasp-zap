@@ -1,0 +1,561 @@
+{
+  "item": [
+    {
+      "id": "0aa8abae-072f-4912-8d9c-abca1016c6d6",
+      "name": "acsrf",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "61921461-9a9b-453e-8709-bfa1d85fb0d3",
+          "name": "acsrf Action Add Option Token",
+          "request": {
+            "name": "acsrf Action Add Option Token",
+            "description": {
+              "content": "Adds an anti-CSRF token with the given name, enabled by default",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "acsrf",
+                "action",
+                "addOptionToken",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "String",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dddb5334-eefc-4d45-b286-4d093aff5b7d",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "acsrf",
+                    "action",
+                    "addOptionToken",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "String",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0bafb4b-c897-4d8b-92e0-f77939af87f8",
+          "name": "acsrf Action Remove Option Token",
+          "request": {
+            "name": "acsrf Action Remove Option Token",
+            "description": {
+              "content": "Removes the anti-CSRF token with the given name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "acsrf",
+                "action",
+                "removeOptionToken",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "String",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8dc37cd5-3588-4783-8d22-e77e434db18a",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "acsrf",
+                    "action",
+                    "removeOptionToken",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "String",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e6859e5-15aa-42ea-937d-3beffb14ec4c",
+          "name": "acsrf Action Set Option Partial Matching Enabled",
+          "request": {
+            "name": "acsrf Action Set Option Partial Matching Enabled",
+            "description": {
+              "content": "Define if ZAP should detect CSRF tokens by searching for partial matches.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "acsrf",
+                "action",
+                "setOptionPartialMatchingEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "Boolean",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30df2974-c792-44ef-9db6-0b33e9eaccca",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "acsrf",
+                    "action",
+                    "setOptionPartialMatchingEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "Boolean",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e4b97a09-32a7-4688-b2ca-0c0301a093ed",
+          "name": "acsrf Other Gen Form",
+          "request": {
+            "name": "acsrf Other Gen Form",
+            "description": {
+              "content": "Generate a form for testing lack of anti-CSRF tokens - typically invoked via ZAP",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "OTHER",
+                "acsrf",
+                "other",
+                "genForm",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "hrefId",
+                  "value": "<string>",
+                  "description": "(Required) Define which request will be used"
+                },
+                {
+                  "disabled": false,
+                  "key": "actionUrl",
+                  "value": "<string>",
+                  "description": "Define the action URL to be used in the generated form"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00eab3b3-0271-4aeb-85f3-5db56a1a1d41",
+              "name": "Error of OTHER endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OTHER",
+                    "acsrf",
+                    "other",
+                    "genForm",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "hrefId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "actionUrl",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68189172-cef6-45f6-8fec-f875553e00d1",
+          "name": "acsrf View Option Partial Matching Enabled",
+          "request": {
+            "name": "acsrf View Option Partial Matching Enabled",
+            "description": {
+              "content": "Define if ZAP should detect CSRF tokens by searching for partial matches",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "acsrf",
+                "view",
+                "optionPartialMatchingEnabled",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fad8aa8c-b477-4cb9-8235-463bc860a7fb",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "acsrf",
+                    "view",
+                    "optionPartialMatchingEnabled",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6bc99114-c550-4ee9-b67d-75efc1be1d3f",
+          "name": "acsrf View Option Tokens Names",
+          "request": {
+            "name": "acsrf View Option Tokens Names",
+            "description": {
+              "content": "Lists the names of all anti-CSRF tokens",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "acsrf",
+                "view",
+                "optionTokensNames",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "157d41d5-f702-49cc-872b-01e9c265a6e1",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "acsrf",
+                    "view",
+                    "optionTokensNames",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "c7b852b7-6ccc-4225-8abd-45c5c8caf911",
+    "name": "ZAP accessControl acsrf API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

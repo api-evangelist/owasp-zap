@@ -1,0 +1,1594 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl core API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "core",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "coreActionAccessUrl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/accessUrl/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "followRedirects",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Convenient and simple action to access a URL, optionally following redirections. Returns the request sent and response received and followed redirections, if any. Other actions are available which offer more control on what is sent, like, 'sendRequest' or 'sendHarRequest'."
+        },
+        {
+          "info": {
+            "name": "coreActionAddProxyChainExcludedDomain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/addProxyChainExcludedDomain/",
+            "params": [
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRegex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isEnabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionClearExcludedFromProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/clearExcludedFromProxy/"
+          },
+          "docs": "Clears the regexes of URLs excluded from the local proxies."
+        },
+        {
+          "info": {
+            "name": "coreActionCreateSbomZip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/createSbomZip/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query",
+                "description": "The path of the zip file to create"
+              }
+            ]
+          },
+          "docs": "Create a zip file of the ZAP core and add-on SBOMs"
+        },
+        {
+          "info": {
+            "name": "coreActionDeleteAlert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/deleteAlert/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoint with the same name in the 'alert' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionDeleteAllAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/deleteAllAlerts/"
+          },
+          "docs": "Use the API endpoint with the same name in the 'alert' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionDeleteSiteNode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/deleteSiteNode/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "method",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "postData",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Deletes the site node found in the Sites Tree on the basis of the URL, HTTP method, and post data (if applicable and specified). "
+        },
+        {
+          "info": {
+            "name": "coreActionDisableAllProxyChainExcludedDomains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/disableAllProxyChainExcludedDomains/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionDisableClientCertificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/disableClientCertificate/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionEnableAllProxyChainExcludedDomains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/enableAllProxyChainExcludedDomains/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionEnablePKCS12ClientCertificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/enablePKCS12ClientCertificate/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "index",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionExcludeFromProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/excludeFromProxy/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Adds a regex of URLs that should be excluded from the local proxies."
+        },
+        {
+          "info": {
+            "name": "coreActionGenerateRootCA",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/generateRootCA/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionLoadSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/loadSession/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Loads the session with the given name. If a relative path is specified it will be resolved against the \"session\" directory in ZAP \"home\" dir."
+        },
+        {
+          "info": {
+            "name": "coreActionModifyProxyChainExcludedDomain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/modifyProxyChainExcludedDomain/",
+            "params": [
+              {
+                "name": "idx",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRegex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isEnabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionNewSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/newSession/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "overwrite",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Creates a new session, optionally overwriting existing files. If a relative path is specified it will be resolved against the \"session\" directory in ZAP \"home\" dir."
+        },
+        {
+          "info": {
+            "name": "coreActionRemoveProxyChainExcludedDomain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/removeProxyChainExcludedDomain/",
+            "params": [
+              {
+                "name": "idx",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionRunGarbageCollection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/runGarbageCollection/"
+          }
+        },
+        {
+          "info": {
+            "name": "coreActionSaveSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/saveSession/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name (or path) of the session. If a relative path is specified it will be resolved against the \"session\" directory in ZAP \"home\" dir."
+              },
+              {
+                "name": "overwrite",
+                "value": "",
+                "type": "query",
+                "description": "If existing files should be overwritten, attempting to overwrite the files of the session already in use/saved will lead to an error (\"already_exists\")."
+              }
+            ]
+          },
+          "docs": "Saves the session."
+        },
+        {
+          "info": {
+            "name": "coreActionSendRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/sendRequest/",
+            "params": [
+              {
+                "name": "request",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "followRedirects",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sends the HTTP request, optionally following redirections. Returns the request sent and response received and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom manual requests are not allowed in 'Safe' mode nor in 'Protected' mode if out of scope."
+        },
+        {
+          "info": {
+            "name": "coreActionSetHomeDirectory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setHomeDirectory/",
+            "params": [
+              {
+                "name": "dir",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "coreActionSetLogLevel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setLogLevel/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The logger name for which the logging level should be set."
+              },
+              {
+                "name": "logLevel",
+                "value": "",
+                "type": "query",
+                "description": "The logging level which should be set."
+              }
+            ]
+          },
+          "docs": "Sets the logging level for a given logger name."
+        },
+        {
+          "info": {
+            "name": "coreActionSetMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setMode/",
+            "params": [
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the mode, which may be one of [safe, protect, standard, attack]"
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionAlertOverridesFilePath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionAlertOverridesFilePath/",
+            "params": [
+              {
+                "name": "filePath",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets (or clears, if empty) the path to the file with alert overrides."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionDefaultUserAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionDefaultUserAgent/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionDnsTtlSuccessfulQueries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionDnsTtlSuccessfulQueries/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionHttpStateEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionHttpStateEnabled/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionMaximumAlertInstances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionMaximumAlertInstances/",
+            "params": [
+              {
+                "name": "numberOfInstances",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets the maximum number of alert instances to include in a report. A value of zero is treated as unlimited."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionMergeRelatedAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionMergeRelatedAlerts/",
+            "params": [
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sets whether or not related alerts will be merged in any reports generated."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionProxyChainName",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionProxyChainName/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionProxyChainPassword",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionProxyChainPassword/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionProxyChainPort",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionProxyChainPort/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionProxyChainPrompt",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionProxyChainPrompt/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionProxyChainRealm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionProxyChainRealm/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionProxyChainSkipName",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionProxyChainSkipName/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Option no longer in effective use."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionProxyChainUserName",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionProxyChainUserName/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionSingleCookieRequestHeader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionSingleCookieRequestHeader/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Option no longer in effective use."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionTimeoutInSecs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionTimeoutInSecs/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionUseProxyChain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionUseProxyChain/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionUseProxyChainAuth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionUseProxyChainAuth/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionSetOptionUseSocksProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/setOptionUseSocksProxy/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "true if the SOCKS proxy should be used, false otherwise."
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreActionShutdown",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/shutdown/"
+          },
+          "docs": "Shuts down ZAP"
+        },
+        {
+          "info": {
+            "name": "coreActionSnapshotSession",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/action/snapshotSession/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "overwrite",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Snapshots the session, optionally with the given name, and overwriting existing files. If no name is specified the name of the current session with a timestamp appended is used. If a relative path is specified it will be resolved against the \"session\" directory in ZAP \"home\" dir."
+        },
+        {
+          "info": {
+            "name": "coreOtherFileDownload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/fileDownload/",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the file, may include subdirectories"
+              }
+            ]
+          },
+          "docs": "Download a file from the transfer directory"
+        },
+        {
+          "info": {
+            "name": "coreOtherFileUpload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/fileUpload/",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the file, may include subdirectories."
+              },
+              {
+                "name": "fileContents",
+                "value": "",
+                "type": "query",
+                "description": "The contents of the file."
+              }
+            ]
+          },
+          "docs": "Upload a file to the transfer directory. Only POST requests accepted with encodings of \"multipart/form-data\" or \"application/x-www-form-urlencoded\"."
+        },
+        {
+          "info": {
+            "name": "coreOtherHtmlreport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/htmlreport/"
+          },
+          "docs": "Use the 'generate' API endpoint the 'reports' component instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherJsonreport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/jsonreport/"
+          },
+          "docs": "Use the 'generate' API endpoint the 'reports' component instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherMdreport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/mdreport/"
+          },
+          "docs": "Use the 'generate' API endpoint the 'reports' component instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherMessageHar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/messageHar/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'exim' add-on instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherMessagesHar",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/messagesHar/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'exim' add-on instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherMessagesHarById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/messagesHarById/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'exim' add-on instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherProxy.pac",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/proxy.pac/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherRootcert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/rootcert/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherSendHarRequest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/sendHarRequest/",
+            "params": [
+              {
+                "name": "request",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "followRedirects",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'exim' add-on instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherSetproxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/setproxy/",
+            "params": [
+              {
+                "name": "proxy",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreOtherXmlreport",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/core/other/xmlreport/"
+          },
+          "docs": "Use the 'generate' API endpoint the 'reports' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewAlert",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/alert/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoint with the same name in the 'alert' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/alerts/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which alerts should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoint with the same name in the 'alert' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewAlertsSummary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/alertsSummary/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which alerts should be included."
+              }
+            ]
+          },
+          "docs": "Use the API endpoint with the same name in the 'alert' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewChildNodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/childNodes/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the child nodes underneath the specified URL in the Sites tree"
+        },
+        {
+          "info": {
+            "name": "coreViewExcludedFromProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/excludedFromProxy/"
+          },
+          "docs": "Gets the regular expressions, applied to URLs, to exclude from the local proxies."
+        },
+        {
+          "info": {
+            "name": "coreViewGetLogLevel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/getLogLevel/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name for which the logger details should be provided (this value will be used as a case insensitive starts with filter)."
+              }
+            ]
+          },
+          "docs": "The detailed logging config, optionally filtered based on a name (ex: starts with)."
+        },
+        {
+          "info": {
+            "name": "coreViewHomeDirectory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/homeDirectory/"
+          }
+        },
+        {
+          "info": {
+            "name": "coreViewHosts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/hosts/"
+          },
+          "docs": "Gets the name of the hosts accessed through/by ZAP"
+        },
+        {
+          "info": {
+            "name": "coreViewMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/message/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the HTTP message with the given ID. Returns the ID, request/response headers and bodies, cookies, note, type, RTT, and timestamp."
+        },
+        {
+          "info": {
+            "name": "coreViewMessages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/messages/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the HTTP messages sent by ZAP, request and response, optionally filtered by URL and paginated with 'start' position and 'count' of messages"
+        },
+        {
+          "info": {
+            "name": "coreViewMessagesById",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/messagesById/",
+            "params": [
+              {
+                "name": "ids",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets the HTTP messages with the given IDs."
+        },
+        {
+          "info": {
+            "name": "coreViewMode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/mode/"
+          },
+          "docs": "Gets the mode"
+        },
+        {
+          "info": {
+            "name": "coreViewNumberOfAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/numberOfAlerts/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which alerts should be included."
+              },
+              {
+                "name": "riskId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Use the API endpoint with the same name in the 'alert' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewNumberOfMessages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/numberOfMessages/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which messages should be included."
+              }
+            ]
+          },
+          "docs": "Gets the number of messages, optionally filtering by URL"
+        },
+        {
+          "info": {
+            "name": "coreViewOptionAlertOverridesFilePath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionAlertOverridesFilePath/"
+          },
+          "docs": "Gets the path to the file with alert overrides."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionDefaultUserAgent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionDefaultUserAgent/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionDnsTtlSuccessfulQueries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionDnsTtlSuccessfulQueries/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionHttpState",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionHttpState/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionHttpStateEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionHttpStateEnabled/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionMaximumAlertInstances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionMaximumAlertInstances/"
+          },
+          "docs": "Gets the maximum number of alert instances to include in a report."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionMergeRelatedAlerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionMergeRelatedAlerts/"
+          },
+          "docs": "Gets whether or not related alerts will be merged in any reports generated."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyChainName",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyChainName/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyChainPassword",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyChainPassword/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyChainPort",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyChainPort/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyChainPrompt",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyChainPrompt/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyChainRealm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyChainRealm/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyChainSkipName",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyChainSkipName/"
+          },
+          "docs": "Use view proxyChainExcludedDomains instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyChainUserName",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyChainUserName/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyExcludedDomains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyExcludedDomains/"
+          },
+          "docs": "Use view proxyChainExcludedDomains instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionProxyExcludedDomainsEnabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionProxyExcludedDomainsEnabled/"
+          },
+          "docs": "Use view proxyChainExcludedDomains instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionSingleCookieRequestHeader",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionSingleCookieRequestHeader/"
+          },
+          "docs": "Option no longer in effective use."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionTimeoutInSecs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionTimeoutInSecs/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionUseProxyChain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionUseProxyChain/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionUseProxyChainAuth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionUseProxyChainAuth/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewOptionUseSocksProxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/optionUseSocksProxy/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewProxyChainExcludedDomains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/proxyChainExcludedDomains/"
+          },
+          "docs": "Use the API endpoints in the 'network' component instead."
+        },
+        {
+          "info": {
+            "name": "coreViewSessionLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/sessionLocation/"
+          },
+          "docs": "Gets the location of the current session file"
+        },
+        {
+          "info": {
+            "name": "coreViewSites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/sites/"
+          },
+          "docs": "Gets the sites accessed through/by ZAP (scheme and domain)"
+        },
+        {
+          "info": {
+            "name": "coreViewUrls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/urls/",
+            "params": [
+              {
+                "name": "baseurl",
+                "value": "",
+                "type": "query",
+                "description": "The highest URL in the Sites tree under which URLs should be included."
+              }
+            ]
+          },
+          "docs": "Gets the URLs accessed through/by ZAP, optionally filtering by (base) URL."
+        },
+        {
+          "info": {
+            "name": "coreViewVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/version/"
+          },
+          "docs": "Gets ZAP version"
+        },
+        {
+          "info": {
+            "name": "coreViewZapHomePath",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/core/view/zapHomePath/"
+          },
+          "docs": "Gets the path to ZAP's home directory."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

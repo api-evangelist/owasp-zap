@@ -1,0 +1,131 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl pnh API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "pnh",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "pnhActionMonitor",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pnh/action/monitor/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "message",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "pnhActionOracle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pnh/action/oracle/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "pnhActionStartMonitoring",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pnh/action/startMonitoring/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "pnhActionStopMonitoring",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/pnh/action/stopMonitoring/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "pnhOtherFx_pnh.xpi",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/pnh/other/fx_pnh.xpi/"
+          }
+        },
+        {
+          "info": {
+            "name": "pnhOtherManifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/pnh/other/manifest/"
+          }
+        },
+        {
+          "info": {
+            "name": "pnhOtherPnh",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/pnh/other/pnh/"
+          }
+        },
+        {
+          "info": {
+            "name": "pnhOtherService",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/OTHER/pnh/other/service/"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

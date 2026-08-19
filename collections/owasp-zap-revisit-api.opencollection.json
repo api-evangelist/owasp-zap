@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl revisit API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "revisit",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "revisitActionRevisitSiteOff",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/revisit/action/revisitSiteOff/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "revisitActionRevisitSiteOn",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/revisit/action/revisitSiteOn/",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startTime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endTime",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "revisitViewRevisitList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/revisit/view/revisitList/"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

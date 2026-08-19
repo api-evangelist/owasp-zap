@@ -1,0 +1,251 @@
+{
+  "item": [
+    {
+      "id": "b300f56e-cd4f-419b-b41b-252358a28683",
+      "name": "authorization",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e09fbd69-870f-4932-a92c-640bb21cbbac",
+          "name": "authorization Action Set Basic Authorization Detection Method",
+          "request": {
+            "name": "authorization Action Set Basic Authorization Detection Method",
+            "description": {
+              "content": "Sets the authorization detection method for a context as one that identifies un-authorized messages based on: the message's status code or a regex pattern in the response's header or body. Also, whether all conditions must match or just some can be specified via the logicalOperator parameter, which accepts two values: \"AND\" (default), \"OR\".  ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "authorization",
+                "action",
+                "setBasicAuthorizationDetectionMethod",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "headerRegex",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bodyRegex",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "statusCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "logicalOperator",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e83c678-065d-4e87-802a-99e0ddfb2e27",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "authorization",
+                    "action",
+                    "setBasicAuthorizationDetectionMethod",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "headerRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bodyRegex",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statusCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "logicalOperator",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d1fd3035-7bbe-499f-a805-2f523b7486ae",
+          "name": "authorization View Get Authorization Detection Method",
+          "request": {
+            "name": "authorization View Get Authorization Detection Method",
+            "description": {
+              "content": "Obtains all the configuration of the authorization detection method that is currently set for a context.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "authorization",
+                "view",
+                "getAuthorizationDetectionMethod",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "contextId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a74015c-6720-47bd-8ec0-5c4805517e44",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "authorization",
+                    "view",
+                    "getAuthorizationDetectionMethod",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "contextId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "40e72946-9b12-48fc-9b9a-442909be9614",
+    "name": "ZAP accessControl authorization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

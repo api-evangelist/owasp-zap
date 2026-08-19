@@ -1,0 +1,365 @@
+{
+  "item": [
+    {
+      "id": "4b6864af-19fa-41db-a7f4-962631b90113",
+      "name": "clientSpider",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0b17de5b-e006-4f36-aa22-188e5a8efbe1",
+          "name": "client Spider Action Scan",
+          "request": {
+            "name": "client Spider Action Scan",
+            "description": {
+              "content": "Starts a client spider scan.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "clientSpider",
+                "action",
+                "scan",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "browser",
+                  "value": "<string>",
+                  "description": "The ID of the browser. See Selenium documentation for valid IDs."
+                },
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "The URL from where to start the spider."
+                },
+                {
+                  "disabled": false,
+                  "key": "contextName",
+                  "value": "<string>",
+                  "description": "The name of the context."
+                },
+                {
+                  "disabled": false,
+                  "key": "userName",
+                  "value": "<string>",
+                  "description": "The name of the user."
+                },
+                {
+                  "disabled": false,
+                  "key": "subtreeOnly",
+                  "value": "<string>",
+                  "description": "true to spider only under the subtree, false otherwise."
+                },
+                {
+                  "disabled": false,
+                  "key": "maxCrawlDepth",
+                  "value": "<string>",
+                  "description": "Maximum Crawl Depth (0 is unlimited)."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageLoadTime",
+                  "value": "<string>",
+                  "description": "Page Load Time (seconds)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6efd85e8-6bae-4f9e-aec0-0a69c9a37c35",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "clientSpider",
+                    "action",
+                    "scan",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "browser",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contextName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subtreeOnly",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxCrawlDepth",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageLoadTime",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc3d475b-4fdb-4232-ad93-941c3e627c91",
+          "name": "client Spider Action Stop",
+          "request": {
+            "name": "client Spider Action Stop",
+            "description": {
+              "content": "Stops a client spider scan.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "clientSpider",
+                "action",
+                "stop",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "scanId",
+                  "value": "<string>",
+                  "description": "(Required) The ID of the client spider scan."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c0c1bc68-0ec0-46bd-9ef0-1b927f9658a3",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "clientSpider",
+                    "action",
+                    "stop",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "scanId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a2a5bb0-cd42-4282-836a-4df13e71b42c",
+          "name": "client Spider View Status",
+          "request": {
+            "name": "client Spider View Status",
+            "description": {
+              "content": "Gets the status of a client spider scan.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "clientSpider",
+                "view",
+                "status",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "scanId",
+                  "value": "<string>",
+                  "description": "(Required) The ID of the client spider scan."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a17fc238-3d56-4baa-b387-d11b26c4db9c",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "clientSpider",
+                    "view",
+                    "status",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "scanId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "471cb732-f1c9-44ed-b3fc-37f72865ed29",
+    "name": "ZAP accessControl clientSpider API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

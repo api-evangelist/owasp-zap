@@ -1,0 +1,275 @@
+{
+  "item": [
+    {
+      "id": "acabad55-ba31-4cb4-8449-a83b6d995027",
+      "name": "openapi",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee2b7665-6083-4cf6-99ad-edcb90dc0dcf",
+          "name": "openapi Action Import File",
+          "request": {
+            "name": "openapi Action Import File",
+            "description": {
+              "content": "Imports an OpenAPI definition from a local file.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "openapi",
+                "action",
+                "importFile",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "file",
+                  "value": "<string>",
+                  "description": "(Required) The file that contains the OpenAPI definition."
+                },
+                {
+                  "disabled": false,
+                  "key": "target",
+                  "value": "<string>",
+                  "description": "The Target URL to override the server URL present in the definition."
+                },
+                {
+                  "disabled": false,
+                  "key": "contextId",
+                  "value": "<string>",
+                  "description": "The ID of the context. Defaults to the first context, if any."
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>",
+                  "description": "The ID of the user."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9030067-29dc-4400-a2ce-f357da258608",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "openapi",
+                    "action",
+                    "importFile",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "file",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "target",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contextId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c60b9742-7fca-4fa5-9ff6-5e47bfa8bd2e",
+          "name": "openapi Action Import Url",
+          "request": {
+            "name": "openapi Action Import Url",
+            "description": {
+              "content": "Imports an OpenAPI definition from a URL.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "JSON",
+                "openapi",
+                "action",
+                "importUrl",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "(Required) The URL locating the OpenAPI definition."
+                },
+                {
+                  "disabled": false,
+                  "key": "hostOverride",
+                  "value": "<string>",
+                  "description": "The Target URL (called hostOverride for historical reasons) to override the server URL present in the definition."
+                },
+                {
+                  "disabled": false,
+                  "key": "contextId",
+                  "value": "<string>",
+                  "description": "The ID of the context. Defaults to the first context, if any."
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<string>",
+                  "description": "The ID of the user."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1882147c-461c-4196-8a4c-463f9e888b47",
+              "name": "Error of JSON endpoints.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "JSON",
+                    "openapi",
+                    "action",
+                    "importUrl",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hostOverride",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contextId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": \"string\",\n  \"message\": \"string\",\n  \"detail\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://zap",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "e32c73e7-baa5-4ccd-ae3a-675d3ad6b17b",
+    "name": "ZAP accessControl openapi API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The HTTP API for controlling and accessing ZAP.\n\nContact Support:\n Name: ZAP User Group\n Email: zaproxy-users@googlegroups.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,800 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ZAP accessControl ajaxSpider API",
+    "version": "2.16.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ajaxSpider",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ajaxSpiderActionAddAllowedResource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/addAllowedResource/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query",
+                "description": "The regular expression of the allowed resource."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "If the allowed resource should be enabled or not."
+              }
+            ]
+          },
+          "docs": "Adds an allowed resource."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionAddExcludedElement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/addExcludedElement/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context."
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description of the excluded element."
+              },
+              {
+                "name": "element",
+                "value": "",
+                "type": "query",
+                "description": "The element to exclude."
+              },
+              {
+                "name": "xpath",
+                "value": "",
+                "type": "query",
+                "description": "The XPath of the element."
+              },
+              {
+                "name": "text",
+                "value": "",
+                "type": "query",
+                "description": "The text of the element."
+              },
+              {
+                "name": "attributeName",
+                "value": "",
+                "type": "query",
+                "description": "The attribute name of the element."
+              },
+              {
+                "name": "attributeValue",
+                "value": "",
+                "type": "query",
+                "description": "The attribute value of the element."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Adds an excluded element to a context."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionModifyExcludedElement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/modifyExcludedElement/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context."
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description of the excluded element."
+              },
+              {
+                "name": "element",
+                "value": "",
+                "type": "query",
+                "description": "The element to exclude."
+              },
+              {
+                "name": "descriptionNew",
+                "value": "",
+                "type": "query",
+                "description": "The new description."
+              },
+              {
+                "name": "xpath",
+                "value": "",
+                "type": "query",
+                "description": "The XPath of the element."
+              },
+              {
+                "name": "text",
+                "value": "",
+                "type": "query",
+                "description": "The text of the element."
+              },
+              {
+                "name": "attributeName",
+                "value": "",
+                "type": "query",
+                "description": "The attribute name of the element."
+              },
+              {
+                "name": "attributeValue",
+                "value": "",
+                "type": "query",
+                "description": "The attribute value of the element."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "The enabled state, true or false."
+              }
+            ]
+          },
+          "docs": "Modifies an excluded element of a context."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionRemoveAllowedResource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/removeAllowedResource/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query",
+                "description": "The regular expression of the allowed resource."
+              }
+            ]
+          },
+          "docs": "Removes an allowed resource."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionRemoveExcludedElement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/removeExcludedElement/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context."
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "The description of the excluded element."
+              }
+            ]
+          },
+          "docs": "Removes an excluded element from a context."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionScan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/scan/",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The starting URL (needs to include the 'scheme')."
+              },
+              {
+                "name": "inScope",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating whether or not the scan should be restricted to 'inScope' only resources (default value is false)."
+              },
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name for any defined context. If the value does not match a defined context then an error will occur."
+              },
+              {
+                "name": "subtreeOnly",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating whether or not the crawl should be constrained to a specific path (default value is false)."
+              }
+            ]
+          },
+          "docs": "Runs the AJAX Spider against a given target."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionScanAsUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/scanAsUser/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name for any defined context. If the value does not match a defined context then an error will occur."
+              },
+              {
+                "name": "userName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the user to be used when crawling. The \"userName\" should be previously defined on the context configuration."
+              },
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "The starting URL (needs to include the 'scheme')."
+              },
+              {
+                "name": "subtreeOnly",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating whether or not the crawl should be constrained to a specific path (default value is false)."
+              }
+            ]
+          },
+          "docs": "Runs the AJAX Spider from the perspective of a User of the web application."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetEnabledAllowedResource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setEnabledAllowedResource/",
+            "params": [
+              {
+                "name": "regex",
+                "value": "",
+                "type": "query",
+                "description": "The regular expression of the allowed resource."
+              },
+              {
+                "name": "enabled",
+                "value": "",
+                "type": "query",
+                "description": "If the allowed resource should be enabled or not."
+              }
+            ]
+          },
+          "docs": "Sets whether or not an allowed resource is enabled."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionBrowserId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionBrowserId/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query",
+                "description": "The name of the browser to be used by the AJAX Spider. (See the Selenium add-on help for a list of supported browsers.)"
+              }
+            ]
+          },
+          "docs": "Sets the configuration of the AJAX Spider to use one of the supported browsers."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionClickDefaultElems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionClickDefaultElems/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating if only default elements such as 'a' 'button' 'input' should be clicked (default is true)."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the AJAX Spider will only click on the default HTML elements."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionClickElemsOnce",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionClickElemsOnce/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating whether or not the AJAX Spider should only click on elements once. If this is set to false, the crawler will attempt to click multiple times; which is more rigorous but may take considerably more time (default is true)."
+              }
+            ]
+          },
+          "docs": "When enabled, the crawler attempts to interact with each element (e.g., by clicking) only once."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionEnableExtensions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionEnableExtensions/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionEventWait",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionEventWait/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The time that the AJAX Spider should wait for each event (default is 1000 milliseconds)."
+              }
+            ]
+          },
+          "docs": "Sets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers over an element, in order for a menu to display, etc."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionLogoutAvoidance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionLogoutAvoidance/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating if logout elements should be avoided (default is false)."
+              }
+            ]
+          },
+          "docs": "Sets whether or not the AJAX Spider should avoid clicking logout elements."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionMaxCrawlDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionMaxCrawlDepth/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The maximum depth that the crawler should explore (zero means unlimited depth, default is 10)."
+              }
+            ]
+          },
+          "docs": "Sets the maximum depth that the crawler can reach."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionMaxCrawlStates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionMaxCrawlStates/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of states that the AJAX Spider should explore (zero means unlimited crawl states, default is 0)"
+              }
+            ]
+          },
+          "docs": "Sets the maximum number of states that the crawler should crawl."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionMaxDuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionMaxDuration/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The maximum amount of time that the AJAX Spider is allowed to run (zero means unlimited running time, default is 60 minutes)."
+              }
+            ]
+          },
+          "docs": "The maximum time that the crawler is allowed to run."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionNumberOfBrowsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionNumberOfBrowsers/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The number of windows that the AJAX Spider can use. The more windows, the faster the process will be. However, more windows also means greater resource usage (CPU, Memory, etc), and could lead to concurrency issues depending on the app being explored (default is 1)."
+              }
+            ]
+          },
+          "docs": "Sets the number of windows to be used by AJAX Spider."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionRandomInputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionRandomInputs/",
+            "params": [
+              {
+                "name": "Boolean",
+                "value": "",
+                "type": "query",
+                "description": "A boolean (true/false) indicating whether or not random values should be use in form fields. Otherwise, empty values are submitted (default is true)."
+              }
+            ]
+          },
+          "docs": "When enabled, inserts random values into form fields."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionReloadWait",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionReloadWait/",
+            "params": [
+              {
+                "name": "Integer",
+                "value": "",
+                "type": "query",
+                "description": "The number of milliseconds the AJAX Spider should wait after a page is loaded (default is 1000)."
+              }
+            ]
+          },
+          "docs": "Sets the time to wait after the page is loaded before interacting with it."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionSetOptionScopeCheck",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/setOptionScopeCheck/",
+            "params": [
+              {
+                "name": "String",
+                "value": "",
+                "type": "query",
+                "description": "The scope check, either Strict or Flexible. Any other value will result in setting the default (Strict)."
+              }
+            ]
+          },
+          "docs": "Sets the scope check."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderActionStop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/action/stop/"
+          },
+          "docs": "Stops the AJAX Spider."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewAllowedResources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/allowedResources/"
+          },
+          "docs": "Gets the allowed resources. The allowed resources are always fetched even if out of scope, allowing to include necessary resources (e.g. scripts) from 3rd-parties."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewExcludedElements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/excludedElements/",
+            "params": [
+              {
+                "name": "contextName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the context."
+              }
+            ]
+          },
+          "docs": "Gets the excluded elements. The excluded elements are not clicked during crawling, for example, to prevent logging out."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewFullResults",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/fullResults/"
+          },
+          "docs": "Gets the full crawled content detected by the AJAX Spider. Returns a set of values based on 'inScope' URLs, 'outOfScope' URLs, and 'errors' encountered during the last/current run of the AJAX Spider."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewNumberOfResults",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/numberOfResults/"
+          },
+          "docs": "Gets the number of resources found."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionBrowserId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionBrowserId/"
+          },
+          "docs": "Gets the configured browser to use for crawling."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionClickDefaultElems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionClickDefaultElems/"
+          },
+          "docs": "Gets the configured value for 'Click Default Elements Only', HTML elements such as 'a', 'button', 'input', all associated with some action or links on the page."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionClickElemsOnce",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionClickElemsOnce/"
+          },
+          "docs": "Gets the value configured for the AJAX Spider to know if it should click on the elements only once."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionEnableExtensions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionEnableExtensions/"
+          }
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionEventWait",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionEventWait/"
+          },
+          "docs": "Gets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers over an element, in order for a menu to display, etc."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionLogoutAvoidance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionLogoutAvoidance/"
+          },
+          "docs": "Gets the value of the Logout Avoidance option."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionMaxCrawlDepth",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionMaxCrawlDepth/"
+          },
+          "docs": "Gets the configured value for the max crawl depth."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionMaxCrawlStates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionMaxCrawlStates/"
+          },
+          "docs": "Gets the configured value for the maximum crawl states allowed."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionMaxDuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionMaxDuration/"
+          },
+          "docs": "Gets the configured max duration of the crawl, the value is in minutes."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionNumberOfBrowsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionNumberOfBrowsers/"
+          },
+          "docs": "Gets the configured number of browsers to be used."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionRandomInputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionRandomInputs/"
+          },
+          "docs": "Gets if the AJAX Spider will use random values in form fields when crawling, if set to true."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionReloadWait",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionReloadWait/"
+          },
+          "docs": "Gets the configured time to wait after reloading the page, this value is in milliseconds."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewOptionScopeCheck",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/optionScopeCheck/"
+          },
+          "docs": "Gets the configured scope check."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewResults",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/results/",
+            "params": [
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "The position (or offset) within the results to use as a starting position for the information returned."
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query",
+                "description": "The number of results to return."
+              }
+            ]
+          },
+          "docs": "Gets the current results of the crawler."
+        },
+        {
+          "info": {
+            "name": "ajaxSpiderViewStatus",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://zap/JSON/ajaxSpider/view/status/"
+          },
+          "docs": "Gets the current status of the crawler. Actual values are Stopped and Running."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
