@@ -24,6 +24,12 @@ tags:
   - Application Security
   - Vulnerability Scanning
   - Testing
+  - Open-Source
+tags_raw:
+  - Security Testing
+  - Application Security
+  - Vulnerability Scanning
+  - Testing
   - Open Source
 url: https://raw.githubusercontent.com/api-evangelist/owasp-zap/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -36,6 +42,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Access Control
+  tags_raw:
   - accessControl
   properties:
   - type: OpenAPI
@@ -71,7 +79,8 @@ apis:
   description: The ajaxSpider API from OWASP ZAP — 41 operation(s) for ajaxspider.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - ajaxSpider
   properties:
   - type: OpenAPI
@@ -90,6 +99,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Alert
+  tags_raw:
   - alert
   properties:
   - type: OpenAPI
@@ -107,7 +118,8 @@ apis:
   description: The alertFilter API from OWASP ZAP — 12 operation(s) for alertfilter.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - alertFilter
   properties:
   - type: OpenAPI
@@ -144,6 +156,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Authentication
+  tags_raw:
   - authentication
   properties:
   - type: OpenAPI
@@ -162,6 +176,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Authorization
+  tags_raw:
   - authorization
   properties:
   - type: OpenAPI
@@ -180,6 +196,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Automation
+  tags_raw:
   - automation
   properties:
   - type: OpenAPI
@@ -198,6 +216,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Auto-Update
+  tags_raw:
   - autoupdate
   properties:
   - type: OpenAPI
@@ -234,6 +254,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Clients
+  tags_raw:
   - client
   properties:
   - type: OpenAPI
@@ -251,7 +273,8 @@ apis:
   description: The clientSpider API from OWASP ZAP — 3 operation(s) for clientspider.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - clientSpider
   properties:
   - type: OpenAPI
@@ -270,6 +293,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Context
+  tags_raw:
   - context
   properties:
   - type: OpenAPI
@@ -288,6 +313,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Core
+  tags_raw:
   - core
   properties:
   - type: OpenAPI
@@ -324,6 +351,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Dev
+  tags_raw:
   - dev
   properties:
   - type: OpenAPI
@@ -359,7 +388,8 @@ apis:
   description: The forcedUser API from OWASP ZAP — 4 operation(s) for forceduser.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - forcedUser
   properties:
   - type: OpenAPI
@@ -378,6 +408,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - GraphQL
+  tags_raw:
   - graphql
   properties:
   - type: OpenAPI
@@ -395,7 +427,8 @@ apis:
   description: The httpSessions API from OWASP ZAP — 16 operation(s) for httpsessions.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - httpSessions
   properties:
   - type: OpenAPI
@@ -414,6 +447,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - HUD
+  tags_raw:
   - hud
   properties:
   - type: OpenAPI
@@ -432,6 +467,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Keyboard
+  tags_raw:
   - keyboard
   properties:
   - type: OpenAPI
@@ -449,7 +486,8 @@ apis:
   description: The localProxies API from OWASP ZAP — 3 operation(s) for localproxies.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - localProxies
   properties:
   - type: OpenAPI
@@ -468,6 +506,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Network
+  tags_raw:
   - network
   properties:
   - type: OpenAPI
@@ -504,6 +544,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - OpenAPI
+  tags_raw:
   - openapi
   properties:
   - type: OpenAPI
@@ -521,7 +563,8 @@ apis:
   description: The paramDigger API from OWASP ZAP — 1 operation(s) for paramdigger.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - paramDigger
   properties:
   - type: OpenAPI
@@ -576,6 +619,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Postman
+  tags_raw:
   - postman
   properties:
   - type: OpenAPI
@@ -648,6 +693,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Reports
+  tags_raw:
   - reports
   properties:
   - type: OpenAPI
@@ -684,6 +731,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Reveal
+  tags_raw:
   - reveal
   properties:
   - type: OpenAPI
@@ -719,7 +768,8 @@ apis:
   description: The ruleConfig API from OWASP ZAP — 5 operation(s) for ruleconfig.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
+  tags: []
+  tags_raw:
   - ruleConfig
   properties:
   - type: OpenAPI
@@ -738,6 +788,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Script
+  tags_raw:
   - script
   properties:
   - type: OpenAPI
@@ -756,6 +808,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Search
+  tags_raw:
   - search
   properties:
   - type: OpenAPI
@@ -774,6 +828,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Selenium
+  tags_raw:
   - selenium
   properties:
   - type: OpenAPI
@@ -792,6 +848,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Session Management
+  tags_raw:
   - sessionManagement
   properties:
   - type: OpenAPI
@@ -810,6 +868,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - SOAP
+  tags_raw:
   - soap
   properties:
   - type: OpenAPI
@@ -846,6 +906,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - Stats
+  tags_raw:
   - stats
   properties:
   - type: OpenAPI
@@ -864,6 +926,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - User
+  tags_raw:
   - users
   properties:
   - type: OpenAPI
@@ -900,6 +964,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - WebSocket
+  tags_raw:
   - websocket
   properties:
   - type: OpenAPI
