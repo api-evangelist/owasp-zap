@@ -5,6 +5,19 @@ description: >-
   and web applications during development and testing. ZAP exposes a comprehensive HTTP API for controlling and
   automating scans, spidering, authentication, alerts, reporting, and more.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: Apache-2.0
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -979,6 +992,19 @@ apis:
   - type: GitHub API Docs
     url: https://github.com/zaproxy/zap-api-docs
 common:
+  - type: CapabilityMap
+    url: capabilities/owasp-zap-capability-edges.yml
+    name: OWASP ZAP Business Capability Map
+  - type: IssueTracker
+    url: https://github.com/zaproxy/zaproxy/issues
+  - type: Releases
+    url: https://github.com/zaproxy/zaproxy/releases
+  - type: SecurityPolicy
+    url: https://github.com/zaproxy/zaproxy/blob/main/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/zaproxy/.github/blob/master/.github/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/zaproxy/zaproxy/blob/main/CONTRIBUTING.md
   - type: License
     name: Apache-2.0
     url: https://github.com/zaproxy/zaproxy/blob/main/LICENSE
