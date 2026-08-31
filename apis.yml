@@ -54,8 +54,7 @@ apis:
   description: The accessControl API from OWASP ZAP — 4 operation(s) for accesscontrol.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
-  - Access Control
+  tags: []
   tags_raw:
   - accessControl
   properties:
@@ -209,7 +208,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Automation
+  - automation
   tags_raw:
   - automation
   properties:
@@ -229,7 +228,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Auto-Update
+  - autoupdate
   tags_raw:
   - autoupdate
   properties:
@@ -267,7 +266,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Clients
+  - client
   tags_raw:
   - client
   properties:
@@ -364,7 +363,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Dev
+  - dev
   tags_raw:
   - dev
   properties:
@@ -421,7 +420,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - GraphQL
+  - graphql
   tags_raw:
   - graphql
   properties:
@@ -460,7 +459,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - HUD
+  - hud
   tags_raw:
   - hud
   properties:
@@ -480,7 +479,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Keyboard
+  - keyboard
   tags_raw:
   - keyboard
   properties:
@@ -744,7 +743,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Reveal
+  - reveal
   tags_raw:
   - reveal
   properties:
@@ -841,7 +840,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Selenium
+  - selenium
   tags_raw:
   - selenium
   properties:
@@ -860,8 +859,7 @@ apis:
   description: The sessionManagement API from OWASP ZAP — 4 operation(s) for sessionmanagement.
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
-  tags:
-  - Session Management
+  tags: []
   tags_raw:
   - sessionManagement
   properties:
@@ -881,7 +879,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - SOAP
+  - soap
   tags_raw:
   - soap
   properties:
@@ -977,7 +975,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - WebSocket
+  - websocket
   tags_raw:
   - websocket
   properties:
