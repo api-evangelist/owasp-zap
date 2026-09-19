@@ -480,7 +480,7 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
-  - Network
+  - Networks
   tags_raw:
   - network
   properties:
@@ -936,6 +936,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - GraphQL
+  tags_raw:
   - Graph QL
   properties:
   - type: OpenAPI
@@ -954,6 +956,8 @@ apis:
   humanURL: https://www.zaproxy.org
   baseURL: http://zap
   tags:
+  - OpenAPI
+  tags_raw:
   - Open API
   properties:
   - type: OpenAPI
