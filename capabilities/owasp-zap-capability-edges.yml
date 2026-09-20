@@ -41,7 +41,8 @@ edges:
   reason: Alerts here are security findings from the scanner, ranked by risk — vulnerability findings
     management. Explicitly NOT observability alerting or financial-crime alerting.
 - tag: accessControl
-  spec_file: owasp-zap-accesscontrol-api-openapi.yml
+  spec_file: owasp-zap-access-control-api-openapi.yml
+  reanchored_from: owasp-zap-accesscontrol-api-openapi.yml
   capability_id: BC-620.40
   capability_id_l1: BC-620
   capability_name: Vulnerability Management
