@@ -1,0 +1,91 @@
+slug: owasp-zap
+provider: OWASP ZAP
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 8
+edges:
+- tag: ascan
+  spec_file: owasp-zap-ascan-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.9
+  evidence: GET /JSON/ascan/action/addScanPolicy/; GET /JSON/ascan/action/enableAllScanners/; GET /JSON/ascan/action/pauseAllScans/
+  reason: Active vulnerability scanning engine control — scan policies, scanners, scan execution. Plainly
+    vulnerability scanning.
+- tag: pscan
+  spec_file: owasp-zap-pscan-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.85
+  evidence: GET /JSON/pscan/action/enableAllScanners/ ; setScannerAlertThreshold ; setMaxAlertsPerRule
+  reason: Passive scan rule enablement and alert thresholds within a web application vulnerability scanner
+    — directly realises vulnerability scanning/detection.
+- tag: alert
+  spec_file: owasp-zap-alert-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.8
+  evidence: GET /JSON/alert/view/alertCountsByRisk/; GET /JSON/alert/view/alertsByRisk/
+  reason: Alerts here are security findings from the scanner, ranked by risk — vulnerability findings
+    management. Explicitly NOT observability alerting or financial-crime alerting.
+- tag: accessControl
+  spec_file: owasp-zap-accesscontrol-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.75
+  evidence: GET /JSON/accessControl/action/scan/ accessControlActionScan; "web application security scanner
+    for finding vulnerabilities"
+  reason: ZAP's access control testing scans a target web app for authorisation flaws and writes an HTML
+    report — this is security vulnerability testing of an application, i.e. Vulnerability Management,
+    not enterprise IAM administration.
+- tag: ajaxSpider
+  spec_file: owasp-zap-ajaxspider-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.75
+  evidence: GET /JSON/ajaxSpider/action/scan/ ajaxSpiderActionScan; GET /JSON/ajaxSpider/action/scanAsUser/
+  reason: Crawling/spidering a target application to enumerate attack surface for security scanning —
+    security vulnerability discovery, not general IT ops.
+- tag: acsrf
+  spec_file: owasp-zap-acsrf-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.7
+  evidence: GET /JSON/acsrf/action/addOptionToken/ acsrfActionAddOptionToken; GET /OTHER/acsrf/other/genForm/
+  reason: Anti-CSRF token configuration for the vulnerability scanner; part of ZAP's security-testing
+    surface, mapped to vulnerability scanning/testing. Confidence moderated because the operations are
+    scanner option configuration.
+- tag: alertFilter
+  spec_file: owasp-zap-alertfilter-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.7
+  evidence: GET /JSON/alertFilter/action/addAlertFilter/ alertFilterActionAddAlertFilter
+  reason: Filters that reclassify or suppress scanner vulnerability findings (false-positive triage) —
+    part of vulnerability management workflow, though the operations are configuration-oriented.
+- tag: core
+  spec_file: owasp-zap-core-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.7
+  evidence: coreActionDeleteAlert, coreActionDeleteAllAlerts, coreActionAccessUrl, coreActionCreateSbomZip
+  reason: Core control surface of a web application vulnerability scanner, including management of security
+    alerts (scan findings) and target access; maps to vulnerability scanning/remediation tracking. Mixed
+    with proxy/certificate plumbing, hence not top confidence.
