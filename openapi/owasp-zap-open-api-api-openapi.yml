@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl openapi API
+  title: ZAP Openapi API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: openapi
+- name: Open API
 paths:
   /JSON/openapi/action/importFile/:
     parameters:
@@ -56,10 +56,12 @@ paths:
       description: Imports an OpenAPI definition from a local file.
       operationId: openapiActionImportFile
       tags:
-      - openapi
+      - Open API
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Openapi action import file
+      x-summary-source: derived
   /JSON/openapi/action/importUrl/:
     parameters:
     - name: url
@@ -87,18 +89,13 @@ paths:
       description: Imports an OpenAPI definition from a URL.
       operationId: openapiActionImportUrl
       tags:
-      - openapi
+      - Open API
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Openapi action import url
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -112,6 +109,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

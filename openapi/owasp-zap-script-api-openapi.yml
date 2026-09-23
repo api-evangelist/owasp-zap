@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl script API
+  title: ZAP Script API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: script
+- name: Script
 paths:
   /JSON/script/action/clearGlobalCustomVar/:
     parameters:
@@ -41,10 +41,12 @@ paths:
       description: Clears a global custom variable.
       operationId: scriptActionClearGlobalCustomVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action clear global custom var
+      x-summary-source: derived
   /JSON/script/action/clearGlobalVar/:
     parameters:
     - name: varKey
@@ -57,19 +59,23 @@ paths:
       description: Clears the global variable with the given key.
       operationId: scriptActionClearGlobalVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action clear global var
+      x-summary-source: derived
   /JSON/script/action/clearGlobalVars/:
     get:
       description: Clears the global variables.
       operationId: scriptActionClearGlobalVars
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action clear global vars
+      x-summary-source: derived
   /JSON/script/action/clearScriptCustomVar/:
     parameters:
     - name: scriptName
@@ -88,10 +94,12 @@ paths:
       description: Clears a script custom variable.
       operationId: scriptActionClearScriptCustomVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action clear script custom var
+      x-summary-source: derived
   /JSON/script/action/clearScriptVar/:
     parameters:
     - name: scriptName
@@ -110,10 +118,12 @@ paths:
       description: Clears the variable with the given key of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
       operationId: scriptActionClearScriptVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action clear script var
+      x-summary-source: derived
   /JSON/script/action/clearScriptVars/:
     parameters:
     - name: scriptName
@@ -126,10 +136,12 @@ paths:
       description: Clears the variables of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
       operationId: scriptActionClearScriptVars
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action clear script vars
+      x-summary-source: derived
   /JSON/script/action/disable/:
     parameters:
     - name: scriptName
@@ -142,10 +154,12 @@ paths:
       description: Disables the script with the given name
       operationId: scriptActionDisable
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action disable
+      x-summary-source: derived
   /JSON/script/action/enable/:
     parameters:
     - name: scriptName
@@ -158,10 +172,12 @@ paths:
       description: Enables the script with the given name
       operationId: scriptActionEnable
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action enable
+      x-summary-source: derived
   /JSON/script/action/load/:
     parameters:
     - name: scriptName
@@ -202,10 +218,12 @@ paths:
       description: Loads a script into ZAP from the given local file, with the given name, type and engine, optionally with a description, and a charset name to read the script (the charset name is required if the script is not in UTF-8, for example, in ISO-8859-1).
       operationId: scriptActionLoad
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action load
+      x-summary-source: derived
   /JSON/script/action/remove/:
     parameters:
     - name: scriptName
@@ -218,10 +236,12 @@ paths:
       description: Removes the script with the given name
       operationId: scriptActionRemove
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action remove
+      x-summary-source: derived
   /JSON/script/action/runStandAloneScript/:
     parameters:
     - name: scriptName
@@ -234,10 +254,12 @@ paths:
       description: Runs the stand alone script with the given name
       operationId: scriptActionRunStandAloneScript
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action run stand alone script
+      x-summary-source: derived
   /JSON/script/action/setGlobalVar/:
     parameters:
     - name: varKey
@@ -255,10 +277,12 @@ paths:
       description: Sets the value of the global variable with the given key.
       operationId: scriptActionSetGlobalVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action set global var
+      x-summary-source: derived
   /JSON/script/action/setScriptVar/:
     parameters:
     - name: scriptName
@@ -282,10 +306,12 @@ paths:
       description: Sets the value of the variable with the given key of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
       operationId: scriptActionSetScriptVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script action set script var
+      x-summary-source: derived
   /JSON/script/view/globalCustomVar/:
     parameters:
     - name: varKey
@@ -298,19 +324,23 @@ paths:
       description: Gets the value (string representation) of a global custom variable. Returns an API error (DOES_NOT_EXIST) if no value was previously set.
       operationId: scriptViewGlobalCustomVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view global custom var
+      x-summary-source: derived
   /JSON/script/view/globalCustomVars/:
     get:
       description: Gets all the global custom variables (key/value pairs, the value is the string representation).
       operationId: scriptViewGlobalCustomVars
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view global custom vars
+      x-summary-source: derived
   /JSON/script/view/globalVar/:
     parameters:
     - name: varKey
@@ -323,46 +353,56 @@ paths:
       description: Gets the value of the global variable with the given key. Returns an API error (DOES_NOT_EXIST) if no value was previously set.
       operationId: scriptViewGlobalVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view global var
+      x-summary-source: derived
   /JSON/script/view/globalVars/:
     get:
       description: Gets all the global variables (key/value pairs).
       operationId: scriptViewGlobalVars
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view global vars
+      x-summary-source: derived
   /JSON/script/view/listEngines/:
     get:
       description: Lists the script engines available
       operationId: scriptViewListEngines
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view list engines
+      x-summary-source: derived
   /JSON/script/view/listScripts/:
     get:
       description: Lists the scripts available, with its engine, name, description, type and error state.
       operationId: scriptViewListScripts
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view list scripts
+      x-summary-source: derived
   /JSON/script/view/listTypes/:
     get:
       description: Lists the script types available.
       operationId: scriptViewListTypes
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view list types
+      x-summary-source: derived
   /JSON/script/view/scriptCustomVar/:
     parameters:
     - name: scriptName
@@ -381,10 +421,12 @@ paths:
       description: Gets the value (string representation) of a custom variable. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists or if no value was previously set.
       operationId: scriptViewScriptCustomVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view script custom var
+      x-summary-source: derived
   /JSON/script/view/scriptCustomVars/:
     parameters:
     - name: scriptName
@@ -397,10 +439,12 @@ paths:
       description: Gets all the custom variables (key/value pairs, the value is the string representation) of a script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
       operationId: scriptViewScriptCustomVars
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view script custom vars
+      x-summary-source: derived
   /JSON/script/view/scriptVar/:
     parameters:
     - name: scriptName
@@ -419,10 +463,12 @@ paths:
       description: Gets the value of the variable with the given key for the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists or if no value was previously set.
       operationId: scriptViewScriptVar
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view script var
+      x-summary-source: derived
   /JSON/script/view/scriptVars/:
     parameters:
     - name: scriptName
@@ -435,18 +481,13 @@ paths:
       description: Gets all the variables (key/value pairs) of the given script. Returns an API error (DOES_NOT_EXIST) if no script with the given name exists.
       operationId: scriptViewScriptVars
       tags:
-      - script
+      - Script
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Script view script vars
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -460,6 +501,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

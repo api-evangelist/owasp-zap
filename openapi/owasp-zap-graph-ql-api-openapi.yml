@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl graphql API
+  title: ZAP Graphql API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: graphql
+- name: Graph QL
 paths:
   /JSON/graphql/action/importFile/:
     parameters:
@@ -47,10 +47,12 @@ paths:
       description: Imports a GraphQL Schema from a File.
       operationId: graphqlActionImportFile
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action import file
+      x-summary-source: derived
   /JSON/graphql/action/importUrl/:
     parameters:
     - name: endurl
@@ -68,10 +70,12 @@ paths:
       description: Imports a GraphQL Schema from a URL.
       operationId: graphqlActionImportUrl
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action import url
+      x-summary-source: derived
   /JSON/graphql/action/setOptionArgsType/:
     parameters:
     - name: String
@@ -84,10 +88,12 @@ paths:
       description: Sets how arguments are specified.
       operationId: graphqlActionSetOptionArgsType
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option args type
+      x-summary-source: derived
   /JSON/graphql/action/setOptionLenientMaxQueryDepthEnabled/:
     parameters:
     - name: Boolean
@@ -100,10 +106,12 @@ paths:
       description: Sets whether or not Maximum Query Depth is enforced leniently.
       operationId: graphqlActionSetOptionLenientMaxQueryDepthEnabled
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option lenient max query depth enabled
+      x-summary-source: derived
   /JSON/graphql/action/setOptionMaxAdditionalQueryDepth/:
     parameters:
     - name: Integer
@@ -116,10 +124,12 @@ paths:
       description: Sets the maximum additional query generation depth (used if enforced leniently).
       operationId: graphqlActionSetOptionMaxAdditionalQueryDepth
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option max additional query depth
+      x-summary-source: derived
   /JSON/graphql/action/setOptionMaxArgsDepth/:
     parameters:
     - name: Integer
@@ -132,10 +142,12 @@ paths:
       description: Sets the maximum arguments generation depth.
       operationId: graphqlActionSetOptionMaxArgsDepth
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option max args depth
+      x-summary-source: derived
   /JSON/graphql/action/setOptionMaxQueryDepth/:
     parameters:
     - name: Integer
@@ -148,10 +160,12 @@ paths:
       description: Sets the maximum query generation depth.
       operationId: graphqlActionSetOptionMaxQueryDepth
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option max query depth
+      x-summary-source: derived
   /JSON/graphql/action/setOptionOptionalArgsEnabled/:
     parameters:
     - name: Boolean
@@ -164,10 +178,12 @@ paths:
       description: Sets whether or not Optional Arguments should be specified.
       operationId: graphqlActionSetOptionOptionalArgsEnabled
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option optional args enabled
+      x-summary-source: derived
   /JSON/graphql/action/setOptionQueryGenEnabled/:
     parameters:
     - name: Boolean
@@ -180,10 +196,12 @@ paths:
       description: Sets whether the query generator is enabled.
       operationId: graphqlActionSetOptionQueryGenEnabled
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option query gen enabled
+      x-summary-source: derived
   /JSON/graphql/action/setOptionQuerySplitType/:
     parameters:
     - name: String
@@ -196,10 +214,12 @@ paths:
       description: Sets the level for which a single query is generated.
       operationId: graphqlActionSetOptionQuerySplitType
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option query split type
+      x-summary-source: derived
   /JSON/graphql/action/setOptionRequestMethod/:
     parameters:
     - name: String
@@ -212,99 +232,112 @@ paths:
       description: Sets the request method.
       operationId: graphqlActionSetOptionRequestMethod
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql action set option request method
+      x-summary-source: derived
   /JSON/graphql/view/optionArgsType/:
     get:
       description: Returns how arguments are currently specified.
       operationId: graphqlViewOptionArgsType
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option args type
+      x-summary-source: derived
   /JSON/graphql/view/optionLenientMaxQueryDepthEnabled/:
     get:
       description: Returns whether or not lenient maximum query generation depth is enabled.
       operationId: graphqlViewOptionLenientMaxQueryDepthEnabled
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option lenient max query depth enabled
+      x-summary-source: derived
   /JSON/graphql/view/optionMaxAdditionalQueryDepth/:
     get:
       description: Returns the current maximum additional query generation depth.
       operationId: graphqlViewOptionMaxAdditionalQueryDepth
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option max additional query depth
+      x-summary-source: derived
   /JSON/graphql/view/optionMaxArgsDepth/:
     get:
       description: Returns the current maximum arguments generation depth.
       operationId: graphqlViewOptionMaxArgsDepth
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option max args depth
+      x-summary-source: derived
   /JSON/graphql/view/optionMaxQueryDepth/:
     get:
       description: Returns the current maximum query generation depth.
       operationId: graphqlViewOptionMaxQueryDepth
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option max query depth
+      x-summary-source: derived
   /JSON/graphql/view/optionOptionalArgsEnabled/:
     get:
       description: Returns whether or not optional arguments are currently specified.
       operationId: graphqlViewOptionOptionalArgsEnabled
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option optional args enabled
+      x-summary-source: derived
   /JSON/graphql/view/optionQueryGenEnabled/:
     get:
       description: Returns whether the query generator is enabled.
       operationId: graphqlViewOptionQueryGenEnabled
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option query gen enabled
+      x-summary-source: derived
   /JSON/graphql/view/optionQuerySplitType/:
     get:
       description: Returns the current level for which a single query is generated.
       operationId: graphqlViewOptionQuerySplitType
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option query split type
+      x-summary-source: derived
   /JSON/graphql/view/optionRequestMethod/:
     get:
       description: Returns the current request method.
       operationId: graphqlViewOptionRequestMethod
       tags:
-      - graphql
+      - Graph QL
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Graphql view option request method
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -318,6 +351,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

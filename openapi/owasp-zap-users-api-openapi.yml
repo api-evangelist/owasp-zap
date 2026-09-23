@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl users API
+  title: ZAP Users API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: users
+- name: Users
 paths:
   /JSON/users/action/authenticateAsUser/:
     parameters:
@@ -47,10 +47,12 @@ paths:
       description: Tries to authenticate as the identified user, returning the authentication request and whether it appears to have succeeded.
       operationId: usersActionAuthenticateAsUser
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action authenticate as user
+      x-summary-source: derived
   /JSON/users/action/newUser/:
     parameters:
     - name: contextId
@@ -69,10 +71,12 @@ paths:
       description: Creates a new user with the given name for the context with the given ID.
       operationId: usersActionNewUser
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action new user
+      x-summary-source: derived
   /JSON/users/action/pollAsUser/:
     parameters:
     - name: contextId
@@ -91,10 +95,12 @@ paths:
       description: Tries to poll as the identified user, returning the authentication request and whether it appears to have succeeded. This will only work if the polling verification strategy has been configured.
       operationId: usersActionPollAsUser
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action poll as user
+      x-summary-source: derived
   /JSON/users/action/removeUser/:
     parameters:
     - name: contextId
@@ -113,10 +119,12 @@ paths:
       description: Removes the user with the given ID that belongs to the context with the given ID.
       operationId: usersActionRemoveUser
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action remove user
+      x-summary-source: derived
   /JSON/users/action/setAuthenticationCredentials/:
     parameters:
     - name: contextId
@@ -140,10 +148,12 @@ paths:
       description: Sets the authentication credentials for the user with the given ID that belongs to the context with the given ID.
       operationId: usersActionSetAuthenticationCredentials
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action set authentication credentials
+      x-summary-source: derived
   /JSON/users/action/setAuthenticationState/:
     parameters:
     - name: contextId
@@ -177,10 +187,12 @@ paths:
       description: Sets fields in the authentication state for the user identified by the Context and User Ids.
       operationId: usersActionSetAuthenticationState
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action set authentication state
+      x-summary-source: derived
   /JSON/users/action/setCookie/:
     parameters:
     - name: contextId
@@ -227,10 +239,12 @@ paths:
       description: Sets the specified cookie for the user identified by the Context and User Ids.
       operationId: usersActionSetCookie
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action set cookie
+      x-summary-source: derived
   /JSON/users/action/setUserEnabled/:
     parameters:
     - name: contextId
@@ -255,10 +269,12 @@ paths:
       description: Sets whether or not the user, with the given ID that belongs to the context with the given ID, should be enabled.
       operationId: usersActionSetUserEnabled
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action set user enabled
+      x-summary-source: derived
   /JSON/users/action/setUserName/:
     parameters:
     - name: contextId
@@ -283,10 +299,12 @@ paths:
       description: Renames the user with the given ID that belongs to the context with the given ID.
       operationId: usersActionSetUserName
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users action set user name
+      x-summary-source: derived
   /JSON/users/view/getAuthenticationCredentials/:
     parameters:
     - name: contextId
@@ -305,10 +323,12 @@ paths:
       description: Gets the authentication credentials of the user with given ID that belongs to the context with the given ID.
       operationId: usersViewGetAuthenticationCredentials
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users view get authentication credentials
+      x-summary-source: derived
   /JSON/users/view/getAuthenticationCredentialsConfigParams/:
     parameters:
     - name: contextId
@@ -321,10 +341,12 @@ paths:
       description: Gets the configuration parameters for the credentials of the context with the given ID.
       operationId: usersViewGetAuthenticationCredentialsConfigParams
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users view get authentication credentials config params
+      x-summary-source: derived
   /JSON/users/view/getAuthenticationSession/:
     parameters:
     - name: contextId
@@ -343,10 +365,12 @@ paths:
       description: Gets the authentication session information for the user identified by the Context and User Ids, e.g. cookies and realm credentials.
       operationId: usersViewGetAuthenticationSession
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users view get authentication session
+      x-summary-source: derived
   /JSON/users/view/getAuthenticationState/:
     parameters:
     - name: contextId
@@ -365,10 +389,12 @@ paths:
       description: Gets the authentication state information for the user identified by the Context and User Ids.
       operationId: usersViewGetAuthenticationState
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users view get authentication state
+      x-summary-source: derived
   /JSON/users/view/getUserById/:
     parameters:
     - name: contextId
@@ -387,10 +413,12 @@ paths:
       description: Gets the data of the user with the given ID that belongs to the context with the given ID.
       operationId: usersViewGetUserById
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users view get user by id
+      x-summary-source: derived
   /JSON/users/view/usersList/:
     parameters:
     - name: contextId
@@ -402,18 +430,13 @@ paths:
       description: Gets a list of users that belong to the context with the given ID, or all users if none provided.
       operationId: usersViewUsersList
       tags:
-      - users
+      - Users
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Users view users list
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -427,6 +450,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

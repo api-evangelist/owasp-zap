@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl oast API
+  title: ZAP Oast API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -45,6 +45,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast action set active scan service
+      x-summary-source: derived
   /JSON/oast/action/setBoastOptions/:
     parameters:
     - name: server
@@ -67,6 +69,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast action set boast options
+      x-summary-source: derived
   /JSON/oast/action/setCallbackOptions/:
     parameters:
     - name: localAddress
@@ -95,6 +99,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast action set callback options
+      x-summary-source: derived
   /JSON/oast/action/setDaysToKeepRecords/:
     parameters:
     - name: days
@@ -111,6 +117,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast action set days to keep records
+      x-summary-source: derived
   /JSON/oast/action/setInteractshOptions/:
     parameters:
     - name: server
@@ -139,6 +147,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast action set interactsh options
+      x-summary-source: derived
   /JSON/oast/view/getActiveScanService/:
     get:
       description: Gets the service used with the active scanner, if any.
@@ -148,6 +158,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast view get active scan service
+      x-summary-source: derived
   /JSON/oast/view/getBoastOptions/:
     get:
       description: Gets the BOAST options.
@@ -157,6 +169,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast view get boast options
+      x-summary-source: derived
   /JSON/oast/view/getCallbackOptions/:
     get:
       description: Gets the Callback options.
@@ -166,6 +180,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast view get callback options
+      x-summary-source: derived
   /JSON/oast/view/getDaysToKeepRecords/:
     get:
       description: Gets the number of days the OAST records will be kept for.
@@ -175,6 +191,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast view get days to keep records
+      x-summary-source: derived
   /JSON/oast/view/getInteractshOptions/:
     get:
       description: Gets the Interactsh options.
@@ -184,6 +202,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast view get interactsh options
+      x-summary-source: derived
   /JSON/oast/view/getServices/:
     get:
       description: Gets all of the services.
@@ -193,14 +213,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Oast view get services
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -214,6 +229,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

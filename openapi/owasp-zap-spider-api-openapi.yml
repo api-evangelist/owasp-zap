@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl spider API
+  title: ZAP Spider API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -55,6 +55,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action add domain always in scope
+      x-summary-source: derived
   /JSON/spider/action/clearExcludedFromScan/:
     get:
       description: Clears the regexes of URLs excluded from the spider scans.
@@ -64,6 +66,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action clear excluded from scan
+      x-summary-source: derived
   /JSON/spider/action/disableAllDomainsAlwaysInScope/:
     get:
       description: Disables all domains that are always in scope.
@@ -73,6 +77,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action disable all domains always in scope
+      x-summary-source: derived
   /JSON/spider/action/enableAllDomainsAlwaysInScope/:
     get:
       description: Enables all domains that are always in scope.
@@ -82,6 +88,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action enable all domains always in scope
+      x-summary-source: derived
   /JSON/spider/action/excludeFromScan/:
     parameters:
     - name: regex
@@ -98,6 +106,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action exclude from scan
+      x-summary-source: derived
   /JSON/spider/action/modifyDomainAlwaysInScope/:
     parameters:
     - name: idx
@@ -129,6 +139,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action modify domain always in scope
+      x-summary-source: derived
   /JSON/spider/action/pause/:
     parameters:
     - name: scanId
@@ -145,6 +157,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action pause
+      x-summary-source: derived
   /JSON/spider/action/pauseAllScans/:
     get:
       description: ''
@@ -154,6 +168,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action pause all scans
+      x-summary-source: derived
   /JSON/spider/action/removeAllScans/:
     get:
       description: ''
@@ -163,6 +179,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action remove all scans
+      x-summary-source: derived
   /JSON/spider/action/removeDomainAlwaysInScope/:
     parameters:
     - name: idx
@@ -179,6 +197,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action remove domain always in scope
+      x-summary-source: derived
   /JSON/spider/action/removeScan/:
     parameters:
     - name: scanId
@@ -195,6 +215,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action remove scan
+      x-summary-source: derived
   /JSON/spider/action/resume/:
     parameters:
     - name: scanId
@@ -211,6 +233,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action resume
+      x-summary-source: derived
   /JSON/spider/action/resumeAllScans/:
     get:
       description: ''
@@ -220,6 +244,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action resume all scans
+      x-summary-source: derived
   /JSON/spider/action/scan/:
     parameters:
     - name: url
@@ -255,6 +281,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action scan
+      x-summary-source: derived
   /JSON/spider/action/scanAsUser/:
     parameters:
     - name: contextId
@@ -297,6 +325,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action scan as user
+      x-summary-source: derived
   /JSON/spider/action/setOptionAcceptCookies/:
     parameters:
     - name: Boolean
@@ -313,6 +343,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option accept cookies
+      x-summary-source: derived
   /JSON/spider/action/setOptionHandleODataParametersVisited/:
     parameters:
     - name: Boolean
@@ -329,6 +361,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option handle OData parameters visited
+      x-summary-source: derived
   /JSON/spider/action/setOptionHandleParameters/:
     parameters:
     - name: String
@@ -345,6 +379,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option handle parameters
+      x-summary-source: derived
   /JSON/spider/action/setOptionLogoutAvoidance/:
     parameters:
     - name: Boolean
@@ -361,6 +397,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option logout avoidance
+      x-summary-source: derived
   /JSON/spider/action/setOptionMaxChildren/:
     parameters:
     - name: Integer
@@ -377,6 +415,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option max children
+      x-summary-source: derived
   /JSON/spider/action/setOptionMaxDepth/:
     parameters:
     - name: Integer
@@ -393,6 +433,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option max depth
+      x-summary-source: derived
   /JSON/spider/action/setOptionMaxDuration/:
     parameters:
     - name: Integer
@@ -409,6 +451,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option max duration
+      x-summary-source: derived
   /JSON/spider/action/setOptionMaxParseSizeBytes/:
     parameters:
     - name: Integer
@@ -425,6 +469,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option max parse size bytes
+      x-summary-source: derived
   /JSON/spider/action/setOptionMaxScansInUI/:
     parameters:
     - name: Integer
@@ -441,6 +487,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option max scans in UI
+      x-summary-source: derived
   /JSON/spider/action/setOptionParseComments/:
     parameters:
     - name: Boolean
@@ -457,6 +505,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option parse comments
+      x-summary-source: derived
   /JSON/spider/action/setOptionParseDsStore/:
     parameters:
     - name: Boolean
@@ -473,6 +523,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option parse ds store
+      x-summary-source: derived
   /JSON/spider/action/setOptionParseGit/:
     parameters:
     - name: Boolean
@@ -489,6 +541,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option parse git
+      x-summary-source: derived
   /JSON/spider/action/setOptionParseRobotsTxt/:
     parameters:
     - name: Boolean
@@ -505,6 +559,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option parse robots txt
+      x-summary-source: derived
   /JSON/spider/action/setOptionParseSVNEntries/:
     parameters:
     - name: Boolean
@@ -521,6 +577,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option parse SVN entries
+      x-summary-source: derived
   /JSON/spider/action/setOptionParseSitemapXml/:
     parameters:
     - name: Boolean
@@ -537,6 +595,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option parse sitemap xml
+      x-summary-source: derived
   /JSON/spider/action/setOptionPostForm/:
     parameters:
     - name: Boolean
@@ -553,6 +613,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option post form
+      x-summary-source: derived
   /JSON/spider/action/setOptionProcessForm/:
     parameters:
     - name: Boolean
@@ -569,6 +631,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option process form
+      x-summary-source: derived
   /JSON/spider/action/setOptionSendRefererHeader/:
     parameters:
     - name: Boolean
@@ -585,6 +649,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option send referer header
+      x-summary-source: derived
   /JSON/spider/action/setOptionShowAdvancedDialog/:
     parameters:
     - name: Boolean
@@ -601,6 +667,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option show advanced dialog
+      x-summary-source: derived
   /JSON/spider/action/setOptionSkipURLString/:
     parameters:
     - name: String
@@ -617,6 +685,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option skip URL string
+      x-summary-source: derived
   /JSON/spider/action/setOptionThreadCount/:
     parameters:
     - name: Integer
@@ -633,6 +703,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option thread count
+      x-summary-source: derived
   /JSON/spider/action/setOptionUserAgent/:
     parameters:
     - name: String
@@ -649,6 +721,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action set option user agent
+      x-summary-source: derived
   /JSON/spider/action/stop/:
     parameters:
     - name: scanId
@@ -664,6 +738,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action stop
+      x-summary-source: derived
   /JSON/spider/action/stopAllScans/:
     get:
       description: ''
@@ -673,6 +749,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider action stop all scans
+      x-summary-source: derived
   /JSON/spider/view/addedNodes/:
     parameters:
     - name: scanId
@@ -688,6 +766,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view added nodes
+      x-summary-source: derived
   /JSON/spider/view/allUrls/:
     get:
       description: Returns a list of unique URLs from the history table based on HTTP messages added by the Spider.
@@ -697,6 +777,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view all urls
+      x-summary-source: derived
   /JSON/spider/view/domainsAlwaysInScope/:
     get:
       description: 'Gets all the domains that are always in scope. For each domain the following are shown: the index, the value (domain), if enabled, and if specified as a regex.'
@@ -706,6 +788,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view domains always in scope
+      x-summary-source: derived
   /JSON/spider/view/excludedFromScan/:
     get:
       description: Gets the regexes of URLs excluded from the spider scans.
@@ -715,6 +799,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view excluded from scan
+      x-summary-source: derived
   /JSON/spider/view/fullResults/:
     parameters:
     - name: scanId
@@ -731,6 +817,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view full results
+      x-summary-source: derived
   /JSON/spider/view/optionAcceptCookies/:
     get:
       description: Gets whether or not a spider process should accept cookies while spidering.
@@ -740,6 +828,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option accept cookies
+      x-summary-source: derived
   /JSON/spider/view/optionDomainsAlwaysInScope/:
     get:
       description: Use view domainsAlwaysInScope instead.
@@ -750,6 +840,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option domains always in scope
+      x-summary-source: derived
   /JSON/spider/view/optionDomainsAlwaysInScopeEnabled/:
     get:
       description: Use view domainsAlwaysInScope instead.
@@ -760,6 +852,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option domains always in scope enabled
+      x-summary-source: derived
   /JSON/spider/view/optionHandleODataParametersVisited/:
     get:
       description: ''
@@ -769,6 +863,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option handle OData parameters visited
+      x-summary-source: derived
   /JSON/spider/view/optionHandleParameters/:
     get:
       description: ''
@@ -778,6 +874,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option handle parameters
+      x-summary-source: derived
   /JSON/spider/view/optionLogoutAvoidance/:
     get:
       description: Gets whether or not the spider should attempt to avoid logout related paths/functionality.
@@ -787,6 +885,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option logout avoidance
+      x-summary-source: derived
   /JSON/spider/view/optionMaxChildren/:
     get:
       description: Gets the maximum number of child nodes (per node) that can be crawled, 0 means no limit.
@@ -796,6 +896,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option max children
+      x-summary-source: derived
   /JSON/spider/view/optionMaxDepth/:
     get:
       description: Gets the maximum depth the spider can crawl, 0 if unlimited.
@@ -805,6 +907,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option max depth
+      x-summary-source: derived
   /JSON/spider/view/optionMaxDuration/:
     get:
       description: ''
@@ -814,6 +918,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option max duration
+      x-summary-source: derived
   /JSON/spider/view/optionMaxParseSizeBytes/:
     get:
       description: Gets the maximum size, in bytes, that a response might have to be parsed, or 0 for unlimited.
@@ -823,6 +929,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option max parse size bytes
+      x-summary-source: derived
   /JSON/spider/view/optionMaxScansInUI/:
     get:
       description: ''
@@ -832,6 +940,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option max scans in UI
+      x-summary-source: derived
   /JSON/spider/view/optionParseComments/:
     get:
       description: ''
@@ -841,6 +951,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option parse comments
+      x-summary-source: derived
   /JSON/spider/view/optionParseDsStore/:
     get:
       description: ''
@@ -850,6 +962,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option parse ds store
+      x-summary-source: derived
   /JSON/spider/view/optionParseGit/:
     get:
       description: ''
@@ -859,6 +973,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option parse git
+      x-summary-source: derived
   /JSON/spider/view/optionParseRobotsTxt/:
     get:
       description: ''
@@ -868,6 +984,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option parse robots txt
+      x-summary-source: derived
   /JSON/spider/view/optionParseSVNEntries/:
     get:
       description: ''
@@ -877,6 +995,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option parse SVN entries
+      x-summary-source: derived
   /JSON/spider/view/optionParseSitemapXml/:
     get:
       description: ''
@@ -886,6 +1006,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option parse sitemap xml
+      x-summary-source: derived
   /JSON/spider/view/optionPostForm/:
     get:
       description: ''
@@ -895,6 +1017,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option post form
+      x-summary-source: derived
   /JSON/spider/view/optionProcessForm/:
     get:
       description: ''
@@ -904,6 +1028,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option process form
+      x-summary-source: derived
   /JSON/spider/view/optionSendRefererHeader/:
     get:
       description: Gets whether or not the 'Referer' header should be sent while spidering.
@@ -913,6 +1039,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option send referer header
+      x-summary-source: derived
   /JSON/spider/view/optionShowAdvancedDialog/:
     get:
       description: ''
@@ -922,6 +1050,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option show advanced dialog
+      x-summary-source: derived
   /JSON/spider/view/optionSkipURLString/:
     get:
       description: ''
@@ -931,6 +1061,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option skip URL string
+      x-summary-source: derived
   /JSON/spider/view/optionThreadCount/:
     get:
       description: ''
@@ -940,6 +1072,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option thread count
+      x-summary-source: derived
   /JSON/spider/view/optionUserAgent/:
     get:
       description: ''
@@ -949,6 +1083,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view option user agent
+      x-summary-source: derived
   /JSON/spider/view/results/:
     parameters:
     - name: scanId
@@ -964,6 +1100,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view results
+      x-summary-source: derived
   /JSON/spider/view/scans/:
     get:
       description: ''
@@ -973,6 +1111,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view scans
+      x-summary-source: derived
   /JSON/spider/view/status/:
     parameters:
     - name: scanId
@@ -988,14 +1128,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Spider view status
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -1009,6 +1144,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

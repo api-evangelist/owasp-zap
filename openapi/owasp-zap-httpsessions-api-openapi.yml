@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl httpSessions API
+  title: ZAP HTTP Sessions API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -50,6 +50,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action add default session token
+      x-summary-source: derived
   /JSON/httpSessions/action/addSessionToken/:
     parameters:
     - name: site
@@ -72,6 +74,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action add session token
+      x-summary-source: derived
   /JSON/httpSessions/action/createEmptySession/:
     parameters:
     - name: site
@@ -93,6 +97,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action create empty session
+      x-summary-source: derived
   /JSON/httpSessions/action/removeDefaultSessionToken/:
     parameters:
     - name: sessionToken
@@ -109,6 +115,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action remove default session token
+      x-summary-source: derived
   /JSON/httpSessions/action/removeSession/:
     parameters:
     - name: site
@@ -131,6 +139,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action remove session
+      x-summary-source: derived
   /JSON/httpSessions/action/removeSessionToken/:
     parameters:
     - name: site
@@ -153,6 +163,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action remove session token
+      x-summary-source: derived
   /JSON/httpSessions/action/renameSession/:
     parameters:
     - name: site
@@ -181,6 +193,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action rename session
+      x-summary-source: derived
   /JSON/httpSessions/action/setActiveSession/:
     parameters:
     - name: site
@@ -203,6 +217,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action set active session
+      x-summary-source: derived
   /JSON/httpSessions/action/setDefaultSessionTokenEnabled/:
     parameters:
     - name: sessionToken
@@ -225,6 +241,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action set default session token enabled
+      x-summary-source: derived
   /JSON/httpSessions/action/setSessionTokenValue/:
     parameters:
     - name: site
@@ -259,6 +277,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action set session token value
+      x-summary-source: derived
   /JSON/httpSessions/action/unsetActiveSession/:
     parameters:
     - name: site
@@ -275,6 +295,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions action unset active session
+      x-summary-source: derived
   /JSON/httpSessions/view/activeSession/:
     parameters:
     - name: site
@@ -291,6 +313,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions view active session
+      x-summary-source: derived
   /JSON/httpSessions/view/defaultSessionTokens/:
     get:
       description: Gets the default session tokens.
@@ -300,6 +324,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions view default session tokens
+      x-summary-source: derived
   /JSON/httpSessions/view/sessionTokens/:
     parameters:
     - name: site
@@ -316,6 +342,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions view session tokens
+      x-summary-source: derived
   /JSON/httpSessions/view/sessions/:
     parameters:
     - name: site
@@ -337,6 +365,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions view sessions
+      x-summary-source: derived
   /JSON/httpSessions/view/sites/:
     get:
       description: Gets all of the sites that have sessions.
@@ -346,14 +376,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Http sessions view sites
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -367,6 +392,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

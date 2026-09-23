@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl localProxies API
+  title: ZAP Local Proxies API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -67,6 +67,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Local proxies action add additional proxy
+      x-summary-source: derived
   /JSON/localProxies/action/removeAdditionalProxy/:
     parameters:
     - name: address
@@ -90,6 +92,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Local proxies action remove additional proxy
+      x-summary-source: derived
   /JSON/localProxies/view/additionalProxies/:
     get:
       description: Use the API endpoints in the 'network' component instead.
@@ -100,14 +104,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Local proxies view additional proxies
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -121,6 +120,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl break API
+  title: ZAP Break API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -62,13 +62,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Adds a custom HTTP breakpoint. The string is the string to match. Location may be one of: url, request_header, request_body, response_header or response_body. Match may be: contains or regex. Inverse (match) may be true or false. Lastly, ignorecase (when matching the string) may be true or false.  '
+      description: 'Adds a custom HTTP breakpoint. The string is the string to match. Location may be one of: url, request_header, request_body, response_header or response_body. Match may be: contains or regex. Inverse (match) may be true or false. Lastly, ignorecase (when matching the string) may be true or false.'
       operationId: breakActionAddHttpBreakpoint
       tags:
       - break
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break action add http breakpoint
+      x-summary-source: derived
   /JSON/break/action/break/:
     parameters:
     - name: type
@@ -96,6 +98,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break action break
+      x-summary-source: derived
   /JSON/break/action/continue/:
     get:
       description: Submits the currently intercepted message and unsets the global request/response breakpoints
@@ -105,6 +109,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break action continue
+      x-summary-source: derived
   /JSON/break/action/drop/:
     get:
       description: Drops the currently intercepted message
@@ -114,6 +120,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break action drop
+      x-summary-source: derived
   /JSON/break/action/removeHttpBreakpoint/:
     parameters:
     - name: string
@@ -154,6 +162,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break action remove http breakpoint
+      x-summary-source: derived
   /JSON/break/action/setHttpMessage/:
     parameters:
     - name: httpHeader
@@ -175,6 +185,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break action set http message
+      x-summary-source: derived
   /JSON/break/action/step/:
     get:
       description: Submits the currently intercepted message, the next request or response will automatically be intercepted
@@ -184,6 +196,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break action step
+      x-summary-source: derived
   /JSON/break/view/httpMessage/:
     get:
       description: Returns the HTTP message currently intercepted (if any)
@@ -193,6 +207,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break view http message
+      x-summary-source: derived
   /JSON/break/view/isBreakAll/:
     get:
       description: Returns True if ZAP will break on both requests and responses
@@ -202,6 +218,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break view is break all
+      x-summary-source: derived
   /JSON/break/view/isBreakRequest/:
     get:
       description: Returns True if ZAP will break on requests
@@ -211,6 +229,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break view is break request
+      x-summary-source: derived
   /JSON/break/view/isBreakResponse/:
     get:
       description: Returns True if ZAP will break on responses
@@ -220,14 +240,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Break view is break response
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -241,6 +256,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

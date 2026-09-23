@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl exim API
+  title: ZAP Exim API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -45,6 +45,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Exim action export sites tree
+      x-summary-source: derived
   /JSON/exim/action/importHar/:
     parameters:
     - name: filePath
@@ -61,6 +63,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Exim action import har
+      x-summary-source: derived
   /JSON/exim/action/importModsec2Logs/:
     parameters:
     - name: filePath
@@ -77,6 +81,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Exim action import modsec2 logs
+      x-summary-source: derived
   /JSON/exim/action/importUrls/:
     parameters:
     - name: filePath
@@ -93,6 +99,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Exim action import urls
+      x-summary-source: derived
   /JSON/exim/action/importZapLogs/:
     parameters:
     - name: filePath
@@ -109,6 +117,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Exim action import zap logs
+      x-summary-source: derived
   /JSON/exim/action/pruneSitesTree/:
     parameters:
     - name: filePath
@@ -125,6 +135,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Exim action prune sites tree
+      x-summary-source: derived
   /OTHER/exim/other/exportHar/:
     parameters:
     - name: baseurl
@@ -150,6 +162,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Exim other export har
+      x-summary-source: derived
   /OTHER/exim/other/exportHarById/:
     parameters:
     - name: ids
@@ -166,6 +180,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Exim other export har by id
+      x-summary-source: derived
   /OTHER/exim/other/sendHarRequest/:
     parameters:
     - name: request
@@ -187,6 +203,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Exim other send har request
+      x-summary-source: derived
 components:
   schemas:
     ErrorJson:

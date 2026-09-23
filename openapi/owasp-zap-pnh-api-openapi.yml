@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl pnh API
+  title: ZAP Pnh API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -51,6 +51,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pnh action monitor
+      x-summary-source: derived
   /JSON/pnh/action/oracle/:
     parameters:
     - name: id
@@ -67,6 +69,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pnh action oracle
+      x-summary-source: derived
   /JSON/pnh/action/startMonitoring/:
     parameters:
     - name: url
@@ -83,6 +87,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pnh action start monitoring
+      x-summary-source: derived
   /JSON/pnh/action/stopMonitoring/:
     parameters:
     - name: id
@@ -99,6 +105,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pnh action stop monitoring
+      x-summary-source: derived
   /OTHER/pnh/other/fx_pnh.xpi/:
     get:
       description: ''
@@ -108,6 +116,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Pnh other fx pnh xpi
+      x-summary-source: derived
   /OTHER/pnh/other/manifest/:
     get:
       description: ''
@@ -117,6 +127,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Pnh other manifest
+      x-summary-source: derived
   /OTHER/pnh/other/pnh/:
     get:
       description: ''
@@ -126,6 +138,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Pnh other pnh
+      x-summary-source: derived
   /OTHER/pnh/other/service/:
     get:
       description: ''
@@ -135,6 +149,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Pnh other service
+      x-summary-source: derived
 components:
   schemas:
     ErrorJson:

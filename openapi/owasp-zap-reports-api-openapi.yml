@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl reports API
+  title: ZAP Reports API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: reports
+- name: Reports
 paths:
   /JSON/reports/action/generate/:
     parameters:
@@ -102,10 +102,12 @@ paths:
       description: Generate a report with the supplied parameters.
       operationId: reportsActionGenerate
       tags:
-      - reports
+      - Reports
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Reports action generate
+      x-summary-source: derived
   /JSON/reports/view/templateDetails/:
     parameters:
     - name: template
@@ -118,27 +120,24 @@ paths:
       description: View details of the specified template.
       operationId: reportsViewTemplateDetails
       tags:
-      - reports
+      - Reports
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Reports view template details
+      x-summary-source: derived
   /JSON/reports/view/templates/:
     get:
       description: View available templates.
       operationId: reportsViewTemplates
       tags:
-      - reports
+      - Reports
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Reports view templates
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -152,6 +151,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

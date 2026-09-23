@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl context API
+  title: ZAP Context API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: context
+- name: Context
 paths:
   /JSON/context/action/excludeAllContextTechnologies/:
     parameters:
@@ -41,10 +41,12 @@ paths:
       description: Excludes all built in technologies from a context
       operationId: contextActionExcludeAllContextTechnologies
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action exclude all context technologies
+      x-summary-source: derived
   /JSON/context/action/excludeContextTechnologies/:
     parameters:
     - name: contextName
@@ -63,10 +65,12 @@ paths:
       description: Excludes technologies with the given names, separated by a comma, from a context
       operationId: contextActionExcludeContextTechnologies
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action exclude context technologies
+      x-summary-source: derived
   /JSON/context/action/excludeFromContext/:
     parameters:
     - name: contextName
@@ -85,10 +89,12 @@ paths:
       description: Add exclude regex to context
       operationId: contextActionExcludeFromContext
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action exclude from context
+      x-summary-source: derived
   /JSON/context/action/exportContext/:
     parameters:
     - name: contextName
@@ -107,10 +113,12 @@ paths:
       description: Exports the context with the given name to a file. If a relative file path is specified it will be resolved against the "contexts" directory in ZAP "home" dir.
       operationId: contextActionExportContext
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action export context
+      x-summary-source: derived
   /JSON/context/action/importContext/:
     parameters:
     - name: contextFile
@@ -123,10 +131,12 @@ paths:
       description: Imports a context from a file. If a relative file path is specified it will be resolved against the "contexts" directory in ZAP "home" dir.
       operationId: contextActionImportContext
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action import context
+      x-summary-source: derived
   /JSON/context/action/includeAllContextTechnologies/:
     parameters:
     - name: contextName
@@ -139,10 +149,12 @@ paths:
       description: Includes all built in technologies in to a context
       operationId: contextActionIncludeAllContextTechnologies
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action include all context technologies
+      x-summary-source: derived
   /JSON/context/action/includeContextTechnologies/:
     parameters:
     - name: contextName
@@ -161,10 +173,12 @@ paths:
       description: Includes technologies with the given names, separated by a comma, to a context
       operationId: contextActionIncludeContextTechnologies
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action include context technologies
+      x-summary-source: derived
   /JSON/context/action/includeInContext/:
     parameters:
     - name: contextName
@@ -183,10 +197,12 @@ paths:
       description: Add include regex to context
       operationId: contextActionIncludeInContext
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action include in context
+      x-summary-source: derived
   /JSON/context/action/newContext/:
     parameters:
     - name: contextName
@@ -199,10 +215,12 @@ paths:
       description: Creates a new context with the given name in the current session
       operationId: contextActionNewContext
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action new context
+      x-summary-source: derived
   /JSON/context/action/removeContext/:
     parameters:
     - name: contextName
@@ -215,10 +233,12 @@ paths:
       description: Removes a context in the current session
       operationId: contextActionRemoveContext
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action remove context
+      x-summary-source: derived
   /JSON/context/action/setContextCheckingStrategy/:
     parameters:
     - name: contextName
@@ -262,10 +282,12 @@ paths:
       description: Set the checking strategy for a context - this defines how ZAP checks that a request is authenticated
       operationId: contextActionSetContextCheckingStrategy
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action set context checking strategy
+      x-summary-source: derived
   /JSON/context/action/setContextInScope/:
     parameters:
     - name: contextName
@@ -284,10 +306,12 @@ paths:
       description: Sets a context to in scope (contexts are in scope by default)
       operationId: contextActionSetContextInScope
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action set context in scope
+      x-summary-source: derived
   /JSON/context/action/setContextRegexs/:
     parameters:
     - name: contextName
@@ -312,10 +336,12 @@ paths:
       description: Set the regexs to include and exclude for a context, both supplied as JSON string arrays
       operationId: contextActionSetContextRegexs
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context action set context regexs
+      x-summary-source: derived
   /JSON/context/view/context/:
     parameters:
     - name: contextName
@@ -328,19 +354,23 @@ paths:
       description: List the information about the named context
       operationId: contextViewContext
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view context
+      x-summary-source: derived
   /JSON/context/view/contextList/:
     get:
       description: List context names of current session
       operationId: contextViewContextList
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view context list
+      x-summary-source: derived
   /JSON/context/view/excludeRegexs/:
     parameters:
     - name: contextName
@@ -353,10 +383,12 @@ paths:
       description: List excluded regexs for context
       operationId: contextViewExcludeRegexs
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view exclude regexs
+      x-summary-source: derived
   /JSON/context/view/excludedTechnologyList/:
     parameters:
     - name: contextName
@@ -369,10 +401,12 @@ paths:
       description: Lists the names of all technologies excluded from a context
       operationId: contextViewExcludedTechnologyList
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view excluded technology list
+      x-summary-source: derived
   /JSON/context/view/includeRegexs/:
     parameters:
     - name: contextName
@@ -385,10 +419,12 @@ paths:
       description: List included regexs for context
       operationId: contextViewIncludeRegexs
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view include regexs
+      x-summary-source: derived
   /JSON/context/view/includedTechnologyList/:
     parameters:
     - name: contextName
@@ -401,19 +437,23 @@ paths:
       description: Lists the names of all technologies included in a context
       operationId: contextViewIncludedTechnologyList
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view included technology list
+      x-summary-source: derived
   /JSON/context/view/technologyList/:
     get:
       description: Lists the names of all built in technologies
       operationId: contextViewTechnologyList
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view technology list
+      x-summary-source: derived
   /JSON/context/view/urls/:
     parameters:
     - name: contextName
@@ -426,18 +466,13 @@ paths:
       description: Lists the URLs accessed through/by ZAP, that belong to the context with the given name.
       operationId: contextViewUrls
       tags:
-      - context
+      - Context
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Context view urls
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -451,6 +486,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

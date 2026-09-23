@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl ajaxSpider API
+  title: ZAP Ajax Spider API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -50,6 +50,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action add allowed resource
+      x-summary-source: derived
   /JSON/ajaxSpider/action/addExcludedElement/:
     parameters:
     - name: contextName
@@ -103,6 +105,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action add excluded element
+      x-summary-source: derived
   /JSON/ajaxSpider/action/modifyExcludedElement/:
     parameters:
     - name: contextName
@@ -161,6 +165,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action modify excluded element
+      x-summary-source: derived
   /JSON/ajaxSpider/action/removeAllowedResource/:
     parameters:
     - name: regex
@@ -177,6 +183,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action remove allowed resource
+      x-summary-source: derived
   /JSON/ajaxSpider/action/removeExcludedElement/:
     parameters:
     - name: contextName
@@ -199,6 +207,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action remove excluded element
+      x-summary-source: derived
   /JSON/ajaxSpider/action/scan/:
     parameters:
     - name: url
@@ -229,6 +239,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action scan
+      x-summary-source: derived
   /JSON/ajaxSpider/action/scanAsUser/:
     parameters:
     - name: contextName
@@ -261,6 +273,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action scan as user
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setEnabledAllowedResource/:
     parameters:
     - name: regex
@@ -283,6 +297,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set enabled allowed resource
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionBrowserId/:
     parameters:
     - name: String
@@ -299,6 +315,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option browser id
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionClickDefaultElems/:
     parameters:
     - name: Boolean
@@ -315,6 +333,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option click default elems
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionClickElemsOnce/:
     parameters:
     - name: Boolean
@@ -331,6 +351,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option click elems once
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionEnableExtensions/:
     parameters:
     - name: Boolean
@@ -347,6 +369,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option enable extensions
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionEventWait/:
     parameters:
     - name: Integer
@@ -363,6 +387,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option event wait
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionLogoutAvoidance/:
     parameters:
     - name: Boolean
@@ -379,6 +405,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option logout avoidance
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionMaxCrawlDepth/:
     parameters:
     - name: Integer
@@ -395,6 +423,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option max crawl depth
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionMaxCrawlStates/:
     parameters:
     - name: Integer
@@ -411,6 +441,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option max crawl states
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionMaxDuration/:
     parameters:
     - name: Integer
@@ -427,6 +459,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option max duration
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionNumberOfBrowsers/:
     parameters:
     - name: Integer
@@ -443,6 +477,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option number of browsers
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionRandomInputs/:
     parameters:
     - name: Boolean
@@ -459,6 +495,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option random inputs
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionReloadWait/:
     parameters:
     - name: Integer
@@ -475,6 +513,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option reload wait
+      x-summary-source: derived
   /JSON/ajaxSpider/action/setOptionScopeCheck/:
     parameters:
     - name: String
@@ -491,6 +531,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action set option scope check
+      x-summary-source: derived
   /JSON/ajaxSpider/action/stop/:
     get:
       description: Stops the AJAX Spider.
@@ -500,6 +542,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider action stop
+      x-summary-source: derived
   /JSON/ajaxSpider/view/allowedResources/:
     get:
       description: Gets the allowed resources. The allowed resources are always fetched even if out of scope, allowing to include necessary resources (e.g. scripts) from 3rd-parties.
@@ -509,6 +553,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view allowed resources
+      x-summary-source: derived
   /JSON/ajaxSpider/view/excludedElements/:
     parameters:
     - name: contextName
@@ -525,6 +571,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view excluded elements
+      x-summary-source: derived
   /JSON/ajaxSpider/view/fullResults/:
     get:
       description: Gets the full crawled content detected by the AJAX Spider. Returns a set of values based on 'inScope' URLs, 'outOfScope' URLs, and 'errors' encountered during the last/current run of the AJAX Spider.
@@ -534,6 +582,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view full results
+      x-summary-source: derived
   /JSON/ajaxSpider/view/numberOfResults/:
     get:
       description: Gets the number of resources found.
@@ -543,6 +593,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view number of results
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionBrowserId/:
     get:
       description: Gets the configured browser to use for crawling.
@@ -552,6 +604,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option browser id
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionClickDefaultElems/:
     get:
       description: Gets the configured value for 'Click Default Elements Only', HTML elements such as 'a', 'button', 'input', all associated with some action or links on the page.
@@ -561,6 +615,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option click default elems
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionClickElemsOnce/:
     get:
       description: Gets the value configured for the AJAX Spider to know if it should click on the elements only once.
@@ -570,6 +626,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option click elems once
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionEnableExtensions/:
     get:
       description: ''
@@ -579,6 +637,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option enable extensions
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionEventWait/:
     get:
       description: 'Gets the time to wait after an event (in milliseconds). For example: the wait delay after the cursor hovers over an element, in order for a menu to display, etc.'
@@ -588,6 +648,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option event wait
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionLogoutAvoidance/:
     get:
       description: Gets the value of the Logout Avoidance option.
@@ -597,6 +659,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option logout avoidance
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionMaxCrawlDepth/:
     get:
       description: Gets the configured value for the max crawl depth.
@@ -606,6 +670,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option max crawl depth
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionMaxCrawlStates/:
     get:
       description: Gets the configured value for the maximum crawl states allowed.
@@ -615,6 +681,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option max crawl states
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionMaxDuration/:
     get:
       description: Gets the configured max duration of the crawl, the value is in minutes.
@@ -624,6 +692,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option max duration
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionNumberOfBrowsers/:
     get:
       description: Gets the configured number of browsers to be used.
@@ -633,6 +703,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option number of browsers
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionRandomInputs/:
     get:
       description: Gets if the AJAX Spider will use random values in form fields when crawling, if set to true.
@@ -642,6 +714,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option random inputs
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionReloadWait/:
     get:
       description: Gets the configured time to wait after reloading the page, this value is in milliseconds.
@@ -651,6 +725,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option reload wait
+      x-summary-source: derived
   /JSON/ajaxSpider/view/optionScopeCheck/:
     get:
       description: Gets the configured scope check.
@@ -660,6 +736,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view option scope check
+      x-summary-source: derived
   /JSON/ajaxSpider/view/results/:
     parameters:
     - name: start
@@ -680,6 +758,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view results
+      x-summary-source: derived
   /JSON/ajaxSpider/view/status/:
     get:
       description: Gets the current status of the crawler. Actual values are Stopped and Running.
@@ -689,14 +769,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ajax spider view status
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -710,6 +785,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

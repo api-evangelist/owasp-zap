@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl core API
+  title: ZAP Core API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: core
+- name: Core
 paths:
   /JSON/core/action/accessUrl/:
     parameters:
@@ -46,10 +46,12 @@ paths:
       description: Convenient and simple action to access a URL, optionally following redirections. Returns the request sent and response received and followed redirections, if any. Other actions are available which offer more control on what is sent, like, 'sendRequest' or 'sendHarRequest'.
       operationId: coreActionAccessUrl
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action access url
+      x-summary-source: derived
   /JSON/core/action/addProxyChainExcludedDomain/:
     parameters:
     - name: value
@@ -73,19 +75,23 @@ paths:
       deprecated: true
       operationId: coreActionAddProxyChainExcludedDomain
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action add proxy chain excluded domain
+      x-summary-source: derived
   /JSON/core/action/clearExcludedFromProxy/:
     get:
       description: Clears the regexes of URLs excluded from the local proxies.
       operationId: coreActionClearExcludedFromProxy
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action clear excluded from proxy
+      x-summary-source: derived
   /JSON/core/action/createSbomZip/:
     parameters:
     - name: filePath
@@ -98,10 +104,12 @@ paths:
       description: Create a zip file of the ZAP core and add-on SBOMs
       operationId: coreActionCreateSbomZip
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action create sbom zip
+      x-summary-source: derived
   /JSON/core/action/deleteAlert/:
     parameters:
     - name: id
@@ -115,20 +123,24 @@ paths:
       deprecated: true
       operationId: coreActionDeleteAlert
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action delete alert
+      x-summary-source: derived
   /JSON/core/action/deleteAllAlerts/:
     get:
       description: Use the API endpoint with the same name in the 'alert' component instead.
       deprecated: true
       operationId: coreActionDeleteAllAlerts
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action delete all alerts
+      x-summary-source: derived
   /JSON/core/action/deleteSiteNode/:
     parameters:
     - name: url
@@ -148,43 +160,51 @@ paths:
       schema:
         type: string
     get:
-      description: 'Deletes the site node found in the Sites Tree on the basis of the URL, HTTP method, and post data (if applicable and specified). '
+      description: Deletes the site node found in the Sites Tree on the basis of the URL, HTTP method, and post data (if applicable and specified).
       operationId: coreActionDeleteSiteNode
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action delete site node
+      x-summary-source: derived
   /JSON/core/action/disableAllProxyChainExcludedDomains/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreActionDisableAllProxyChainExcludedDomains
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action disable all proxy chain excluded domains
+      x-summary-source: derived
   /JSON/core/action/disableClientCertificate/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreActionDisableClientCertificate
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action disable client certificate
+      x-summary-source: derived
   /JSON/core/action/enableAllProxyChainExcludedDomains/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreActionEnableAllProxyChainExcludedDomains
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action enable all proxy chain excluded domains
+      x-summary-source: derived
   /JSON/core/action/enablePKCS12ClientCertificate/:
     parameters:
     - name: filePath
@@ -209,10 +229,12 @@ paths:
       deprecated: true
       operationId: coreActionEnablePKCS12ClientCertificate
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action enable PKCS12 client certificate
+      x-summary-source: derived
   /JSON/core/action/excludeFromProxy/:
     parameters:
     - name: regex
@@ -225,20 +247,24 @@ paths:
       description: Adds a regex of URLs that should be excluded from the local proxies.
       operationId: coreActionExcludeFromProxy
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action exclude from proxy
+      x-summary-source: derived
   /JSON/core/action/generateRootCA/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreActionGenerateRootCA
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action generate root CA
+      x-summary-source: derived
   /JSON/core/action/loadSession/:
     parameters:
     - name: name
@@ -251,10 +277,12 @@ paths:
       description: Loads the session with the given name. If a relative path is specified it will be resolved against the "session" directory in ZAP "home" dir.
       operationId: coreActionLoadSession
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action load session
+      x-summary-source: derived
   /JSON/core/action/modifyProxyChainExcludedDomain/:
     parameters:
     - name: idx
@@ -283,10 +311,12 @@ paths:
       deprecated: true
       operationId: coreActionModifyProxyChainExcludedDomain
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action modify proxy chain excluded domain
+      x-summary-source: derived
   /JSON/core/action/newSession/:
     parameters:
     - name: name
@@ -303,10 +333,12 @@ paths:
       description: Creates a new session, optionally overwriting existing files. If a relative path is specified it will be resolved against the "session" directory in ZAP "home" dir.
       operationId: coreActionNewSession
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action new session
+      x-summary-source: derived
   /JSON/core/action/removeProxyChainExcludedDomain/:
     parameters:
     - name: idx
@@ -320,19 +352,23 @@ paths:
       deprecated: true
       operationId: coreActionRemoveProxyChainExcludedDomain
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action remove proxy chain excluded domain
+      x-summary-source: derived
   /JSON/core/action/runGarbageCollection/:
     get:
       description: ''
       operationId: coreActionRunGarbageCollection
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action run garbage collection
+      x-summary-source: derived
   /JSON/core/action/saveSession/:
     parameters:
     - name: name
@@ -350,10 +386,12 @@ paths:
       description: Saves the session.
       operationId: coreActionSaveSession
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action save session
+      x-summary-source: derived
   /JSON/core/action/sendRequest/:
     parameters:
     - name: request
@@ -371,10 +409,12 @@ paths:
       description: Sends the HTTP request, optionally following redirections. Returns the request sent and response received and followed redirections, if any. The Mode is enforced when sending the request (and following redirections), custom manual requests are not allowed in 'Safe' mode nor in 'Protected' mode if out of scope.
       operationId: coreActionSendRequest
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action send request
+      x-summary-source: derived
   /JSON/core/action/setHomeDirectory/:
     parameters:
     - name: dir
@@ -387,10 +427,12 @@ paths:
       description: ''
       operationId: coreActionSetHomeDirectory
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set home directory
+      x-summary-source: derived
   /JSON/core/action/setLogLevel/:
     parameters:
     - name: name
@@ -409,10 +451,12 @@ paths:
       description: Sets the logging level for a given logger name.
       operationId: coreActionSetLogLevel
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set log level
+      x-summary-source: derived
   /JSON/core/action/setMode/:
     parameters:
     - name: mode
@@ -425,10 +469,12 @@ paths:
       description: Sets the mode, which may be one of [safe, protect, standard, attack]
       operationId: coreActionSetMode
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set mode
+      x-summary-source: derived
   /JSON/core/action/setOptionAlertOverridesFilePath/:
     parameters:
     - name: filePath
@@ -440,10 +486,12 @@ paths:
       description: Sets (or clears, if empty) the path to the file with alert overrides.
       operationId: coreActionSetOptionAlertOverridesFilePath
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option alert overrides file path
+      x-summary-source: derived
   /JSON/core/action/setOptionDefaultUserAgent/:
     parameters:
     - name: String
@@ -457,10 +505,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionDefaultUserAgent
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option default user agent
+      x-summary-source: derived
   /JSON/core/action/setOptionDnsTtlSuccessfulQueries/:
     parameters:
     - name: Integer
@@ -474,10 +524,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionDnsTtlSuccessfulQueries
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option dns ttl successful queries
+      x-summary-source: derived
   /JSON/core/action/setOptionHttpStateEnabled/:
     parameters:
     - name: Boolean
@@ -491,10 +543,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionHttpStateEnabled
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option http state enabled
+      x-summary-source: derived
   /JSON/core/action/setOptionMaximumAlertInstances/:
     parameters:
     - name: numberOfInstances
@@ -507,10 +561,12 @@ paths:
       description: Sets the maximum number of alert instances to include in a report. A value of zero is treated as unlimited.
       operationId: coreActionSetOptionMaximumAlertInstances
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option maximum alert instances
+      x-summary-source: derived
   /JSON/core/action/setOptionMergeRelatedAlerts/:
     parameters:
     - name: enabled
@@ -523,10 +579,12 @@ paths:
       description: Sets whether or not related alerts will be merged in any reports generated.
       operationId: coreActionSetOptionMergeRelatedAlerts
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option merge related alerts
+      x-summary-source: derived
   /JSON/core/action/setOptionProxyChainName/:
     parameters:
     - name: String
@@ -540,10 +598,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionProxyChainName
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option proxy chain name
+      x-summary-source: derived
   /JSON/core/action/setOptionProxyChainPassword/:
     parameters:
     - name: String
@@ -557,10 +617,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionProxyChainPassword
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option proxy chain password
+      x-summary-source: derived
   /JSON/core/action/setOptionProxyChainPort/:
     parameters:
     - name: Integer
@@ -574,10 +636,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionProxyChainPort
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option proxy chain port
+      x-summary-source: derived
   /JSON/core/action/setOptionProxyChainPrompt/:
     parameters:
     - name: Boolean
@@ -591,10 +655,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionProxyChainPrompt
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option proxy chain prompt
+      x-summary-source: derived
   /JSON/core/action/setOptionProxyChainRealm/:
     parameters:
     - name: String
@@ -608,10 +674,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionProxyChainRealm
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option proxy chain realm
+      x-summary-source: derived
   /JSON/core/action/setOptionProxyChainSkipName/:
     parameters:
     - name: String
@@ -625,10 +693,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionProxyChainSkipName
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option proxy chain skip name
+      x-summary-source: derived
   /JSON/core/action/setOptionProxyChainUserName/:
     parameters:
     - name: String
@@ -642,10 +712,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionProxyChainUserName
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option proxy chain user name
+      x-summary-source: derived
   /JSON/core/action/setOptionSingleCookieRequestHeader/:
     parameters:
     - name: Boolean
@@ -659,10 +731,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionSingleCookieRequestHeader
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option single cookie request header
+      x-summary-source: derived
   /JSON/core/action/setOptionTimeoutInSecs/:
     parameters:
     - name: Integer
@@ -676,10 +750,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionTimeoutInSecs
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option timeout in secs
+      x-summary-source: derived
   /JSON/core/action/setOptionUseProxyChain/:
     parameters:
     - name: Boolean
@@ -693,10 +769,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionUseProxyChain
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option use proxy chain
+      x-summary-source: derived
   /JSON/core/action/setOptionUseProxyChainAuth/:
     parameters:
     - name: Boolean
@@ -710,10 +788,12 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionUseProxyChainAuth
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option use proxy chain auth
+      x-summary-source: derived
   /JSON/core/action/setOptionUseSocksProxy/:
     parameters:
     - name: Boolean
@@ -727,19 +807,23 @@ paths:
       deprecated: true
       operationId: coreActionSetOptionUseSocksProxy
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action set option use socks proxy
+      x-summary-source: derived
   /JSON/core/action/shutdown/:
     get:
       description: Shuts down ZAP
       operationId: coreActionShutdown
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action shutdown
+      x-summary-source: derived
   /JSON/core/action/snapshotSession/:
     parameters:
     - name: name
@@ -756,10 +840,12 @@ paths:
       description: Snapshots the session, optionally with the given name, and overwriting existing files. If no name is specified the name of the current session with a timestamp appended is used. If a relative path is specified it will be resolved against the "session" directory in ZAP "home" dir.
       operationId: coreActionSnapshotSession
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core action snapshot session
+      x-summary-source: derived
   /OTHER/core/other/fileDownload/:
     parameters:
     - name: fileName
@@ -772,10 +858,12 @@ paths:
       description: Download a file from the transfer directory
       operationId: coreOtherFileDownload
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other file download
+      x-summary-source: derived
   /OTHER/core/other/fileUpload/:
     parameters:
     - name: fileName
@@ -794,40 +882,48 @@ paths:
       description: Upload a file to the transfer directory. Only POST requests accepted with encodings of "multipart/form-data" or "application/x-www-form-urlencoded".
       operationId: coreOtherFileUpload
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other file upload
+      x-summary-source: derived
   /OTHER/core/other/htmlreport/:
     get:
       description: Use the 'generate' API endpoint the 'reports' component instead.
       deprecated: true
       operationId: coreOtherHtmlreport
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other htmlreport
+      x-summary-source: derived
   /OTHER/core/other/jsonreport/:
     get:
       description: Use the 'generate' API endpoint the 'reports' component instead.
       deprecated: true
       operationId: coreOtherJsonreport
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other jsonreport
+      x-summary-source: derived
   /OTHER/core/other/mdreport/:
     get:
       description: Use the 'generate' API endpoint the 'reports' component instead.
       deprecated: true
       operationId: coreOtherMdreport
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other mdreport
+      x-summary-source: derived
   /OTHER/core/other/messageHar/:
     parameters:
     - name: id
@@ -841,10 +937,12 @@ paths:
       deprecated: true
       operationId: coreOtherMessageHar
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other message har
+      x-summary-source: derived
   /OTHER/core/other/messagesHar/:
     parameters:
     - name: baseurl
@@ -867,10 +965,12 @@ paths:
       deprecated: true
       operationId: coreOtherMessagesHar
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other messages har
+      x-summary-source: derived
   /OTHER/core/other/messagesHarById/:
     parameters:
     - name: ids
@@ -884,30 +984,36 @@ paths:
       deprecated: true
       operationId: coreOtherMessagesHarById
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other messages har by id
+      x-summary-source: derived
   /OTHER/core/other/proxy.pac/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreOtherProxy.pac
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other proxy pac
+      x-summary-source: derived
   /OTHER/core/other/rootcert/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreOtherRootcert
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other rootcert
+      x-summary-source: derived
   /OTHER/core/other/sendHarRequest/:
     parameters:
     - name: request
@@ -926,10 +1032,12 @@ paths:
       deprecated: true
       operationId: coreOtherSendHarRequest
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other send har request
+      x-summary-source: derived
   /OTHER/core/other/setproxy/:
     parameters:
     - name: proxy
@@ -943,20 +1051,24 @@ paths:
       deprecated: true
       operationId: coreOtherSetproxy
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other setproxy
+      x-summary-source: derived
   /OTHER/core/other/xmlreport/:
     get:
       description: Use the 'generate' API endpoint the 'reports' component instead.
       deprecated: true
       operationId: coreOtherXmlreport
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Core other xmlreport
+      x-summary-source: derived
   /JSON/core/view/alert/:
     parameters:
     - name: id
@@ -970,10 +1082,12 @@ paths:
       deprecated: true
       operationId: coreViewAlert
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view alert
+      x-summary-source: derived
   /JSON/core/view/alerts/:
     parameters:
     - name: baseurl
@@ -1001,10 +1115,12 @@ paths:
       deprecated: true
       operationId: coreViewAlerts
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view alerts
+      x-summary-source: derived
   /JSON/core/view/alertsSummary/:
     parameters:
     - name: baseurl
@@ -1017,10 +1133,12 @@ paths:
       deprecated: true
       operationId: coreViewAlertsSummary
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view alerts summary
+      x-summary-source: derived
   /JSON/core/view/childNodes/:
     parameters:
     - name: url
@@ -1032,19 +1150,23 @@ paths:
       description: Gets the child nodes underneath the specified URL in the Sites tree
       operationId: coreViewChildNodes
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view child nodes
+      x-summary-source: derived
   /JSON/core/view/excludedFromProxy/:
     get:
       description: Gets the regular expressions, applied to URLs, to exclude from the local proxies.
       operationId: coreViewExcludedFromProxy
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view excluded from proxy
+      x-summary-source: derived
   /JSON/core/view/getLogLevel/:
     parameters:
     - name: name
@@ -1056,29 +1178,35 @@ paths:
       description: 'The detailed logging config, optionally filtered based on a name (ex: starts with).'
       operationId: coreViewGetLogLevel
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view get log level
+      x-summary-source: derived
   /JSON/core/view/homeDirectory/:
     get:
       description: ''
       deprecated: true
       operationId: coreViewHomeDirectory
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view home directory
+      x-summary-source: derived
   /JSON/core/view/hosts/:
     get:
       description: Gets the name of the hosts accessed through/by ZAP
       operationId: coreViewHosts
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view hosts
+      x-summary-source: derived
   /JSON/core/view/message/:
     parameters:
     - name: id
@@ -1091,10 +1219,12 @@ paths:
       description: Gets the HTTP message with the given ID. Returns the ID, request/response headers and bodies, cookies, note, type, RTT, and timestamp.
       operationId: coreViewMessage
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view message
+      x-summary-source: derived
   /JSON/core/view/messages/:
     parameters:
     - name: baseurl
@@ -1116,10 +1246,12 @@ paths:
       description: Gets the HTTP messages sent by ZAP, request and response, optionally filtered by URL and paginated with 'start' position and 'count' of messages
       operationId: coreViewMessages
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view messages
+      x-summary-source: derived
   /JSON/core/view/messagesById/:
     parameters:
     - name: ids
@@ -1132,19 +1264,23 @@ paths:
       description: Gets the HTTP messages with the given IDs.
       operationId: coreViewMessagesById
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view messages by id
+      x-summary-source: derived
   /JSON/core/view/mode/:
     get:
       description: Gets the mode
       operationId: coreViewMode
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view mode
+      x-summary-source: derived
   /JSON/core/view/numberOfAlerts/:
     parameters:
     - name: baseurl
@@ -1162,10 +1298,12 @@ paths:
       deprecated: true
       operationId: coreViewNumberOfAlerts
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view number of alerts
+      x-summary-source: derived
   /JSON/core/view/numberOfMessages/:
     parameters:
     - name: baseurl
@@ -1177,245 +1315,295 @@ paths:
       description: Gets the number of messages, optionally filtering by URL
       operationId: coreViewNumberOfMessages
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view number of messages
+      x-summary-source: derived
   /JSON/core/view/optionAlertOverridesFilePath/:
     get:
       description: Gets the path to the file with alert overrides.
       operationId: coreViewOptionAlertOverridesFilePath
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option alert overrides file path
+      x-summary-source: derived
   /JSON/core/view/optionDefaultUserAgent/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionDefaultUserAgent
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option default user agent
+      x-summary-source: derived
   /JSON/core/view/optionDnsTtlSuccessfulQueries/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionDnsTtlSuccessfulQueries
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option dns ttl successful queries
+      x-summary-source: derived
   /JSON/core/view/optionHttpState/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionHttpState
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option http state
+      x-summary-source: derived
   /JSON/core/view/optionHttpStateEnabled/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionHttpStateEnabled
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option http state enabled
+      x-summary-source: derived
   /JSON/core/view/optionMaximumAlertInstances/:
     get:
       description: Gets the maximum number of alert instances to include in a report.
       operationId: coreViewOptionMaximumAlertInstances
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option maximum alert instances
+      x-summary-source: derived
   /JSON/core/view/optionMergeRelatedAlerts/:
     get:
       description: Gets whether or not related alerts will be merged in any reports generated.
       operationId: coreViewOptionMergeRelatedAlerts
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option merge related alerts
+      x-summary-source: derived
   /JSON/core/view/optionProxyChainName/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionProxyChainName
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy chain name
+      x-summary-source: derived
   /JSON/core/view/optionProxyChainPassword/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionProxyChainPassword
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy chain password
+      x-summary-source: derived
   /JSON/core/view/optionProxyChainPort/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionProxyChainPort
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy chain port
+      x-summary-source: derived
   /JSON/core/view/optionProxyChainPrompt/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionProxyChainPrompt
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy chain prompt
+      x-summary-source: derived
   /JSON/core/view/optionProxyChainRealm/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionProxyChainRealm
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy chain realm
+      x-summary-source: derived
   /JSON/core/view/optionProxyChainSkipName/:
     get:
       description: Use view proxyChainExcludedDomains instead.
       deprecated: true
       operationId: coreViewOptionProxyChainSkipName
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy chain skip name
+      x-summary-source: derived
   /JSON/core/view/optionProxyChainUserName/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionProxyChainUserName
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy chain user name
+      x-summary-source: derived
   /JSON/core/view/optionProxyExcludedDomains/:
     get:
       description: Use view proxyChainExcludedDomains instead.
       deprecated: true
       operationId: coreViewOptionProxyExcludedDomains
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy excluded domains
+      x-summary-source: derived
   /JSON/core/view/optionProxyExcludedDomainsEnabled/:
     get:
       description: Use view proxyChainExcludedDomains instead.
       deprecated: true
       operationId: coreViewOptionProxyExcludedDomainsEnabled
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option proxy excluded domains enabled
+      x-summary-source: derived
   /JSON/core/view/optionSingleCookieRequestHeader/:
     get:
       description: Option no longer in effective use.
       deprecated: true
       operationId: coreViewOptionSingleCookieRequestHeader
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option single cookie request header
+      x-summary-source: derived
   /JSON/core/view/optionTimeoutInSecs/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionTimeoutInSecs
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option timeout in secs
+      x-summary-source: derived
   /JSON/core/view/optionUseProxyChain/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionUseProxyChain
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option use proxy chain
+      x-summary-source: derived
   /JSON/core/view/optionUseProxyChainAuth/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionUseProxyChainAuth
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option use proxy chain auth
+      x-summary-source: derived
   /JSON/core/view/optionUseSocksProxy/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewOptionUseSocksProxy
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view option use socks proxy
+      x-summary-source: derived
   /JSON/core/view/proxyChainExcludedDomains/:
     get:
       description: Use the API endpoints in the 'network' component instead.
       deprecated: true
       operationId: coreViewProxyChainExcludedDomains
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view proxy chain excluded domains
+      x-summary-source: derived
   /JSON/core/view/sessionLocation/:
     get:
       description: Gets the location of the current session file
       operationId: coreViewSessionLocation
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view session location
+      x-summary-source: derived
   /JSON/core/view/sites/:
     get:
       description: Gets the sites accessed through/by ZAP (scheme and domain)
       operationId: coreViewSites
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view sites
+      x-summary-source: derived
   /JSON/core/view/urls/:
     parameters:
     - name: baseurl
@@ -1427,28 +1615,34 @@ paths:
       description: Gets the URLs accessed through/by ZAP, optionally filtering by (base) URL.
       operationId: coreViewUrls
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view urls
+      x-summary-source: derived
   /JSON/core/view/version/:
     get:
       description: Gets ZAP version
       operationId: coreViewVersion
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view version
+      x-summary-source: derived
   /JSON/core/view/zapHomePath/:
     get:
       description: Gets the path to ZAP's home directory.
       operationId: coreViewZapHomePath
       tags:
-      - core
+      - Core
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Core view zap home path
+      x-summary-source: derived
 components:
   schemas:
     ErrorJson:

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl authentication API
+  title: ZAP Authentication API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: authentication
+- name: Authentication
 paths:
   /JSON/authentication/action/setAuthenticationMethod/:
     parameters:
@@ -52,10 +52,12 @@ paths:
       description: Sets the authentication method for the context with the given ID.
       operationId: authenticationActionSetAuthenticationMethod
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication action set authentication method
+      x-summary-source: derived
   /JSON/authentication/action/setLoggedInIndicator/:
     parameters:
     - name: contextId
@@ -74,10 +76,12 @@ paths:
       description: Sets the logged in indicator for the context with the given ID.
       operationId: authenticationActionSetLoggedInIndicator
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication action set logged in indicator
+      x-summary-source: derived
   /JSON/authentication/action/setLoggedOutIndicator/:
     parameters:
     - name: contextId
@@ -96,10 +100,12 @@ paths:
       description: Sets the logged out indicator for the context with the given ID.
       operationId: authenticationActionSetLoggedOutIndicator
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication action set logged out indicator
+      x-summary-source: derived
   /JSON/authentication/view/getAuthenticationMethod/:
     parameters:
     - name: contextId
@@ -112,10 +118,12 @@ paths:
       description: Gets the name of the authentication method for the context with the given ID.
       operationId: authenticationViewGetAuthenticationMethod
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication view get authentication method
+      x-summary-source: derived
   /JSON/authentication/view/getAuthenticationMethodConfigParams/:
     parameters:
     - name: authMethodName
@@ -128,10 +136,12 @@ paths:
       description: Gets the configuration parameters for the authentication method with the given name.
       operationId: authenticationViewGetAuthenticationMethodConfigParams
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication view get authentication method config params
+      x-summary-source: derived
   /JSON/authentication/view/getLoggedInIndicator/:
     parameters:
     - name: contextId
@@ -144,10 +154,12 @@ paths:
       description: Gets the logged in indicator for the context with the given ID.
       operationId: authenticationViewGetLoggedInIndicator
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication view get logged in indicator
+      x-summary-source: derived
   /JSON/authentication/view/getLoggedOutIndicator/:
     parameters:
     - name: contextId
@@ -160,27 +172,24 @@ paths:
       description: Gets the logged out indicator for the context with the given ID.
       operationId: authenticationViewGetLoggedOutIndicator
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication view get logged out indicator
+      x-summary-source: derived
   /JSON/authentication/view/getSupportedAuthenticationMethods/:
     get:
       description: Gets the name of the authentication methods.
       operationId: authenticationViewGetSupportedAuthenticationMethods
       tags:
-      - authentication
+      - Authentication
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authentication view get supported authentication methods
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -194,6 +203,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

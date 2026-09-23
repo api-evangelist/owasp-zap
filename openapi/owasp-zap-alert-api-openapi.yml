@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl alert API
+  title: ZAP Alert API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: alert
+- name: Alert
 paths:
   /JSON/alert/action/addAlert/:
     parameters:
@@ -105,10 +105,12 @@ paths:
       description: Add an alert associated with the given message ID, with the provided details. (The ID of the created alert is returned.)
       operationId: alertActionAddAlert
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert action add alert
+      x-summary-source: derived
   /JSON/alert/action/deleteAlert/:
     parameters:
     - name: id
@@ -118,13 +120,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Deletes the alert with the given ID. '
+      description: Deletes the alert with the given ID.
       operationId: alertActionDeleteAlert
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert action delete alert
+      x-summary-source: derived
   /JSON/alert/action/deleteAlerts/:
     parameters:
     - name: contextName
@@ -146,19 +150,23 @@ paths:
       description: Deletes all the alerts optionally filtered by URL which fall within the Context with the provided name, risk, or base URL.
       operationId: alertActionDeleteAlerts
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert action delete alerts
+      x-summary-source: derived
   /JSON/alert/action/deleteAllAlerts/:
     get:
       description: Deletes all alerts of the current session.
       operationId: alertActionDeleteAllAlerts
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert action delete all alerts
+      x-summary-source: derived
   /JSON/alert/action/updateAlert/:
     parameters:
     - name: id
@@ -235,10 +243,12 @@ paths:
       description: Update the alert with the given ID, with the provided details.
       operationId: alertActionUpdateAlert
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert action update alert
+      x-summary-source: derived
   /JSON/alert/action/updateAlertsConfidence/:
     parameters:
     - name: ids
@@ -257,10 +267,12 @@ paths:
       description: Update the confidence of the alerts.
       operationId: alertActionUpdateAlertsConfidence
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert action update alerts confidence
+      x-summary-source: derived
   /JSON/alert/action/updateAlertsRisk/:
     parameters:
     - name: ids
@@ -279,10 +291,12 @@ paths:
       description: Update the risk of the alerts.
       operationId: alertActionUpdateAlertsRisk
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert action update alerts risk
+      x-summary-source: derived
   /JSON/alert/view/alert/:
     parameters:
     - name: id
@@ -295,10 +309,12 @@ paths:
       description: Gets the alert with the given ID, the corresponding HTTP message can be obtained with the 'messageId' field and 'message' API method
       operationId: alertViewAlert
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert view alert
+      x-summary-source: derived
   /JSON/alert/view/alertCountsByRisk/:
     parameters:
     - name: url
@@ -315,10 +331,12 @@ paths:
       description: Gets a count of the alerts, optionally filtered as per alertsPerRisk
       operationId: alertViewAlertCountsByRisk
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert view alert counts by risk
+      x-summary-source: derived
   /JSON/alert/view/alerts/:
     parameters:
     - name: baseurl
@@ -350,10 +368,12 @@ paths:
       description: Gets the alerts raised by ZAP, optionally filtering by URL or riskId, and paginating with 'start' position and 'count' of alerts
       operationId: alertViewAlerts
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert view alerts
+      x-summary-source: derived
   /JSON/alert/view/alertsByRisk/:
     parameters:
     - name: url
@@ -370,10 +390,12 @@ paths:
       description: Gets a summary of the alerts, optionally filtered by a 'url'. If 'recurse' is true then all alerts that apply to urls that start with the specified 'url' will be returned, otherwise only those on exactly the same 'url' (ignoring url parameters)
       operationId: alertViewAlertsByRisk
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert view alerts by risk
+      x-summary-source: derived
   /JSON/alert/view/alertsSummary/:
     parameters:
     - name: baseurl
@@ -385,10 +407,12 @@ paths:
       description: Gets number of alerts grouped by each risk level, optionally filtering by URL
       operationId: alertViewAlertsSummary
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert view alerts summary
+      x-summary-source: derived
   /JSON/alert/view/numberOfAlerts/:
     parameters:
     - name: baseurl
@@ -405,18 +429,13 @@ paths:
       description: Gets the number of alerts, optionally filtering by URL or riskId
       operationId: alertViewNumberOfAlerts
       tags:
-      - alert
+      - Alert
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert view number of alerts
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -430,6 +449,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

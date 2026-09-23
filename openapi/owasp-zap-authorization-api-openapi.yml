@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl authorization API
+  title: ZAP Authorization API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: authorization
+- name: Authorization
 paths:
   /JSON/authorization/action/setBasicAuthorizationDetectionMethod/:
     parameters:
@@ -58,13 +58,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Sets the authorization detection method for a context as one that identifies un-authorized messages based on: the message''s status code or a regex pattern in the response''s header or body. Also, whether all conditions must match or just some can be specified via the logicalOperator parameter, which accepts two values: "AND" (default), "OR".  '
+      description: 'Sets the authorization detection method for a context as one that identifies un-authorized messages based on: the message''s status code or a regex pattern in the response''s header or body. Also, whether all conditions must match or just some can be specified via the logicalOperator parameter, which accepts two values: "AND" (default), "OR".'
       operationId: authorizationActionSetBasicAuthorizationDetectionMethod
       tags:
-      - authorization
+      - Authorization
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authorization action set basic authorization detection method
+      x-summary-source: derived
   /JSON/authorization/view/getAuthorizationDetectionMethod/:
     parameters:
     - name: contextId
@@ -77,18 +79,13 @@ paths:
       description: Obtains all the configuration of the authorization detection method that is currently set for a context.
       operationId: authorizationViewGetAuthorizationDetectionMethod
       tags:
-      - authorization
+      - Authorization
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Authorization view get authorization detection method
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -102,6 +99,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

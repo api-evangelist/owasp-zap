@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl soap API
+  title: ZAP Soap API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: soap
+- name: Soap
 paths:
   /JSON/soap/action/importFile/:
     parameters:
@@ -41,10 +41,12 @@ paths:
       description: Import a WSDL definition from local file.
       operationId: soapActionImportFile
       tags:
-      - soap
+      - Soap
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Soap action import file
+      x-summary-source: derived
   /JSON/soap/action/importUrl/:
     parameters:
     - name: url
@@ -57,18 +59,13 @@ paths:
       description: Import a WSDL definition from a URL.
       operationId: soapActionImportUrl
       tags:
-      - soap
+      - Soap
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Soap action import url
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -82,6 +79,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

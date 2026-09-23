@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl custompayloads API
+  title: ZAP Custompayloads API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -50,6 +50,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads action add custom payload
+      x-summary-source: derived
   /JSON/custompayloads/action/disableCustomPayload/:
     parameters:
     - name: category
@@ -71,6 +73,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads action disable custom payload
+      x-summary-source: derived
   /JSON/custompayloads/action/disableCustomPayloads/:
     parameters:
     - name: category
@@ -86,6 +90,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads action disable custom payloads
+      x-summary-source: derived
   /JSON/custompayloads/action/enableCustomPayload/:
     parameters:
     - name: category
@@ -107,6 +113,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads action enable custom payload
+      x-summary-source: derived
   /JSON/custompayloads/action/enableCustomPayloads/:
     parameters:
     - name: category
@@ -122,6 +130,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads action enable custom payloads
+      x-summary-source: derived
   /JSON/custompayloads/action/removeCustomPayload/:
     parameters:
     - name: category
@@ -143,6 +153,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads action remove custom payload
+      x-summary-source: derived
   /JSON/custompayloads/view/customPayloads/:
     parameters:
     - name: category
@@ -158,6 +170,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads view custom payloads
+      x-summary-source: derived
   /JSON/custompayloads/view/customPayloadsCategories/:
     get:
       description: Lists all available categories.
@@ -167,14 +181,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Custompayloads view custom payloads categories
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -188,6 +197,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

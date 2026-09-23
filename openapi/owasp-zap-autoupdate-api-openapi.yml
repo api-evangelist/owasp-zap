@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl autoupdate API
+  title: ZAP Autoupdate API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -31,13 +31,15 @@ tags:
 paths:
   /JSON/autoupdate/action/downloadLatestRelease/:
     get:
-      description: 'Downloads the latest release, if any '
+      description: Downloads the latest release, if any
       operationId: autoupdateActionDownloadLatestRelease
       tags:
       - autoupdate
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action download latest release
+      x-summary-source: derived
   /JSON/autoupdate/action/installAddon/:
     parameters:
     - name: id
@@ -54,6 +56,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action install addon
+      x-summary-source: derived
   /JSON/autoupdate/action/installLocalAddon/:
     parameters:
     - name: file
@@ -70,6 +74,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action install local addon
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionCheckAddonUpdates/:
     parameters:
     - name: Boolean
@@ -86,6 +92,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option check addon updates
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionCheckOnStart/:
     parameters:
     - name: Boolean
@@ -102,6 +110,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option check on start
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionDownloadNewRelease/:
     parameters:
     - name: Boolean
@@ -118,6 +128,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option download new release
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionInstallAddonUpdates/:
     parameters:
     - name: Boolean
@@ -134,6 +146,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option install addon updates
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionInstallScannerRules/:
     parameters:
     - name: Boolean
@@ -150,6 +164,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option install scanner rules
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionReportAlphaAddons/:
     parameters:
     - name: Boolean
@@ -166,6 +182,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option report alpha addons
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionReportBetaAddons/:
     parameters:
     - name: Boolean
@@ -182,6 +200,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option report beta addons
+      x-summary-source: derived
   /JSON/autoupdate/action/setOptionReportReleaseAddons/:
     parameters:
     - name: Boolean
@@ -198,6 +218,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action set option report release addons
+      x-summary-source: derived
   /JSON/autoupdate/action/uninstallAddon/:
     parameters:
     - name: id
@@ -207,13 +229,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Uninstalls the specified add-on '
+      description: Uninstalls the specified add-on
       operationId: autoupdateActionUninstallAddon
       tags:
       - autoupdate
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate action uninstall addon
+      x-summary-source: derived
   /JSON/autoupdate/view/installedAddons/:
     get:
       description: Return a list of all of the installed add-ons
@@ -223,6 +247,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view installed addons
+      x-summary-source: derived
   /JSON/autoupdate/view/isLatestVersion/:
     get:
       description: Returns 'true' if ZAP is on the latest version
@@ -232,6 +258,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view is latest version
+      x-summary-source: derived
   /JSON/autoupdate/view/latestVersionNumber/:
     get:
       description: Returns the latest version number
@@ -241,6 +269,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view latest version number
+      x-summary-source: derived
   /JSON/autoupdate/view/localAddons/:
     get:
       description: Returns a list with all local add-ons, installed or not.
@@ -250,6 +280,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view local addons
+      x-summary-source: derived
   /JSON/autoupdate/view/marketplaceAddons/:
     get:
       description: Return a list of all of the add-ons on the ZAP Marketplace (this information is read once and then cached)
@@ -259,6 +291,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view marketplace addons
+      x-summary-source: derived
   /JSON/autoupdate/view/newAddons/:
     get:
       description: Return a list of any add-ons that have been added to the Marketplace since the last check for updates
@@ -268,6 +302,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view new addons
+      x-summary-source: derived
   /JSON/autoupdate/view/optionAddonDirectories/:
     get:
       description: ''
@@ -277,6 +313,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option addon directories
+      x-summary-source: derived
   /JSON/autoupdate/view/optionCheckAddonUpdates/:
     get:
       description: ''
@@ -286,6 +324,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option check addon updates
+      x-summary-source: derived
   /JSON/autoupdate/view/optionCheckOnStart/:
     get:
       description: ''
@@ -295,6 +335,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option check on start
+      x-summary-source: derived
   /JSON/autoupdate/view/optionDayLastChecked/:
     get:
       description: ''
@@ -304,6 +346,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option day last checked
+      x-summary-source: derived
   /JSON/autoupdate/view/optionDayLastInstallWarned/:
     get:
       description: ''
@@ -313,6 +357,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option day last install warned
+      x-summary-source: derived
   /JSON/autoupdate/view/optionDayLastUpdateWarned/:
     get:
       description: ''
@@ -322,6 +368,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option day last update warned
+      x-summary-source: derived
   /JSON/autoupdate/view/optionDownloadDirectory/:
     get:
       description: ''
@@ -331,6 +379,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option download directory
+      x-summary-source: derived
   /JSON/autoupdate/view/optionDownloadNewRelease/:
     get:
       description: ''
@@ -340,6 +390,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option download new release
+      x-summary-source: derived
   /JSON/autoupdate/view/optionInstallAddonUpdates/:
     get:
       description: ''
@@ -349,6 +401,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option install addon updates
+      x-summary-source: derived
   /JSON/autoupdate/view/optionInstallScannerRules/:
     get:
       description: ''
@@ -358,6 +412,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option install scanner rules
+      x-summary-source: derived
   /JSON/autoupdate/view/optionReportAlphaAddons/:
     get:
       description: ''
@@ -367,6 +423,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option report alpha addons
+      x-summary-source: derived
   /JSON/autoupdate/view/optionReportBetaAddons/:
     get:
       description: ''
@@ -376,6 +434,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option report beta addons
+      x-summary-source: derived
   /JSON/autoupdate/view/optionReportReleaseAddons/:
     get:
       description: ''
@@ -385,6 +445,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view option report release addons
+      x-summary-source: derived
   /JSON/autoupdate/view/updatedAddons/:
     get:
       description: Return a list of any add-ons that have been changed in the Marketplace since the last check for updates
@@ -394,14 +456,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Autoupdate view updated addons
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -415,6 +472,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

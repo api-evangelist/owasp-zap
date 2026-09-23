@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl stats API
+  title: ZAP Stats API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: stats
+- name: Stats
 paths:
   /JSON/stats/action/clearStats/:
     parameters:
@@ -40,10 +40,12 @@ paths:
       description: Clears all of the statistics
       operationId: statsActionClearStats
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats action clear stats
+      x-summary-source: derived
   /JSON/stats/action/setOptionInMemoryEnabled/:
     parameters:
     - name: Boolean
@@ -56,10 +58,12 @@ paths:
       description: Sets whether in memory statistics are enabled
       operationId: statsActionSetOptionInMemoryEnabled
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats action set option in memory enabled
+      x-summary-source: derived
   /JSON/stats/action/setOptionStatsdHost/:
     parameters:
     - name: String
@@ -72,10 +76,12 @@ paths:
       description: Sets the Statsd service hostname, supply an empty string to stop using a Statsd service
       operationId: statsActionSetOptionStatsdHost
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats action set option statsd host
+      x-summary-source: derived
   /JSON/stats/action/setOptionStatsdPort/:
     parameters:
     - name: Integer
@@ -88,10 +94,12 @@ paths:
       description: Sets the Statsd service port
       operationId: statsActionSetOptionStatsdPort
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats action set option statsd port
+      x-summary-source: derived
   /JSON/stats/action/setOptionStatsdPrefix/:
     parameters:
     - name: String
@@ -104,10 +112,12 @@ paths:
       description: Sets the prefix to be applied to all stats sent to the configured Statsd service
       operationId: statsActionSetOptionStatsdPrefix
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats action set option statsd prefix
+      x-summary-source: derived
   /JSON/stats/view/allSitesStats/:
     parameters:
     - name: keyPrefix
@@ -119,55 +129,67 @@ paths:
       description: Gets all of the site based statistics, optionally filtered by a key prefix
       operationId: statsViewAllSitesStats
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view all sites stats
+      x-summary-source: derived
   /JSON/stats/view/optionInMemoryEnabled/:
     get:
       description: Returns 'true' if in memory statistics are enabled, otherwise returns 'false'
       operationId: statsViewOptionInMemoryEnabled
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view option in memory enabled
+      x-summary-source: derived
   /JSON/stats/view/optionStatsdEnabled/:
     get:
       description: Returns 'true' if a Statsd server has been correctly configured, otherwise returns 'false'
       operationId: statsViewOptionStatsdEnabled
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view option statsd enabled
+      x-summary-source: derived
   /JSON/stats/view/optionStatsdHost/:
     get:
       description: Gets the Statsd service hostname
       operationId: statsViewOptionStatsdHost
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view option statsd host
+      x-summary-source: derived
   /JSON/stats/view/optionStatsdPort/:
     get:
       description: Gets the Statsd service port
       operationId: statsViewOptionStatsdPort
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view option statsd port
+      x-summary-source: derived
   /JSON/stats/view/optionStatsdPrefix/:
     get:
       description: Gets the prefix to be applied to all stats sent to the configured Statsd service
       operationId: statsViewOptionStatsdPrefix
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view option statsd prefix
+      x-summary-source: derived
   /JSON/stats/view/siteStats/:
     parameters:
     - name: site
@@ -185,10 +207,12 @@ paths:
       description: Gets all of the global statistics, optionally filtered by a key prefix
       operationId: statsViewSiteStats
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view site stats
+      x-summary-source: derived
   /JSON/stats/view/stats/:
     parameters:
     - name: keyPrefix
@@ -200,18 +224,13 @@ paths:
       description: Statistics
       operationId: statsViewStats
       tags:
-      - stats
+      - Stats
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Stats view stats
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -225,6 +244,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

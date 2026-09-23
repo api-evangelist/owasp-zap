@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl selenium API
+  title: ZAP Selenium API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -56,6 +56,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action add browser argument
+      x-summary-source: derived
   /JSON/selenium/action/launchBrowser/:
     parameters:
     - name: browser
@@ -72,6 +74,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action launch browser
+      x-summary-source: derived
   /JSON/selenium/action/removeBrowserArgument/:
     parameters:
     - name: browser
@@ -94,6 +98,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action remove browser argument
+      x-summary-source: derived
   /JSON/selenium/action/setBrowserArgumentEnabled/:
     parameters:
     - name: browser
@@ -122,6 +128,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set browser argument enabled
+      x-summary-source: derived
   /JSON/selenium/action/setOptionChromeBinaryPath/:
     parameters:
     - name: String
@@ -138,6 +146,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option chrome binary path
+      x-summary-source: derived
   /JSON/selenium/action/setOptionChromeDriverPath/:
     parameters:
     - name: String
@@ -154,6 +164,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option chrome driver path
+      x-summary-source: derived
   /JSON/selenium/action/setOptionFirefoxBinaryPath/:
     parameters:
     - name: String
@@ -170,6 +182,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option firefox binary path
+      x-summary-source: derived
   /JSON/selenium/action/setOptionFirefoxDefaultProfile/:
     parameters:
     - name: String
@@ -186,6 +200,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option firefox default profile
+      x-summary-source: derived
   /JSON/selenium/action/setOptionFirefoxDriverPath/:
     parameters:
     - name: String
@@ -202,6 +218,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option firefox driver path
+      x-summary-source: derived
   /JSON/selenium/action/setOptionIeDriverPath/:
     parameters:
     - name: String
@@ -219,6 +237,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option ie driver path
+      x-summary-source: derived
   /JSON/selenium/action/setOptionLastDirectory/:
     parameters:
     - name: String
@@ -235,6 +255,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option last directory
+      x-summary-source: derived
   /JSON/selenium/action/setOptionPhantomJsBinaryPath/:
     parameters:
     - name: String
@@ -252,6 +274,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium action set option phantom js binary path
+      x-summary-source: derived
   /JSON/selenium/view/getBrowserArguments/:
     parameters:
     - name: browser
@@ -268,6 +292,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view get browser arguments
+      x-summary-source: derived
   /JSON/selenium/view/optionBrowserExtensions/:
     get:
       description: ''
@@ -277,6 +303,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option browser extensions
+      x-summary-source: derived
   /JSON/selenium/view/optionChromeBinaryPath/:
     get:
       description: Returns the current path to Chrome binary
@@ -286,6 +314,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option chrome binary path
+      x-summary-source: derived
   /JSON/selenium/view/optionChromeDriverPath/:
     get:
       description: Returns the current path to ChromeDriver
@@ -295,6 +325,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option chrome driver path
+      x-summary-source: derived
   /JSON/selenium/view/optionFirefoxBinaryPath/:
     get:
       description: Returns the current path to Firefox binary
@@ -304,6 +336,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option firefox binary path
+      x-summary-source: derived
   /JSON/selenium/view/optionFirefoxDefaultProfile/:
     get:
       description: ''
@@ -313,6 +347,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option firefox default profile
+      x-summary-source: derived
   /JSON/selenium/view/optionFirefoxDriverPath/:
     get:
       description: Returns the current path to Firefox driver (geckodriver)
@@ -322,6 +358,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option firefox driver path
+      x-summary-source: derived
   /JSON/selenium/view/optionIeDriverPath/:
     get:
       description: Option no longer in effective use.
@@ -332,6 +370,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option ie driver path
+      x-summary-source: derived
   /JSON/selenium/view/optionLastDirectory/:
     get:
       description: ''
@@ -341,6 +381,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option last directory
+      x-summary-source: derived
   /JSON/selenium/view/optionPhantomJsBinaryPath/:
     get:
       description: Option no longer in effective use.
@@ -351,14 +393,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Selenium view option phantom js binary path
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -372,6 +409,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl pscan API
+  title: ZAP Pscan API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -38,6 +38,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action clear queue
+      x-summary-source: derived
   /JSON/pscan/action/disableAllScanners/:
     get:
       description: Disables all passive scan rules.
@@ -47,6 +49,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action disable all scanners
+      x-summary-source: derived
   /JSON/pscan/action/disableAllTags/:
     get:
       description: Disables all passive scan tags.
@@ -56,6 +60,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action disable all tags
+      x-summary-source: derived
   /JSON/pscan/action/disableScanners/:
     parameters:
     - name: ids
@@ -72,6 +78,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action disable scanners
+      x-summary-source: derived
   /JSON/pscan/action/enableAllScanners/:
     get:
       description: Enables all passive scan rules.
@@ -81,6 +89,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action enable all scanners
+      x-summary-source: derived
   /JSON/pscan/action/enableAllTags/:
     get:
       description: Enables all passive scan tags.
@@ -90,6 +100,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action enable all tags
+      x-summary-source: derived
   /JSON/pscan/action/enableScanners/:
     parameters:
     - name: ids
@@ -106,6 +118,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action enable scanners
+      x-summary-source: derived
   /JSON/pscan/action/setEnabled/:
     parameters:
     - name: enabled
@@ -122,6 +136,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action set enabled
+      x-summary-source: derived
   /JSON/pscan/action/setMaxAlertsPerRule/:
     parameters:
     - name: maxAlerts
@@ -138,6 +154,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action set max alerts per rule
+      x-summary-source: derived
   /JSON/pscan/action/setScanOnlyInScope/:
     parameters:
     - name: onlyInScope
@@ -154,6 +172,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action set scan only in scope
+      x-summary-source: derived
   /JSON/pscan/action/setScannerAlertThreshold/:
     parameters:
     - name: id
@@ -176,6 +196,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan action set scanner alert threshold
+      x-summary-source: derived
   /JSON/pscan/view/currentRule/:
     get:
       description: Use the currentTasks view instead.
@@ -186,6 +208,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan view current rule
+      x-summary-source: derived
   /JSON/pscan/view/currentTasks/:
     get:
       description: Shows information about the passive scan tasks currently being run (if any).
@@ -195,6 +219,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan view current tasks
+      x-summary-source: derived
   /JSON/pscan/view/maxAlertsPerRule/:
     get:
       description: Gets the maximum number of alerts a passive scan rule should raise.
@@ -204,6 +230,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan view max alerts per rule
+      x-summary-source: derived
   /JSON/pscan/view/recordsToScan/:
     get:
       description: The number of records the passive scanner still has to scan.
@@ -213,6 +241,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan view records to scan
+      x-summary-source: derived
   /JSON/pscan/view/scanOnlyInScope/:
     get:
       description: Tells whether or not the passive scan should be performed only on messages that are in scope.
@@ -222,6 +252,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan view scan only in scope
+      x-summary-source: derived
   /JSON/pscan/view/scanners/:
     get:
       description: Lists all passive scan rules with their ID, name, enabled state, and alert threshold.
@@ -231,14 +263,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Pscan view scanners
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -252,6 +279,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl replacer API
+  title: ZAP Replacer API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -77,13 +77,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Adds a replacer rule. For the parameters: desc is a user friendly description, enabled is true or false, matchType is one of [REQ_HEADER, REQ_HEADER_STR, REQ_BODY_STR, RESP_HEADER, RESP_HEADER_STR, RESP_BODY_STR], matchRegex should be true if the matchString should be treated as a regex otherwise false, matchString is the string that will be matched against, replacement is the replacement string, initiators may be blank (for all initiators) or a comma separated list of integers as defined in <a href="https://www.zaproxy.org/docs/constants/">Request Initiator Constants</a>  '
+      description: 'Adds a replacer rule. For the parameters: desc is a user friendly description, enabled is true or false, matchType is one of [REQ_HEADER, REQ_HEADER_STR, REQ_BODY_STR, RESP_HEADER, RESP_HEADER_STR, RESP_BODY_STR], matchRegex should be true if the matchString should be treated as a regex otherwise false, matchString is the string that will be matched against, replacement is the replacement string, initiators may be blank (for all initiators) or a comma separated list of integers as defined in Request Initiator Constants'
       operationId: replacerActionAddRule
       tags:
       - replacer
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Replacer action add rule
+      x-summary-source: derived
   /JSON/replacer/action/removeRule/:
     parameters:
     - name: description
@@ -100,6 +102,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Replacer action remove rule
+      x-summary-source: derived
   /JSON/replacer/action/setEnabled/:
     parameters:
     - name: description
@@ -115,13 +119,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Enables or disables the rule with the given description based on the bool parameter  '
+      description: Enables or disables the rule with the given description based on the bool parameter
       operationId: replacerActionSetEnabled
       tags:
       - replacer
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Replacer action set enabled
+      x-summary-source: derived
   /JSON/replacer/view/rules/:
     get:
       description: Returns full details of all of the rules
@@ -131,14 +137,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Replacer view rules
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -152,6 +153,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

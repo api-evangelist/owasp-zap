@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl API
+  title: ZAP Access Control API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: accessControl
+- name: Access Control
 paths:
   /JSON/accessControl/action/scan/:
     parameters:
@@ -62,10 +62,12 @@ paths:
       description: 'Starts an Access Control scan with the given context ID and user ID. (Optional parameters: user ID for Unauthenticated user, boolean identifying whether or not Alerts are raised, and the Risk level for the Alerts.) [This assumes the Access Control rules were previously established via ZAP gui and the necessary Context exported/imported.]'
       operationId: accessControlActionScan
       tags:
-      - accessControl
+      - Access Control
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Access control action scan
+      x-summary-source: derived
   /JSON/accessControl/action/writeHTMLreport/:
     parameters:
     - name: contextId
@@ -81,13 +83,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Generates an Access Control report for the given context ID and saves it based on the provided filename (path). '
+      description: Generates an Access Control report for the given context ID and saves it based on the provided filename (path).
       operationId: accessControlActionWriteHTMLreport
       tags:
-      - accessControl
+      - Access Control
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Access control action write HTM lreport
+      x-summary-source: derived
   /JSON/accessControl/view/getScanProgress/:
     parameters:
     - name: contextId
@@ -100,10 +104,12 @@ paths:
       description: Gets the Access Control scan progress (percentage integer) for the given context ID.
       operationId: accessControlViewGetScanProgress
       tags:
-      - accessControl
+      - Access Control
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Access control view get scan progress
+      x-summary-source: derived
   /JSON/accessControl/view/getScanStatus/:
     parameters:
     - name: contextId
@@ -116,18 +122,13 @@ paths:
       description: Gets the Access Control scan status (description string) for the given context ID.
       operationId: accessControlViewGetScanStatus
       tags:
-      - accessControl
+      - Access Control
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Access control view get scan status
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -141,6 +142,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

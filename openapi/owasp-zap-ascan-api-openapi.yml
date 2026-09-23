@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl ascan API
+  title: ZAP Ascan API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -48,13 +48,15 @@ paths:
       schema:
         type: string
     get:
-      description: 'Adds a new parameter excluded from the scan, using the specified name. Optionally sets if the new entry applies to a specific URL (default, all URLs) and sets the ID of the type of the parameter (default, ID of any type). The type IDs can be obtained with the view excludedParamTypes. '
+      description: Adds a new parameter excluded from the scan, using the specified name. Optionally sets if the new entry applies to a specific URL (default, all URLs) and sets the ID of the type of the parameter (default, ID of any type). The type IDs can be obtained with the view excludedParamTypes.
       operationId: ascanActionAddExcludedParam
       tags:
       - ascan
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action add excluded param
+      x-summary-source: derived
   /JSON/ascan/action/addScanPolicy/:
     parameters:
     - name: scanPolicyName
@@ -81,6 +83,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action add scan policy
+      x-summary-source: derived
   /JSON/ascan/action/clearExcludedFromScan/:
     get:
       description: Clears the regexes of URLs excluded from the active scans.
@@ -90,6 +94,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action clear excluded from scan
+      x-summary-source: derived
   /JSON/ascan/action/disableAllScanners/:
     parameters:
     - name: scanPolicyName
@@ -105,6 +111,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action disable all scanners
+      x-summary-source: derived
   /JSON/ascan/action/disableScanners/:
     parameters:
     - name: ids
@@ -126,6 +134,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action disable scanners
+      x-summary-source: derived
   /JSON/ascan/action/enableAllScanners/:
     parameters:
     - name: scanPolicyName
@@ -141,6 +151,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action enable all scanners
+      x-summary-source: derived
   /JSON/ascan/action/enableScanners/:
     parameters:
     - name: ids
@@ -162,6 +174,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action enable scanners
+      x-summary-source: derived
   /JSON/ascan/action/excludeFromScan/:
     parameters:
     - name: regex
@@ -178,6 +192,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action exclude from scan
+      x-summary-source: derived
   /JSON/ascan/action/importScanPolicy/:
     parameters:
     - name: path
@@ -194,6 +210,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action import scan policy
+      x-summary-source: derived
   /JSON/ascan/action/modifyExcludedParam/:
     parameters:
     - name: idx
@@ -225,6 +243,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action modify excluded param
+      x-summary-source: derived
   /JSON/ascan/action/pause/:
     parameters:
     - name: scanId
@@ -241,6 +261,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action pause
+      x-summary-source: derived
   /JSON/ascan/action/pauseAllScans/:
     get:
       description: ''
@@ -250,6 +272,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action pause all scans
+      x-summary-source: derived
   /JSON/ascan/action/removeAllScans/:
     get:
       description: ''
@@ -259,6 +283,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action remove all scans
+      x-summary-source: derived
   /JSON/ascan/action/removeExcludedParam/:
     parameters:
     - name: idx
@@ -275,6 +301,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action remove excluded param
+      x-summary-source: derived
   /JSON/ascan/action/removeScan/:
     parameters:
     - name: scanId
@@ -291,6 +319,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action remove scan
+      x-summary-source: derived
   /JSON/ascan/action/removeScanPolicy/:
     parameters:
     - name: scanPolicyName
@@ -307,6 +337,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action remove scan policy
+      x-summary-source: derived
   /JSON/ascan/action/resume/:
     parameters:
     - name: scanId
@@ -323,6 +355,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action resume
+      x-summary-source: derived
   /JSON/ascan/action/resumeAllScans/:
     get:
       description: ''
@@ -332,6 +366,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action resume all scans
+      x-summary-source: derived
   /JSON/ascan/action/scan/:
     parameters:
     - name: url
@@ -377,6 +413,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action scan
+      x-summary-source: derived
   /JSON/ascan/action/scanAsUser/:
     parameters:
     - name: url
@@ -422,6 +460,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action scan as user
+      x-summary-source: derived
   /JSON/ascan/action/setEnabledPolicies/:
     parameters:
     - name: ids
@@ -443,6 +483,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set enabled policies
+      x-summary-source: derived
   /JSON/ascan/action/setOptionAddQueryParam/:
     parameters:
     - name: Boolean
@@ -459,6 +501,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option add query param
+      x-summary-source: derived
   /JSON/ascan/action/setOptionAllowAttackOnStart/:
     parameters:
     - name: Boolean
@@ -475,6 +519,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option allow attack on start
+      x-summary-source: derived
   /JSON/ascan/action/setOptionAttackPolicy/:
     parameters:
     - name: String
@@ -491,6 +537,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option attack policy
+      x-summary-source: derived
   /JSON/ascan/action/setOptionDefaultPolicy/:
     parameters:
     - name: String
@@ -507,6 +555,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option default policy
+      x-summary-source: derived
   /JSON/ascan/action/setOptionDelayInMs/:
     parameters:
     - name: Integer
@@ -524,6 +574,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option delay in ms
+      x-summary-source: derived
   /JSON/ascan/action/setOptionEncodeCookieValues/:
     parameters:
     - name: Boolean
@@ -540,6 +592,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option encode cookie values
+      x-summary-source: derived
   /JSON/ascan/action/setOptionHandleAntiCSRFTokens/:
     parameters:
     - name: Boolean
@@ -556,6 +610,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option handle anti CSRF tokens
+      x-summary-source: derived
   /JSON/ascan/action/setOptionHostPerScan/:
     parameters:
     - name: Integer
@@ -572,6 +628,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option host per scan
+      x-summary-source: derived
   /JSON/ascan/action/setOptionInjectPluginIdInHeader/:
     parameters:
     - name: Boolean
@@ -588,6 +646,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option inject plugin id in header
+      x-summary-source: derived
   /JSON/ascan/action/setOptionMaxAlertsPerRule/:
     parameters:
     - name: Integer
@@ -604,6 +664,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option max alerts per rule
+      x-summary-source: derived
   /JSON/ascan/action/setOptionMaxChartTimeInMins/:
     parameters:
     - name: Integer
@@ -620,6 +682,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option max chart time in mins
+      x-summary-source: derived
   /JSON/ascan/action/setOptionMaxResultsToList/:
     parameters:
     - name: Integer
@@ -636,6 +700,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option max results to list
+      x-summary-source: derived
   /JSON/ascan/action/setOptionMaxRuleDurationInMins/:
     parameters:
     - name: Integer
@@ -652,6 +718,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option max rule duration in mins
+      x-summary-source: derived
   /JSON/ascan/action/setOptionMaxScanDurationInMins/:
     parameters:
     - name: Integer
@@ -668,6 +736,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option max scan duration in mins
+      x-summary-source: derived
   /JSON/ascan/action/setOptionMaxScansInUI/:
     parameters:
     - name: Integer
@@ -684,6 +754,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option max scans in UI
+      x-summary-source: derived
   /JSON/ascan/action/setOptionPromptInAttackMode/:
     parameters:
     - name: Boolean
@@ -700,6 +772,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option prompt in attack mode
+      x-summary-source: derived
   /JSON/ascan/action/setOptionPromptToClearFinishedScans/:
     parameters:
     - name: Boolean
@@ -716,6 +790,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option prompt to clear finished scans
+      x-summary-source: derived
   /JSON/ascan/action/setOptionRescanInAttackMode/:
     parameters:
     - name: Boolean
@@ -732,6 +808,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option rescan in attack mode
+      x-summary-source: derived
   /JSON/ascan/action/setOptionScanHeadersAllRequests/:
     parameters:
     - name: Boolean
@@ -748,6 +826,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option scan headers all requests
+      x-summary-source: derived
   /JSON/ascan/action/setOptionScanNullJsonValues/:
     parameters:
     - name: Boolean
@@ -764,6 +844,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option scan null json values
+      x-summary-source: derived
   /JSON/ascan/action/setOptionShowAdvancedDialog/:
     parameters:
     - name: Boolean
@@ -780,6 +862,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option show advanced dialog
+      x-summary-source: derived
   /JSON/ascan/action/setOptionTargetParamsEnabledRPC/:
     parameters:
     - name: Integer
@@ -796,6 +880,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option target params enabled RPC
+      x-summary-source: derived
   /JSON/ascan/action/setOptionTargetParamsInjectable/:
     parameters:
     - name: Integer
@@ -812,6 +898,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option target params injectable
+      x-summary-source: derived
   /JSON/ascan/action/setOptionThreadPerHost/:
     parameters:
     - name: Integer
@@ -828,6 +916,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set option thread per host
+      x-summary-source: derived
   /JSON/ascan/action/setPolicyAlertThreshold/:
     parameters:
     - name: id
@@ -855,6 +945,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set policy alert threshold
+      x-summary-source: derived
   /JSON/ascan/action/setPolicyAttackStrength/:
     parameters:
     - name: id
@@ -882,6 +974,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set policy attack strength
+      x-summary-source: derived
   /JSON/ascan/action/setScannerAlertThreshold/:
     parameters:
     - name: id
@@ -909,6 +1003,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set scanner alert threshold
+      x-summary-source: derived
   /JSON/ascan/action/setScannerAttackStrength/:
     parameters:
     - name: id
@@ -936,6 +1032,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action set scanner attack strength
+      x-summary-source: derived
   /JSON/ascan/action/skipScanner/:
     parameters:
     - name: scanId
@@ -958,6 +1056,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action skip scanner
+      x-summary-source: derived
   /JSON/ascan/action/stop/:
     parameters:
     - name: scanId
@@ -974,6 +1074,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action stop
+      x-summary-source: derived
   /JSON/ascan/action/stopAllScans/:
     get:
       description: ''
@@ -983,6 +1085,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action stop all scans
+      x-summary-source: derived
   /JSON/ascan/action/updateScanPolicy/:
     parameters:
     - name: scanPolicyName
@@ -1009,6 +1113,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan action update scan policy
+      x-summary-source: derived
   /JSON/ascan/view/alertsIds/:
     parameters:
     - name: scanId
@@ -1025,6 +1131,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view alerts ids
+      x-summary-source: derived
   /JSON/ascan/view/attackModeQueue/:
     get:
       description: ''
@@ -1034,6 +1142,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view attack mode queue
+      x-summary-source: derived
   /JSON/ascan/view/excludedFromScan/:
     get:
       description: Gets the regexes of URLs excluded from the active scans.
@@ -1043,6 +1153,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view excluded from scan
+      x-summary-source: derived
   /JSON/ascan/view/excludedParamTypes/:
     get:
       description: 'Gets all the types of excluded parameters. For each type the following are shown: the ID and the name.'
@@ -1052,6 +1164,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view excluded param types
+      x-summary-source: derived
   /JSON/ascan/view/excludedParams/:
     get:
       description: 'Gets all the parameters that are excluded. For each parameter the following are shown: the name, the URL, and the parameter type.'
@@ -1061,6 +1175,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view excluded params
+      x-summary-source: derived
   /JSON/ascan/view/messagesIds/:
     parameters:
     - name: scanId
@@ -1077,6 +1193,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view messages ids
+      x-summary-source: derived
   /JSON/ascan/view/optionAddQueryParam/:
     get:
       description: Tells whether or not the active scanner should add a query parameter to GET request that don't have parameters to start with.
@@ -1086,6 +1204,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option add query param
+      x-summary-source: derived
   /JSON/ascan/view/optionAllowAttackOnStart/:
     get:
       description: ''
@@ -1095,6 +1215,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option allow attack on start
+      x-summary-source: derived
   /JSON/ascan/view/optionAttackPolicy/:
     get:
       description: ''
@@ -1104,6 +1226,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option attack policy
+      x-summary-source: derived
   /JSON/ascan/view/optionDefaultPolicy/:
     get:
       description: ''
@@ -1113,6 +1237,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option default policy
+      x-summary-source: derived
   /JSON/ascan/view/optionDelayInMs/:
     get:
       description: This option has been superseded. Use the API rate limit endpoints in the 'network' component instead.
@@ -1123,6 +1249,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option delay in ms
+      x-summary-source: derived
   /JSON/ascan/view/optionEncodeCookieValues/:
     get:
       description: Tells whether or not the active scanner should encode cookie values.
@@ -1132,6 +1260,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option encode cookie values
+      x-summary-source: derived
   /JSON/ascan/view/optionExcludedParamList/:
     get:
       description: Use view excludedParams instead.
@@ -1142,6 +1272,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option excluded param list
+      x-summary-source: derived
   /JSON/ascan/view/optionHandleAntiCSRFTokens/:
     get:
       description: ''
@@ -1151,6 +1283,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option handle anti CSRF tokens
+      x-summary-source: derived
   /JSON/ascan/view/optionHostPerScan/:
     get:
       description: ''
@@ -1160,6 +1294,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option host per scan
+      x-summary-source: derived
   /JSON/ascan/view/optionInjectPluginIdInHeader/:
     get:
       description: Tells whether or not the active scanner should inject the HTTP request header X-ZAP-Scan-ID, with the ID of the scan rule that's sending the requests.
@@ -1169,6 +1305,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option inject plugin id in header
+      x-summary-source: derived
   /JSON/ascan/view/optionMaxAlertsPerRule/:
     get:
       description: Gets the maximum number of alerts that a rule can raise before being skipped.
@@ -1178,6 +1316,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option max alerts per rule
+      x-summary-source: derived
   /JSON/ascan/view/optionMaxChartTimeInMins/:
     get:
       description: ''
@@ -1187,6 +1327,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option max chart time in mins
+      x-summary-source: derived
   /JSON/ascan/view/optionMaxResultsToList/:
     get:
       description: ''
@@ -1196,6 +1338,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option max results to list
+      x-summary-source: derived
   /JSON/ascan/view/optionMaxRuleDurationInMins/:
     get:
       description: ''
@@ -1205,6 +1349,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option max rule duration in mins
+      x-summary-source: derived
   /JSON/ascan/view/optionMaxScanDurationInMins/:
     get:
       description: ''
@@ -1214,6 +1360,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option max scan duration in mins
+      x-summary-source: derived
   /JSON/ascan/view/optionMaxScansInUI/:
     get:
       description: ''
@@ -1223,6 +1371,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option max scans in UI
+      x-summary-source: derived
   /JSON/ascan/view/optionPromptInAttackMode/:
     get:
       description: ''
@@ -1232,6 +1382,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option prompt in attack mode
+      x-summary-source: derived
   /JSON/ascan/view/optionPromptToClearFinishedScans/:
     get:
       description: ''
@@ -1241,6 +1393,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option prompt to clear finished scans
+      x-summary-source: derived
   /JSON/ascan/view/optionRescanInAttackMode/:
     get:
       description: ''
@@ -1250,6 +1404,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option rescan in attack mode
+      x-summary-source: derived
   /JSON/ascan/view/optionScanHeadersAllRequests/:
     get:
       description: Tells whether or not the HTTP Headers of all requests should be scanned. Not just requests that send parameters, through the query or request body.
@@ -1259,6 +1415,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option scan headers all requests
+      x-summary-source: derived
   /JSON/ascan/view/optionScanNullJsonValues/:
     get:
       description: Tells whether or not the active scanner should scan null JSON values.
@@ -1268,6 +1426,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option scan null json values
+      x-summary-source: derived
   /JSON/ascan/view/optionShowAdvancedDialog/:
     get:
       description: ''
@@ -1277,6 +1437,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option show advanced dialog
+      x-summary-source: derived
   /JSON/ascan/view/optionTargetParamsEnabledRPC/:
     get:
       description: ''
@@ -1286,6 +1448,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option target params enabled RPC
+      x-summary-source: derived
   /JSON/ascan/view/optionTargetParamsInjectable/:
     get:
       description: ''
@@ -1295,6 +1459,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option target params injectable
+      x-summary-source: derived
   /JSON/ascan/view/optionThreadPerHost/:
     get:
       description: ''
@@ -1304,6 +1470,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view option thread per host
+      x-summary-source: derived
   /JSON/ascan/view/policies/:
     parameters:
     - name: scanPolicyName
@@ -1324,6 +1492,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view policies
+      x-summary-source: derived
   /JSON/ascan/view/scanPolicyNames/:
     get:
       description: ''
@@ -1333,6 +1503,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view scan policy names
+      x-summary-source: derived
   /JSON/ascan/view/scanProgress/:
     parameters:
     - name: scanId
@@ -1348,6 +1520,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view scan progress
+      x-summary-source: derived
   /JSON/ascan/view/scanners/:
     parameters:
     - name: scanPolicyName
@@ -1368,6 +1542,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view scanners
+      x-summary-source: derived
   /JSON/ascan/view/scans/:
     get:
       description: ''
@@ -1377,6 +1553,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view scans
+      x-summary-source: derived
   /JSON/ascan/view/status/:
     parameters:
     - name: scanId
@@ -1392,14 +1570,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Ascan view status
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -1413,6 +1586,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

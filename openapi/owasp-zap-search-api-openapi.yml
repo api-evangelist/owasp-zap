@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl search API
+  title: ZAP Search API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: search
+- name: Search
 paths:
   /OTHER/search/other/harByHeaderRegex/:
     parameters:
@@ -56,10 +56,12 @@ paths:
       description: Returns the HTTP messages, in HAR format, that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchOtherHarByHeaderRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Search other har by header regex
+      x-summary-source: derived
   /OTHER/search/other/harByNoteRegex/:
     parameters:
     - name: regex
@@ -87,10 +89,12 @@ paths:
       description: Returns the HTTP messages, in HAR format, that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchOtherHarByNoteRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Search other har by note regex
+      x-summary-source: derived
   /OTHER/search/other/harByRequestRegex/:
     parameters:
     - name: regex
@@ -118,10 +122,12 @@ paths:
       description: Returns the HTTP messages, in HAR format, that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchOtherHarByRequestRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Search other har by request regex
+      x-summary-source: derived
   /OTHER/search/other/harByResponseRegex/:
     parameters:
     - name: regex
@@ -149,10 +155,12 @@ paths:
       description: Returns the HTTP messages, in HAR format, that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchOtherHarByResponseRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Search other har by response regex
+      x-summary-source: derived
   /OTHER/search/other/harByTagRegex/:
     parameters:
     - name: regex
@@ -180,10 +188,12 @@ paths:
       description: Returns the HTTP messages, in HAR format, that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchOtherHarByTagRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Search other har by tag regex
+      x-summary-source: derived
   /OTHER/search/other/harByUrlRegex/:
     parameters:
     - name: regex
@@ -211,10 +221,12 @@ paths:
       description: Returns the HTTP messages, in HAR format, that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchOtherHarByUrlRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Search other har by url regex
+      x-summary-source: derived
   /JSON/search/view/messagesByHeaderRegex/:
     parameters:
     - name: regex
@@ -242,10 +254,12 @@ paths:
       description: Returns the HTTP messages that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewMessagesByHeaderRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view messages by header regex
+      x-summary-source: derived
   /JSON/search/view/messagesByNoteRegex/:
     parameters:
     - name: regex
@@ -273,10 +287,12 @@ paths:
       description: Returns the HTTP messages that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewMessagesByNoteRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view messages by note regex
+      x-summary-source: derived
   /JSON/search/view/messagesByRequestRegex/:
     parameters:
     - name: regex
@@ -304,10 +320,12 @@ paths:
       description: Returns the HTTP messages that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewMessagesByRequestRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view messages by request regex
+      x-summary-source: derived
   /JSON/search/view/messagesByResponseRegex/:
     parameters:
     - name: regex
@@ -335,10 +353,12 @@ paths:
       description: Returns the HTTP messages that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewMessagesByResponseRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view messages by response regex
+      x-summary-source: derived
   /JSON/search/view/messagesByTagRegex/:
     parameters:
     - name: regex
@@ -366,10 +386,12 @@ paths:
       description: Returns the HTTP messages that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewMessagesByTagRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view messages by tag regex
+      x-summary-source: derived
   /JSON/search/view/messagesByUrlRegex/:
     parameters:
     - name: regex
@@ -397,10 +419,12 @@ paths:
       description: Returns the HTTP messages that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewMessagesByUrlRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view messages by url regex
+      x-summary-source: derived
   /JSON/search/view/urlsByHeaderRegex/:
     parameters:
     - name: regex
@@ -428,10 +452,12 @@ paths:
       description: Returns the URLs of the HTTP messages that match the given regular expression in the header(s) optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewUrlsByHeaderRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view urls by header regex
+      x-summary-source: derived
   /JSON/search/view/urlsByNoteRegex/:
     parameters:
     - name: regex
@@ -459,10 +485,12 @@ paths:
       description: Returns the URLs of the HTTP messages that match the given regular expression in their note optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewUrlsByNoteRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view urls by note regex
+      x-summary-source: derived
   /JSON/search/view/urlsByRequestRegex/:
     parameters:
     - name: regex
@@ -490,10 +518,12 @@ paths:
       description: Returns the URLs of the HTTP messages that match the given regular expression in the request optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewUrlsByRequestRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view urls by request regex
+      x-summary-source: derived
   /JSON/search/view/urlsByResponseRegex/:
     parameters:
     - name: regex
@@ -521,10 +551,12 @@ paths:
       description: Returns the URLs of the HTTP messages that match the given regular expression in the response optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewUrlsByResponseRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view urls by response regex
+      x-summary-source: derived
   /JSON/search/view/urlsByTagRegex/:
     parameters:
     - name: regex
@@ -552,10 +584,12 @@ paths:
       description: Returns the URLs of the HTTP messages that match the given regular expression in their history Tags optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewUrlsByTagRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view urls by tag regex
+      x-summary-source: derived
   /JSON/search/view/urlsByUrlRegex/:
     parameters:
     - name: regex
@@ -583,10 +617,12 @@ paths:
       description: Returns the URLs of the HTTP messages that match the given regular expression in the URL optionally filtered by URL and paginated with 'start' position and 'count' of messages.
       operationId: searchViewUrlsByUrlRegex
       tags:
-      - search
+      - Search
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Search view urls by url regex
+      x-summary-source: derived
 components:
   schemas:
     ErrorJson:

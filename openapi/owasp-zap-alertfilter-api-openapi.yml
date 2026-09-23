@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl alertFilter API
+  title: ZAP Alert Filter API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -107,6 +107,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action add alert filter
+      x-summary-source: derived
   /JSON/alertFilter/action/addGlobalAlertFilter/:
     parameters:
     - name: ruleId
@@ -179,6 +181,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action add global alert filter
+      x-summary-source: derived
   /JSON/alertFilter/action/applyAll/:
     get:
       description: Applies all currently enabled Global and Context alert filters.
@@ -188,6 +192,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action apply all
+      x-summary-source: derived
   /JSON/alertFilter/action/applyContext/:
     get:
       description: Applies all currently enabled Context alert filters.
@@ -197,6 +203,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action apply context
+      x-summary-source: derived
   /JSON/alertFilter/action/applyGlobal/:
     get:
       description: Applies all currently enabled Global alert filters.
@@ -206,6 +214,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action apply global
+      x-summary-source: derived
   /JSON/alertFilter/action/removeAlertFilter/:
     parameters:
     - name: contextId
@@ -284,6 +294,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action remove alert filter
+      x-summary-source: derived
   /JSON/alertFilter/action/removeGlobalAlertFilter/:
     parameters:
     - name: ruleId
@@ -356,6 +368,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action remove global alert filter
+      x-summary-source: derived
   /JSON/alertFilter/action/testAll/:
     get:
       description: Tests all currently enabled Global and Context alert filters.
@@ -365,6 +379,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action test all
+      x-summary-source: derived
   /JSON/alertFilter/action/testContext/:
     get:
       description: Tests all currently enabled Context alert filters.
@@ -374,6 +390,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action test context
+      x-summary-source: derived
   /JSON/alertFilter/action/testGlobal/:
     get:
       description: Tests all currently enabled Global alert filters.
@@ -383,6 +401,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter action test global
+      x-summary-source: derived
   /JSON/alertFilter/view/alertFilterList/:
     parameters:
     - name: contextId
@@ -399,6 +419,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter view alert filter list
+      x-summary-source: derived
   /JSON/alertFilter/view/globalAlertFilterList/:
     get:
       description: Lists the global alert filters.
@@ -408,14 +430,9 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Alert filter view global alert filter list
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -429,6 +446,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

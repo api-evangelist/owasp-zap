@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl websocket API
+  title: ZAP Websocket API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: websocket
+- name: Websocket
 paths:
   /JSON/websocket/action/sendTextMessage/:
     parameters:
@@ -53,10 +53,12 @@ paths:
       description: Sends the specified message on the channel specified by channelId, if outgoing is 'True' then the message will be sent to the server and if it is 'False' then it will be sent to the client
       operationId: websocketActionSendTextMessage
       tags:
-      - websocket
+      - Websocket
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Websocket action send text message
+      x-summary-source: derived
   /JSON/websocket/action/setBreakTextMessage/:
     parameters:
     - name: message
@@ -75,28 +77,34 @@ paths:
       description: Sets the text message for an intercepted websockets message
       operationId: websocketActionSetBreakTextMessage
       tags:
-      - websocket
+      - Websocket
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Websocket action set break text message
+      x-summary-source: derived
   /JSON/websocket/view/breakTextMessage/:
     get:
       description: Returns a text representation of an intercepted websockets message
       operationId: websocketViewBreakTextMessage
       tags:
-      - websocket
+      - Websocket
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Websocket view break text message
+      x-summary-source: derived
   /JSON/websocket/view/channels/:
     get:
       description: Returns all of the registered web socket channels
       operationId: websocketViewChannels
       tags:
-      - websocket
+      - Websocket
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Websocket view channels
+      x-summary-source: derived
   /JSON/websocket/view/message/:
     parameters:
     - name: channelId
@@ -115,10 +123,12 @@ paths:
       description: Returns full details of the message specified by the channelId and messageId
       operationId: websocketViewMessage
       tags:
-      - websocket
+      - Websocket
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Websocket view message
+      x-summary-source: derived
   /JSON/websocket/view/messages/:
     parameters:
     - name: channelId
@@ -145,18 +155,13 @@ paths:
       description: Returns a list of all of the messages that meet the given criteria (all optional), where channelId is a channel identifier, start is the offset to start returning messages from (starting from 0), count is the number of messages to return (default no limit) and payloadPreviewLength is the maximum number bytes to return for the payload contents
       operationId: websocketViewMessages
       tags:
-      - websocket
+      - Websocket
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Websocket view messages
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -170,6 +175,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl acsrf API
+  title: ZAP Acsrf API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -45,6 +45,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Acsrf action add option token
+      x-summary-source: derived
   /JSON/acsrf/action/removeOptionToken/:
     parameters:
     - name: String
@@ -61,6 +63,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Acsrf action remove option token
+      x-summary-source: derived
   /JSON/acsrf/action/setOptionPartialMatchingEnabled/:
     parameters:
     - name: Boolean
@@ -77,6 +81,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Acsrf action set option partial matching enabled
+      x-summary-source: derived
   /OTHER/acsrf/other/genForm/:
     parameters:
     - name: hrefId
@@ -98,6 +104,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorOther'
+      summary: Acsrf other gen form
+      x-summary-source: derived
   /JSON/acsrf/view/optionPartialMatchingEnabled/:
     get:
       description: Define if ZAP should detect CSRF tokens by searching for partial matches
@@ -107,6 +115,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Acsrf view option partial matching enabled
+      x-summary-source: derived
   /JSON/acsrf/view/optionTokensNames/:
     get:
       description: Lists the names of all anti-CSRF tokens
@@ -116,6 +126,8 @@ paths:
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Acsrf view option tokens names
+      x-summary-source: derived
 components:
   schemas:
     ErrorJson:

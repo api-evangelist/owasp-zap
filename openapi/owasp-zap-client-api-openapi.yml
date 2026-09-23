@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: ZAP accessControl client API
+  title: ZAP Client API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -27,7 +27,7 @@ security:
 - apiKeyHeader: []
 - apiKeyQuery: []
 tags:
-- name: client
+- name: Client
 paths:
   /JSON/client/action/exportClientMap/:
     parameters:
@@ -41,10 +41,12 @@ paths:
       description: Exports the Client Map to a file.
       operationId: clientActionExportClientMap
       tags:
-      - client
+      - Client
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Client action export client map
+      x-summary-source: derived
   /JSON/client/action/reportEvent/:
     parameters:
     - name: eventJson
@@ -57,10 +59,12 @@ paths:
       description: ''
       operationId: clientActionReportEvent
       tags:
-      - client
+      - Client
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Client action report event
+      x-summary-source: derived
   /JSON/client/action/reportObject/:
     parameters:
     - name: objectJson
@@ -73,10 +77,12 @@ paths:
       description: ''
       operationId: clientActionReportObject
       tags:
-      - client
+      - Client
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Client action report object
+      x-summary-source: derived
   /JSON/client/action/reportZestScript/:
     parameters:
     - name: scriptJson
@@ -89,10 +95,12 @@ paths:
       description: ''
       operationId: clientActionReportZestScript
       tags:
-      - client
+      - Client
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Client action report zest script
+      x-summary-source: derived
   /JSON/client/action/reportZestStatement/:
     parameters:
     - name: statementJson
@@ -105,18 +113,13 @@ paths:
       description: ''
       operationId: clientActionReportZestStatement
       tags:
-      - client
+      - Client
       responses:
         default:
           $ref: '#/components/responses/ErrorJson'
+      summary: Client action report zest statement
+      x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -130,6 +133,13 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey
