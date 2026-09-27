@@ -560,6 +560,17 @@ paths:
       summary: Hud view upgraded domains
       x-summary-source: derived
 components:
+  responses:
+    ErrorOther:
+      description: Error of OTHER endpoints.
+      content:
+        '*/*': {}
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -573,17 +584,6 @@ components:
           type: string
         detail:
           type: string
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
-    ErrorOther:
-      description: Error of OTHER endpoints.
-      content:
-        '*/*': {}
   securitySchemes:
     apiKeyHeader:
       type: apiKey

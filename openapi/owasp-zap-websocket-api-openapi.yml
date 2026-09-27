@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: ZAP Websocket API
+  title: ZAP WebSocket API
   description: The HTTP API for controlling and accessing ZAP.
   contact:
     name: ZAP User Group
@@ -162,6 +162,13 @@ paths:
       summary: Websocket view messages
       x-summary-source: derived
 components:
+  responses:
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   schemas:
     ErrorJson:
       type: object
@@ -175,13 +182,6 @@ components:
           type: string
         detail:
           type: string
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey
