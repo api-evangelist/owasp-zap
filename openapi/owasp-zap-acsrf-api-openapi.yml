@@ -129,17 +129,6 @@ paths:
       summary: Acsrf view option tokens names
       x-summary-source: derived
 components:
-  responses:
-    ErrorJson:
-      description: Error of JSON endpoints.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorJson'
-    ErrorOther:
-      description: Error of OTHER endpoints.
-      content:
-        '*/*': {}
   schemas:
     ErrorJson:
       type: object
@@ -153,6 +142,17 @@ components:
           type: string
         detail:
           type: string
+  responses:
+    ErrorOther:
+      description: Error of OTHER endpoints.
+      content:
+        '*/*': {}
+    ErrorJson:
+      description: Error of JSON endpoints.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorJson'
   securitySchemes:
     apiKeyHeader:
       type: apiKey
