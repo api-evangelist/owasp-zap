@@ -986,6 +986,12 @@ apis:
   - type: GitHub API Docs
     url: https://github.com/zaproxy/zap-api-docs
 common:
+  - type: Plans
+    url: plans/owasp-zap-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/owasp-zap-rate-limits.yml
+  - type: FinOps
+    url: finops/owasp-zap-finops.yml
   - type: CapabilityMap
     url: capabilities/owasp-zap-capability-edges.yml
     name: OWASP ZAP Business Capability Map
