@@ -466,3 +466,9 @@ components:
       type: apiKey
       name: apikey
       in: query
+x-provenance:
+  method: harvested
+  publisher: OWASP ZAP
+  source: https://raw.githubusercontent.com/zaproxy/zap-api-docs/HEAD/openapi.yaml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
